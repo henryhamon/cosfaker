@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Export generator="Cache" version="25" zv="Cache for Windows (x86-32) 2015.2.1 (Build 705U)" ts="2017-01-12 15:22:33">
+<Export generator="Cache" version="25" zv="Cache for Windows (x86-32) 2015.2.1 (Build 705U)" ts="2017-01-20 16:59:49">
 <Class name="cosFaker.Address">
 <Super>%RegisteredObject</Super>
 <TimeChanged>64037,48509.303778</TimeChanged>
@@ -190,6 +190,28 @@ Centro Curitiba Lat -25.429 Lon -49.2671
 	S action = ##class(cosFaker.Data.PtBr).AppAction(pGroup)
 	S function = ##class(cosFaker.Data.PtBr).AppType()
 	Q action _ pSeparator _ function
+]]></Implementation>
+</Method>
+</Class>
+
+
+<Class name="cosFaker.Commerce">
+<TimeChanged>64303,61150.24185</TimeChanged>
+<TimeCreated>64016,37345.119926</TimeCreated>
+
+<Method name="Price">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>pMin:%Integer=0,pMax:%Integer=1000,pDec:%Integer=2,pSymbol:%String=""</FormalSpec>
+<Implementation><![CDATA[
+	Set bOk = $$$NO, $Piece(dec,"9",pDec+1)="", $Piece(tmp,"0",pDec+1)=""
+	
+	While bOk = $$$NO {
+		Set randdec = $Random(dec)
+		Set rand = $Random(pMax ) _ "." _ randdec _ $Extract(tmp, 0, $Length(tmp)-$Length(randdec))
+		Set:((rand >= pMin)&&(rand <= pMax)) bOk = $$$YES
+	}
+	
+	Quit pSymbol _ rand
 ]]></Implementation>
 </Method>
 </Class>
