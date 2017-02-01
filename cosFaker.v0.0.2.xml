@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Export generator="Cache" version="25" zv="Cache for Windows (x86-32) 2015.2.1 (Build 705U)" ts="2017-02-01 09:13:23">
+<Export generator="Cache" version="25" zv="Cache for Windows (x86-32) 2015.2.1 (Build 705U)" ts="2017-02-01 11:03:30">
 <Class name="cosFaker.Address">
 <Super>%RegisteredObject</Super>
 <TimeChanged>64037,48509.303778</TimeChanged>
@@ -665,7 +665,7 @@ Centro Curitiba Lat -25.429 Lon -49.2671
 
 
 <Class name="cosFaker.Finance">
-<TimeChanged>64315,33118.363476</TimeChanged>
+<TimeChanged>64315,39805.450037</TimeChanged>
 <TimeCreated>64315,30624.365455</TimeCreated>
 
 <Method name="Amount">
@@ -714,6 +714,7 @@ Centro Curitiba Lat -25.429 Lon -49.2671
 <Method name="In">
 <ClassMethod>1</ClassMethod>
 <FormalSpec>pValue,pMin:%Integer,pMax:%Integer</FormalSpec>
+<Private>1</Private>
 <ReturnType>%Boolean</ReturnType>
 <Implementation><![CDATA[	Quit ((pValue>=pMin)&&(pValue<=pMax))
 ]]></Implementation>

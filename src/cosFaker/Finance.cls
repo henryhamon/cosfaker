@@ -36,7 +36,7 @@ ClassMethod BitcoinAddress(pMin As %Integer = 27, pMax As %Integer = 34) As %Str
 	Quit bitcoinAddress
 }
 
-ClassMethod In(pValue, pMin As %Integer, pMax As %Integer) As %Boolean
+ClassMethod In(pValue, pMin As %Integer, pMax As %Integer) As %Boolean [ Private ]
 {
 	Quit ((pValue>=pMin)&&(pValue<=pMax))
 }
