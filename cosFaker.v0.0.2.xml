@@ -1,0 +1,1459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="Cache" version="25" zv="Cache for Windows (x86-32) 2015.2.1 (Build 705U)" ts="2017-02-01 08:52:16">
+<Class name="cosFaker.Address">
+<Super>%RegisteredObject</Super>
+<TimeChanged>64037,48509.303778</TimeChanged>
+<TimeCreated>64037,29468.065211</TimeCreated>
+
+<UDLText name="T">
+<Content><![CDATA[
+/*
+
+ @method faker.address.latitude
+
+  this.latitude = function () {
+      return (faker.random.number(180 * 10000) / 10000.0 - 90.0).toFixed(4);
+  }
+   * @method faker.address.longitude
+
+  this.longitude = function () {
+      return (faker.random.number(360 * 10000) / 10000.0 - 180.0).toFixed(4);
+  }
+   this.city = function (format) {
+    var formats = [
+      '{{address.cityPrefix}} {{name.firstName}}{{address.citySuffix}}',
+      '{{address.cityPrefix}} {{name.firstName}}',
+      '{{name.firstName}}{{address.citySuffix}}',
+      '{{name.lastName}}{{address.citySuffix}}'
+    ];
+
+    if (typeof format !== "number") {
+      format = faker.random.number(formats.length - 1);
+    }
+
+    return f(formats[format]);
+
+  }
+
+  **
+   * Return a random localized city prefix
+   * @method faker.address.cityPrefix
+   *
+  this.cityPrefix = function () {
+    return faker.random.arrayElement(faker.definitions.address.city_prefix);
+  }
+
+  **
+   * Return a random localized city suffix
+   *
+   * @method faker.address.citySuffix
+   *
+  this.citySuffix = function () {
+    return faker.random.arrayElement(faker.definitions.address.city_suffix);
+  }
+
+  **
+   * Returns a random localized street name
+   *
+   * @method faker.address.streetName
+   *
+  this.streetName = function () {
+      var result;
+      var suffix = faker.address.streetSuffix();
+      if (suffix !== "") {
+          suffix = " " + suffix
+      }
+
+      switch (faker.random.number(1)) {
+      case 0:
+          result = faker.name.lastName() + suffix;
+          break;
+      case 1:
+          result = faker.name.firstName() + suffix;
+          break;
+      }
+      return result;
+  }
+
+  //
+  // TODO: change all these methods that accept a boolean to instead accept an options hash.
+  //
+  **
+   * Returns a random localized street address
+   *
+   * @method faker.address.streetAddress
+   * @param {Boolean} useFullAddress
+   *
+  this.streetAddress = function (useFullAddress) {
+      if (useFullAddress === undefined) { useFullAddress = false; }
+      var address = "";
+      switch (faker.random.number(2)) {
+      case 0:
+          address = Helpers.replaceSymbolWithNumber("#####") + " " + faker.address.streetName();
+          break;
+      case 1:
+          address = Helpers.replaceSymbolWithNumber("####") +  " " + faker.address.streetName();
+          break;
+      case 2:
+          address = Helpers.replaceSymbolWithNumber("###") + " " + faker.address.streetName();
+          break;
+      }
+      return useFullAddress ? (address + " " + faker.address.secondaryAddress()) : address;
+  }
+
+ **
+   * streetSuffix
+   *
+   * @method faker.address.streetSuffix
+   /
+  this.streetSuffix = function () {
+      return faker.random.arrayElement(faker.definitions.address.street_suffix);
+  }
+  
+ /**
+   * streetPrefix
+   *
+   * @method faker.address.streetPrefix
+   /
+  this.streetPrefix = function () {
+      return faker.random.arrayElement(faker.definitions.address.street_prefix);
+  }
+
+   * secondaryAddress
+   *
+   * @method faker.address.secondaryAddress
+  this.secondaryAddress = function () {
+      return Helpers.replaceSymbolWithNumber(faker.random.arrayElement(
+          [
+              'Apt. ###',
+              'Suite ###'
+          ]
+      ));
+  }
+
+
+Centro Curitiba Lat -25.429 Lon -49.2671
+
+*/
+]]></Content>
+</UDLText>
+
+<Method name="StreetSuffix">
+<ClassMethod>1</ClassMethod>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[	Quit $List($ListFromString("Doutor,,Marechal,Padre,,Almirante,General,Monsenhor,,Conselheiro",","),$Random(10)+1)
+]]></Implementation>
+</Method>
+
+<Method name="StreetPrefix">
+<ClassMethod>1</ClassMethod>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[	Quit $List($ListFromString("Rua,Avenida,Travessa,Ponte,Alameda,Marginal,Viela,Rodovia",","),$Random(8)+1)
+]]></Implementation>
+</Method>
+
+<Method name="StreetName">
+<ClassMethod>1</ClassMethod>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	S suffix = ..StreetSuffix()
+	S:suffix'="" suffix = suffix _ " " 
+	Q ..StreetPrefix() _ " " _ suffix _  ##class(cosFaker.Name).FullName(2)
+]]></Implementation>
+</Method>
+
+<Method name="Latitude">
+<ClassMethod>1</ClassMethod>
+<Implementation><![CDATA[	Quit ($Random(180 * 10000) / 10000.0) - 90.0
+]]></Implementation>
+</Method>
+
+<Method name="Longitude">
+<ClassMethod>1</ClassMethod>
+<Implementation><![CDATA[	Quit ($Random(360 * 10000) / 10000.0 ) - 180.0
+]]></Implementation>
+</Method>
+</Class>
+
+
+<Class name="cosFaker.App">
+<Super>%RegisteredObject</Super>
+<TimeChanged>64016,57122.573</TimeChanged>
+<TimeCreated>64016,37345.119926</TimeCreated>
+
+<Method name="FunctionName">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>pGroup="",pSeparator:%String=""</FormalSpec>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	S:pSeparator="" pSeparator = " "
+	S action = ##class(cosFaker.Data.PtBr).AppAction(pGroup)
+	S function = ##class(cosFaker.Data.PtBr).AppType()
+	Q action _ pSeparator _ function
+]]></Implementation>
+</Method>
+</Class>
+
+
+<Class name="cosFaker.Commerce">
+<TimeChanged>64303,61150.24185</TimeChanged>
+<TimeCreated>64016,37345.119926</TimeCreated>
+
+<Method name="Price">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>pMin:%Integer=0,pMax:%Integer=1000,pDec:%Integer=2,pSymbol:%String=""</FormalSpec>
+<Implementation><![CDATA[
+	Set bOk = $$$NO, $Piece(dec,"9",pDec+1)="", $Piece(tmp,"0",pDec+1)=""
+	
+	While bOk = $$$NO {
+		Set randdec = $Random(dec)
+		Set rand = $Random(pMax ) _ "." _ randdec _ $Extract(tmp, 0, $Length(tmp)-$Length(randdec))
+		Set:((rand >= pMin)&&(rand <= pMax)) bOk = $$$YES
+	}
+	
+	Quit pSymbol _ rand
+]]></Implementation>
+</Method>
+</Class>
+
+
+<Class name="cosFaker.Data.PtBr">
+<Super>%RegisteredObject</Super>
+<TimeChanged>64016,57272.17725</TimeChanged>
+<TimeCreated>64016,39746.54747</TimeCreated>
+
+<Method name="AppAction">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>pGroup=""</FormalSpec>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	S:pGroup="" pGroup = $ListGet($ListFromString("SQL,IF,FUN",","),$Random(3)+1)
+	
+	If pGroup = "SQL" {
+		Set $List(actions,*+1) = "Buscar"
+		Set $List(actions,*+1) = "Resultados"
+		Set $List(actions,*+1) = "Persistir"
+		Set $List(actions,*+1) = "Acessar"
+		Set $List(actions,*+1) = "Integrar"
+		Set $List(actions,*+1) = "Totalizar"
+		Set $List(actions,*+1) = "Contar"
+		Set $List(actions,*+1) = "Virtualizar"
+		Set $List(actions,*+1) = "Consultar"
+		Set $List(actions,*+1) = "Verificar"
+		Set $List(actions,*+1) = "Gerar"
+
+	}
+	
+	If pGroup = "IF" {
+		Set $List(actions,*+1) = "Comparar"
+		Set $List(actions,*+1) = "Verificar"
+		Set $List(actions,*+1) = "Habilitar"
+		Set $List(actions,*+1) = "Validar"
+	}
+	
+	If pGroup = "FUN" {
+		Set $List(actions,*+1) = "Calcular"
+		Set $List(actions,*+1) = "Analisar"
+		Set $List(actions,*+1) = "Executar"
+		Set $List(actions,*+1) = "Atribuir"
+		Set $List(actions,*+1) = "Gerar"
+		Set $List(actions,*+1) = "Totalizar"
+
+	}
+	
+		; S $List(actions,*+1) = ""
+		
+	Set output = $ListGet(actions,$Random($ListLength(actions)) + 1)
+	Kill actions
+	Quit output
+]]></Implementation>
+</Method>
+
+<Method name="AppType">
+<ClassMethod>1</ClassMethod>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	Set $List(things,*+1) = "ICMS"
+	Set $List(things,*+1) = "Imposto"
+	Set $List(things,*+1) = "Nota Fiscal"
+	Set $List(things,*+1) = "Renda"
+	Set $List(things,*+1) = "Venda"
+	Set $List(things,*+1) = "Itens"
+	Set $List(things,*+1) = "Loja"
+	Set $List(things,*+1) = "Vendedor"
+	Set $List(things,*+1) = "Produtos"
+	Set $List(things,*+1) = "Região"
+	Set $List(things,*+1) = "Localização"
+	Set $List(things,*+1) = "Preços"
+	;S $List(things,*+1) = ""
+	
+	Set output = $ListGet(things,$Random($ListLength(things)) + 1)
+	Kill things
+	Quit output
+]]></Implementation>
+</Method>
+
+<Method name="AppName">
+<ClassMethod>1</ClassMethod>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+  	Set $List(appNames,*+1) = "Redhold"
+  	Set $List(appNames,*+1) = "Treeflex"
+  	Set $List(appNames,*+1) = "Trippledex"
+  	Set $List(appNames,*+1) = "Kanlam"
+  	Set $List(appNames,*+1) = "Bigtax"
+  	Set $List(appNames,*+1) = "Daltfresh"
+  	Set $List(appNames,*+1) = "Toughjoyfax"
+  	Set $List(appNames,*+1) = "Mat Lam Tam"
+  	Set $List(appNames,*+1) = "Otcom"
+  	Set $List(appNames,*+1) = "Tres-Zap"
+  	Set $List(appNames,*+1) = "Y-Solowarm"
+  	Set $List(appNames,*+1) = "Tresom"
+  	Set $List(appNames,*+1) = "Voltsillam"
+  	Set $List(appNames,*+1) = "Biodex"
+  	Set $List(appNames,*+1) = "Greenlam"
+  	Set $List(appNames,*+1) = "Viva"
+  	Set $List(appNames,*+1) = "Matsoft"
+  	Set $List(appNames,*+1) = "Temp"
+  	Set $List(appNames,*+1) = "Zoolab"
+  	Set $List(appNames,*+1) = "Subin"
+  	Set $List(appNames,*+1) = "Rank"
+  	Set $List(appNames,*+1) = "Job"
+  	Set $List(appNames,*+1) = "Stringtough"
+  	Set $List(appNames,*+1) = "Tin"
+  	Set $List(appNames,*+1) = "It"
+  	Set $List(appNames,*+1) = "Home Ing"
+  	Set $List(appNames,*+1) = "Zamit"
+  	Set $List(appNames,*+1) = "Sonsing"
+  	Set $List(appNames,*+1) = "Konklab"
+  	Set $List(appNames,*+1) = "Alpha"
+  	Set $List(appNames,*+1) = "Latlux"
+  	Set $List(appNames,*+1) = "Voyatouch"
+  	Set $List(appNames,*+1) = "Alphazap"
+  	Set $List(appNames,*+1) = "Holdlamis"
+  	Set $List(appNames,*+1) = "Zaam-Dox"
+  	Set $List(appNames,*+1) = "Sub-Ex"
+  	Set $List(appNames,*+1) = "Quo Lux"
+  	Set $List(appNames,*+1) = "Bamity"
+  	Set $List(appNames,*+1) = "Ventosanzap"
+  	Set $List(appNames,*+1) = "Lotstring"
+  	Set $List(appNames,*+1) = "Hatity"
+  	Set $List(appNames,*+1) = "Tempsoft"
+  	Set $List(appNames,*+1) = "Overhold"
+  	Set $List(appNames,*+1) = "Fixflex"
+  	Set $List(appNames,*+1) = "Konklux"
+  	Set $List(appNames,*+1) = "Zontrax"
+  	Set $List(appNames,*+1) = "Tampflex"
+  	Set $List(appNames,*+1) = "Span"
+  	Set $List(appNames,*+1) = "Namfix"
+  	Set $List(appNames,*+1) = "Transcof"
+  	Set $List(appNames,*+1) = "Stim"
+  	Set $List(appNames,*+1) = "Fix San"
+  	Set $List(appNames,*+1) = "Sonair"
+  	Set $List(appNames,*+1) = "Stronghold"
+  	Set $List(appNames,*+1) = "Fintone"
+  	Set $List(appNames,*+1) = "Y-find"
+  	Set $List(appNames,*+1) = "Opela"
+  	Set $List(appNames,*+1) = "Lotlux"
+  	Set $List(appNames,*+1) = "Ronstring"
+  	Set $List(appNames,*+1) = "Zathin"
+  	Set $List(appNames,*+1) = "Duobam"
+  	Set $List(appNames,*+1) = "Keylex"
+  	Set $List(appNames,*+1) = "Andalax"
+  	Set $List(appNames,*+1) = "Solarbreeze"
+  	Set $List(appNames,*+1) = "Cookley"
+  	Set $List(appNames,*+1) = "Vagram"
+  	Set $List(appNames,*+1) = "Aerified"
+  	Set $List(appNames,*+1) = "Pannier"
+  	Set $List(appNames,*+1) = "Asoka"
+  	Set $List(appNames,*+1) = "Regrant"
+  	Set $List(appNames,*+1) = "Wrapsafe"
+  	Set $List(appNames,*+1) = "Prodder"
+  	Set $List(appNames,*+1) = "Bytecard"
+  	Set $List(appNames,*+1) = "Bitchip"
+  	Set $List(appNames,*+1) = "Veribet"
+  	Set $List(appNames,*+1) = "Gembucket"
+  	Set $List(appNames,*+1) = "Cardguard"
+  	Set $List(appNames,*+1) = "Bitwolf"
+  	Set $List(appNames,*+1) = "Cardify"
+  	Set $List(appNames,*+1) = "Domainer"
+  	Set $List(appNames,*+1) = "Flowdesk"
+  	Set $List(appNames,*+1) = "Flexidy"
+		
+	Set output = $ListGet(appNames,$Random($ListLength(appNames)) + 1)
+        ; ["ability"S $List(appNames,*+1) = "access"S $List(appNames,*+1) = "adapter"S $List(appNames,*+1) = "algorithm"S $List(appNames,*+1) = "alliance"S $List(appNames,*+1) = "analyzer"S $List(appNames,*+1) = "application"S $List(appNames,*+1) = "approach"S $List(appNames,*+1) = "architecture"S $List(appNames,*+1) = "archive"S $List(appNames,*+1) = "artificial intelligence"S $List(appNames,*+1) = "array"S $List(appNames,*+1) = "attitude"S $List(appNames,*+1) = "benchmark"S $List(appNames,*+1) = "budgetary management"S $List(appNames,*+1) = "capability"S $List(appNames,*+1) = "capacity"S $List(appNames,*+1) = "challenge"S $List(appNames,*+1) = "circuit"S $List(appNames,*+1) = "collaboration"S $List(appNames,*+1) = "complexity"S $List(appNames,*+1) = "concept"S $List(appNames,*+1) = "conglomeration"S $List(appNames,*+1) = "contingency"S $List(appNames,*+1) = "core"S $List(appNames,*+1) = "customer loyalty"S $List(appNames,*+1) = "database"S $List(appNames,*+1) = "data-warehouse"S $List(appNames,*+1) = "definition"S $List(appNames,*+1) = "emulation"S $List(appNames,*+1) = "encoding"S $List(appNames,*+1) = "encryption"S $List(appNames,*+1) = "extranet"S $List(appNames,*+1) = "firmware"S $List(appNames,*+1) = "flexibility"S $List(appNames,*+1) = "focus group"S $List(appNames,*+1) = "forecast"S $List(appNames,*+1) = "frame"S $List(appNames,*+1) = "framework"S $List(appNames,*+1) = "function"S $List(appNames,*+1) = "functionalities"S $List(appNames,*+1) = "Graphic Interface"S $List(appNames,*+1) = "groupware"S $List(appNames,*+1) = "Graphical User Interface"S $List(appNames,*+1) = "hardware"S $List(appNames,*+1) = "help-desk"S $List(appNames,*+1) = "hierarchy"S $List(appNames,*+1) = "hub"S $List(appNames,*+1) = "implementation"S $List(appNames,*+1) = "info-mediaries"S $List(appNames,*+1) = "infrastructure"S $List(appNames,*+1) = "initiative"S $List(appNames,*+1) = "installation"S $List(appNames,*+1) = "instruction set"S $List(appNames,*+1) = "interface"S $List(appNames,*+1) = "internet solution"S $List(appNames,*+1) = "intranet"S $List(appNames,*+1) = "knowledge user"S $List(appNames,*+1) = "knowledge base"S $List(appNames,*+1) = "local area network"S $List(appNames,*+1) = "leverage"S $List(appNames,*+1) = "matrices"S $List(appNames,*+1) = "matrix"S $List(appNames,*+1) = "methodology"S $List(appNames,*+1) = "middleware"S $List(appNames,*+1) = "migration"S $List(appNames,*+1) = "model"S $List(appNames,*+1) = "moderator"S $List(appNames,*+1) = "monitoring"S $List(appNames,*+1) = "moratorium"S $List(appNames,*+1) = "neural-net"S $List(appNames,*+1) = "open architecture"S $List(appNames,*+1) = "open system"S $List(appNames,*+1) = "orchestration"S $List(appNames,*+1) = "paradigm"S $List(appNames,*+1) = "parallelism"S $List(appNames,*+1) = "policy"S $List(appNames,*+1) = "portal"S $List(appNames,*+1) = "pricing structure"S $List(appNames,*+1) = "process improvement"S $List(appNames,*+1) = "product"S $List(appNames,*+1) = "productivity"S $List(appNames,*+1) = "project"S $List(appNames,*+1) = "projection"S $List(appNames,*+1) = "protocol"S $List(appNames,*+1) = "secured line"S $List(appNames,*+1) = "service-desk"S $List(appNames,*+1) = "software"S $List(appNames,*+1) = "solution"S $List(appNames,*+1) = "standardization"S $List(appNames,*+1) = "strategy"S $List(appNames,*+1) = "structure"S $List(appNames,*+1) = "success"S $List(appNames,*+1) = "superstructure"S $List(appNames,*+1) = "support"S $List(appNames,*+1) = "synergy"S $List(appNames,*+1) = "system engine"S $List(appNames,*+1) = "task-force"S $List(appNames,*+1) = "throughput"S $List(appNames,*+1) = "time-frame"S $List(appNames,*+1) = "toolset"S $List(appNames,*+1) = "utilisation"S $List(appNames,*+1) = "website"S $List(appNames,*+1) = "workforce"]
+	
+	Kill appNames
+	Quit output
+]]></Implementation>
+</Method>
+
+<Method name="LastName">
+<ClassMethod>1</ClassMethod>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	Set $List(lastName, *+1) = "Silva"
+	Set $List(lastName, *+1) = "Souza"
+	Set $List(lastName, *+1) = "Carvalho"
+	Set $List(lastName, *+1) = "Santos"
+	Set $List(lastName, *+1) = "Reis"
+	Set $List(lastName, *+1) = "Xavier"
+	Set $List(lastName, *+1) = "Franco"
+	Set $List(lastName, *+1) = "Braga"
+	Set $List(lastName, *+1) = "Macedo"
+	Set $List(lastName, *+1) = "Batista"
+	Set $List(lastName, *+1) = "Barreto"
+	Set $List(lastName, *+1) = "Barros"
+	Set $List(lastName, *+1) = "Moraes"
+	Set $List(lastName, *+1) = "Malta"
+	Set $List(lastName, *+1) = "Carmello"
+	Set $List(lastName, *+1) = "Mengga"
+	Set $List(lastName, *+1) = "Costa"
+	Set $List(lastName, *+1) = "Rodrigues"
+	Set $List(lastName, *+1) = "Pereira"
+	Set $List(lastName, *+1) = "Melo"
+	Set $List(lastName, *+1) = "Saraiva"
+	Set $List(lastName, *+1) = "Nogueira"
+	Set $List(lastName, *+1) = "Oliveira"
+	Set $List(lastName, *+1) = "Martins"
+	Set $List(lastName, *+1) = "Moreira"
+	Set $List(lastName, *+1) = "Lima"
+	Set $List(lastName, *+1) = "Vaz"
+	Set $List(lastName, *+1) = "Albuquerque"
+    Set $List(lastName, *+1) = "Almeida"
+    Set $List(lastName, *+1) = "Alves"
+    Set $List(lastName, *+1) = "Aragão"
+    Set $List(lastName, *+1) = "Araújo"
+    Set $List(lastName, *+1) = "Barbosa"
+    Set $List(lastName, *+1) = "Brito"
+    Set $List(lastName, *+1) = "Caldeira"
+    Set $List(lastName, *+1) = "Campos"
+    Set $List(lastName, *+1) = "Cardoso"
+    Set $List(lastName, *+1) = "Cardoso"
+    Set $List(lastName, *+1) = "Carvalho"
+    Set $List(lastName, *+1) = "Castro"
+    Set $List(lastName, *+1) = "Cavalcante"
+    Set $List(lastName, *+1) = "Cavalcanti"
+    Set $List(lastName, *+1) = "da Conceição"
+    Set $List(lastName, *+1) = "da Costa"
+    Set $List(lastName, *+1) = "da Cruz"
+    Set $List(lastName, *+1) = "da Cunha"
+    Set $List(lastName, *+1) = "da Luz"
+    Set $List(lastName, *+1) = "da Mata"
+    Set $List(lastName, *+1) = "da Mota"
+    Set $List(lastName, *+1) = "da Paz"
+    Set $List(lastName, *+1) = "da Rocha"
+    Set $List(lastName, *+1) = "da Rosa"
+    Set $List(lastName, *+1) = "das Neves"
+    Set $List(lastName, *+1) = "Dias"
+    Set $List(lastName, *+1) = "Duarte"
+    Set $List(lastName, *+1) = "Farias"
+    Set $List(lastName, *+1) = "Fernandes"
+    Set $List(lastName, *+1) = "Ferreira"
+    Set $List(lastName, *+1) = "Fogaça"
+    Set $List(lastName, *+1) = "Freitas"
+    Set $List(lastName, *+1) = "Gomes"
+    Set $List(lastName, *+1) = "Gonçalves"
+    Set $List(lastName, *+1) = "Lopes"
+    Set $List(lastName, *+1) = "Mendes"
+    Set $List(lastName, *+1) = "Monteiro"
+    Set $List(lastName, *+1) = "Moura"
+    Set $List(lastName, *+1) = "Nascimento"
+    Set $List(lastName, *+1) = "Novaes"
+    Set $List(lastName, *+1) = "Nunes"
+    Set $List(lastName, *+1) = "Peixoto"
+    Set $List(lastName, *+1) = "Pinheiro"
+    Set $List(lastName, *+1) = "Pires"
+    Set $List(lastName, *+1) = "Porto"
+    Set $List(lastName, *+1) = "Ramos"
+    Set $List(lastName, *+1) = "Rezende"
+    Set $List(lastName, *+1) = "Ribeiro"
+    Set $List(lastName, *+1) = "Rocha"
+    Set $List(lastName, *+1) = "Sales"
+    Set $List(lastName, *+1) = "Silveira"
+    Set $List(lastName, *+1) = "Teixeira"
+    Set $List(lastName, *+1) = "Viana"
+    Set $List(lastName, *+1) = "Vieira"
+	Set output = $ListGet(lastName,$Random($ListLength(lastName)) + 1)
+	Kill lastName
+	Quit output
+]]></Implementation>
+</Method>
+
+<Method name="PersonSuffix">
+<ClassMethod>1</ClassMethod>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	Set $List(PersonSuffix, *+1) = "Jr."
+  	Set $List(PersonSuffix, *+1) = "Neto"
+	Set $List(PersonSuffix, *+1) = "Filho"
+	Set output = $ListGet(PersonSuffix,$Random($ListLength(PersonSuffix)) + 1)
+	Kill PersonSuffix
+	Quit output
+]]></Implementation>
+</Method>
+
+<Method name="CompanySuffix">
+<ClassMethod>1</ClassMethod>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	Set $List(CompanySuffix, *+1) = "EIRELI"
+	Set $List(CompanySuffix, *+1) = "S.A."
+	Set $List(CompanySuffix, *+1) = "LTDA"
+	Set $List(CompanySuffix, *+1) = "e Associados"
+	Set $List(CompanySuffix, *+1) = "Comércio"
+	Set $List(CompanySuffix, *+1) = "Tecnologia"
+	Set output = $ListGet(CompanySuffix,$Random($ListLength(CompanySuffix)) + 1)
+	Kill CompanySuffix
+	Quit output
+]]></Implementation>
+</Method>
+
+<Method name="DomainSuffix">
+<ClassMethod>1</ClassMethod>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	Set $List(domainSuffix, *+1) = "com"
+  	Set $List(domainSuffix, *+1) = "biz"
+  	Set $List(domainSuffix, *+1) = "info"
+  	Set $List(domainSuffix, *+1) = "name"
+  	Set $List(domainSuffix, *+1) = "net"
+  	Set $List(domainSuffix, *+1) = "org"
+	Set output = $ListGet(domainSuffix,$Random($ListLength(domainSuffix)) + 1)
+	Kill domainSuffix
+	Quit output
+]]></Implementation>
+</Method>
+
+<Method name="EmailProvider">
+<ClassMethod>1</ClassMethod>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	Set $List(freeEmailprovider, *+1) = "gmail.com"
+  	Set $List(freeEmailprovider, *+1) = "yahoo.com"
+	Set $List(freeEmailprovider, *+1) = "hotmail.com"
+  	Set $List(freeEmailprovider, *+1) = "bol.com.br"
+	Set output = $ListGet(freeEmailprovider,$Random($ListLength(freeEmailprovider)) + 1)
+	Kill freeEmailprovider
+	Quit output
+]]></Implementation>
+</Method>
+
+<Method name="FemaleFirstName">
+<ClassMethod>1</ClassMethod>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	Set $List(firstName, *+1) = "Alessandra"
+	Set $List(firstName, *+1) = "Aline"
+	Set $List(firstName, *+1) = "Bruna"
+	Set $List(firstName, *+1) = "Carla"
+	Set $List(firstName, *+1) = "Célia"
+	Set $List(firstName, *+1) = "Cecília"
+	Set $List(firstName, *+1) = "Dalila"
+	Set $List(firstName, *+1) = "Eduarda"
+	Set $List(firstName, *+1) = "Esther"
+	Set $List(firstName, *+1) = "Fabrícia"
+	Set $List(firstName, *+1) = "Felícia"
+	Set $List(firstName, *+1) = "Fabiana"
+	Set $List(firstName, *+1) = "Isabel"
+	Set $List(firstName, *+1) = "Isabela"
+	Set $List(firstName, *+1) = "Joana"
+	Set $List(firstName, *+1) = "Graziela"
+	Set $List(firstName, *+1) = "Júlia"
+	Set $List(firstName, *+1) = "Janaína"
+	Set $List(firstName, *+1) = "Karla"
+	Set $List(firstName, *+1) = "Lorena"
+	Set $List(firstName, *+1) = "Lorraine"
+	Set $List(firstName, *+1) = "Larissa"
+	Set $List(firstName, *+1) = "Meire"
+	Set $List(firstName, *+1) = "Marcela"
+	Set $List(firstName, *+1) = "Margarida"
+	Set $List(firstName, *+1) = "Mércia"
+	Set $List(firstName, *+1) = "Márcia"
+	Set $List(firstName, *+1) = "Marli"
+	Set $List(firstName, *+1) = "Morgana"
+	Set $List(firstName, *+1) = "Maria"
+	Set $List(firstName, *+1) = "Marta"
+	Set $List(firstName, *+1) = "Natália"
+	Set $List(firstName, *+1) = "Núbia"
+	Set $List(firstName, *+1) = "Ofélia"
+	Set $List(firstName, *+1) = "Paula"
+	Set $List(firstName, *+1) = "Rafaelly"
+	Set $List(firstName, *+1) = "Rafaela"
+	Set $List(firstName, *+1) = "Roberta"
+	Set $List(firstName, *+1) = "Sílvia"
+	Set $List(firstName, *+1) = "Silvana"
+	Set $List(firstName, *+1) = "Suélen"
+	Set $List(firstName, *+1) = "Sara"
+	Set $List(firstName, *+1) = "Talita"
+	Set $List(firstName, *+1) = "Vanessa"
+	Set $List(firstName, *+1) = "Vitória"
+	Set output = $ListGet(firstName,$Random($ListLength(firstName)) + 1)
+	Kill firstName
+	Quit output
+]]></Implementation>
+</Method>
+
+<Method name="MaleFirstName">
+<ClassMethod>1</ClassMethod>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	Set $List(firstName, *+1) = "Alessandro"
+	Set $List(firstName, *+1) = "Alexandre"
+	Set $List(firstName, *+1) = "Antônio"
+	Set $List(firstName, *+1) = "Breno"
+	Set $List(firstName, *+1) = "Carlos"
+	Set $List(firstName, *+1) = "César"
+	Set $List(firstName, *+1) = "Danilo"
+	Set $List(firstName, *+1) = "Deneval"
+	Set $List(firstName, *+1) = "Eduardo"
+	Set $List(firstName, *+1) = "Elísio"
+	Set $List(firstName, *+1) = "Fábio"
+	Set $List(firstName, *+1) = "Fabrício"
+	Set $List(firstName, *+1) = "Félix"
+	Set $List(firstName, *+1) = "Felipe"
+	Set $List(firstName, *+1) = "Feliciano"
+	Set $List(firstName, *+1) = "Frederico"
+	Set $List(firstName, *+1) = "Fabiano"
+	Set $List(firstName, *+1) = "Gustavo"
+	Set $List(firstName, *+1) = "Guilherme"
+	Set $List(firstName, *+1) = "Gúbio"
+	Set $List(firstName, *+1) = "Heitor"
+	Set $List(firstName, *+1) = "Hélio"
+	Set $List(firstName, *+1) = "Henry"
+	Set $List(firstName, *+1) = "Hugo"
+	Set $List(firstName, *+1) = "Ígor"
+	Set $List(firstName, *+1) = "João"
+	Set $List(firstName, *+1) = "Josemar"
+	Set $List(firstName, *+1) = "Júlio César"
+	Set $List(firstName, *+1) = "Júlio"
+	Set $List(firstName, *+1) = "Kléber"
+	Set $List(firstName, *+1) = "Lucas"
+	Set $List(firstName, *+1) = "Luiggi"
+	Set $List(firstName, *+1) = "Leandro"
+	Set $List(firstName, *+1) = "Leonardo"
+	Set $List(firstName, *+1) = "Ladislau"
+	Set $List(firstName, *+1) = "Marcos"
+	Set $List(firstName, *+1) = "Marcelo"
+	Set $List(firstName, *+1) = "Mario"
+	Set $List(firstName, *+1) = "Norberto"
+	Set $List(firstName, *+1) = "Nataniel"
+	Set $List(firstName, *+1) = "Paulo"
+	Set $List(firstName, *+1) = "Pablo"
+	Set $List(firstName, *+1) = "Pedro"
+	Set $List(firstName, *+1) = "Raul"
+	Set $List(firstName, *+1) = "Rafael"
+	Set $List(firstName, *+1) = "Ricardo"
+	Set $List(firstName, *+1) = "Roberto"
+	Set $List(firstName, *+1) = "Silas"
+	Set $List(firstName, *+1) = "Salvador"
+	Set $List(firstName, *+1) = "Sirineu"
+	Set $List(firstName, *+1) = "Tertuliano"
+	Set $List(firstName, *+1) = "Vicente"
+	Set $List(firstName, *+1) = "Víctor"
+	Set $List(firstName, *+1) = "Yango"
+	Set $List(firstName, *+1) = "Yago"
+	Set $List(firstName, *+1) = "Yuri"
+	Set $List(firstName, *+1) = "Washington"
+	Set $List(firstName, *+1) = "Warley"
+	Set output = $ListGet(firstName,$Random($ListLength(firstName)) + 1)
+	Kill firstName
+	Quit output
+]]></Implementation>
+</Method>
+</Class>
+
+
+<Class name="cosFaker.Finance">
+<TimeChanged>64315,31892.133092</TimeChanged>
+<TimeCreated>64315,30624.365455</TimeCreated>
+
+<Method name="BitcoinAddress">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>pMin:%Integer=27,pMax:%Integer=34</FormalSpec>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	Set length = "", bitcoinAddress = ""
+	While ('..In(length, pMin, pMax)) {
+		Set length = $Random(35)
+	}
+	
+	For k=1:1:length{
+		Set element = 0, bFlag = $$$NO
+		
+		While bFlag = $$$NO {
+			Set element = $Random(123),
+				bFlag = ((..In(element,48,57))||(..In(element,65,90))||(..In(element,97,122)))
+			
+		}
+		Set bitcoinAddress = bitcoinAddress _ $Char(element)
+	}
+
+	Quit bitcoinAddress
+]]></Implementation>
+</Method>
+
+<Method name="In">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>pValue,pMin:%Integer,pMax:%Integer</FormalSpec>
+<ReturnType>%Boolean</ReturnType>
+<Implementation><![CDATA[	Quit ((pValue>=pMin)&&(pValue<=pMax))
+]]></Implementation>
+</Method>
+</Class>
+
+
+<Class name="cosFaker.Internet">
+<Super>%RegisteredObject</Super>
+<TimeChanged>64309,30323.441617</TimeChanged>
+<TimeCreated>64015,57627.232261</TimeCreated>
+
+<Method name="UserName">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>pFirstName:%String="",pLastName:%String=""</FormalSpec>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	Set rand = $Random(3)
+	Set separator(0) = ".", separator(1) = "_"
+	Set:pFirstName="" pFirstName = ##class(cosFaker.Name).FirstName()
+	Set:pLastName="" pLastName = ##class(cosFaker.Name).LastName()
+	
+	If rand = 0 {
+		Set username = pFirstName _ $Random(99)
+	} ElseIf rand = 1 {
+		Set username = pFirstName _ $Get(separator($Random(3))) _ pLastName
+	} Else {
+		Set username = pFirstName _ $Get(separator($Random(3))) _ pLastName _ $Random(99)
+	}
+	
+	Quit ..Clean(username)
+]]></Implementation>
+</Method>
+
+<Method name="Email">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>pFirstName:%String="",pLastName:%String="",pProvider:%String=""</FormalSpec>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	Set:pProvider="" pProvider = ##class(cosFaker.Data.PtBr).EmailProvider()
+	Quit ..UserName(pFirstName, pLastName) _ "@" _ pProvider
+]]></Implementation>
+</Method>
+
+<Method name="Protocol">
+<ClassMethod>1</ClassMethod>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	Set protocols(0) = "http"
+	Set protocols(1) = "https"
+	Quit $Get(protocols($Random(2)))
+]]></Implementation>
+</Method>
+
+<Method name="DomainWord">
+<ClassMethod>1</ClassMethod>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	Set output = ##class(cosFaker.Name).FirstName()
+	Set m=##class(%Regex.Matcher).%New("([\\~#&*{}/:<>?|\""'])")
+    Set m.Text = output
+    While m.Locate() {
+	    Set output = $Replace(output, m.Group, "")
+    }
+	Quit ..Clean(output)
+]]></Implementation>
+</Method>
+
+<Method name="DomainName">
+<ClassMethod>1</ClassMethod>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[	Quit $ZConvert(..DomainWord(),"l") _ "." _ ##class(cosFaker.Data.PtBr).DomainSuffix()
+]]></Implementation>
+</Method>
+
+<Method name="Url">
+<ClassMethod>1</ClassMethod>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	Set www(0) = "www."
+	Quit ..Protocol() _ "://" _ $Get(www($Random(2))) _ ..DomainName()
+]]></Implementation>
+</Method>
+
+<Method name="Clean">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>pName:%String</FormalSpec>
+<Private>1</Private>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[	Quit $ZConvert($Translate(pName,"úóéíá","uoeia"),"l")
+]]></Implementation>
+</Method>
+
+<Method name="Avatar">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>pSize:%Integer=""</FormalSpec>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	Set:pSize="" pSize = 150
+	Quit "http://www.avatarpro.biz/avatar?s="_pSize
+]]></Implementation>
+</Method>
+
+<Method name="Initializer">
+<Private>1</Private>
+</Method>
+
+<Method name="%OnNew">
+<Private>1</Private>
+<ReturnType>%Status</ReturnType>
+<ServerOnly>1</ServerOnly>
+<Implementation><![CDATA[
+	Do ..Initializer()
+	Quit $$$OK
+]]></Implementation>
+</Method>
+</Class>
+
+
+<Class name="cosFaker.Lorem">
+<Super>%RegisteredObject</Super>
+<TimeChanged>64016,49520.739208</TimeChanged>
+<TimeCreated>64015,32148.367654</TimeCreated>
+
+<Method name="Word">
+<ClassMethod>1</ClassMethod>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[	Q ..LoremIpsum()
+]]></Implementation>
+</Method>
+
+<Method name="Words">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>pNum:%Integer=""</FormalSpec>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	Set:pNum="" pNum = 3
+	For k=1:1:pNum {
+		Set $List(words,*+1) = ..Word()
+	}
+	Quit $ListToString(words, " ")
+]]></Implementation>
+</Method>
+
+<Method name="Sentence">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>pWordCount:%Integer="",pMin:%Integer=3,pMax:%Integer=10</FormalSpec>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	If pWordCount = "" {
+		For {
+			Set pWordCount = $Random(10)
+			Quit:((pWordCount>pMin)&&(pWordCount < pMax))
+		}
+	}
+	
+	Set sentence = ..Words(pWordCount)
+	Quit $ZConvert($Extract(sentence,1,1), "U") _ $Extract(sentence,2,*) _ "."
+]]></Implementation>
+</Method>
+
+<Method name="Sentences">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>pSentenceCount:%Integer="",pSeparator:%String=""</FormalSpec>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	If pSentenceCount = "" {
+		For {
+			Set pSentenceCount = $Random(6)
+			Quit:pSentenceCount>2
+		}
+	}
+	
+	Set:pSeparator="" pSeparator = " "
+	
+	For k=1:1:pSentenceCount {
+		Set $List(sentences,*+1) = ..Sentence()
+	}
+
+	Quit $ListToString($Get(sentences), pSeparator)
+]]></Implementation>
+</Method>
+
+<Method name="Paragraph">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>pSentenceCount:%Integer=""</FormalSpec>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	Set:pSentenceCount="" pSentenceCount = 3
+	Quit ..Sentences(pSentenceCount + $Random(3))
+]]></Implementation>
+</Method>
+
+<Method name="Paragraphs">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>pParagraphCount:%Integer="",pSeparator:%String=""</FormalSpec>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	Set:pParagraphCount="" pParagraphCount = 3
+	Set:pSeparator="" pSeparator = $Char(10) _ $Char(13) ; \n \r OR LF CR
+	
+	For k=1:1:pParagraphCount {
+		Set $List(paragraphs,*+1) = ..Paragraph()
+	}
+	
+	Quit $ListToString($Get(paragraphs), pSeparator)
+]]></Implementation>
+</Method>
+
+<Method name="Lines">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>pLineCount:%Integer=""</FormalSpec>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	If pLineCount = "" {
+		For {
+			Set pLineCount = $Random(5)
+			Quit:pLineCount>1
+		}
+	}
+	
+	Quit ..Sentences(pLineCount, $Char(10))
+]]></Implementation>
+</Method>
+
+<Method name="Text">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>pTimes:%Integer=1</FormalSpec>
+<Implementation><![CDATA[
+	Set output = ""
+	For k=1:1:pTimes {
+		Set rand = $Random(7)
+
+		If rand = 1 { Set output = output _ ..Word() }
+		ElseIf rand = 2 { Set output = output _ ..Words() }
+		ElseIf rand = 3 { Set output = output _ ..Sentence() }
+		ElseIf rand = 4 { Set output = output _ ..Sentences() }
+		ElseIf rand = 5 { Set output = output _ ..Paragraph() }
+		ElseIf rand = 6 { Set output = output _ ..Paragraphs() }
+		ElseIf rand = 7 { Set output = output _ ..Lines() }
+		
+	}
+	
+	Quit output
+]]></Implementation>
+</Method>
+
+<Method name="LoremIpsum">
+<ClassMethod>1</ClassMethod>
+<Private>1</Private>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	Set $List(lorem, *+1) = "alias"
+    Set $List(lorem, *+1) = "consequatur"
+    Set $List(lorem, *+1) = "aut"
+    Set $List(lorem, *+1) = "perferendis"
+    Set $List(lorem, *+1) = "sit"
+    Set $List(lorem, *+1) = "voluptatem"
+    Set $List(lorem, *+1) = "accusantium"
+    Set $List(lorem, *+1) = "doloremque"
+    Set $List(lorem, *+1) = "aperiam"
+    Set $List(lorem, *+1) = "eaque"
+    Set $List(lorem, *+1) = "ipsa"
+    Set $List(lorem, *+1) = "quae"
+    Set $List(lorem, *+1) = "ab"
+    Set $List(lorem, *+1) = "illo"
+    Set $List(lorem, *+1) = "inventore"
+    Set $List(lorem, *+1) = "veritatis"
+    Set $List(lorem, *+1) = "et"
+    Set $List(lorem, *+1) = "quasi"
+    Set $List(lorem, *+1) = "architecto"
+    Set $List(lorem, *+1) = "beatae"
+    Set $List(lorem, *+1) = "vitae"
+    Set $List(lorem, *+1) = "dicta"
+    Set $List(lorem, *+1) = "sunt"
+    Set $List(lorem, *+1) = "explicabo"
+    Set $List(lorem, *+1) = "aspernatur"
+    Set $List(lorem, *+1) = "aut"
+    Set $List(lorem, *+1) = "odit"
+    Set $List(lorem, *+1) = "aut"
+    Set $List(lorem, *+1) = "fugit"
+    Set $List(lorem, *+1) = "sed"
+    Set $List(lorem, *+1) = "quia"
+    Set $List(lorem, *+1) = "consequuntur"
+    Set $List(lorem, *+1) = "magni"
+    Set $List(lorem, *+1) = "dolores"
+    Set $List(lorem, *+1) = "eos"
+    Set $List(lorem, *+1) = "qui"
+    Set $List(lorem, *+1) = "ratione"
+    Set $List(lorem, *+1) = "voluptatem"
+    Set $List(lorem, *+1) = "sequi"
+    Set $List(lorem, *+1) = "nesciunt"
+    Set $List(lorem, *+1) = "neque"
+    Set $List(lorem, *+1) = "dolorem"
+    Set $List(lorem, *+1) = "ipsum"
+    Set $List(lorem, *+1) = "quia"
+    Set $List(lorem, *+1) = "dolor"
+    Set $List(lorem, *+1) = "sit"
+    Set $List(lorem, *+1) = "amet"
+    Set $List(lorem, *+1) = "consectetur"
+    Set $List(lorem, *+1) = "adipisci"
+    Set $List(lorem, *+1) = "velit"
+    Set $List(lorem, *+1) = "sed"
+    Set $List(lorem, *+1) = "quia"
+    Set $List(lorem, *+1) = "non"
+    Set $List(lorem, *+1) = "numquam"
+    Set $List(lorem, *+1) = "eius"
+    Set $List(lorem, *+1) = "modi"
+    Set $List(lorem, *+1) = "tempora"
+    Set $List(lorem, *+1) = "incidunt"
+    Set $List(lorem, *+1) = "ut"
+    Set $List(lorem, *+1) = "labore"
+    Set $List(lorem, *+1) = "et"
+    Set $List(lorem, *+1) = "dolore"
+    Set $List(lorem, *+1) = "magnam"
+    Set $List(lorem, *+1) = "aliquam"
+    Set $List(lorem, *+1) = "quaerat"
+    Set $List(lorem, *+1) = "voluptatem"
+    Set $List(lorem, *+1) = "ut"
+    Set $List(lorem, *+1) = "enim"
+    Set $List(lorem, *+1) = "ad"
+    Set $List(lorem, *+1) = "minima"
+    Set $List(lorem, *+1) = "veniam"
+    Set $List(lorem, *+1) = "quis"
+    Set $List(lorem, *+1) = "nostrum"
+    Set $List(lorem, *+1) = "exercitationem"
+    Set $List(lorem, *+1) = "ullam"
+    Set $List(lorem, *+1) = "corporis"
+    Set $List(lorem, *+1) = "nemo"
+    Set $List(lorem, *+1) = "enim"
+    Set $List(lorem, *+1) = "ipsam"
+    Set $List(lorem, *+1) = "voluptatem"
+    Set $List(lorem, *+1) = "quia"
+    Set $List(lorem, *+1) = "voluptas"
+    Set $List(lorem, *+1) = "sit"
+    Set $List(lorem, *+1) = "suscipit"
+    Set $List(lorem, *+1) = "laboriosam"
+    Set $List(lorem, *+1) = "nisi"
+    Set $List(lorem, *+1) = "ut"
+    Set $List(lorem, *+1) = "aliquid"
+    Set $List(lorem, *+1) = "ex"
+    Set $List(lorem, *+1) = "ea"
+    Set $List(lorem, *+1) = "commodi"
+    Set $List(lorem, *+1) = "consequatur"
+    Set $List(lorem, *+1) = "quis"
+    Set $List(lorem, *+1) = "autem"
+    Set $List(lorem, *+1) = "vel"
+    Set $List(lorem, *+1) = "eum"
+    Set $List(lorem, *+1) = "iure"
+    Set $List(lorem, *+1) = "reprehenderit"
+    Set $List(lorem, *+1) = "qui"
+    Set $List(lorem, *+1) = "in"
+    Set $List(lorem, *+1) = "ea"
+    Set $List(lorem, *+1) = "voluptate"
+    Set $List(lorem, *+1) = "velit"
+    Set $List(lorem, *+1) = "esse"
+    Set $List(lorem, *+1) = "quam"
+    Set $List(lorem, *+1) = "nihil"
+    Set $List(lorem, *+1) = "molestiae"
+    Set $List(lorem, *+1) = "et"
+    Set $List(lorem, *+1) = "iusto"
+    Set $List(lorem, *+1) = "odio"
+    Set $List(lorem, *+1) = "dignissimos"
+    Set $List(lorem, *+1) = "ducimus"
+    Set $List(lorem, *+1) = "qui"
+    Set $List(lorem, *+1) = "blanditiis"
+    Set $List(lorem, *+1) = "praesentium"
+    Set $List(lorem, *+1) = "laudantium"
+    Set $List(lorem, *+1) = "totam"
+    Set $List(lorem, *+1) = "rem"
+    Set $List(lorem, *+1) = "voluptatum"
+    Set $List(lorem, *+1) = "deleniti"
+    Set $List(lorem, *+1) = "atque"
+    Set $List(lorem, *+1) = "corrupti"
+    Set $List(lorem, *+1) = "quos"
+    Set $List(lorem, *+1) = "dolores"
+    Set $List(lorem, *+1) = "et"
+    Set $List(lorem, *+1) = "quas"
+    Set $List(lorem, *+1) = "molestias"
+    Set $List(lorem, *+1) = "excepturi"
+    Set $List(lorem, *+1) = "sint"
+    Set $List(lorem, *+1) = "occaecati"
+    Set $List(lorem, *+1) = "cupiditate"
+    Set $List(lorem, *+1) = "non"
+    Set $List(lorem, *+1) = "provident"
+    Set $List(lorem, *+1) = "sed"
+    Set $List(lorem, *+1) = "ut"
+    Set $List(lorem, *+1) = "perspiciatis"
+    Set $List(lorem, *+1) = "unde"
+    Set $List(lorem, *+1) = "omnis"
+    Set $List(lorem, *+1) = "iste"
+    Set $List(lorem, *+1) = "natus"
+    Set $List(lorem, *+1) = "error"
+    Set $List(lorem, *+1) = "similique"
+    Set $List(lorem, *+1) = "sunt"
+    Set $List(lorem, *+1) = "in"
+    Set $List(lorem, *+1) = "culpa"
+    Set $List(lorem, *+1) = "qui"
+    Set $List(lorem, *+1) = "officia"
+    Set $List(lorem, *+1) = "deserunt"
+    Set $List(lorem, *+1) = "mollitia"
+    Set $List(lorem, *+1) = "animi"
+    Set $List(lorem, *+1) = "id"
+    Set $List(lorem, *+1) = "est"
+    Set $List(lorem, *+1) = "laborum"
+    Set $List(lorem, *+1) = "et"
+    Set $List(lorem, *+1) = "dolorum"
+    Set $List(lorem, *+1) = "fuga"
+    Set $List(lorem, *+1) = "et"
+    Set $List(lorem, *+1) = "harum"
+    Set $List(lorem, *+1) = "quidem"
+    Set $List(lorem, *+1) = "rerum"
+    Set $List(lorem, *+1) = "facilis"
+    Set $List(lorem, *+1) = "est"
+    Set $List(lorem, *+1) = "et"
+    Set $List(lorem, *+1) = "expedita"
+    Set $List(lorem, *+1) = "distinctio"
+    Set $List(lorem, *+1) = "nam"
+    Set $List(lorem, *+1) = "libero"
+    Set $List(lorem, *+1) = "tempore"
+    Set $List(lorem, *+1) = "cum"
+    Set $List(lorem, *+1) = "soluta"
+    Set $List(lorem, *+1) = "nobis"
+    Set $List(lorem, *+1) = "est"
+    Set $List(lorem, *+1) = "eligendi"
+    Set $List(lorem, *+1) = "optio"
+    Set $List(lorem, *+1) = "cumque"
+    Set $List(lorem, *+1) = "nihil"
+    Set $List(lorem, *+1) = "impedit"
+    Set $List(lorem, *+1) = "quo"
+    Set $List(lorem, *+1) = "porro"
+    Set $List(lorem, *+1) = "quisquam"
+    Set $List(lorem, *+1) = "est"
+    Set $List(lorem, *+1) = "qui"
+    Set $List(lorem, *+1) = "minus"
+    Set $List(lorem, *+1) = "id"
+    Set $List(lorem, *+1) = "quod"
+    Set $List(lorem, *+1) = "maxime"
+    Set $List(lorem, *+1) = "placeat"
+    Set $List(lorem, *+1) = "facere"
+    Set $List(lorem, *+1) = "possimus"
+    Set $List(lorem, *+1) = "omnis"
+    Set $List(lorem, *+1) = "voluptas"
+    Set $List(lorem, *+1) = "assumenda"
+    Set $List(lorem, *+1) = "est"
+    Set $List(lorem, *+1) = "omnis"
+    Set $List(lorem, *+1) = "dolor"
+    Set $List(lorem, *+1) = "repellendus"
+    Set $List(lorem, *+1) = "temporibus"
+    Set $List(lorem, *+1) = "autem"
+    Set $List(lorem, *+1) = "quibusdam"
+    Set $List(lorem, *+1) = "et"
+    Set $List(lorem, *+1) = "aut"
+    Set $List(lorem, *+1) = "consequatur"
+    Set $List(lorem, *+1) = "vel"
+    Set $List(lorem, *+1) = "illum"
+    Set $List(lorem, *+1) = "qui"
+    Set $List(lorem, *+1) = "dolorem"
+    Set $List(lorem, *+1) = "eum"
+    Set $List(lorem, *+1) = "fugiat"
+    Set $List(lorem, *+1) = "quo"
+    Set $List(lorem, *+1) = "voluptas"
+    Set $List(lorem, *+1) = "nulla"
+    Set $List(lorem, *+1) = "pariatur"
+    Set $List(lorem, *+1) = "at"
+    Set $List(lorem, *+1) = "vero"
+    Set $List(lorem, *+1) = "eos"
+    Set $List(lorem, *+1) = "et"
+    Set $List(lorem, *+1) = "accusamus"
+    Set $List(lorem, *+1) = "officiis"
+    Set $List(lorem, *+1) = "debitis"
+    Set $List(lorem, *+1) = "aut"
+    Set $List(lorem, *+1) = "rerum"
+    Set $List(lorem, *+1) = "necessitatibus"
+    Set $List(lorem, *+1) = "saepe"
+    Set $List(lorem, *+1) = "eveniet"
+    Set $List(lorem, *+1) = "ut"
+    Set $List(lorem, *+1) = "et"
+    Set $List(lorem, *+1) = "voluptates"
+    Set $List(lorem, *+1) = "repudiandae"
+    Set $List(lorem, *+1) = "sint"
+    Set $List(lorem, *+1) = "et"
+    Set $List(lorem, *+1) = "molestiae"
+    Set $List(lorem, *+1) = "non"
+    Set $List(lorem, *+1) = "recusandae"
+    Set $List(lorem, *+1) = "itaque"
+    Set $List(lorem, *+1) = "earum"
+    Set $List(lorem, *+1) = "rerum"
+    Set $List(lorem, *+1) = "hic"
+    Set $List(lorem, *+1) = "tenetur"
+    Set $List(lorem, *+1) = "a"
+    Set $List(lorem, *+1) = "sapiente"
+    Set $List(lorem, *+1) = "delectus"
+    Set $List(lorem, *+1) = "ut"
+    Set $List(lorem, *+1) = "aut"
+    Set $List(lorem, *+1) = "reiciendis"
+    Set $List(lorem, *+1) = "voluptatibus"
+    Set $List(lorem, *+1) = "maiores"
+    Set $List(lorem, *+1) = "doloribus"
+    Set $List(lorem, *+1) = "asperiores"
+    Set $List(lorem, *+1) = "repellat"
+    
+    Set output = $ListGet(lorem,$Random($ListLength(lorem)) + 1)
+	Kill lorem
+	Quit output
+]]></Implementation>
+</Method>
+
+<Method name="Hipster">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>pParagraphCount:%Integer="",pSeparator:%String=""</FormalSpec>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	Set:pParagraphCount="" pParagraphCount = 3
+	Set:pSeparator="" pSeparator = $Char(10) _ $Char(13) ; \n \r OR LF CR
+	
+	Set $List(begin, *+1) = "Caros amigos, "
+    Set $List(begin, *+1) = "Por outro lado, "
+    Set $List(begin, *+1) = "Assim mesmo, "
+    Set $List(begin, *+1) = "No entanto, não podemos esquecer que "
+    Set $List(begin, *+1) = "Do mesmo modo, "
+    Set $List(begin, *+1) = "A prática cotidiana prova que "
+    Set $List(begin, *+1) = "Nunca é demais lembrar o peso e o significado destes problemas, uma vez que "
+    Set $List(begin, *+1) = "As experiências acumuladas demonstram que "
+    Set $List(begin, *+1) = "Acima de tudo, é fundamental ressaltar que "
+    Set $List(begin, *+1) = "O incentivo ao avanço tecnológico, assim como "
+    Set $List(begin, *+1) = "Não obstante, "
+    Set $List(begin, *+1) = "Todas estas questões, devidamente ponderadas, levantam dúvidas sobre se "
+    Set $List(begin, *+1) = "Pensando mais a longo prazo, "
+    Set $List(begin, *+1) = "O que temos que ter sempre em mente é que "
+    Set $List(begin, *+1) = "Ainda assim, existem dúvidas a respeito de como "
+    Set $List(begin, *+1) = "Gostaria de enfatizar que "
+    Set $List(begin, *+1) = "Todavia, "
+    Set $List(begin, *+1) = "A nível organizacional, "
+    Set $List(begin, *+1) = "O empenho em analisar "
+    Set $List(begin, *+1) = "Percebemos, cada vez mais, que "
+    Set $List(begin, *+1) = "No mundo atual, "
+    Set $List(begin, *+1) = "É importante questionar o quanto "
+    Set $List(begin, *+1) = "Neste sentido, "
+    Set $List(begin, *+1) = "Evidentemente, "
+    Set $List(begin, *+1) = "Por conseguinte, "
+    Set $List(begin, *+1) = "É claro que "
+    Set $List(begin, *+1) = "Podemos já vislumbrar o modo pelo qual "
+    Set $List(begin, *+1) = "Desta maneira, "
+    Set $List(begin, *+1) = "O cuidado em identificar pontos críticos n"
+    Set $List(begin, *+1) = "A certificação de metodologias que nos auxiliam a lidar com "
+    
+    Set $List(middle, *+1) = "a execução dos pontos do programa "
+    Set $List(middle, *+1) = "a complexidade dos estudos efetuados "
+    Set $List(middle, *+1) = "a contínua expansão de nossa atividade "
+    Set $List(middle, *+1) = "a estrutura atual da organização "
+    Set $List(middle, *+1) = "o novo modelo estrutural aqui preconizado "
+    Set $List(middle, *+1) = "o desenvolvimento contínuo de distintas formas de atuação "
+    Set $List(middle, *+1) = "a constante divulgação das informações "
+    Set $List(middle, *+1) = "a consolidação das estruturas "
+    Set $List(middle, *+1) = "a consulta aos diversos militantes "
+    Set $List(middle, *+1) = "o início da atividade geral de formação de atitudes "
+    Set $List(middle, *+1) = "o desafiador cenário globalizado "
+    Set $List(middle, *+1) = "a mobilidade dos capitais internacionais "
+    Set $List(middle, *+1) = "o fenômeno da Internet "
+    Set $List(middle, *+1) = "a hegemonia do ambiente político "
+    Set $List(middle, *+1) = "a expansão dos mercados mundiais "
+    Set $List(middle, *+1) = "o aumento do diálogo entre os diferentes setores produtivos "
+    Set $List(middle, *+1) = "a crescente influência da mídia "
+    Set $List(middle, *+1) = "a necessidade de renovação processual "
+    Set $List(middle, *+1) = "a competitividade nas transações comerciais "
+    Set $List(middle, *+1) = "o surgimento do comércio virtual "
+    Set $List(middle, *+1) = "a revolução dos costumes "
+    Set $List(middle, *+1) = "o acompanhamento das preferências de consumo "
+    Set $List(middle, *+1) = "o comprometimento entre as equipes "
+    Set $List(middle, *+1) = "a determinação clara de objetivos "
+    Set $List(middle, *+1) = "a adoção de políticas descentralizadoras "
+    Set $List(middle, *+1) = "a valorização de fatores subjetivos "
+    Set $List(middle, *+1) = "a percepção das dificuldades "
+    Set $List(middle, *+1) = "o entendimento das metas propostas "
+    Set $List(middle, *+1) = "o consenso sobre a necessidade de qualificação "
+    Set $List(middle, *+1) = "o julgamento imparcial das eventualidades "
+
+    Set $List(middle2, *+1) = "nos obriga à análise "
+    Set $List(middle2, *+1) = "cumpre um papel essencial na formulação "
+    Set $List(middle2, *+1) = "exige a precisão e a definição "
+    Set $List(middle2, *+1) = "auxilia a preparação e a composição "
+    Set $List(middle2, *+1) = "garante a contribuição de um grupo importante na determinação "
+    Set $List(middle2, *+1) = "assume importantes posições no estabelecimento "
+    Set $List(middle2, *+1) = "facilita a criação "
+    Set $List(middle2, *+1) = "obstaculiza a apreciação da importância "
+    Set $List(middle2, *+1) = "oferece uma interessante oportunidade para verificação "
+    Set $List(middle2, *+1) = "acarreta um processo de reformulação e modernização "
+    Set $List(middle2, *+1) = "pode nos levar a considerar a reestruturação "
+    Set $List(middle2, *+1) = "representa uma abertura para a melhoria "
+    Set $List(middle2, *+1) = "ainda não demonstrou convincentemente que vai participar na mudança "
+    Set $List(middle2, *+1) = "talvez venha a ressaltar a relatividade "
+    Set $List(middle2, *+1) = "prepara-nos para enfrentar situações atípicas decorrentes "
+    Set $List(middle2, *+1) = "maximiza as possibilidades por conta "
+    Set $List(middle2, *+1) = "desafia a capacidade de equalização "
+    Set $List(middle2, *+1) = "agrega valor ao estabelecimento "
+    Set $List(middle2, *+1) = "é uma das consequências "
+    Set $List(middle2, *+1) = "promove a alavancagem "
+    Set $List(middle2, *+1) = "não pode mais se dissociar "
+    Set $List(middle2, *+1) = "possibilita uma melhor visão global "
+    Set $List(middle2, *+1) = "estimula a padronização "
+    Set $List(middle2, *+1) = "aponta para a melhoria "
+    Set $List(middle2, *+1) = "faz parte de um processo de gerenciamento "
+    Set $List(middle2, *+1) = "causa impacto indireto na reavaliação "
+    Set $List(middle2, *+1) = "apresenta tendências no sentido de aprovar a manutenção "
+    Set $List(middle2, *+1) = "estende o alcance e a importância "
+    Set $List(middle2, *+1) = "deve passar por modificações independentemente "
+    Set $List(middle2, *+1) = "afeta positivamente a correta previsão "
+    
+    Set $List( TheEnd, *+1) = "das condições financeiras e administrativas exigidas."
+    Set $List( TheEnd, *+1) = "das diretrizes de desenvolvimento para o futuro."
+    Set $List( TheEnd, *+1) = "do sistema de participação geral."
+    Set $List( TheEnd, *+1) = "das posturas dos órgãos dirigentes com relação às suas atribuições."
+    Set $List( TheEnd, *+1) = "das novas proposições."
+    Set $List( TheEnd, *+1) = "das direções preferenciais no sentido do progresso."
+    Set $List( TheEnd, *+1) = "do sistema de formação de quadros que corresponde às necessidades."
+    Set $List( TheEnd, *+1) = "das condições inegavelmente apropriadas."
+    Set $List( TheEnd, *+1) = "dos índices pretendidos."
+    Set $List( TheEnd, *+1) = "das formas de ação."
+    Set $List( TheEnd, *+1) = "dos paradigmas corporativos."
+    Set $List( TheEnd, *+1) = "dos relacionamentos verticais entre as hierarquias."
+    Set $List( TheEnd, *+1) = "do processo de comunicação como um todo."
+    Set $List( TheEnd, *+1) = "dos métodos utilizados na avaliação de resultados."
+    Set $List( TheEnd, *+1) = "de todos os recursos funcionais envolvidos."
+    Set $List( TheEnd, *+1) = "dos níveis de motivação departamental."
+    Set $List( TheEnd, *+1) = "da gestão inovadora da qual fazemos parte."
+    Set $List( TheEnd, *+1) = "dos modos de operação convencionais."
+    Set $List( TheEnd, *+1) = "de alternativas às soluções ortodoxas."
+    Set $List( TheEnd, *+1) = "dos procedimentos normalmente adotados."
+    Set $List( TheEnd, *+1) = "dos conhecimentos estratégicos para atingir a excelência."
+    Set $List( TheEnd, *+1) = "do fluxo de informações."
+    Set $List( TheEnd, *+1) = "do levantamento das variáveis envolvidas."
+    Set $List( TheEnd, *+1) = "das diversas correntes de pensamento."
+    Set $List( TheEnd, *+1) = "do impacto na agilidade decisória."
+    Set $List( TheEnd, *+1) = "das regras de conduta normativas."
+    Set $List( TheEnd, *+1) = "do orçamento setorial."
+    Set $List( TheEnd, *+1) = "do retorno esperado a longo prazo."
+    Set $List( TheEnd, *+1) = "do investimento em reciclagem técnica."
+    Set $List( TheEnd, *+1) = "do remanejamento dos quadros funcionais."
+    
+	For k=1:1:pParagraphCount {
+		S paragraph = $ListGet(begin,$Random($ListLength(begin)) + 1)
+		S paragraph = paragraph _ $ListGet(middle,$Random($ListLength(middle)) + 1)
+		S paragraph = paragraph _ $ListGet(middle2,$Random($ListLength(middle2)) + 1)
+		S paragraph = paragraph _ $ListGet(TheEnd,$Random($ListLength(TheEnd)) + 1)
+		Set $List(paragraphs,*+1) = paragraph
+	}
+	
+	K begin, TheEnd, middle, middle2
+	Quit $ListToString($Get(paragraphs), pSeparator)
+]]></Implementation>
+</Method>
+</Class>
+
+
+<Class name="cosFaker.Name">
+<Super>%RegisteredObject</Super>
+<TimeChanged>64033,48840.651029</TimeChanged>
+<TimeCreated>64015,30897.267344</TimeCreated>
+
+<UDLText name="T">
+<Content><![CDATA[
+/*
+function validarCPF(cpf) {  
+         
+    // Valida 1o digito 
+    add = 0;    
+    for (i=0; i < 9; i ++)       
+        add += parseInt(cpf.charAt(i)) * (10 - i);  
+        rev = 11 - (add % 11);  
+        if (rev == 10 || rev == 11)     
+            rev = 0;    
+        if (rev != parseInt(cpf.charAt(9)))     
+            return false;       
+    // Valida 2o digito 
+    add = 0;    
+    for (i = 0; i < 10; i ++)        
+        add += parseInt(cpf.charAt(i)) * (11 - i);  
+    rev = 11 - (add % 11);  
+    if (rev == 10 || rev == 11) 
+        rev = 0;    
+    if (rev != parseInt(cpf.charAt(10)))
+        return false;       
+    return true;   
+}
+
+*/
+]]></Content>
+</UDLText>
+
+<Method name="FirstName">
+<Description>
+Generate a First Name
+Female Gender = 1
+Male Gender = 1</Description>
+<ClassMethod>1</ClassMethod>
+<FormalSpec>pGender:%Integer=""</FormalSpec>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	Set:pGender="" pGender = ($Random(2) + 1)
+	
+	Set name = ##class(cosFaker.Data.PtBr).FemaleFirstName()
+	If pGender = 2 {
+		Set name = ##class(cosFaker.Data.PtBr).MaleFirstName()
+	} 
+	
+	Quit name
+]]></Implementation>
+</Method>
+
+<Method name="LastName">
+<ClassMethod>1</ClassMethod>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[	Quit ##class(cosFaker.Data.PtBr).LastName()
+]]></Implementation>
+</Method>
+
+<Method name="FullName">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>pGender:%Integer=""</FormalSpec>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	Set:pGender="" pGender = ($Random(2) + 1)
+	
+	Set firstname = ##class(cosFaker.Data.PtBr).FemaleFirstName()
+	If pGender = 2 {
+		Set firstname = ##class(cosFaker.Data.PtBr).MaleFirstName()
+	} 
+	
+	S rand = $R(3) + 1,lastname = ""
+	F k=1:1:rand {
+		S:k>1 lastname = lastname _ " "
+		S lastname = lastname _ ##class(cosFaker.Data.PtBr).LastName()
+	}
+	
+	Quit firstname _ " " _ lastname
+]]></Implementation>
+</Method>
+
+<Method name="Suffix">
+<ClassMethod>1</ClassMethod>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[	Q ##class(cosFaker.Data.PtBr).PersonSuffix()
+]]></Implementation>
+</Method>
+
+<Method name="%OnNew">
+<Private>1</Private>
+<ReturnType>%Status</ReturnType>
+<ServerOnly>1</ServerOnly>
+<Implementation><![CDATA[
+	Do ..Initializer()
+	Quit $$$OK
+]]></Implementation>
+</Method>
+
+<Method name="Initializer">
+<Private>1</Private>
+</Method>
+</Class>
+</Export>

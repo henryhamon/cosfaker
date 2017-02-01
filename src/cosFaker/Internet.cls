@@ -56,13 +56,13 @@ ClassMethod Url() As %String
 
 ClassMethod Clean(pName As %String) As %String [ Private ]
 {
-	Quit $Replace($Replace($Replace($Replace($Replace(pName,"ϊ","u"),"σ","o"),"ι","e"),"ν","i"),"α","a")
+	Quit $ZConvert($Translate(pName,"ϊσινα","uoeia"),"l")
 }
 
 ClassMethod Avatar(pSize As %Integer = "") As %String
 {
-	S:pSize="" pSize = 150
-	Q "http://www.avatarpro.biz/avatar?s="_pSize
+	Set:pSize="" pSize = 150
+	Quit "http://www.avatarpro.biz/avatar?s="_pSize
 }
 
 Method Initializer() [ Private ]

@@ -1,0 +1,31 @@
+Class cosFaker.Finance
+{
+
+ClassMethod BitcoinAddress(pMin As %Integer = 27, pMax As %Integer = 34) As %String
+{
+	Set length = "", bitcoinAddress = ""
+	While ('..In(length, pMin, pMax)) {
+		Set length = $Random(35)
+	}
+	
+	For k=1:1:length{
+		Set element = 0, bFlag = $$$NO
+		
+		While bFlag = $$$NO {
+			Set element = $Random(123),
+				bFlag = ((..In(element,48,57))||(..In(element,65,90))||(..In(element,97,122)))
+			
+		}
+		Set bitcoinAddress = bitcoinAddress _ $Char(element)
+	}
+
+	Quit bitcoinAddress
+}
+
+ClassMethod In(pValue, pMin As %Integer, pMax As %Integer) As %Boolean
+{
+	Quit ((pValue>=pMin)&&(pValue<=pMax))
+}
+
+}
+
