@@ -15,25 +15,20 @@ ClassMethod Amount(pMin As %Integer = 0, pMax As %Integer = 10000, pDec As %Inte
 	Quit pSymbol _ value _ pSeparator _ dec
 }
 
-ClassMethod BitcoinAddress(pMin As %Integer = 27, pMax As %Integer = 34) As %String
+ClassMethod BitcoinAddress(pMin As %Integer = 24, pMax As %Integer = 34) As %String
 {
-	Set length = "", bitcoinAddress = ""
+	Set length = "", bitcoinAddress = "", 
+		digits58 = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
 	While ('..In(length, pMin, pMax)) {
-		Set length = $Random(35)
+		Set length = $Random(36)
 	}
 	
-	For k=1:1:length{
-		Set element = 0, bFlag = $$$NO
-		
-		While bFlag = $$$NO {
-			Set element = $Random(123),
-				bFlag = ((..In(element,48,57))||(..In(element,65,90))||(..In(element,97,122)))
-			
-		}
-		Set bitcoinAddress = bitcoinAddress _ $Char(element)
+	For k=1:1:27{
+		Set i = $Random($Length(digits58)) + 1
+		Set bitcoinAddress = bitcoinAddress _ $Extract(digits58,i)
 	}
 
-	Quit bitcoinAddress
+	Quit 1 _ bitcoinAddress
 }
 
 ClassMethod In(pValue, pMin As %Integer, pMax As %Integer) As %Boolean [ Private ]

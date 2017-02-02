@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Export generator="Cache" version="25" zv="Cache for Windows (x86-32) 2015.2.1 (Build 705U)" ts="2017-02-02 11:13:48">
+<Export generator="Cache" version="25" zv="Cache for Windows (x86-32) 2015.2.1 (Build 705U)" ts="2017-02-02 11:17:03">
 <Class name="cosFaker.Address">
 <Super>%RegisteredObject</Super>
 <TimeChanged>64037,48509.303778</TimeChanged>
@@ -665,7 +665,7 @@ Centro Curitiba Lat -25.429 Lon -49.2671
 
 
 <Class name="cosFaker.Finance">
-<TimeChanged>64316,40408.66937</TimeChanged>
+<TimeChanged>64316,40546.910552</TimeChanged>
 <TimeCreated>64315,30624.365455</TimeCreated>
 
 <Method name="Amount">
@@ -688,26 +688,21 @@ Centro Curitiba Lat -25.429 Lon -49.2671
 
 <Method name="BitcoinAddress">
 <ClassMethod>1</ClassMethod>
-<FormalSpec>pMin:%Integer=27,pMax:%Integer=34</FormalSpec>
+<FormalSpec>pMin:%Integer=24,pMax:%Integer=34</FormalSpec>
 <ReturnType>%String</ReturnType>
 <Implementation><![CDATA[
-	Set length = "", bitcoinAddress = ""
+	Set length = "", bitcoinAddress = "", 
+		digits58 = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
 	While ('..In(length, pMin, pMax)) {
-		Set length = $Random(35)
+		Set length = $Random(36)
 	}
 	
-	For k=1:1:length{
-		Set element = 0, bFlag = $$$NO
-		
-		While bFlag = $$$NO {
-			Set element = $Random(123),
-				bFlag = ((..In(element,48,57))||(..In(element,65,90))||(..In(element,97,122)))
-			
-		}
-		Set bitcoinAddress = bitcoinAddress _ $Char(element)
+	For k=1:1:27{
+		Set i = $Random($Length(digits58)) + 1
+		Set bitcoinAddress = bitcoinAddress _ $Extract(digits58,i)
 	}
 
-	Quit bitcoinAddress
+	Quit 1 _ bitcoinAddress
 ]]></Implementation>
 </Method>
 
