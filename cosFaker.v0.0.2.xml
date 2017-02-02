@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Export generator="Cache" version="25" zv="Cache for Windows (x86-32) 2015.2.1 (Build 705U)" ts="2017-02-01 11:03:30">
+<Export generator="Cache" version="25" zv="Cache for Windows (x86-32) 2015.2.1 (Build 705U)" ts="2017-02-02 11:13:48">
 <Class name="cosFaker.Address">
 <Super>%RegisteredObject</Super>
 <TimeChanged>64037,48509.303778</TimeChanged>
@@ -665,7 +665,7 @@ Centro Curitiba Lat -25.429 Lon -49.2671
 
 
 <Class name="cosFaker.Finance">
-<TimeChanged>64315,39805.450037</TimeChanged>
+<TimeChanged>64316,40408.66937</TimeChanged>
 <TimeCreated>64315,30624.365455</TimeCreated>
 
 <Method name="Amount">
@@ -682,7 +682,7 @@ Centro Curitiba Lat -25.429 Lon -49.2671
 		Set dec = dec _ $Random(10)
 	}
 	
-	Quit pSymbol _ value _ pSeparator _ pDec
+	Quit pSymbol _ value _ pSeparator _ dec
 ]]></Implementation>
 </Method>
 

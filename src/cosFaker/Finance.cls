@@ -12,7 +12,7 @@ ClassMethod Amount(pMin As %Integer = 0, pMax As %Integer = 10000, pDec As %Inte
 		Set dec = dec _ $Random(10)
 	}
 	
-	Quit pSymbol _ value _ pSeparator _ pDec
+	Quit pSymbol _ value _ pSeparator _ dec
 }
 
 ClassMethod BitcoinAddress(pMin As %Integer = 27, pMax As %Integer = 34) As %String
