@@ -17,8 +17,11 @@ ClassMethod Amount(pMin As %Integer = 0, pMax As %Integer = 10000, pDec As %Inte
 
 ClassMethod BitcoinAddress(pMin As %Integer = 24, pMax As %Integer = 34) As %String
 {
+	Set:pMin<24 pMin = 24
+	Set:pMax>34 pMax = 34
 	Set length = "", bitcoinAddress = "", 
 		digits58 = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
+	
 	While ('..In(length, pMin, pMax)) {
 		Set length = $Random(36)
 	}

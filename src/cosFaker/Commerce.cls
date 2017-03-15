@@ -14,5 +14,9 @@ ClassMethod Price(pMin As %Integer = 0, pMax As %Integer = 1000, pDec As %Intege
 	Quit pSymbol _ rand
 }
 
+ClassMethod CNPJ(pPretty As %Boolean = 1) As %String
+{
+}
+
 }
 
