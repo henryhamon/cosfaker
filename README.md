@@ -17,5 +17,5 @@ Method OnPopulate() As %Status [ ServerOnly = 1 ]
 Or on a simple Set
 
 ```cos
-Set ..Name = ##class(cosFaker.Name).FullName()`
+Set ..Name = ##class(cosFaker.Name).FullName()
 ```
