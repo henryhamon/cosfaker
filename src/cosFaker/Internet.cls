@@ -65,6 +65,14 @@ ClassMethod Avatar(pSize As %Integer = "") As %String
 	Quit "http://www.avatarpro.biz/avatar?s="_pSize
 }
 
+ClassMethod Slug(pWords As %String = "", pGlue As %String = "") As %String
+{
+	Set:pGlue="" pGlue = $ListToString($List($ListBuild("-","_","."),$Random(3)+1) ,"")
+	Set:pWords="" pWords = ##class(cosFaker.Lorem).Word(), 
+		pWords = $Replace(pWords," ",pGlue)
+	Quit pWords
+}
+
 Method Initializer() [ Private ]
 {
 }
