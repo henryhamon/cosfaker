@@ -1,4 +1,4 @@
-# cosfaker [![GitHub issues](https://img.shields.io/github/issues/badges/shields.svg)](https://github.com/henryhamon/cosfaker/issues)
+# cosFaker 
 generate massive amounts of fake data for Intersystems Caché
 
 ## Usage
