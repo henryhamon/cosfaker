@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Export generator="Cache" version="25" zv="Cache for Windows (x86-32) 2015.2.1 (Build 705U)" ts="2017-03-22 10:47:26">
+<Export generator="Cache" version="25" zv="Cache for Windows (x86-32) 2015.2.1 (Build 705U)" ts="2017-03-22 15:18:04">
 <Class name="cosFaker.Address">
 <Super>%RegisteredObject</Super>
 <TimeChanged>64037,48509.303778</TimeChanged>
@@ -708,7 +708,8 @@ Centro Curitiba Lat -25.429 Lon -49.2671
 
 
 <Class name="cosFaker.Finance">
-<TimeChanged>64316,48068.617585</TimeChanged>
+<Super>cosFaker.lib.core</Super>
+<TimeChanged>64364,54928.776548</TimeChanged>
 <TimeCreated>64315,30624.365455</TimeCreated>
 
 <Method name="Amount">
@@ -726,6 +727,24 @@ Centro Curitiba Lat -25.429 Lon -49.2671
 	}
 	
 	Quit pSymbol _ value _ pSeparator _ dec
+]]></Implementation>
+</Method>
+
+<Method name="CreditCard">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>pType:%String=""</FormalSpec>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	Set templates = ##class(%ArrayOfDataTypes).%New(),
+		types = $ListBuild("visa", "mastercard", "american_express")
+		
+	Set:pType="" pType = ..Sample(types)
+	
+	Do templates.SetAt($ListBuild("4###########","4###-####-####-###"),"visa")
+	Do templates.SetAt($ListBuild("5053-####-####-###","6771-89##-####-###"),"mastercard")
+	Do templates.SetAt($ListBuild("34##-######-####"),"american_express")
+
+	Quit ..MaskNumber(..Sample(templates.GetAt(pType)))
 ]]></Implementation>
 </Method>
 
@@ -749,15 +768,6 @@ Centro Curitiba Lat -25.429 Lon -49.2671
 	}
 
 	Quit 1 _ bitcoinAddress
-]]></Implementation>
-</Method>
-
-<Method name="In">
-<ClassMethod>1</ClassMethod>
-<FormalSpec>pValue,pMin:%Integer,pMax:%Integer</FormalSpec>
-<Private>1</Private>
-<ReturnType>%Boolean</ReturnType>
-<Implementation><![CDATA[	Quit ((pValue>=pMin)&&(pValue<=pMax))
 ]]></Implementation>
 </Method>
 </Class>
@@ -1667,6 +1677,70 @@ Male Gender = 1</Description>
 	}
 	
 	Quit $ListToString(sentences," ")
+]]></Implementation>
+</Method>
+</Class>
+
+
+<Class name="cosFaker.lib.core">
+<TimeChanged>64364,54985.238226</TimeChanged>
+<TimeCreated>64364,54430.726245</TimeCreated>
+
+<Method name="Sample">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>pList</FormalSpec>
+<Private>1</Private>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[	Quit $List(pList, $Random($ListLength(pList)) + 1)
+]]></Implementation>
+</Method>
+
+<Method name="MaskNumber">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>pTemplate:%String,pMin:%Integer="",pMax:%Integer=""</FormalSpec>
+<Private>1</Private>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	Set pos = $Find(pTemplate,"#",0)
+	
+	While pos'=$$$NO {
+		
+		//If (pMin="" || pMax="") {
+		Set value = $Random(10)
+		/*
+		} Else {
+			Set value = ..Range(pMin, pMax)
+		}
+		*/
+		
+		Set pTemplate = $Extract(pTemplate,0,pos-2)_value_$Extract(pTemplate,pos,*),
+			pos = $Find(pTemplate,"#",0)
+	}
+	Quit pTemplate
+]]></Implementation>
+</Method>
+
+<Method name="Range">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>pMin:%Integer=0,pMax:%Integer=10000</FormalSpec>
+<Private>1</Private>
+<ReturnType>%Integer</ReturnType>
+<Implementation><![CDATA[
+	Set value = pMin-10, dec = ""
+	While ('..In(value, pMin, pMax)) {
+		Set value = $Random(pMax + 1)
+	}
+	
+	Quit value
+]]></Implementation>
+</Method>
+
+<Method name="In">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>pValue,pMin:%Integer,pMax:%Integer</FormalSpec>
+<Private>1</Private>
+<ReturnType>%Boolean</ReturnType>
+<Implementation><![CDATA[	Quit ((pValue>=pMin)&&(pValue<=pMax))
 ]]></Implementation>
 </Method>
 </Class>
