@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Export generator="Cache" version="25" zv="Cache for Windows (x86-32) 2015.2.1 (Build 705U)" ts="2017-03-23 14:28:39">
+<Export generator="Cache" version="25" zv="Cache for Windows (x86-32) 2015.2.1 (Build 705U)" ts="2017-03-23 14:54:52">
 <Class name="cosFaker.Address">
 <Super>%RegisteredObject</Super>
 <TimeChanged>64037,48509.303778</TimeChanged>
@@ -913,6 +913,38 @@ Centro Curitiba Lat -25.429 Lon -49.2671
 <Implementation><![CDATA[
 	Do ..Initializer()
 	Quit $$$OK
+]]></Implementation>
+</Method>
+</Class>
+
+
+<Class name="cosFaker.Job">
+<Super>cosFaker.lib.core</Super>
+<TimeChanged>64365,53680.722712</TimeChanged>
+<TimeCreated>64365,52785.076161</TimeCreated>
+
+<Method name="Title">
+<ClassMethod>1</ClassMethod>
+<Implementation><![CDATA[
+	Set title = $Random(3),
+		seniority = ..Sample($ListFromString("Lead,Senior,Product,National,Regional,District,Central,Global,Customer,Investor,Dynamic,International,Legacy,Forward,Internal,Chief",",")),
+		position = ..Sample($ListFromString("Supervisor,Associate,Executive,Liaison,Officer,Manager,Engineer,Specialist,Director,Coordinator,Administrator,Architect,Analyst,Designer,Planner,Orchestrator,Technician,Developer,Producer,Consultant,Assistant,Facilitator,Agent,Representative,Strategist",","))
+
+	Quit:title=0 seniority_" "_..Field()_" "_position
+	Quit:title=1 seniority_" "_position
+	Quit:title=2 ..Field()_" "_position
+]]></Implementation>
+</Method>
+
+<Method name="Field">
+<ClassMethod>1</ClassMethod>
+<Implementation><![CDATA[	Quit ..Sample($ListFromString("Marketing,IT,Accounting,Administration,Advertising,Banking,Community-Services,Construction,Consulting,Design,Education,Farming,Government,Healthcare,Hospitality,Legal,Manufacturing,Marketing,Mining,Real-Estate,Retail,Sales,Technology",","))
+]]></Implementation>
+</Method>
+
+<Method name="Skills">
+<ClassMethod>1</ClassMethod>
+<Implementation><![CDATA[	Quit ..Sample($ListFromString("Teamwork,Communication,Problem solving,Leadership,Organisation,Work under pressure,Confidence,Self-motivated,Networking skills,Proactive,Fast learner,Technical savvy",","))
 ]]></Implementation>
 </Method>
 </Class>
