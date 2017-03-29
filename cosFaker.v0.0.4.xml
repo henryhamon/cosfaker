@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Export generator="Cache" version="25" zv="Cache for Windows (x86-32) 2015.2.1 (Build 705U)" ts="2017-03-23 14:54:52">
+<Export generator="Cache" version="25" zv="Cache for Windows (x86-32) 2015.2.1 (Build 705U)" ts="2017-03-29 08:21:54">
 <Class name="cosFaker.Address">
 <Super>%RegisteredObject</Super>
 <TimeChanged>64037,48509.303778</TimeChanged>
@@ -686,6 +686,22 @@ Centro Curitiba Lat -25.429 Lon -49.2671
 	Set output = $ListGet(firstName,$Random($ListLength(firstName)) + 1)
 	Kill firstName
 	Quit output
+]]></Implementation>
+</Method>
+</Class>
+
+
+<Class name="cosFaker.DragonBall">
+<Super>cosFaker.lib.core</Super>
+<TimeChanged>64371,30101.281513</TimeChanged>
+<TimeCreated>64371,30101.281513</TimeCreated>
+
+<Method name="Character">
+<ClassMethod>1</ClassMethod>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	Set characters = $ListBuild("Goku", "Bulma", "Kami", "Yamcha", "Krillin", "Tien", "Piccolo", "Gohan", "Vegeta", "Kid Trunks", "Goten", "Future Trunks", "Pan", "Android 18", "Android 16", "Android 17", "Android 19", "Android 20", "Beerus", "Chaozu", "Chi-Chi", "Launch", "Mr. Satan", "Oolong", "Puar", "Videl", "Whis", "Yajirobe", "Demon King Piccolo", "Freeza", "Cell", "Majin Buu", "Goku Black", "Zamasu", "Baba", "Bra", "Bardock", "Champa", "Dende", "Dr. Gero", "Captain Ginyu", "Grandpa Gohan", "Jaco", "King Kai", "Supreme Kai", "Elder Kai", "Mr. Popo", "Nappa", "Uub", "Pilaf", "Raditz", "Shenron", "Vados", "Zarbon", "Broly", "Cooler", "King Cold", "Garlic Jr", "King Vegeta", "Nail", "Guru", "Hit", "Super Saiyan Goku", "Super Saiyan 2 Goku", "Super Saiyan 3 Goku", "Super Saiyan Vegeta", "Super Saiyan 2 Vegeta", "Majin Vegeta", "Super Saiyan Gohan", "Super Saiyan 2 Gohan", "Super Saiyan Goten", "Super Saiyan Trunks", "Vegito", "Gogeta", "Super Saiyan Blue Goku", "Super Saiyan Blue Vegeta", "Mystic Gohan")
+	Quit ..Sample(characters)
 ]]></Implementation>
 </Method>
 </Class>
