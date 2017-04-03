@@ -8,7 +8,10 @@ ClassMethod Category() As %String
 
 ClassMethod Fighter(ByRef pCategory As %String = "", ByRef pCountry As %String = "", pWithISOCountry As %Boolean = 0) As %String
 {
-	Set:pCategory="" pCategory = ..Category()
+	Set tCategory = $ListBuild("Heavyweight","Featherweight","Middleweight","Welterweight","Lightweight","Bantamweight","Flyweight","LightHeavyweight")	
+	
+	Set:((pCategory="") || ($ListFind(tCategory, pCategory)=0)) pCategory = ..Sample(tCategory)
+	
 	
 	Set:pCategory="Heavyweight" tFighter = ..Heavyweight(.pCountry)
 	Set:pCategory="Featherweight" tFighter = ..Featherweight(.pCountry)
