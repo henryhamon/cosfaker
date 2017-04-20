@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Export generator="Cache" version="25" zv="Cache for Windows (x86-32) 2015.2.1 (Build 705U)" ts="2017-04-03 11:10:54">
+<Export generator="Cache" version="25" zv="Cache for Windows (x86-32) 2015.2.1 (Build 705U)" ts="2017-04-20 08:49:42">
 <Class name="cosFaker.Address">
 <Super>%RegisteredObject</Super>
 <TimeChanged>64037,48509.303778</TimeChanged>
@@ -755,6 +755,27 @@ Centro Curitiba Lat -25.429 Lon -49.2671
 	Set output = $ListGet(firstName,$Random($ListLength(firstName)) + 1)
 	Kill firstName
 	Quit output
+]]></Implementation>
+</Method>
+</Class>
+
+
+<Class name="cosFaker.Dates">
+<Super>cosFaker.lib.core</Super>
+<TimeChanged>64393,31736.546796</TimeChanged>
+<TimeCreated>64393,30769.359688</TimeCreated>
+
+<Method name="Forward">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>pDays:%Integer=365,pFormat:%Integer=3</FormalSpec>
+<Implementation><![CDATA[	Quit $ZDateTime(($Horolog + $Random(pDays) +1),pFormat)
+]]></Implementation>
+</Method>
+
+<Method name="Backward">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>pDays:%Integer=365,pFormat:%Integer=3</FormalSpec>
+<Implementation><![CDATA[	Quit $ZDateTime((($Horolog - $Random(pDays)) +1),pFormat)
 ]]></Implementation>
 </Method>
 </Class>
