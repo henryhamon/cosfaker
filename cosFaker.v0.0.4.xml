@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Export generator="Cache" version="25" zv="Cache for Windows (x86-64) 2016.2.1 (Build 803)" ts="2017-05-03 13:39:45">
+<Export generator="Cache" version="25" zv="Cache for Windows (x86-64) 2016.2.1 (Build 803)" ts="2017-05-03 14:18:20">
 <Class name="cosFaker.Address">
 <Super>%RegisteredObject</Super>
 <TimeChanged>64037,48509.303778</TimeChanged>
@@ -895,6 +895,43 @@ Centro Curitiba Lat -25.429 Lon -49.2671
 	}
 
 	Quit 1 _ bitcoinAddress
+]]></Implementation>
+</Method>
+</Class>
+
+
+<Class name="cosFaker.Game">
+<Super>cosFaker.lib.core</Super>
+<TimeChanged>64406,51281.551648</TimeChanged>
+<TimeCreated>64371,30101.281513</TimeCreated>
+
+<Method name="MortalKombat">
+<ClassMethod>1</ClassMethod>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	Set characters = $ListBuild("Liu Kang","Scorpion","Raiden","Johnny Cage","Sub-Zero","Sonya Blade","Kano","Reptile","Goro","Jax","Kitana","Kung Lao","Mileena","Nightwolf")
+	Quit ..Sample(characters)
+]]></Implementation>
+</Method>
+
+<Method name="StreetFighter">
+<ClassMethod>1</ClassMethod>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	Set characters = $ListBuild("Ryu","Ken","Retsu","Geki","Joe","Mike","Lee","Gen","Birdie","Eagle","Adon","Sagat","Chun-Li","Blanka","Zangief","EHonda","Guile","Dhalsim","Balrog","Vega","MBison","THawk","Cammy","FeiLong","DeeJay","Akuma")
+	Quit ..Sample(characters)
+]]></Implementation>
+</Method>
+
+<Method name="Card">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>pAbrev:%Boolean=0</FormalSpec>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	Set cards = $ListBuild("A","2","3","4","5","6","7","8","9","J","Q","K")
+	Set suits = $ListBuild("Clubs","Hearts","Spades","Diamonds")
+	Quit:pAbrev ..Sample(cards)_$Extract(..Sample(suits),1,1)
+	Quit ..Sample(cards)_" of "_..Sample(suits)
 ]]></Implementation>
 </Method>
 </Class>
