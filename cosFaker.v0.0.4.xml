@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Export generator="Cache" version="25" zv="Cache for Windows (x86-64) 2016.2.1 (Build 803)" ts="2017-05-08 14:49:36">
+<Export generator="Cache" version="25" zv="Cache for Windows (x86-64) 2016.2.1 (Build 803)" ts="2017-05-08 15:49:02">
 <Class name="cosFaker.Address">
 <Super>cosFaker.lib.braziliancities,cosFaker.lib.americancities</Super>
 <TimeChanged>64411,51715.017241</TimeChanged>
@@ -148,7 +148,7 @@ Generates an random City<br/>
 
 <Class name="cosFaker.App">
 <Super>cosFaker.lib.core</Super>
-<TimeChanged>64411,52034.219839</TimeChanged>
+<TimeChanged>64411,56663.906553</TimeChanged>
 <TimeCreated>64016,37345.119926</TimeCreated>
 
 <Method name="FunctionName">
@@ -157,13 +157,8 @@ Generates an random City<br/>
 <ReturnType>%String</ReturnType>
 <Implementation><![CDATA[
 	Set:pSeparator="" pSeparator = " "
-	If ..GetLanguage() = "pr-br"{
-		Set action = ##class(cosFaker.Data.PtBr).AppAction(pGroup)
-		Set function = ##class(cosFaker.Data.PtBr).AppType()
-	} Else {
-		Set action = ##class(cosFaker.Data.EnUs).AppAction(pGroup)
-		Set function = ##class(cosFaker.Data.EnUs).AppType()
-	}
+	Set action = $ClassMethod(..GetClass(),"AppAction",pGroup)
+	Set function = $ClassMethod(..GetClass(),"AppType")
 	Quit action _ pSeparator _ function
 ]]></Implementation>
 </Method>
@@ -323,7 +318,7 @@ Generates an random City<br/>
 
 <Class name="cosFaker.Data.EnUs">
 <Super>cosFaker.lib.core</Super>
-<TimeChanged>64411,52361.806711</TimeChanged>
+<TimeChanged>64411,54887.547804</TimeChanged>
 <TimeCreated>64016,39746.54747</TimeCreated>
 
 <Method name="Country">
@@ -396,6 +391,64 @@ Generates an random City<br/>
 	Set $List(things,*+1) = "Prices"
 	
 	Quit ..Sample(things)
+]]></Implementation>
+</Method>
+
+<Method name="LastName">
+<ClassMethod>1</ClassMethod>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	Set LName =  $ZConvert(..Sample($ListBuild("SMITH","JOHNSON","WILLIAMS","JONES","BROWN","DAVIS","MILLER","WILSON","MOORE","TAYLOR","ANDERSON","THOMAS","JACKSON","WHITE","HARRIS","MARTIN","THOMPSON","GARCIA","MARTINEZ","ROBINSON","CLARK","RODRIGUEZ","LEWIS","LEE","WALKER","HALL","ALLEN","YOUNG","HERNANDEZ","KING","WRIGHT","LOPEZ","HILL","SCOTT","GREEN","ADAMS","BAKER","GONZALEZ","NELSON","CARTER","MITCHELL","PEREZ","ROBERTS","TURNER","PHILLIPS","CAMPBELL","PARKER","EVANS","EDWARDS","COLLINS","STEWART","SANCHEZ","MORRIS","ROGERS","REED","COOK","MORGAN","BELL","MURPHY","BAILEY","RIVERA","COOPER","RICHARDSON","COX","HOWARD","WARD","TORRES","PETERSON","GRAY","RAMIREZ","JAMES","WATSON","BROOKS","KELLY","SANDERS","PRICE","BENNETT","WOOD","BARNES","ROSS","HENDERSON","COLEMAN","JENKINS","PERRY","POWELL","LONG","PATTERSON","HUGHES","FLORES","WASHINGTON","BUTLER","SIMMONS","FOSTER","GONZALES","BRYANT","ALEXANDER","RUSSELL","GRIFFIN","DIAZ","HAYES","MYERS","FORD","HAMILTON","GRAHAM","SULLIVAN","WALLACE","WOODS","COLE","WEST","JORDAN","OWENS","REYNOLDS","FISHER","ELLIS","HARRISON","GIBSON","MCDONALD","CRUZ","MARSHALL","ORTIZ","GOMEZ","MURRAY","FREEMAN","WELLS","WEBB","SIMPSON","STEVENS","TUCKER","PORTER","HUNTER","HICKS","CRAWFORD","HENRY","BOYD","MASON","MORALES","KENNEDY","WARREN","DIXON","RAMOS","REYES","BURNS","GORDON","SHAW","HOLMES","RICE","ROBERTSON","HUNT","BLACK","DANIELS","PALMER","MILLS","NICHOLS","GRANT","KNIGHT","FERGUSON","ROSE","STONE","HAWKINS","DUNN","PERKINS","HUDSON","SPENCER","GARDNER","STEPHENS","PAYNE","PIERCE","BERRY","MATTHEWS","ARNOLD","WAGNER","WILLIS","RAY","WATKINS","OLSON","CARROLL","DUNCAN","SNYDER","HART","CUNNINGHAM","BRADLEY","LANE","ANDREWS","RUIZ","HARPER","FOX","RILEY","ARMSTRONG","CARPENTER","WEAVER","GREENE","LAWRENCE","ELLIOTT","CHAVEZ","SIMS","AUSTIN","PETERS","KELLEY","FRANKLIN","LAWSON","FIELDS","GUTIERREZ","RYAN","SCHMIDT","CARR","VASQUEZ","CASTILLO","WHEELER","CHAPMAN","OLIVER","MONTGOMERY","RICHARDS","WILLIAMSON","JOHNSTON","BANKS","MEYER","BISHOP","MCCOY","HOWELL","ALVAREZ","MORRISON","HANSEN","FERNANDEZ","GARZA","HARVEY","LITTLE","BURTON","STANLEY","NGUYEN","GEORGE","JACOBS","REID","KIM","FULLER","LYNCH","DEAN","GILBERT","GARRETT","ROMERO","WELCH","LARSON","FRAZIER","BURKE","HANSON","DAY","MENDOZA","MORENO","BOWMAN","MEDINA","FOWLER","BREWER","HOFFMAN","CARLSON","SILVA","PEARSON","HOLLAND","DOUGLAS","FLEMING","JENSEN","VARGAS","BYRD","DAVIDSON","HOPKINS","MAY","TERRY","HERRERA","WADE","SOTO","WALTERS","CURTIS","NEAL","CALDWELL","LOWE","JENNINGS","BARNETT","GRAVES","JIMENEZ","HORTON","SHELTON","BARRETT","OBRIEN","CASTRO","SUTTON","GREGORY","MCKINNEY","LUCAS","MILES","CRAIG","RODRIQUEZ","CHAMBERS","HOLT","LAMBERT","FLETCHER","WATTS","BATES","HALE","RHODES","PENA","BECK","NEWMAN","HAYNES","MCDANIEL","MENDEZ","BUSH","VAUGHN","PARKS","DAWSON","SANTIAGO","NORRIS","HARDY","LOVE","STEELE","CURRY","POWERS","SCHULTZ","BARKER","GUZMAN","PAGE","MUNOZ","BALL","KELLER","CHANDLER","WEBER","LEONARD","WALSH","LYONS","RAMSEY","WOLFE","SCHNEIDER","MULLINS","BENSON","SHARP","BOWEN","DANIEL","BARBER","CUMMINGS","HINES","BALDWIN","GRIFFITH","VALDEZ","HUBBARD","SALAZAR","REEVES","WARNER","STEVENSON","BURGESS","SANTOS","TATE","CROSS","GARNER","MANN","MACK","MOSS","THORNTON","DENNIS","MCGEE","FARMER","DELGADO","AGUILAR","VEGA","GLOVER","MANNING","COHEN","HARMON","RODGERS","ROBBINS","NEWTON","TODD","BLAIR","HIGGINS","INGRAM","REESE","CANNON","STRICKLAND","TOWNSEND","POTTER","GOODWIN","WALTON","ROWE","HAMPTON","ORTEGA","PATTON","SWANSON","JOSEPH","FRANCIS","GOODMAN","MALDONADO","YATES","BECKER","ERICKSON","HODGES","RIOS","CONNER","ADKINS","WEBSTER","NORMAN","MALONE","HAMMOND","FLOWERS","COBB","MOODY","QUINN","BLAKE","MAXWELL","POPE","FLOYD","OSBORNE","PAUL","MCCARTHY","GUERRERO","LINDSEY","ESTRADA","SANDOVAL","GIBBS","TYLER","GROSS","FITZGERALD","STOKES","DOYLE","SHERMAN","SAUNDERS","WISE","COLON","GILL","ALVARADO","GREER","PADILLA","SIMON","WATERS","NUNEZ","BALLARD","SCHWARTZ","MCBRIDE","HOUSTON","CHRISTENSEN","KLEIN","PRATT","BRIGGS","PARSONS","MCLAUGHLIN","ZIMMERMAN","FRENCH","BUCHANAN","MORAN","COPELAND","ROY","PITTMAN","BRADY","MCCORMICK","HOLLOWAY","BROCK","POOLE","FRANK","LOGAN","OWEN","BASS","MARSH","DRAKE","WONG","JEFFERSON","PARK","MORTON","ABBOTT","SPARKS","PATRICK","NORTON","HUFF","CLAYTON","MASSEY","LLOYD","FIGUEROA","CARSON","BOWERS","ROBERSON","BARTON","TRAN","LAMB","HARRINGTON","CASEY","BOONE","CORTEZ","CLARKE","MATHIS","SINGLETON","WILKINS","CAIN","BRYAN","UNDERWOOD","HOGAN","MCKENZIE","COLLIER","LUNA","PHELPS","MCGUIRE","ALLISON","BRIDGES","WILKERSON","NASH","SUMMERS","ATKINS","WILCOX","PITTS","CONLEY","MARQUEZ","BURNETT","RICHARD","COCHRAN","CHASE","DAVENPORT","HOOD","GATES","CLAY","AYALA","SAWYER","ROMAN","VAZQUEZ","DICKERSON","HODGE","ACOSTA","FLYNN","ESPINOZA","NICHOLSON","MONROE","WOLF","MORROW","KIRK","RANDALL","ANTHONY","WHITAKER","OCONNOR","SKINNER","WARE","MOLINA","KIRBY","HUFFMAN","BRADFORD","CHARLES","GILMORE","DOMINGUEZ","ONEAL","BRUCE","LANG","COMBS","KRAMER","HEATH","HANCOCK","GALLAGHER","GAINES","SHAFFER","SHORT","WIGGINS","MATHEWS","MCCLAIN","FISCHER","WALL","SMALL","MELTON","HENSLEY","BOND","DYER","CAMERON","GRIMES","CONTRERAS","CHRISTIAN","WYATT","BAXTER","SNOW","MOSLEY","SHEPHERD","LARSEN","HOOVER","BEASLEY","GLENN","PETERSEN","WHITEHEAD","MEYERS","KEITH","GARRISON","VINCENT","SHIELDS","HORN","SAVAGE","OLSEN","SCHROEDER","HARTMAN","WOODARD","MUELLER","KEMP","DELEON","BOOTH","PATEL","CALHOUN","WILEY","EATON","CLINE","NAVARRO","HARRELL","LESTER","HUMPHREY","PARRISH","DURAN","HUTCHINSON","HESS","DORSEY","BULLOCK","ROBLES","BEARD","DALTON","AVILA","VANCE","RICH","BLACKWELL","YORK","JOHNS","BLANKENSHIP","TREVINO","SALINAS","CAMPOS","PRUITT","MOSES","CALLAHAN","GOLDEN","MONTOYA")),"L")
+	Quit $ZConvert($Extract(LName,1,1),"U")_$Extract(LName,2,*)
+]]></Implementation>
+</Method>
+
+<Method name="MaleFirstName">
+<ClassMethod>1</ClassMethod>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	Set FName = $ZConvert(..Sample($ListBuild("JAMES","JOHN","ROBERT","MICHAEL","WILLIAM","DAVID","RICHARD","CHARLES","JOSEPH","THOMAS","CHRISTOPHER","DANIEL","PAUL","MARK","DONALD","GEORGE","KENNETH","STEVEN","EDWARD","BRIAN","RONALD","ANTHONY","KEVIN","JASON","MATTHEW","GARY","TIMOTHY","JOSE","LARRY","JEFFREY","FRANK","SCOTT","ERIC","STEPHEN","ANDREW","RAYMOND","GREGORY","JOSHUA","JERRY","DENNIS","WALTER","PATRICK","PETER","HAROLD","DOUGLAS","HENRY","CARL","ARTHUR","RYAN","ROGER","JOE","JUAN","JACK","ALBERT","JONATHAN","JUSTIN","TERRY","GERALD","KEITH","SAMUEL","WILLIE","RALPH","LAWRENCE","NICHOLAS","ROY","BENJAMIN","BRUCE","BRANDON","ADAM","HARRY","FRED","WAYNE","BILLY","STEVE","LOUIS","JEREMY","AARON","RANDY","HOWARD","EUGENE","CARLOS","RUSSELL","BOBBY","VICTOR","MARTIN","ERNEST","PHILLIP","TODD","JESSE","CRAIG","ALAN","SHAWN","CLARENCE","SEAN","PHILIP","CHRIS","JOHNNY","EARL","JIMMY","ANTONIO","DANNY","BRYAN","TONY","LUIS","MIKE","STANLEY","LEONARD","NATHAN","DALE","MANUEL","RODNEY","CURTIS","NORMAN","ALLEN","MARVIN","VINCENT","GLENN","JEFFERY","TRAVIS","JEFF","CHAD","JACOB","LEE","MELVIN","ALFRED","KYLE","FRANCIS","BRADLEY","JESUS","HERBERT","FREDERICK","RAY","JOEL","EDWIN","DON","EDDIE","RICKY","TROY","RANDALL","BARRY","ALEXANDER","BERNARD","MARIO","LEROY","FRANCISCO","MARCUS","MICHEAL","THEODORE","CLIFFORD","MIGUEL","OSCAR","JAY","JIM","TOM","CALVIN","ALEX","JON","RONNIE","BILL","LLOYD","TOMMY","LEON","DEREK","WARREN","DARRELL","JEROME","FLOYD","LEO","ALVIN","TIM","WESLEY","GORDON","DEAN","GREG","JORGE","DUSTIN","PEDRO","DERRICK","DAN","LEWIS","ZACHARY","COREY","HERMAN","MAURICE","VERNON","ROBERTO","CLYDE","GLEN","HECTOR","SHANE","RICARDO","SAM","RICK","LESTER","BRENT","RAMON","CHARLIE","TYLER","GILBERT","GENE","MARC","REGINALD","RUBEN","BRETT","ANGEL","NATHANIEL","RAFAEL","LESLIE","EDGAR","MILTON","RAUL","BEN","CHESTER","CECIL","DUANE","FRANKLIN","ANDRE","ELMER","BRAD","GABRIEL","RON","MITCHELL","ROLAND","ARNOLD","HARVEY","JARED","ADRIAN","KARL","CORY","CLAUDE","ERIK","DARRYL","JAMIE","NEIL","JESSIE","CHRISTIAN","JAVIER","FERNANDO","CLINTON","TED","MATHEW","TYRONE","DARREN","LONNIE","LANCE","CODY","JULIO","KELLY","KURT","ALLAN","NELSON","GUY","CLAYTON","HUGH","MAX","DWAYNE","DWIGHT","ARMANDO","FELIX","JIMMIE","EVERETT","JORDAN","IAN","WALLACE","KEN","BOB","JAIME","CASEY","ALFREDO","ALBERTO","DAVE","IVAN","JOHNNIE","SIDNEY","BYRON","JULIAN","ISAAC","MORRIS","CLIFTON","WILLARD","DARYL","ROSS","VIRGIL","ANDY","MARSHALL","SALVADOR","PERRY","KIRK","SERGIO","MARION","TRACY","SETH","KENT","TERRANCE","RENE","EDUARDO","TERRENCE","ENRIQUE","FREDDIE","WADE")),"L")
+	Quit $ZConvert($Extract(FName,1,1),"U")_$Extract(FName,2,*)
+]]></Implementation>
+</Method>
+
+<Method name="FemaleFirstName">
+<ClassMethod>1</ClassMethod>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	Set FName = $ZConvert(..Sample($ListBuild("MARY","PATRICIA","LINDA","BARBARA","ELIZABETH","JENNIFER","MARIA","SUSAN","MARGARET","DOROTHY","LISA","NANCY","KAREN","BETTY","HELEN","SANDRA","DONNA","CAROL","RUTH","SHARON","MICHELLE","LAURA","SARAH","KIMBERLY","DEBORAH","JESSICA","SHIRLEY","CYNTHIA","ANGELA","MELISSA","BRENDA","AMY","ANNA","REBECCA","VIRGINIA","KATHLEEN","PAMELA","MARTHA","DEBRA","AMANDA","STEPHANIE","CAROLYN","CHRISTINE","MARIE","JANET","CATHERINE","FRANCES","ANN","JOYCE","DIANE","ALICE","JULIE","HEATHER","TERESA","DORIS","GLORIA","EVELYN","JEAN","CHERYL","MILDRED","KATHERINE","JOAN","ASHLEY","JUDITH","ROSE","JANICE","KELLY","NICOLE","JUDY","CHRISTINA","KATHY","THERESA","BEVERLY","DENISE","TAMMY","IRENE","JANE","LORI","RACHEL","MARILYN","ANDREA","KATHRYN","LOUISE","SARA","ANNE","JACQUELINE","WANDA","BONNIE","JULIA","RUBY","LOIS","TINA","PHYLLIS","NORMA","PAULA","DIANA","ANNIE","LILLIAN","EMILY","ROBIN","PEGGY","CRYSTAL","GLADYS","RITA","DAWN","CONNIE","FLORENCE","TRACY","EDNA","TIFFANY","CARMEN","ROSA","CINDY","GRACE","WENDY","VICTORIA","EDITH","KIM","SHERRY","SYLVIA","JOSEPHINE","THELMA","SHANNON","SHEILA","ETHEL","ELLEN","ELAINE","MARJORIE","CARRIE","CHARLOTTE","MONICA","ESTHER","PAULINE","EMMA","JUANITA","ANITA","RHONDA","HAZEL","AMBER","EVA","DEBBIE","APRIL","LESLIE","CLARA","LUCILLE","JAMIE","JOANNE","ELEANOR","VALERIE","DANIELLE","MEGAN","ALICIA","SUZANNE","MICHELE","GAIL","BERTHA","DARLENE","VERONICA","JILL","ERIN","GERALDINE","LAUREN","CATHY","JOANN","LORRAINE","LYNN","SALLY","REGINA","ERICA","BEATRICE","DOLORES","BERNICE","AUDREY","YVONNE","ANNETTE","JUNE","SAMANTHA","MARION","DANA","STACY","ANA","RENEE","IDA","VIVIAN","ROBERTA","HOLLY","BRITTANY","MELANIE","LORETTA","YOLANDA","JEANETTE","LAURIE","KATIE","KRISTEN","VANESSA","ALMA","SUE","ELSIE","BETH","JEANNE","VICKI","CARLA","TARA","ROSEMARY","EILEEN","TERRI","GERTRUDE","LUCY","TONYA","ELLA","STACEY","WILMA","GINA","KRISTIN","JESSIE","NATALIE","AGNES","VERA","WILLIE","CHARLENE","BESSIE","DELORES","MELINDA","PEARL","ARLENE","MAUREEN","COLLEEN","ALLISON","TAMARA","JOY","GEORGIA","CONSTANCE","LILLIE","CLAUDIA","JACKIE","MARCIA","TANYA","NELLIE","MINNIE","MARLENE","HEIDI","GLENDA","LYDIA","VIOLA","COURTNEY","MARIAN","STELLA","CAROLINE","DORA","JO","VICKIE","MATTIE","TERRY","MAXINE","IRMA","MABEL","MARSHA","MYRTLE","LENA","CHRISTY","DEANNA","PATSY","HILDA","GWENDOLYN","JENNIE","NORA","MARGIE","NINA","CASSANDRA","LEAH","PENNY","KAY","PRISCILLA","NAOMI","CAROLE","BRANDY","OLGA","BILLIE","DIANNE","TRACEY","LEONA","JENNY","FELICIA","SONIA","MIRIAM","VELMA","BECKY","BOBBIE","VIOLET","KRISTINA","TONI","MISTY","MAE","SHELLY","DAISY","RAMONA","SHERRI","ERIKA","KATRINA","CLAIRE")),"L")
+	Quit $ZConvert($Extract(FName,1,1),"U")_$Extract(FName,2,*)
+]]></Implementation>
+</Method>
+
+<Method name="CompanySuffix">
+<ClassMethod>1</ClassMethod>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	Set $List(CompanySuffix, *+1) = "Corp."
+	Set $List(CompanySuffix, *+1) = "Inc."
+	Set $List(CompanySuffix, *+1) = "Co."
+	Set $List(CompanySuffix, *+1) = "Ltd."
+	Set $List(CompanySuffix, *+1) = "LC"
+	Set $List(CompanySuffix, *+1) = "LLC"
+	Set $List(CompanySuffix, *+1) = "PLLC"
+	Set $List(CompanySuffix, *+1) = "LP"
+	Set $List(CompanySuffix, *+1) = "LLP"
+	Set $List(CompanySuffix, *+1) = "LLLP"
+	Quit ..Sample(CompanySuffix)
+]]></Implementation>
+</Method>
+
+<Method name="PersonSuffix">
+<ClassMethod>1</ClassMethod>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	Set $List(PersonSuffix, *+1) = "Jr."
+  	Set $List(PersonSuffix, *+1) = "Grandson"
+	Set $List(PersonSuffix, *+1) = "Son"
+	Set output = $ListGet(PersonSuffix,$Random($ListLength(PersonSuffix)) + 1)
+	Kill PersonSuffix
+	Quit output
 ]]></Implementation>
 </Method>
 </Class>
@@ -1722,25 +1775,31 @@ Generates an random City<br/>
 
 
 <Class name="cosFaker.Name">
-<Super>%RegisteredObject</Super>
-<TimeChanged>64357,40538.008011</TimeChanged>
+<Description><![CDATA[
+Operating in:<br/>
+<ul>
+<li>En-US (Default)</li>
+<li>Pt-BR</li>
+</ul>]]></Description>
+<Super>cosFaker.lib.core</Super>
+<TimeChanged>64411,55744.359531</TimeChanged>
 <TimeCreated>64015,30897.267344</TimeCreated>
 
 <Method name="FirstName">
 <Description>
 Generate a First Name
 Female Gender = 1
-Male Gender = 1</Description>
+Male Gender = 2</Description>
 <ClassMethod>1</ClassMethod>
 <FormalSpec>pGender:%Integer=""</FormalSpec>
 <ReturnType>%String</ReturnType>
 <Implementation><![CDATA[
-	Set:pGender="" pGender = ($Random(2) + 1)
-	
-	Set name = ##class(cosFaker.Data.PtBr).FemaleFirstName()
+	Set:pGender="" pGender = ($Random(2) + 1)	
 	If pGender = 2 {
-		Set name = ##class(cosFaker.Data.PtBr).MaleFirstName()
-	} 
+		Set name = $ClassMethod(..GetClass(),"MaleFirstName")
+	} Else {
+		Set name = $ClassMethod(..GetClass(),"FemaleFirstName")
+	}
 	
 	Quit name
 ]]></Implementation>
@@ -1749,7 +1808,7 @@ Male Gender = 1</Description>
 <Method name="LastName">
 <ClassMethod>1</ClassMethod>
 <ReturnType>%String</ReturnType>
-<Implementation><![CDATA[	Quit ##class(cosFaker.Data.PtBr).LastName()
+<Implementation><![CDATA[	Quit $ClassMethod(..GetClass(),"LastName")
 ]]></Implementation>
 </Method>
 
@@ -1759,16 +1818,17 @@ Male Gender = 1</Description>
 <ReturnType>%String</ReturnType>
 <Implementation><![CDATA[
 	Set:pGender="" pGender = ($Random(2) + 1)
-	
-	Set firstname = ##class(cosFaker.Data.PtBr).FemaleFirstName()
+
 	If pGender = 2 {
-		Set firstname = ##class(cosFaker.Data.PtBr).MaleFirstName()
-	} 
+		Set firstname = $ClassMethod(..GetClass(),"MaleFirstName")
+	} Else {
+		Set firstname = $ClassMethod(..GetClass(),"FemaleFirstName")
+	}
 	
-	S rand = $R(3) + 1,lastname = ""
-	F k=1:1:rand {
-		S:k>1 lastname = lastname _ " "
-		S lastname = lastname _ ##class(cosFaker.Data.PtBr).LastName()
+	Set rand = $Random(3) + 1,lastname = ""
+	For k=1:1:rand {
+		Set:k>1 lastname = lastname _ " "
+		Set lastname = lastname _ $ClassMethod(..GetClass(),"LastName")
 	}
 	
 	Quit firstname _ " " _ lastname
@@ -1778,22 +1838,8 @@ Male Gender = 1</Description>
 <Method name="Suffix">
 <ClassMethod>1</ClassMethod>
 <ReturnType>%String</ReturnType>
-<Implementation><![CDATA[	Q ##class(cosFaker.Data.PtBr).PersonSuffix()
+<Implementation><![CDATA[	Quit $ClassMethod(..GetClass(),"PersonSuffix")
 ]]></Implementation>
-</Method>
-
-<Method name="%OnNew">
-<Private>1</Private>
-<ReturnType>%Status</ReturnType>
-<ServerOnly>1</ServerOnly>
-<Implementation><![CDATA[
-	Do ..Initializer()
-	Quit $$$OK
-]]></Implementation>
-</Method>
-
-<Method name="Initializer">
-<Private>1</Private>
 </Method>
 </Class>
 
@@ -3490,8 +3536,16 @@ Do ##class(cosFaker.SQL).Update("SamplePrj_PierogiDelivery_Data.Clients",
 
 
 <Class name="cosFaker.lib.core">
-<TimeChanged>64411,51190.72415</TimeChanged>
+<TimeChanged>64411,55819.441603</TimeChanged>
 <TimeCreated>64364,54430.726245</TimeCreated>
+
+<Parameter name="PtBrDataClass">
+<Default>cosFaker.Data.PtBr</Default>
+</Parameter>
+
+<Parameter name="EnUsDataClass">
+<Default>cosFaker.Data.EnUs</Default>
+</Parameter>
 
 <Method name="GetLanguage">
 <Description><![CDATA[
@@ -3516,6 +3570,17 @@ Do ##class(cosFaker.SQL).Update("SamplePrj_PierogiDelivery_Data.Clients",
 <Private>1</Private>
 <ReturnType>%String</ReturnType>
 <Implementation><![CDATA[	Quit $ZConvert($List(##class(%SYS.NLS.Locale).GetLanguage(),1),"l")
+]]></Implementation>
+</Method>
+
+<Method name="GetClass">
+<ClassMethod>1</ClassMethod>
+<Private>1</Private>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	Set tClass = ..#EnUsDataClass ;Default
+	Set:..GetLanguage()="pt-br" tClass = ..#PtBrDataClass
+	Quit tClass
 ]]></Implementation>
 </Method>
 

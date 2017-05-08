@@ -1,6 +1,10 @@
 Class cosFaker.lib.core
 {
 
+Parameter PtBrDataClass = "cosFaker.Data.PtBr";
+
+Parameter EnUsDataClass = "cosFaker.Data.EnUs";
+
 /// "cs" = "Czech"<br/>
 /// "de" = "German"<br/>
 /// "en" = "English"<br/>
@@ -21,6 +25,13 @@ Class cosFaker.lib.core
 ClassMethod GetLanguage() As %String [ Private ]
 {
 	Quit $ZConvert($List(##class(%SYS.NLS.Locale).GetLanguage(),1),"l")
+}
+
+ClassMethod GetClass() As %String [ Private ]
+{
+	Set tClass = ..#EnUsDataClass ;Default
+	Set:..GetLanguage()="pt-br" tClass = ..#PtBrDataClass
+	Quit tClass
 }
 
 ClassMethod Sample(pList) As %String [ Private ]
