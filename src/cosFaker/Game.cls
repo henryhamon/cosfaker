@@ -15,10 +15,7 @@ ClassMethod StreetFighter() As %String
 
 ClassMethod Card(pAbrev As %Boolean = 0) As %String
 {
-	Set cards = $ListBuild("A","2","3","4","5","6","7","8","9","J","Q","K")
-	Set suits = $ListBuild("Clubs","Hearts","Spades","Diamonds")
-	Quit:pAbrev ..Sample(cards)_$Extract(..Sample(suits),1,1)
-	Quit ..Sample(cards)_" of "_..Sample(suits)
+	Quit $ClassMethod(..GetClass(),"Card",pAbrev)
 }
 
 }
