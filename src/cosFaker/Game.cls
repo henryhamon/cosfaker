@@ -22,3 +22,4 @@ ClassMethod Card(pAbrev As %Boolean = 0) As %String
 }
 
 }
+

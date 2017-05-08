@@ -1,9 +1,15 @@
-Class cosFaker.Data.PtBr Extends %RegisteredObject
+Class cosFaker.Data.PtBr Extends cosFaker.lib.core
 {
+
+ClassMethod Country(pAbrev As %Boolean = 0) As %String
+{
+	Quit:pAbrev ..Sample($ListBuild("AF","ZA","AL","DE","AD","AO","AI","AQ","AG","AN","SA","DZ","AR","AM","AW","AU","AT","AZ","BS","BD","BB","BH","BY","BE","BZ","BX","BJ","BM","BO","BA","BW","BR","BN","BG","BF","BI","BT","CV","CM","KH","CA","QA","KZ","TD","CL","CN","CY","CO","KM","CG","CI","CR","HR","CU","DK","DJ","DM","EG","SV","AE","EC","ER","EM","SK","SI","ES","US","EE","ET","RU","FJ","PH","FI","FR","GA","GM","GH","GE","GS","GI","GD","GR","GL","GP","GU","GT","GY","GN","GW","GQ","HT","NL","HN","HK","HU","YE","IN","ID","ID","IR","IR","IQ","IQ","IE","IE","IS","IS","IL","IL","IT","JM","JP","JE","JO","KI","KW","LA","LS","LV","LB","LR","LY","LI","LT","LU","MO","MG","MY","MW","MV","ML","MT","MA","MQ","MU","MR","MX","MM","FM","MZ","MC","MN","MS","ME","NA","NR","NP","NI","NE","NG","NO","NC","NZ","OM","PW","PA","PG","PK","PY","PE","PN","PF","PL","PR","PT","KE","KG","GB","CF","KR","MK","MD","CD","DO","KP","CZ","TZ","RE","RO","RW","EH","PM","AS","WS","SH","LC","KN","SM","ST","VC","SN","SL","RS","SC","SG","SY","SO","LK","SZ","SD","SE","CH","SR","SJ","TJ","TH","TW","TL","TG","TK","TO","TT","TN","TM","TR","TV","UA","UG","UY","UZ","VU","VA","VE","VN","YU","ZR","ZM","ZW"))
+	Quit ..Sample($ListBuild("Afeganistão","Africa do Sul","Albânia","Alemanha","Andorra","Angola","Anguilla","Antartica","Antígua e Barbuda","Antilhas Holandesas","Arábia Saudita","Argélia","Argentina","Armênia","Aruba","Austrália","Áustria","Azerbaidjão","Bahamas","Bangladesh","Barbados","Bareine","Belarus","Bélgica","Belize","Benelux","Benin","Bermudas","Bolívia","Bósnia e Herzegóvina","Botswana","Brasil","Brunei Darussalam","Bulgária","Burkina Faso","Burundi","Butão","Cabo Verde","Camarões","Camboja","Canadá","Catar","Cazaquistão","Chade","Chile","China","Chipre","Colômbia","Comores","Congo","Costa do Marfim","Costa Rica","Croácia","Cuba","Dinamarca","Djibuti","Dominica","Egito","El Salvador","Emirados Árabes Unidos","Equador","Eritréia","Escritório para Harmonização no Mercado Interno","Eslováquia","Eslovenia","Espanha","Estados Unidos da América","Estônia","Etiópia","Federação Russa","Fiji","Filipinas","Finlândia","França","Gabão","Gambia","Gana","Geórgia","Geórgia do Sul e Ilhas Sandwich do Sul","Gibraltar","Granada","Grécia","Groenlândia","Guadalupe","Guam","Guatemala","Guiana","Guine","Guiné Bissau","Guine Equatorial","Haiti","Holanda","Honduras","Hong-Kong","Hungria","Iêmen","India","Indonésia","Indonésia","Irã","Irã","Iraque","Iraque","Irlanda","Irlanda","Islândia","Islândia","Israel","Israel","Itália","Jamaica","Japão","Jersey","Jordânia","Kiribati","Kuwait","Laos","Lesoto","Letônia","Líbano","Libéria","Líbia","Liechtenstein","Lituânia","Luxemburgo","Macau","Madagascar","Malásia","Malawi","Maldivas","Mali","Malta","Marrocos","Martinica","Maurício","Mauritânia","México","Mianmá","Micronésia","Moçambique","Mônaco","Mongólia","Mont Serrat","Montenegro","Namíbia","Nauru","Nepal","Nicarágua","Níger","Nigéria","Noruega","Nova Caledônia","Nova Zelândia","Omã","Palau","Panamá","Papua Nova Guiné","Paquistão","Paraguai","Peru","Pitcairn","Polinésia Francesa","Polônia","Porto Rico","Portugal","Quênia","Quirguistão","Reino Unido","República Centro Africana","República da Coréia","República da Macedonia","República da Moldova","República Dem. Do Congo","República Dominicana","República Pop. Dem. da Coreia","República Tcheca","República Unida da Tanzânia","Reunião","Romênia","Ruanda","Saara Ocidental","Saint Pierre e Miquelon","Samoa Americana","Samoa Ocidental","Santa Helena","Santa Lúcia","São Cristovão e Nevis","São Marino","São Tomé e Príncipe","São Vicente e Granadinas","Senegal","Serra Leoa","Sérvia","Seychelles","Singapura","Síria","Somália","Sri Lanka","Suazilândia","Sudão","Suécia","Suíça","Suriname","Svalbard e Jan Mayen","Tadjiquistão","Tailândia","Taiwan","Timor-Leste","Togo","Tokelau","Tonga","Trinidad e Tobago","Tunísia","Turcomenistão","Turquia","Tuvalu","Ucrânia","Uganda","Uruguai","Uzbequistão","Vanuatu","Vaticano","Venezuela","Vietnã","Yugoslávia","Zaire","Zâmbia","Zimbábue"))
+}
 
 ClassMethod AppAction(pGroup = "") As %String
 {
-	S:pGroup="" pGroup = $ListGet($ListFromString("SQL,IF,FUN",","),$Random(3)+1)
+	Set:pGroup="" pGroup = $ListGet($ListFromString("SQL,IF,FUN",","),$Random(3)+1)
 	
 	If pGroup = "SQL" {
 		Set $List(actions,*+1) = "Buscar"
@@ -36,9 +42,6 @@ ClassMethod AppAction(pGroup = "") As %String
 		Set $List(actions,*+1) = "Totalizar"
 
 	}
-	
-		; S $List(actions,*+1) = ""
-		
 	Set output = $ListGet(actions,$Random($ListLength(actions)) + 1)
 	Kill actions
 	Quit output
@@ -58,7 +61,6 @@ ClassMethod AppType() As %String
 	Set $List(things,*+1) = "Região"
 	Set $List(things,*+1) = "Localização"
 	Set $List(things,*+1) = "Preços"
-	;S $List(things,*+1) = ""
 	
 	Set output = $ListGet(things,$Random($ListLength(things)) + 1)
 	Kill things
@@ -150,9 +152,7 @@ ClassMethod AppName() As %String
   	Set $List(appNames,*+1) = "Flowdesk"
   	Set $List(appNames,*+1) = "Flexidy"
 		
-	Set output = $ListGet(appNames,$Random($ListLength(appNames)) + 1)
-        ; ["ability"S $List(appNames,*+1) = "access"S $List(appNames,*+1) = "adapter"S $List(appNames,*+1) = "algorithm"S $List(appNames,*+1) = "alliance"S $List(appNames,*+1) = "analyzer"S $List(appNames,*+1) = "application"S $List(appNames,*+1) = "approach"S $List(appNames,*+1) = "architecture"S $List(appNames,*+1) = "archive"S $List(appNames,*+1) = "artificial intelligence"S $List(appNames,*+1) = "array"S $List(appNames,*+1) = "attitude"S $List(appNames,*+1) = "benchmark"S $List(appNames,*+1) = "budgetary management"S $List(appNames,*+1) = "capability"S $List(appNames,*+1) = "capacity"S $List(appNames,*+1) = "challenge"S $List(appNames,*+1) = "circuit"S $List(appNames,*+1) = "collaboration"S $List(appNames,*+1) = "complexity"S $List(appNames,*+1) = "concept"S $List(appNames,*+1) = "conglomeration"S $List(appNames,*+1) = "contingency"S $List(appNames,*+1) = "core"S $List(appNames,*+1) = "customer loyalty"S $List(appNames,*+1) = "database"S $List(appNames,*+1) = "data-warehouse"S $List(appNames,*+1) = "definition"S $List(appNames,*+1) = "emulation"S $List(appNames,*+1) = "encoding"S $List(appNames,*+1) = "encryption"S $List(appNames,*+1) = "extranet"S $List(appNames,*+1) = "firmware"S $List(appNames,*+1) = "flexibility"S $List(appNames,*+1) = "focus group"S $List(appNames,*+1) = "forecast"S $List(appNames,*+1) = "frame"S $List(appNames,*+1) = "framework"S $List(appNames,*+1) = "function"S $List(appNames,*+1) = "functionalities"S $List(appNames,*+1) = "Graphic Interface"S $List(appNames,*+1) = "groupware"S $List(appNames,*+1) = "Graphical User Interface"S $List(appNames,*+1) = "hardware"S $List(appNames,*+1) = "help-desk"S $List(appNames,*+1) = "hierarchy"S $List(appNames,*+1) = "hub"S $List(appNames,*+1) = "implementation"S $List(appNames,*+1) = "info-mediaries"S $List(appNames,*+1) = "infrastructure"S $List(appNames,*+1) = "initiative"S $List(appNames,*+1) = "installation"S $List(appNames,*+1) = "instruction set"S $List(appNames,*+1) = "interface"S $List(appNames,*+1) = "internet solution"S $List(appNames,*+1) = "intranet"S $List(appNames,*+1) = "knowledge user"S $List(appNames,*+1) = "knowledge base"S $List(appNames,*+1) = "local area network"S $List(appNames,*+1) = "leverage"S $List(appNames,*+1) = "matrices"S $List(appNames,*+1) = "matrix"S $List(appNames,*+1) = "methodology"S $List(appNames,*+1) = "middleware"S $List(appNames,*+1) = "migration"S $List(appNames,*+1) = "model"S $List(appNames,*+1) = "moderator"S $List(appNames,*+1) = "monitoring"S $List(appNames,*+1) = "moratorium"S $List(appNames,*+1) = "neural-net"S $List(appNames,*+1) = "open architecture"S $List(appNames,*+1) = "open system"S $List(appNames,*+1) = "orchestration"S $List(appNames,*+1) = "paradigm"S $List(appNames,*+1) = "parallelism"S $List(appNames,*+1) = "policy"S $List(appNames,*+1) = "portal"S $List(appNames,*+1) = "pricing structure"S $List(appNames,*+1) = "process improvement"S $List(appNames,*+1) = "product"S $List(appNames,*+1) = "productivity"S $List(appNames,*+1) = "project"S $List(appNames,*+1) = "projection"S $List(appNames,*+1) = "protocol"S $List(appNames,*+1) = "secured line"S $List(appNames,*+1) = "service-desk"S $List(appNames,*+1) = "software"S $List(appNames,*+1) = "solution"S $List(appNames,*+1) = "standardization"S $List(appNames,*+1) = "strategy"S $List(appNames,*+1) = "structure"S $List(appNames,*+1) = "success"S $List(appNames,*+1) = "superstructure"S $List(appNames,*+1) = "support"S $List(appNames,*+1) = "synergy"S $List(appNames,*+1) = "system engine"S $List(appNames,*+1) = "task-force"S $List(appNames,*+1) = "throughput"S $List(appNames,*+1) = "time-frame"S $List(appNames,*+1) = "toolset"S $List(appNames,*+1) = "utilisation"S $List(appNames,*+1) = "website"S $List(appNames,*+1) = "workforce"]
-	
+	Set output = $ListGet(appNames,$Random($ListLength(appNames)) + 1)	
 	Kill appNames
 	Quit output
 }

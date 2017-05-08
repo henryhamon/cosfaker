@@ -1,6 +1,28 @@
 Class cosFaker.lib.core
 {
 
+/// "cs" = "Czech"<br/>
+/// "de" = "German"<br/>
+/// "en" = "English"<br/>
+/// "en-us" = "English (United States)"<br/>
+/// "es" = "Spanish"<br/>
+/// "fr" = "French"<br/>
+/// "it" = "Italian"<br/>
+/// "ja" = "Japanese"<br/>
+/// "ko" = "Korean"<br/>
+/// "nl" = "Dutch"<br/>
+/// "pt" = "Portuguese"<br/>
+/// "pt-br" = "Portuguese (Brazil)"<br/>
+/// "ru" = "Russian"<br/>
+/// "uk" = "Ukrainian"<br/>
+/// "zh" = "Chinese"<br/>
+/// "zh-cn" = "Chinese (PRC)"<br/>
+/// "zh-tw" = "Chinese (Taiwan)"
+ClassMethod GetLanguage() As %String [ Private ]
+{
+	Quit $ZConvert($List(##class(%SYS.NLS.Locale).GetLanguage(),1),"l")
+}
+
 ClassMethod Sample(pList) As %String [ Private ]
 {
 	Quit $List(pList, $Random($ListLength(pList)) + 1)

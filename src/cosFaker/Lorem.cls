@@ -19,7 +19,7 @@ ClassMethod Sentence(pWordCount As %Integer = "", pMin As %Integer = 3, pMax As 
 {
 	If pWordCount = "" {
 		For {
-			Set pWordCount = $Random(10)
+			Set pWordCount = $Random(pMax)
 			Quit:((pWordCount>pMin)&&(pWordCount < pMax))
 		}
 	}
