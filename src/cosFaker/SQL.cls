@@ -13,6 +13,7 @@
 /// <li>state [<b>full-name</b><span style="color:darkgreen;">{0}</span>]</li>
 /// <li>statefull</li>
 /// <li>city [<b>state</b>]</li>
+/// <li>country [<b>abbreviated</b>]</li>
 /// </ul>
 /// <b>App:</b><ul>
 /// <li>function || functionname || function-name [<b>group</b><span style="color:darkblue;">(SQL,IF,FUN)</span>,<b>separator</b>]</li>
@@ -282,10 +283,11 @@ ClassMethod DefineValue(pType As %String, args...) As %String [ Private ]
         "streetname":       ##class(Address).StreetName(),
         "latitude":         ##class(Address).Latitude(),
         "longitude":        ##class(Address).Longitude(),
-        "capital":          ##class(Address).Capital($Get(args(1),"BR")),
-        "state":            ##class(Address).State($Get(args(1),0),$Get(args(2),"BR")),
-        "statefull":        ##class(Address).State(1,$Get(args(1),"BR")),
-        "city":             ##class(Address).City($Get(args(1),"BR"),$Get(args(2),"")),
+        "capital":          ##class(Address).Capital(),
+        "state":            ##class(Address).State($Get(args(1),"0")),
+        "statefull":        ##class(Address).State(1),
+        "city":             ##class(Address).City($Get(args(1),"")),
+        "country":			##class(Address).Country($Get(args(1),"0")),
         
         //Class: App
         "function":         ##class(App).FunctionName($Get(args(1),""),$Get(args(2),"")),
