@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Export generator="Cache" version="25" zv="Cache for Windows (x86-64) 2016.2.1 (Build 803)" ts="2017-05-09 15:04:36">
+<Export generator="Cache" version="25" zv="Cache for Windows (x86-64) 2016.2.1 (Build 803)" ts="2017-05-09 15:20:23">
 <CSP name="cosFaker/lang/EnUs/app.fkr" application="/" default="1"><![CDATA[
 action_sql={Search,Results,Persist,Access,Integrate,Totalize,Count,Virtualize,Query,Verify,Generate}
 action_if={Compare,Check,Enable,Validate}
@@ -1568,16 +1568,16 @@ Male Gender = 2</Description>
 <ul><li>Any other will be an random integer between 1 and 99</li></ul>
 </div><br/><h3>Examples:</h3>
 <example>
-Do ##class(cosFaker.SQL).Insert("Sample_Data.Clients","City,Name,NickName","city BR SC,name 2,ufc.nickname 'Anderson Silva'",1)
+Do ##class(cosFaker.SQL).Insert("Sample_Data.Clients","City,Name,NickName","city SC,name 2,ufc.nickname 'Anderson Silva'",1)
 ;INSERT INTO Sample_Data.Clients (City,Name,NickName) VALUES ('Trombudo Central','Leandro Mendes','The Spider')
 </example>
 <example>
-Do ##class(cosFaker.SQL).Insert("Sample_Data.Clients","City,Name,Salary","city BR SC,name 2,price 1000 2000 2 R$",2)
+Do ##class(cosFaker.SQL).Insert("Sample_Data.Clients","City,Name,Salary","city SC,name 2,price 1000 2000 2 R$",2)
 ;INSERT INTO Sample_Data.Clients (City,Name,Salary) VALUES ('Celso Ramos','Luiggi Dias Nunes Saraiva','R$1654.30')
 ;INSERT INTO Sample_Data.Clients (City,Name,Salary) VALUES ('Nova Veneza','Fabiano da Costa','R$1255.13')
 </example>]]></Description>
 <Super>cosFaker.lib.core</Super>
-<TimeChanged>64412,54244.231739</TimeChanged>
+<TimeChanged>64412,55207.257141</TimeChanged>
 <TimeCreated>64373,51516.328131</TimeCreated>
 
 <Parameter name="Version">
@@ -1613,7 +1613,7 @@ Parameters:<br/>
 <example>
 Do ##class(cosFaker.SQL).Insert("SamplePrj_PierogiDelivery_Data.Clients",
     "City,Name,Street",
-    "city BR SC,name 2,street",
+    "city SC,name 2,street",
     3)
 </example>]]></Description>
 <ClassMethod>1</ClassMethod>
@@ -1642,7 +1642,7 @@ Parameters:<br/>
 <example>
 Do ##class(cosFaker.SQL).Update("SamplePrj_PierogiDelivery_Data.Clients",
         "City,Name,Street",
-        "city BR SC,name 2,street",
+        "city SC,name 2,street",
         "ID > 5000")
 </example>]]></Description>
 <ClassMethod>1</ClassMethod>

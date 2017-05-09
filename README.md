@@ -2,6 +2,7 @@
 Generate massive amounts of fake data for Intersystems Caché
 
 The language of data is according to configuration of your Caché (Now works with Pt-Br and En-Us(Default)).
+
 ## Valid Types
 * Address (Street, Latitude, Longitude, City, State, Capital, Country, Street Suffix, Street Prefix)
 * App (Function name)
@@ -48,7 +49,7 @@ Set ..Name = ##class(cosFaker.Name).FullName()
 You can generate data directly on a table
 
 ```cos
-Do ##class(cosFaker.SQL).Insert("Sample_Data.Clients","City,Name,Salary","city BR SC,name 2,price 1000 2000 2 R$",2)
+Do ##class(cosFaker.SQL).Insert("Sample_Data.Clients","City,Name,Salary","city SC,name 2,price 1000 2000 2 R$",2)
 //Same as:
 //INSERT INTO Sample_Data.Clients (City,Name,Salary) VALUES ('Celso Ramos','Luiggi Dias Nunes Saraiva','R$1654.30')
 //INSERT INTO Sample_Data.Clients (City,Name,Salary) VALUES ('Nova Veneza','Fabiano da Costa','R$1255.13')

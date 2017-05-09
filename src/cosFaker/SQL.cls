@@ -124,11 +124,11 @@
 /// <ul><li>Any other will be an random integer between 1 and 99</li></ul>
 /// </div><br/><h3>Examples:</h3>
 /// <example>
-/// Do ##class(cosFaker.SQL).Insert("Sample_Data.Clients","City,Name,NickName","city BR SC,name 2,ufc.nickname 'Anderson Silva'",1)
+/// Do ##class(cosFaker.SQL).Insert("Sample_Data.Clients","City,Name,NickName","city SC,name 2,ufc.nickname 'Anderson Silva'",1)
 /// ;INSERT INTO Sample_Data.Clients (City,Name,NickName) VALUES ('Trombudo Central','Leandro Mendes','The Spider')
 /// </example>
 /// <example>
-/// Do ##class(cosFaker.SQL).Insert("Sample_Data.Clients","City,Name,Salary","city BR SC,name 2,price 1000 2000 2 R$",2)
+/// Do ##class(cosFaker.SQL).Insert("Sample_Data.Clients","City,Name,Salary","city SC,name 2,price 1000 2000 2 R$",2)
 /// ;INSERT INTO Sample_Data.Clients (City,Name,Salary) VALUES ('Celso Ramos','Luiggi Dias Nunes Saraiva','R$1654.30')
 /// ;INSERT INTO Sample_Data.Clients (City,Name,Salary) VALUES ('Nova Veneza','Fabiano da Costa','R$1255.13')
 /// </example>
@@ -154,7 +154,7 @@ Parameter Testing As %Boolean = 0;
 /// <example>
 /// Do ##class(cosFaker.SQL).Insert("SamplePrj_PierogiDelivery_Data.Clients",
 ///     "City,Name,Street",
-///     "city BR SC,name 2,street",
+///     "city SC,name 2,street",
 ///     3)
 /// </example>
 ClassMethod Insert(pTableName As %String = "", pTableFields As %String = "", pTypeOfFields As %String, pAmount As %Integer = 1) As %Status
@@ -178,7 +178,7 @@ ClassMethod Insert(pTableName As %String = "", pTableFields As %String = "", pTy
 /// <example>
 /// Do ##class(cosFaker.SQL).Update("SamplePrj_PierogiDelivery_Data.Clients",
 ///         "City,Name,Street",
-///         "city BR SC,name 2,street",
+///         "city SC,name 2,street",
 ///         "ID > 5000")
 /// </example>
 ClassMethod Update(pTableName As %String = "", pTableFields As %String = "", pTypeOfFields As %String, pWhereClause As %String = "") As %Status
