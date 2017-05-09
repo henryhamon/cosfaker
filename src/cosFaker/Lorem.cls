@@ -346,15 +346,27 @@ ClassMethod LoremIpsum() As %String [ Private ]
     Set $List(lorem, *+1) = "doloribus"
     Set $List(lorem, *+1) = "asperiores"
     Set $List(lorem, *+1) = "repellat"
-    
-    Set output = $ListGet(lorem,$Random($ListLength(lorem)) + 1)
-	Kill lorem
-	Quit output
+    Quit ..Sample(lorem)
 }
 
 ClassMethod Hipster(pParagraphCount As %Integer = "", pSeparator As %String = "") As %String
 {
-	Quit $ClassMethod(..GetClass(),"Hipster",pParagraphCount,pSeparator)
+	Set:pParagraphCount="" pParagraphCount = 3
+	Set:pSeparator="" pSeparator = $Char(10) _ $Char(13) ; \n \r OR LF CR
+	Set begin = $ListFromString(..GetFile("\"_..GetLang()_"\hipster.fkr","begin"),"|")
+    Set middle = $ListFromString(..GetFile("\"_..GetLang()_"\hipster.fkr","middle1"),"|")
+    Set middle2 = $ListFromString(..GetFile("\"_..GetLang()_"\hipster.fkr","middle2"),"|")
+    Set TheEnd = $ListFromString(..GetFile("\"_..GetLang()_"\hipster.fkr","end"),"|")
+	For k=1:1:pParagraphCount {
+		S paragraph = $ListGet(begin,$Random($ListLength(begin)) + 1)
+		S paragraph = paragraph _ $ListGet(middle,$Random($ListLength(middle)) + 1)
+		S paragraph = paragraph _ $ListGet(middle2,$Random($ListLength(middle2)) + 1)
+		S paragraph = paragraph _ $ListGet(TheEnd,$Random($ListLength(TheEnd)) + 1)
+		Set $List(paragraphs,*+1) = paragraph
+	}
+	
+	Kill begin, TheEnd, middle, middle2
+	Quit $ListToString($Get(paragraphs), pSeparator)
 }
 
 }

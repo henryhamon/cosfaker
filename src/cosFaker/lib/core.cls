@@ -2,13 +2,13 @@ Class cosFaker.lib.core
 {
 
 /// Portuguese (Brazil)
-Parameter PtBrDataClass = "cosFaker.Data.PtBr";
+Parameter PtBr = "PtBr";
 
 /// English (United States)
-Parameter EnUsDataClass = "cosFaker.Data.EnUs";
+Parameter EnUs = "EnUs";
 
 /// Russian
-Parameter RuDataClass = "cosFaker.Data.Ru";
+Parameter Ru = "Ru";
 
 /// "cs" = "Czech"<br/>
 /// "de" = "German"<br/>
@@ -32,17 +32,18 @@ ClassMethod GetLanguage() As %String [ Private ]
 	Quit $ZConvert($List(##class(%SYS.NLS.Locale).GetLanguage(),1),"l")
 }
 
-ClassMethod GetClass() As %String [ Private ]
+ClassMethod GetLang() As %String [ Private ]
 {
-	Set tClass = ..#EnUsDataClass ;Default
-	Set:..GetLanguage()="pt-br" tClass = ..#PtBrDataClass
-	Set:..GetLanguage()="ru" tClass = ..#RuDataClass
-	Quit tClass
+	Set tLang = ..#EnUs ;Default
+	Set:..GetLanguage()="pt-br" tLang = ..#PtBr
+	Set:..GetLanguage()="ru" tLang = ..#Ru
+	Quit tLang
 }
 
 ClassMethod Sample(pList) As %String [ Private ]
 {
-	Quit $List(pList, $Random($ListLength(pList)) + 1)
+	Quit:$ListLength(pList)>0 $List(pList, $Random($ListLength(pList)) + 1)
+	Quit ""
 }
 
 ClassMethod MaskNumber(pTemplate As %String, pMin As %Integer = "", pMax As %Integer = "") As %String [ Private ]
@@ -80,16 +81,27 @@ ClassMethod In(pValue, pMin As %Integer, pMax As %Integer) As %Boolean [ Private
 	Quit ((pValue>=pMin)&&(pValue<=pMax))
 }
 
-ClassMethod GetFile(pDirFname As %String) As %String [ Private ]
+ClassMethod GetFile(pDirFname As %String, pSearch As %String = "") As %String [ Private ]
 {
 	Set file = ##class(%File).%New(..GetPath()_"cosFaker\lang"_pDirFname)
 	Do file.Open("R")
-	Quit file.Read()
+	Set Ret = ""
+	While 'file.AtEnd{
+		Set val = file.Read()
+		If ((pSearch'="")&&($Find(val,pSearch_"={")>0)){
+			Set Ret = $Piece($Piece(val,"{",2),"}",1)
+			Quit
+		}
+		Set:pSearch="" Ret = Ret_val
+	}
+	Do file.Close()
+	Quit Ret
 }
 
-ClassMethod FromFile(pName As %String) As %String [ Private ]
+ClassMethod SampleFromFile(pName As %String, pSearch As %String = "", pLang As %String = "") As %String [ Private ]
 {
-	Quit ..Sample($ListFromString(..GetFile("\"_$Piece(..GetClass(),".",*)_"\"_pName_".fkr"),","))
+	Set:pLang="" pLang = ..GetLang()
+	Quit ..Sample($ListFromString(..GetFile("\"_pLang_"\"_pName_".fkr",pSearch),","))
 }
 
 ClassMethod GetPath() As %String [ Private ]

@@ -9,10 +9,10 @@
 /// <li>street || streetname || street-name</li>
 /// <li>latitude</li>
 /// <li>longitude</li>
-/// <li>capital [<b>country</b><span style="color:darkblue;">(BR,US)</span><span style="color:darkgreen;">{BR}</span>]</li>
-/// <li>state [<b>full-name</b><span style="color:darkgreen;">{0}</span>,  <b>country</b><span style="color:darkblue;">(BR,US)</span><span style="color:darkgreen;">{BR}</span>]</li>
-/// <li>statefull [<b>country</b><span style="color:darkblue;">(BR,US)</span><span style="color:darkgreen;">{BR}</span>]</li>
-/// <li>city [<b>country</b><span style="color:darkblue;">(BR,US)</span><span style="color:darkgreen;">{BR}</span>,  <b>state</b>]</li>
+/// <li>capital</li>
+/// <li>state [<b>full-name</b><span style="color:darkgreen;">{0}</span>]</li>
+/// <li>statefull</li>
+/// <li>city [<b>state</b>]</li>
 /// </ul>
 /// <b>App:</b><ul>
 /// <li>function || functionname || function-name [<b>group</b><span style="color:darkblue;">(SQL,IF,FUN)</span>,<b>separator</b>]</li>
@@ -138,7 +138,7 @@ Class cosFaker.SQL Extends cosFaker.lib.core
 Parameter Version As %String = "BETA 0.0.1";
 
 /// Last time that this class was updated
-Parameter LastUpdate As %String = "2017-05-08 11:20:00";
+Parameter LastUpdate As %String = "2017-05-09 13:55:00";
 
 /// Testing Enabled will show the SQL's queries and the parameters
 Parameter Testing As %Boolean = 0;
