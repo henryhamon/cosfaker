@@ -475,124 +475,16 @@ ClassMethod EmailProvider() As %String
 
 ClassMethod FemaleFirstName() As %String
 {
-	Set $List(firstName, *+1) = "Alessandra"
-	Set $List(firstName, *+1) = "Aline"
-	Set $List(firstName, *+1) = "Bruna"
-	Set $List(firstName, *+1) = "Carla"
-	Set $List(firstName, *+1) = "Célia"
-	Set $List(firstName, *+1) = "Cecília"
-	Set $List(firstName, *+1) = "Dalila"
-	Set $List(firstName, *+1) = "Eduarda"
-	Set $List(firstName, *+1) = "Esther"
-	Set $List(firstName, *+1) = "Fabrícia"
-	Set $List(firstName, *+1) = "Felícia"
-	Set $List(firstName, *+1) = "Fabiana"
-	Set $List(firstName, *+1) = "Isabel"
-	Set $List(firstName, *+1) = "Isabela"
-	Set $List(firstName, *+1) = "Joana"
-	Set $List(firstName, *+1) = "Graziela"
-	Set $List(firstName, *+1) = "Júlia"
-	Set $List(firstName, *+1) = "Janaína"
-	Set $List(firstName, *+1) = "Karla"
-	Set $List(firstName, *+1) = "Lorena"
-	Set $List(firstName, *+1) = "Lorraine"
-	Set $List(firstName, *+1) = "Larissa"
-	Set $List(firstName, *+1) = "Meire"
-	Set $List(firstName, *+1) = "Marcela"
-	Set $List(firstName, *+1) = "Margarida"
-	Set $List(firstName, *+1) = "Mércia"
-	Set $List(firstName, *+1) = "Márcia"
-	Set $List(firstName, *+1) = "Marli"
-	Set $List(firstName, *+1) = "Morgana"
-	Set $List(firstName, *+1) = "Maria"
-	Set $List(firstName, *+1) = "Marta"
-	Set $List(firstName, *+1) = "Natália"
-	Set $List(firstName, *+1) = "Núbia"
-	Set $List(firstName, *+1) = "Ofélia"
-	Set $List(firstName, *+1) = "Paula"
-	Set $List(firstName, *+1) = "Rafaelly"
-	Set $List(firstName, *+1) = "Rafaela"
-	Set $List(firstName, *+1) = "Roberta"
-	Set $List(firstName, *+1) = "Sílvia"
-	Set $List(firstName, *+1) = "Silvana"
-	Set $List(firstName, *+1) = "Suélen"
-	Set $List(firstName, *+1) = "Sara"
-	Set $List(firstName, *+1) = "Talita"
-	Set $List(firstName, *+1) = "Vanessa"
-	Set $List(firstName, *+1) = "Vitória"
-	Set output = $ListGet(firstName,$Random($ListLength(firstName)) + 1)
-	Kill firstName
-	Quit output
+	Quit ..FromFile("female_names")
 }
 
 ClassMethod MaleFirstName() As %String
 {
-	Set $List(firstName, *+1) = "Alessandro"
-	Set $List(firstName, *+1) = "Alexandre"
-	Set $List(firstName, *+1) = "Antônio"
-	Set $List(firstName, *+1) = "Breno"
-	Set $List(firstName, *+1) = "Carlos"
-	Set $List(firstName, *+1) = "César"
-	Set $List(firstName, *+1) = "Danilo"
-	Set $List(firstName, *+1) = "Deneval"
-	Set $List(firstName, *+1) = "Eduardo"
-	Set $List(firstName, *+1) = "Elísio"
-	Set $List(firstName, *+1) = "Fábio"
-	Set $List(firstName, *+1) = "Fabrício"
-	Set $List(firstName, *+1) = "Félix"
-	Set $List(firstName, *+1) = "Felipe"
-	Set $List(firstName, *+1) = "Feliciano"
-	Set $List(firstName, *+1) = "Frederico"
-	Set $List(firstName, *+1) = "Fabiano"
-	Set $List(firstName, *+1) = "Gustavo"
-	Set $List(firstName, *+1) = "Guilherme"
-	Set $List(firstName, *+1) = "Gúbio"
-	Set $List(firstName, *+1) = "Heitor"
-	Set $List(firstName, *+1) = "Hélio"
-	Set $List(firstName, *+1) = "Henry"
-	Set $List(firstName, *+1) = "Hugo"
-	Set $List(firstName, *+1) = "Ígor"
-	Set $List(firstName, *+1) = "João"
-	Set $List(firstName, *+1) = "Josemar"
-	Set $List(firstName, *+1) = "Júlio César"
-	Set $List(firstName, *+1) = "Júlio"
-	Set $List(firstName, *+1) = "Kléber"
-	Set $List(firstName, *+1) = "Lucas"
-	Set $List(firstName, *+1) = "Luiggi"
-	Set $List(firstName, *+1) = "Leandro"
-	Set $List(firstName, *+1) = "Leonardo"
-	Set $List(firstName, *+1) = "Ladislau"
-	Set $List(firstName, *+1) = "Marcos"
-	Set $List(firstName, *+1) = "Marcelo"
-	Set $List(firstName, *+1) = "Mario"
-	Set $List(firstName, *+1) = "Norberto"
-	Set $List(firstName, *+1) = "Nataniel"
-	Set $List(firstName, *+1) = "Paulo"
-	Set $List(firstName, *+1) = "Pablo"
-	Set $List(firstName, *+1) = "Pedro"
-	Set $List(firstName, *+1) = "Raul"
-	Set $List(firstName, *+1) = "Rafael"
-	Set $List(firstName, *+1) = "Ricardo"
-	Set $List(firstName, *+1) = "Roberto"
-	Set $List(firstName, *+1) = "Silas"
-	Set $List(firstName, *+1) = "Salvador"
-	Set $List(firstName, *+1) = "Sirineu"
-	Set $List(firstName, *+1) = "Tertuliano"
-	Set $List(firstName, *+1) = "Vicente"
-	Set $List(firstName, *+1) = "Víctor"
-	Set $List(firstName, *+1) = "Yango"
-	Set $List(firstName, *+1) = "Yago"
-	Set $List(firstName, *+1) = "Yuri"
-	Set $List(firstName, *+1) = "Washington"
-	Set $List(firstName, *+1) = "Warley"
-	Set output = $ListGet(firstName,$Random($ListLength(firstName)) + 1)
-	Kill firstName
-	Quit output
+	Quit ..FromFile("male_names")
 }
 
 ClassMethod StreetSuffix() As %String
 {
-	
 	Quit ..Sample($ListFromString("Doutor,,Marechal,Padre,,Almirante,General,Monsenhor,,Conselheiro",","))
 }
 
@@ -603,7 +495,7 @@ ClassMethod StreetPrefix() As %String
 
 ClassMethod Capital() As %String
 {
-	Quit ..Sample($ListBuild("Rio Branco","Maceió","Macapá","Manaus","Salvador","Fortaleza","Brasília","Vitória","Goiânia","São Luís","Cuiabá","Campo Grande","Belo Horizonte","Belém","João Pessoa","Curitiba","Recife","Teresina","Rio de Janeiro","Natal","Porto Alegre","Porto Velho","Boa Vista","Florianópolis","São Paulo","Aracaju","Palmas"))
+	Quit ..FromFile("capital")
 }
 
 ClassMethod State(pFullName As %Boolean = 0) As %String

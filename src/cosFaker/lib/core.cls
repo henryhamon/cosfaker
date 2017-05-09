@@ -1,9 +1,14 @@
 Class cosFaker.lib.core
 {
 
+/// Portuguese (Brazil)
 Parameter PtBrDataClass = "cosFaker.Data.PtBr";
 
+/// English (United States)
 Parameter EnUsDataClass = "cosFaker.Data.EnUs";
+
+/// Russian
+Parameter RuDataClass = "cosFaker.Data.Ru";
 
 /// "cs" = "Czech"<br/>
 /// "de" = "German"<br/>
@@ -31,6 +36,7 @@ ClassMethod GetClass() As %String [ Private ]
 {
 	Set tClass = ..#EnUsDataClass ;Default
 	Set:..GetLanguage()="pt-br" tClass = ..#PtBrDataClass
+	Set:..GetLanguage()="ru" tClass = ..#RuDataClass
 	Quit tClass
 }
 
@@ -72,6 +78,28 @@ ClassMethod Range(pMin As %Integer = 0, pMax As %Integer = 10000) As %Integer [ 
 ClassMethod In(pValue, pMin As %Integer, pMax As %Integer) As %Boolean [ Private ]
 {
 	Quit ((pValue>=pMin)&&(pValue<=pMax))
+}
+
+ClassMethod GetFile(pDirFname As %String) As %String [ Private ]
+{
+	Set file = ##class(%File).%New(..GetPath()_"cosFaker\lang"_pDirFname)
+	Do file.Open("R")
+	Quit file.Read()
+}
+
+ClassMethod FromFile(pName As %String) As %String [ Private ]
+{
+	Quit ..Sample($ListFromString(..GetFile("\"_$Piece(..GetClass(),".",*)_"\"_pName_".fkr"),","))
+}
+
+ClassMethod GetPath() As %String [ Private ]
+{
+	Set OldNS = $Namespace
+	ZN "%SYS"
+	Set app = ##class(Security.Applications).%OpenId($System.CSP.GetDefaultApp(OldNS))
+	Set path = app.Path
+	ZN OldNS
+	Quit path
 }
 
 }
