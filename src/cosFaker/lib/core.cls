@@ -34,10 +34,9 @@ ClassMethod GetLanguage() As %String [ Private ]
 
 ClassMethod GetLang() As %String [ Private ]
 {
-	Set tLang = ..#EnUs ;Default
-	Set:..GetLanguage()="pt-br" tLang = ..#PtBr
-	Set:..GetLanguage()="ru" tLang = ..#Ru
-	Quit tLang
+	Quit:..GetLanguage()="pt-br" ..#PtBr
+	//Set:..GetLanguage()="ru" tLang = ..#Ru
+	Quit ..#EnUs ;Default
 }
 
 ClassMethod Sample(pList) As %String [ Private ]
