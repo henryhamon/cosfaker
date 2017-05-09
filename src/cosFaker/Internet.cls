@@ -1,4 +1,4 @@
-Class cosFaker.Internet Extends %RegisteredObject
+Class cosFaker.Internet Extends cosFaker.lib.core
 {
 
 ClassMethod UserName(pFirstName As %String = "", pLastName As %String = "") As %String
@@ -21,7 +21,7 @@ ClassMethod UserName(pFirstName As %String = "", pLastName As %String = "") As %
 
 ClassMethod Email(pFirstName As %String = "", pLastName As %String = "", pProvider As %String = "") As %String
 {
-	Set:pProvider="" pProvider = ##class(cosFaker.Data.PtBr).EmailProvider()
+	Set:pProvider="" pProvider = $ClassMethod(..GetClass(),"EmailProvider")
 	Quit ..UserName(pFirstName, pLastName) _ "@" _ pProvider
 }
 
@@ -45,7 +45,7 @@ ClassMethod DomainWord() As %String
 
 ClassMethod DomainName() As %String
 {
-	Quit $ZConvert(..DomainWord(),"l") _ "." _ ##class(cosFaker.Data.PtBr).DomainSuffix()
+	Quit $ZConvert(..DomainWord(),"l") _ "." _ $ClassMethod(..GetClass(),".DomainSuffix")
 }
 
 ClassMethod Url() As %String
@@ -71,16 +71,6 @@ ClassMethod Slug(pWords As %String = "", pGlue As %String = "") As %String
 	Set:pWords="" pWords = ##class(cosFaker.Lorem).Words(), 
 		pWords = $Replace(pWords," ",pGlue)
 	Quit pWords
-}
-
-Method Initializer() [ Private ]
-{
-}
-
-Method %OnNew() As %Status [ Private, ServerOnly = 1 ]
-{
-	Do ..Initializer()
-	Quit $$$OK
 }
 
 }

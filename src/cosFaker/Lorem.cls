@@ -1,9 +1,9 @@
-Class cosFaker.Lorem Extends %RegisteredObject
+Class cosFaker.Lorem Extends cosFaker.lib.core
 {
 
 ClassMethod Word() As %String
 {
-	Q ..LoremIpsum()
+	Quit ..LoremIpsum()
 }
 
 ClassMethod Words(pNum As %Integer = "") As %String
@@ -19,7 +19,7 @@ ClassMethod Sentence(pWordCount As %Integer = "", pMin As %Integer = 3, pMax As 
 {
 	If pWordCount = "" {
 		For {
-			Set pWordCount = $Random(10)
+			Set pWordCount = $Random(pMax)
 			Quit:((pWordCount>pMin)&&(pWordCount < pMax))
 		}
 	}
@@ -354,143 +354,7 @@ ClassMethod LoremIpsum() As %String [ Private ]
 
 ClassMethod Hipster(pParagraphCount As %Integer = "", pSeparator As %String = "") As %String
 {
-	Set:pParagraphCount="" pParagraphCount = 3
-	Set:pSeparator="" pSeparator = $Char(10) _ $Char(13) ; \n \r OR LF CR
-	
-	Set $List(begin, *+1) = "Caros amigos, "
-    Set $List(begin, *+1) = "Por outro lado, "
-    Set $List(begin, *+1) = "Assim mesmo, "
-    Set $List(begin, *+1) = "No entanto, não podemos esquecer que "
-    Set $List(begin, *+1) = "Do mesmo modo, "
-    Set $List(begin, *+1) = "A prática cotidiana prova que "
-    Set $List(begin, *+1) = "Nunca é demais lembrar o peso e o significado destes problemas, uma vez que "
-    Set $List(begin, *+1) = "As experiências acumuladas demonstram que "
-    Set $List(begin, *+1) = "Acima de tudo, é fundamental ressaltar que "
-    Set $List(begin, *+1) = "O incentivo ao avanço tecnológico, assim como "
-    Set $List(begin, *+1) = "Não obstante, "
-    Set $List(begin, *+1) = "Todas estas questões, devidamente ponderadas, levantam dúvidas sobre se "
-    Set $List(begin, *+1) = "Pensando mais a longo prazo, "
-    Set $List(begin, *+1) = "O que temos que ter sempre em mente é que "
-    Set $List(begin, *+1) = "Ainda assim, existem dúvidas a respeito de como "
-    Set $List(begin, *+1) = "Gostaria de enfatizar que "
-    Set $List(begin, *+1) = "Todavia, "
-    Set $List(begin, *+1) = "A nível organizacional, "
-    Set $List(begin, *+1) = "O empenho em analisar "
-    Set $List(begin, *+1) = "Percebemos, cada vez mais, que "
-    Set $List(begin, *+1) = "No mundo atual, "
-    Set $List(begin, *+1) = "É importante questionar o quanto "
-    Set $List(begin, *+1) = "Neste sentido, "
-    Set $List(begin, *+1) = "Evidentemente, "
-    Set $List(begin, *+1) = "Por conseguinte, "
-    Set $List(begin, *+1) = "É claro que "
-    Set $List(begin, *+1) = "Podemos já vislumbrar o modo pelo qual "
-    Set $List(begin, *+1) = "Desta maneira, "
-    Set $List(begin, *+1) = "O cuidado em identificar pontos críticos n"
-    Set $List(begin, *+1) = "A certificação de metodologias que nos auxiliam a lidar com "
-    
-    Set $List(middle, *+1) = "a execução dos pontos do programa "
-    Set $List(middle, *+1) = "a complexidade dos estudos efetuados "
-    Set $List(middle, *+1) = "a contínua expansão de nossa atividade "
-    Set $List(middle, *+1) = "a estrutura atual da organização "
-    Set $List(middle, *+1) = "o novo modelo estrutural aqui preconizado "
-    Set $List(middle, *+1) = "o desenvolvimento contínuo de distintas formas de atuação "
-    Set $List(middle, *+1) = "a constante divulgação das informações "
-    Set $List(middle, *+1) = "a consolidação das estruturas "
-    Set $List(middle, *+1) = "a consulta aos diversos militantes "
-    Set $List(middle, *+1) = "o início da atividade geral de formação de atitudes "
-    Set $List(middle, *+1) = "o desafiador cenário globalizado "
-    Set $List(middle, *+1) = "a mobilidade dos capitais internacionais "
-    Set $List(middle, *+1) = "o fenômeno da Internet "
-    Set $List(middle, *+1) = "a hegemonia do ambiente político "
-    Set $List(middle, *+1) = "a expansão dos mercados mundiais "
-    Set $List(middle, *+1) = "o aumento do diálogo entre os diferentes setores produtivos "
-    Set $List(middle, *+1) = "a crescente influência da mídia "
-    Set $List(middle, *+1) = "a necessidade de renovação processual "
-    Set $List(middle, *+1) = "a competitividade nas transações comerciais "
-    Set $List(middle, *+1) = "o surgimento do comércio virtual "
-    Set $List(middle, *+1) = "a revolução dos costumes "
-    Set $List(middle, *+1) = "o acompanhamento das preferências de consumo "
-    Set $List(middle, *+1) = "o comprometimento entre as equipes "
-    Set $List(middle, *+1) = "a determinação clara de objetivos "
-    Set $List(middle, *+1) = "a adoção de políticas descentralizadoras "
-    Set $List(middle, *+1) = "a valorização de fatores subjetivos "
-    Set $List(middle, *+1) = "a percepção das dificuldades "
-    Set $List(middle, *+1) = "o entendimento das metas propostas "
-    Set $List(middle, *+1) = "o consenso sobre a necessidade de qualificação "
-    Set $List(middle, *+1) = "o julgamento imparcial das eventualidades "
-
-    Set $List(middle2, *+1) = "nos obriga à análise "
-    Set $List(middle2, *+1) = "cumpre um papel essencial na formulação "
-    Set $List(middle2, *+1) = "exige a precisão e a definição "
-    Set $List(middle2, *+1) = "auxilia a preparação e a composição "
-    Set $List(middle2, *+1) = "garante a contribuição de um grupo importante na determinação "
-    Set $List(middle2, *+1) = "assume importantes posições no estabelecimento "
-    Set $List(middle2, *+1) = "facilita a criação "
-    Set $List(middle2, *+1) = "obstaculiza a apreciação da importância "
-    Set $List(middle2, *+1) = "oferece uma interessante oportunidade para verificação "
-    Set $List(middle2, *+1) = "acarreta um processo de reformulação e modernização "
-    Set $List(middle2, *+1) = "pode nos levar a considerar a reestruturação "
-    Set $List(middle2, *+1) = "representa uma abertura para a melhoria "
-    Set $List(middle2, *+1) = "ainda não demonstrou convincentemente que vai participar na mudança "
-    Set $List(middle2, *+1) = "talvez venha a ressaltar a relatividade "
-    Set $List(middle2, *+1) = "prepara-nos para enfrentar situações atípicas decorrentes "
-    Set $List(middle2, *+1) = "maximiza as possibilidades por conta "
-    Set $List(middle2, *+1) = "desafia a capacidade de equalização "
-    Set $List(middle2, *+1) = "agrega valor ao estabelecimento "
-    Set $List(middle2, *+1) = "é uma das consequências "
-    Set $List(middle2, *+1) = "promove a alavancagem "
-    Set $List(middle2, *+1) = "não pode mais se dissociar "
-    Set $List(middle2, *+1) = "possibilita uma melhor visão global "
-    Set $List(middle2, *+1) = "estimula a padronização "
-    Set $List(middle2, *+1) = "aponta para a melhoria "
-    Set $List(middle2, *+1) = "faz parte de um processo de gerenciamento "
-    Set $List(middle2, *+1) = "causa impacto indireto na reavaliação "
-    Set $List(middle2, *+1) = "apresenta tendências no sentido de aprovar a manutenção "
-    Set $List(middle2, *+1) = "estende o alcance e a importância "
-    Set $List(middle2, *+1) = "deve passar por modificações independentemente "
-    Set $List(middle2, *+1) = "afeta positivamente a correta previsão "
-    
-    Set $List( TheEnd, *+1) = "das condições financeiras e administrativas exigidas."
-    Set $List( TheEnd, *+1) = "das diretrizes de desenvolvimento para o futuro."
-    Set $List( TheEnd, *+1) = "do sistema de participação geral."
-    Set $List( TheEnd, *+1) = "das posturas dos órgãos dirigentes com relação às suas atribuições."
-    Set $List( TheEnd, *+1) = "das novas proposições."
-    Set $List( TheEnd, *+1) = "das direções preferenciais no sentido do progresso."
-    Set $List( TheEnd, *+1) = "do sistema de formação de quadros que corresponde às necessidades."
-    Set $List( TheEnd, *+1) = "das condições inegavelmente apropriadas."
-    Set $List( TheEnd, *+1) = "dos índices pretendidos."
-    Set $List( TheEnd, *+1) = "das formas de ação."
-    Set $List( TheEnd, *+1) = "dos paradigmas corporativos."
-    Set $List( TheEnd, *+1) = "dos relacionamentos verticais entre as hierarquias."
-    Set $List( TheEnd, *+1) = "do processo de comunicação como um todo."
-    Set $List( TheEnd, *+1) = "dos métodos utilizados na avaliação de resultados."
-    Set $List( TheEnd, *+1) = "de todos os recursos funcionais envolvidos."
-    Set $List( TheEnd, *+1) = "dos níveis de motivação departamental."
-    Set $List( TheEnd, *+1) = "da gestão inovadora da qual fazemos parte."
-    Set $List( TheEnd, *+1) = "dos modos de operação convencionais."
-    Set $List( TheEnd, *+1) = "de alternativas às soluções ortodoxas."
-    Set $List( TheEnd, *+1) = "dos procedimentos normalmente adotados."
-    Set $List( TheEnd, *+1) = "dos conhecimentos estratégicos para atingir a excelência."
-    Set $List( TheEnd, *+1) = "do fluxo de informações."
-    Set $List( TheEnd, *+1) = "do levantamento das variáveis envolvidas."
-    Set $List( TheEnd, *+1) = "das diversas correntes de pensamento."
-    Set $List( TheEnd, *+1) = "do impacto na agilidade decisória."
-    Set $List( TheEnd, *+1) = "das regras de conduta normativas."
-    Set $List( TheEnd, *+1) = "do orçamento setorial."
-    Set $List( TheEnd, *+1) = "do retorno esperado a longo prazo."
-    Set $List( TheEnd, *+1) = "do investimento em reciclagem técnica."
-    Set $List( TheEnd, *+1) = "do remanejamento dos quadros funcionais."
-    
-	For k=1:1:pParagraphCount {
-		S paragraph = $ListGet(begin,$Random($ListLength(begin)) + 1)
-		S paragraph = paragraph _ $ListGet(middle,$Random($ListLength(middle)) + 1)
-		S paragraph = paragraph _ $ListGet(middle2,$Random($ListLength(middle2)) + 1)
-		S paragraph = paragraph _ $ListGet(TheEnd,$Random($ListLength(TheEnd)) + 1)
-		Set $List(paragraphs,*+1) = paragraph
-	}
-	
-	K begin, TheEnd, middle, middle2
-	Quit $ListToString($Get(paragraphs), pSeparator)
+	Quit $ClassMethod(..GetClass(),"Hipster",pParagraphCount,pSeparator)
 }
 
 }

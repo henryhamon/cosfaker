@@ -1,13 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Export generator="Cache" version="25" zv="Cache for Windows (x86-64) 2016.2.1 (Build 803)" ts="2017-05-08 13:29:56">
-<Class name="cosFaker.Commerce">
-<TimeChanged>64411,48515.205149</TimeChanged>
-<TimeCreated>64016,37345.119926</TimeCreated>
+Class cosFaker.Commerce
+{
 
-<Method name="Price">
-<ClassMethod>1</ClassMethod>
-<FormalSpec>pMin:%Integer=0,pMax:%Integer=1000,pDec:%Integer=2,pSymbol:%String=""</FormalSpec>
-<Implementation><![CDATA[
+ClassMethod Price(pMin As %Integer = 0, pMax As %Integer = 1000, pDec As %Integer = 2, pSymbol As %String = "")
+{
 	Set bOk = $$$NO, $Piece(dec,"9",pDec+1)="", $Piece(tmp,"0",pDec+1)=""
 	
 	While bOk = $$$NO {
@@ -17,14 +12,10 @@
 	}
 	
 	Quit pSymbol _ rand
-]]></Implementation>
-</Method>
+}
 
-<Method name="CNPJ">
-<ClassMethod>1</ClassMethod>
-<FormalSpec>pPretty:%Boolean=1</FormalSpec>
-<ReturnType>%String</ReturnType>
-<Implementation><![CDATA[
+ClassMethod CNPJ(pPretty As %Boolean = 1) As %String
+{
 	#define r $Random(9)
 	Set n1 = $$$r,
 		n2 = $$$r,
@@ -48,15 +39,12 @@
 	Set:pPretty ret = n1_n2_"."_n3_n4_n5_"."_n6_n7_n8_"/"_n9_n10_n11_n12_"-"_d1_d2
 	Set:'pPretty ret = n1_n2_n3_n4_n5_n6_n7_n8_n9_n10_n11_n12_d1_d2
 	Quit ret
-]]></Implementation>
-</Method>
+}
 
-<Method name="mod">
-<ClassMethod>1</ClassMethod>
-<FormalSpec>div1,div2</FormalSpec>
-<Private>1</Private>
-<Implementation><![CDATA[	Quit $Number(div1 - (((div1/div2)\1)*div2),0)
-]]></Implementation>
-</Method>
-</Class>
-</Export>
+ClassMethod mod(div1, div2) [ Private ]
+{
+	Quit $Number(div1 - (((div1/div2)\1)*div2),0)
+}
+
+}
+
