@@ -21,7 +21,7 @@ ClassMethod UserName(pFirstName As %String = "", pLastName As %String = "") As %
 
 ClassMethod Email(pFirstName As %String = "", pLastName As %String = "", pProvider As %String = "") As %String
 {
-	Set:pProvider="" pProvider = $ClassMethod(..GetClass(),"EmailProvider")
+	Set:pProvider="" pProvider = ..SampleFromFile("internet","email_provider")
 	Quit ..UserName(pFirstName, pLastName) _ "@" _ pProvider
 }
 
@@ -45,7 +45,7 @@ ClassMethod DomainWord() As %String
 
 ClassMethod DomainName() As %String
 {
-	Quit $ZConvert(..DomainWord(),"l") _ "." _ $ClassMethod(..GetClass(),".DomainSuffix")
+	Quit $ZConvert(..DomainWord(),"l") _ "." _ ..SampleFromFile("internet","domain_suffix")
 }
 
 ClassMethod Url() As %String
@@ -71,6 +71,21 @@ ClassMethod Slug(pWords As %String = "", pGlue As %String = "") As %String
 	Set:pWords="" pWords = ##class(cosFaker.Lorem).Words(), 
 		pWords = $Replace(pWords," ",pGlue)
 	Quit pWords
+}
+
+ClassMethod IPV4() As %String
+{
+	Quit ..MaskNumber("#.#.#.#",1,254)
+}
+
+ClassMethod IPV6() As %String
+{
+	Quit ..Times(32,"cosFaker.lib.core","Hexadecimal",4,":")
+}
+
+ClassMethod MAC() As %String
+{
+	Quit $ZConvert(..Times(12,"cosFaker.lib.core","Hexadecimal",2,":"),"U")
 }
 
 }

@@ -9,10 +9,11 @@
 /// <li>street || streetname || street-name</li>
 /// <li>latitude</li>
 /// <li>longitude</li>
-/// <li>capital [<b>country</b><span style="color:darkblue;">(BR,US)</span><span style="color:darkgreen;">{BR}</span>]</li>
-/// <li>state [<b>full-name</b><span style="color:darkgreen;">{0}</span>,  <b>country</b><span style="color:darkblue;">(BR,US)</span><span style="color:darkgreen;">{BR}</span>]</li>
-/// <li>statefull [<b>country</b><span style="color:darkblue;">(BR,US)</span><span style="color:darkgreen;">{BR}</span>]</li>
-/// <li>city [<b>country</b><span style="color:darkblue;">(BR,US)</span><span style="color:darkgreen;">{BR}</span>,  <b>state</b>]</li>
+/// <li>capital</li>
+/// <li>state [<b>full-name</b><span style="color:darkgreen;">{0}</span>]</li>
+/// <li>statefull</li>
+/// <li>city [<b>state</b>]</li>
+/// <li>country [<b>abbreviated</b>]</li>
 /// </ul>
 /// <b>App:</b><ul>
 /// <li>function || functionname || function-name [<b>group</b><span style="color:darkblue;">(SQL,IF,FUN)</span>,<b>separator</b>]</li>
@@ -63,6 +64,9 @@
 /// <li>avatar [<b>size</b>]</li>
 /// <li>url</li>
 /// <li>slug [<b style="color:darkred">'words'</b>,<b>glue</b>]</li>
+/// <li>ipv4</li>
+/// <li>ipv6</li>
+/// <li>mac</li>
 /// </ul>
 /// <b>Job:</b><ul>
 /// <li>job.title</li>
@@ -123,11 +127,11 @@
 /// <ul><li>Any other will be an random integer between 1 and 99</li></ul>
 /// </div><br/><h3>Examples:</h3>
 /// <example>
-/// Do ##class(cosFaker.SQL).Insert("Sample_Data.Clients","City,Name,NickName","city BR SC,name 2,ufc.nickname 'Anderson Silva'",1)
+/// Do ##class(cosFaker.SQL).Insert("Sample_Data.Clients","City,Name,NickName","city SC,name 2,ufc.nickname 'Anderson Silva'",1)
 /// ;INSERT INTO Sample_Data.Clients (City,Name,NickName) VALUES ('Trombudo Central','Leandro Mendes','The Spider')
 /// </example>
 /// <example>
-/// Do ##class(cosFaker.SQL).Insert("Sample_Data.Clients","City,Name,Salary","city BR SC,name 2,price 1000 2000 2 R$",2)
+/// Do ##class(cosFaker.SQL).Insert("Sample_Data.Clients","City,Name,Salary","city SC,name 2,price 1000 2000 2 R$",2)
 /// ;INSERT INTO Sample_Data.Clients (City,Name,Salary) VALUES ('Celso Ramos','Luiggi Dias Nunes Saraiva','R$1654.30')
 /// ;INSERT INTO Sample_Data.Clients (City,Name,Salary) VALUES ('Nova Veneza','Fabiano da Costa','R$1255.13')
 /// </example>
@@ -138,7 +142,7 @@ Class cosFaker.SQL Extends cosFaker.lib.core
 Parameter Version As %String = "BETA 0.0.1";
 
 /// Last time that this class was updated
-Parameter LastUpdate As %String = "2017-05-08 11:20:00";
+Parameter LastUpdate As %String = "2017-05-09 13:55:00";
 
 /// Testing Enabled will show the SQL's queries and the parameters
 Parameter Testing As %Boolean = 0;
@@ -153,7 +157,7 @@ Parameter Testing As %Boolean = 0;
 /// <example>
 /// Do ##class(cosFaker.SQL).Insert("SamplePrj_PierogiDelivery_Data.Clients",
 ///     "City,Name,Street",
-///     "city BR SC,name 2,street",
+///     "city SC,name 2,street",
 ///     3)
 /// </example>
 ClassMethod Insert(pTableName As %String = "", pTableFields As %String = "", pTypeOfFields As %String, pAmount As %Integer = 1) As %Status
@@ -177,7 +181,7 @@ ClassMethod Insert(pTableName As %String = "", pTableFields As %String = "", pTy
 /// <example>
 /// Do ##class(cosFaker.SQL).Update("SamplePrj_PierogiDelivery_Data.Clients",
 ///         "City,Name,Street",
-///         "city BR SC,name 2,street",
+///         "city SC,name 2,street",
 ///         "ID > 5000")
 /// </example>
 ClassMethod Update(pTableName As %String = "", pTableFields As %String = "", pTypeOfFields As %String, pWhereClause As %String = "") As %Status
@@ -282,10 +286,11 @@ ClassMethod DefineValue(pType As %String, args...) As %String [ Private ]
         "streetname":       ##class(Address).StreetName(),
         "latitude":         ##class(Address).Latitude(),
         "longitude":        ##class(Address).Longitude(),
-        "capital":          ##class(Address).Capital($Get(args(1),"BR")),
-        "state":            ##class(Address).State($Get(args(1),0),$Get(args(2),"BR")),
-        "statefull":        ##class(Address).State(1,$Get(args(1),"BR")),
-        "city":             ##class(Address).City($Get(args(1),"BR"),$Get(args(2),"")),
+        "capital":          ##class(Address).Capital(),
+        "state":            ##class(Address).State($Get(args(1),"0")),
+        "statefull":        ##class(Address).State(1),
+        "city":             ##class(Address).City($Get(args(1),"")),
+        "country":			##class(Address).Country($Get(args(1),"0")),
         
         //Class: App
         "function":         ##class(App).FunctionName($Get(args(1),""),$Get(args(2),"")),
@@ -342,6 +347,9 @@ ClassMethod DefineValue(pType As %String, args...) As %String [ Private ]
         "url":              ##class(Internet).Url(),
         "avatar":           ##class(Internet).Avatar($Get(args(1),"")),
         "slug":             ##class(Internet).Slug($Get(args(1),""),$Get(args(2),"")),
+        "ipv4":             ##class(Internet).IPV4(),
+        "ipv6":             ##class(Internet).IPV6(),
+        "mac":              ##class(Internet).MAC(),
         
         //Class: Job
         "job.title":        ##class(Job).Title(),

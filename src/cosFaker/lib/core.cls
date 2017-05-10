@@ -2,13 +2,10 @@ Class cosFaker.lib.core
 {
 
 /// Portuguese (Brazil)
-Parameter PtBrDataClass = "cosFaker.Data.PtBr";
+Parameter PtBr = "PtBr";
 
 /// English (United States)
-Parameter EnUsDataClass = "cosFaker.Data.EnUs";
-
-/// Russian
-Parameter RuDataClass = "cosFaker.Data.Ru";
+Parameter EnUs = "EnUs";
 
 /// "cs" = "Czech"<br/>
 /// "de" = "German"<br/>
@@ -32,17 +29,16 @@ ClassMethod GetLanguage() As %String [ Private ]
 	Quit $ZConvert($List(##class(%SYS.NLS.Locale).GetLanguage(),1),"l")
 }
 
-ClassMethod GetClass() As %String [ Private ]
+ClassMethod GetLang() As %String [ Private ]
 {
-	Set tClass = ..#EnUsDataClass ;Default
-	Set:..GetLanguage()="pt-br" tClass = ..#PtBrDataClass
-	Set:..GetLanguage()="ru" tClass = ..#RuDataClass
-	Quit tClass
+	Quit:..GetLanguage()="pt-br" ..#PtBr
+	Quit ..#EnUs ;Default
 }
 
 ClassMethod Sample(pList) As %String [ Private ]
 {
-	Quit $List(pList, $Random($ListLength(pList)) + 1)
+	Quit:$ListLength(pList)>0 $List(pList, $Random($ListLength(pList)) + 1)
+	Quit ""
 }
 
 ClassMethod MaskNumber(pTemplate As %String, pMin As %Integer = "", pMax As %Integer = "") As %String [ Private ]
@@ -51,13 +47,11 @@ ClassMethod MaskNumber(pTemplate As %String, pMin As %Integer = "", pMax As %Int
 	
 	While pos'=$$$NO {
 		
-		//If (pMin="" || pMax="") {
+		If (pMin="" || pMax="") {
 		Set value = $Random(10)
-		/*
 		} Else {
 			Set value = ..Range(pMin, pMax)
 		}
-		*/
 		
 		Set pTemplate = $Extract(pTemplate,0,pos-2)_value_$Extract(pTemplate,pos,*),
 			pos = $Find(pTemplate,"#",0)
@@ -80,16 +74,27 @@ ClassMethod In(pValue, pMin As %Integer, pMax As %Integer) As %Boolean [ Private
 	Quit ((pValue>=pMin)&&(pValue<=pMax))
 }
 
-ClassMethod GetFile(pDirFname As %String) As %String [ Private ]
+ClassMethod GetFile(pDirFname As %String, pSearch As %String = "") As %String [ Private ]
 {
 	Set file = ##class(%File).%New(..GetPath()_"cosFaker\lang"_pDirFname)
 	Do file.Open("R")
-	Quit file.Read()
+	Set Ret = ""
+	While 'file.AtEnd{
+		Set val = file.Read()
+		If ((pSearch'="")&&($Find(val,pSearch_"={")>0)){
+			Set Ret = $Piece($Piece(val,"{",2),"}",1)
+			Quit
+		}
+		Set:pSearch="" Ret = Ret_val
+	}
+	Do file.Close()
+	Quit Ret
 }
 
-ClassMethod FromFile(pName As %String) As %String [ Private ]
+ClassMethod SampleFromFile(pName As %String, pSearch As %String = "", pLang As %String = "") As %String [ Private ]
 {
-	Quit ..Sample($ListFromString(..GetFile("\"_$Piece(..GetClass(),".",*)_"\"_pName_".fkr"),","))
+	Set:pLang="" pLang = ..GetLang()
+	Quit ..Sample($ListFromString(..GetFile("\"_pLang_"\"_pName_".fkr",pSearch),","))
 }
 
 ClassMethod GetPath() As %String [ Private ]
@@ -100,6 +105,24 @@ ClassMethod GetPath() As %String [ Private ]
 	Set path = app.Path
 	ZN OldNS
 	Quit path
+}
+
+ClassMethod Hexadecimal() As %String [ Private ]
+{
+	Set Num = ..Range(0,15)
+	Quit:Num<10 Num
+	Quit $Case(Num,10:"a",11:"b",12:"c",13:"d",14:"e",15:"f")
+}
+
+ClassMethod Times(pAmount As %Integer = 1, pClassName As %String = "", pMethodName As %String = "", pBreakInsertCount As %Integer = -1, pBreakInsertString As %String) As %String [ Private ]
+{
+	Set count = 0, ret = ""
+	For i=1:1:pAmount{
+		Set:count=pBreakInsertCount ret = ret_pBreakInsertString, count = 0
+		Set count = count + 1
+		Set ret = ret_$ClassMethod(pClassName,pMethodName)
+	}
+	Quit ret
 }
 
 }

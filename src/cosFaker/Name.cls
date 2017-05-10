@@ -1,8 +1,3 @@
-/// Operating in:<br/>
-/// <ul>
-/// <li>En-US (Default)</li>
-/// <li>Pt-BR</li>
-/// </ul>
 Class cosFaker.Name Extends cosFaker.lib.core
 {
 
@@ -12,18 +7,13 @@ Class cosFaker.Name Extends cosFaker.lib.core
 ClassMethod FirstName(pGender As %Integer = "") As %String
 {
 	Set:pGender="" pGender = ($Random(2) + 1)	
-	If pGender = 2 {
-		Set name = $ClassMethod(..GetClass(),"MaleFirstName")
-	} Else {
-		Set name = $ClassMethod(..GetClass(),"FemaleFirstName")
-	}
-	
-	Quit name
+	Quit:pGender=2 ..SampleFromFile("male_names")
+	Quit ..SampleFromFile("female_names")
 }
 
 ClassMethod LastName() As %String
 {
-	Quit $ClassMethod(..GetClass(),"LastName")
+	Quit ..SampleFromFile("last_names")
 }
 
 ClassMethod FullName(pGender As %Integer = "") As %String
@@ -31,15 +21,15 @@ ClassMethod FullName(pGender As %Integer = "") As %String
 	Set:pGender="" pGender = ($Random(2) + 1)
 
 	If pGender = 2 {
-		Set firstname = $ClassMethod(..GetClass(),"MaleFirstName")
+		Set firstname = ..SampleFromFile("male_names")
 	} Else {
-		Set firstname = $ClassMethod(..GetClass(),"FemaleFirstName")
+		Set firstname = ..SampleFromFile("female_names")
 	}
 	
 	Set rand = $Random(3) + 1,lastname = ""
 	For k=1:1:rand {
 		Set:k>1 lastname = lastname _ " "
-		Set lastname = lastname _ $ClassMethod(..GetClass(),"LastName")
+		Set lastname = lastname _ ..SampleFromFile("last_names")
 	}
 	
 	Quit firstname _ " " _ lastname
@@ -47,7 +37,7 @@ ClassMethod FullName(pGender As %Integer = "") As %String
 
 ClassMethod Suffix() As %String
 {
-	Quit $ClassMethod(..GetClass(),"PersonSuffix")
+	Quit ..SampleFromFile("person_suffix")
 }
 
 }
