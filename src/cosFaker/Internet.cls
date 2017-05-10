@@ -68,8 +68,8 @@ ClassMethod Avatar(pSize As %Integer = "") As %String
 ClassMethod Slug(pWords As %String = "", pGlue As %String = "") As %String
 {
 	Set:pGlue="" pGlue = $List($ListBuild("-","_","."),($Random(3)+1))
-	Set:pWords="" pWords = ##class(cosFaker.Lorem).Words(), 
-		pWords = $Replace(pWords," ",pGlue)
+	Set:pWords="" pWords = ##class(cosFaker.Lorem).Words()
+	Set pWords = $Replace(pWords," ",pGlue)
 	Quit pWords
 }
 

@@ -142,7 +142,7 @@ Class cosFaker.SQL Extends cosFaker.lib.core
 Parameter Version As %String = "BETA 0.0.1";
 
 /// Last time that this class was updated
-Parameter LastUpdate As %String = "2017-05-09 13:55:00";
+Parameter LastUpdate As %String = "2017-05-10 10:20:00";
 
 /// Testing Enabled will show the SQL's queries and the parameters
 Parameter Testing As %Boolean = 0;
@@ -231,38 +231,6 @@ ClassMethod PrepareSQL(pUpdate As %Boolean = 0, pTableName As %String = "", pTab
     Quit tSC
 }
 
-ClassMethod GetInfo(pTypeField As %String, Output pType As %String, Output pParams) As %Status [ Private ]
-{
-    Set tSC = $$$OK
-    Try {
-        Set pParams = 0
-        If $Find(pTypeField,"'")>0{
-           Set p2 = $Replace($Piece(pTypeField,"'",2)," ","_")
-           Set $Piece(pTypeField,"'",2) = p2
-           Set pTypeField = $Translate(pTypeField,"'","")
-        }
-        Set ListType = $ListFromString(pTypeField," "), ptr = 0, idx = 0
-        Set pType = $List(ListType,1)
-        For i=2:1:$ListLength(ListType){
-            Set idx = idx + 1
-            Set pParams = idx
-            Set pParams(idx) = $Translate($List(ListType,i),"_"," ")
-        }   
-    } Catch tException {
-        Set:$$$ISOK(tSC) tSC = tException.AsStatus()
-    }
-    Quit tSC
-}
-
-ClassMethod Validate(pField, pDescription) As %Status [ Private ]
-{
-    Set tSC = $$$OK
-    If pField = ""{
-        Set tSC = $$$ERROR(5002,pDescription)
-    }
-    Quit tSC
-}
-
 ClassMethod ValidateFields(pTableName = "", pTableFields = "", pTypeOfFields = "") As %Status [ Private ]
 {
     Set tSC = $$$OK
@@ -274,146 +242,6 @@ ClassMethod ValidateFields(pTableName = "", pTableFields = "", pTypeOfFields = "
         Set:$$$ISOK(tSC) tSC = tException.AsStatus()
     }
     Quit tSC
-}
-
-ClassMethod DefineValue(pType As %String, args...) As %String [ Private ]
-{
-    Quit $Case($Translate($ZConvert(pType,"L"),"-",""),     
-        //Class: Address
-        "streetprefix":     ##class(Address).StreetPrefix(),
-        "streetsuffix":     ##class(Address).StreetSuffix(),
-        "street":           ##class(Address).StreetName(),
-        "streetname":       ##class(Address).StreetName(),
-        "latitude":         ##class(Address).Latitude(),
-        "longitude":        ##class(Address).Longitude(),
-        "capital":          ##class(Address).Capital(),
-        "state":            ##class(Address).State($Get(args(1),"0")),
-        "statefull":        ##class(Address).State(1),
-        "city":             ##class(Address).City($Get(args(1),"")),
-        "country":			##class(Address).Country($Get(args(1),"0")),
-        
-        //Class: App
-        "function":         ##class(App).FunctionName($Get(args(1),""),$Get(args(2),"")),
-        "functionname":     ##class(App).FunctionName($Get(args(1),""),$Get(args(2),"")),
-                
-        //Class: Coffee
-        "coffee.blendname": ##class(Coffee).BlendName(),
-        "coffee.blend":     ##class(Coffee).BlendName(),
-        "coffee.variety":   ##class(Coffee).Variety(),
-        "coffee.notes":     ##class(Coffee).Notes(),
-        "coffee.origin":    ##class(Coffee).Origin(),
-        
-        //Class: Commerce
-        "price":            ##class(Commerce).Price($Get(args(1),"0"),$Get(args(2),"1000"),$Get(args(3),"2"),$Get(args(4),"")),
-        "cnpj":             ##class(Commerce).CNPJ($Get(args(1),"1")),
-
-        //Class: Company
-        "profession":       ##class(Company).Profession(),
-        "industry":         ##class(Company).Industry(),
-        
-        //Class: Dates
-        "date":             $Case(($Random(2)+1),1:##class(Dates).Backward($Get(args(1),"365"),$Get(args(2),"3")),:##class(Dates).Forward($Get(args(1),"365"),$Get(args(2),"3"))),
-        "dates.forward":    ##class(Dates).Forward($Get(args(1),"365"),$Get(args(2),"3")),
-        "dates.backward":   ##class(Dates).Backward($Get(args(1),"365"),$Get(args(2),"3")),
-        "date.forward":     ##class(Dates).Forward($Get(args(1),"365"),$Get(args(2),"3")),
-        "date.backward":    ##class(Dates).Backward($Get(args(1),"365"),$Get(args(2),"3")),
-
-        //Class: DragonBall
-        "dragonball.character": ##class(DragonBall).Character(),
-        
-        //Class: File
-        "filename":         ##class(File).Filename($Get(args(1),""),$Get(args(2),""),$Get(args(3),""),$Get(args(4),"/")),
-        "file.extension":   ##class(File).Extension(),
-        "file.mimetype":    ##class(File).MimeType(),
-        
-        //Class: Finance
-        "amount":           ##class(Finance).Amount($Get(args(1),"0"),$Get(args(2),"10000"),$Get(args(3),"2"),$Get(args(4),","),$Get(args(5),"")),
-        "creditcard":       ##class(Finance).CreditCard($Get(args(1),"")),
-        "bitcoinaddress":   ##class(Finance).BitcoinAddress($Get(args(1),"24"),$Get(args(1),"34")),
-        
-        //Class: Game
-        "mortalkombat":     ##class(Game).MortalKombat(),
-        "streetfighter":    ##class(Game).StreetFighter(),
-        "game.card":        ##class(Game).Card($Get(args(1),"0")),
-        "card":             ##class(Game).Card($Get(args(1),"0")),
-        
-        //Class: Internet
-        "username":         ##class(Internet).UserName($Get(args(1),""),$Get(args(2),"")),
-        "email":            ##class(Internet).Email($Get(args(1),""),$Get(args(2),""),$Get(args(3),"")),
-        "protocol":         ##class(Internet).Protocol(),
-        "domainword":       ##class(Internet).DomainWord(),
-        "domain":           ##class(Internet).DomainName(),
-        "domainname":       ##class(Internet).DomainName(),
-        "url":              ##class(Internet).Url(),
-        "avatar":           ##class(Internet).Avatar($Get(args(1),"")),
-        "slug":             ##class(Internet).Slug($Get(args(1),""),$Get(args(2),"")),
-        "ipv4":             ##class(Internet).IPV4(),
-        "ipv6":             ##class(Internet).IPV6(),
-        "mac":              ##class(Internet).MAC(),
-        
-        //Class: Job
-        "job.title":        ##class(Job).Title(),
-        "job.skills":       ##class(Job).Skills(),
-        "skill":            ##class(Job).Skills(),
-        "job.field":        ##class(Job).Field(),
-        
-        //Class: Lorem
-        "word":             ##class(Lorem).Word(),
-        "words":            ##class(Lorem).Words($Get(args(1),"")),
-        "sentence":         ##class(Lorem).Sentence("",$Get(args(1),3),$Get(args(2),10)),
-        "sentences":        ##class(Lorem).Sentences($Get(args(1),""),$Get(args(2),"")),
-        "paragraph":        ##class(Lorem).Paragraph($Get(args(1),"")),
-        "p":                ##class(Lorem).Paragraph($Get(args(1),"")),
-        "paragraphs":       ##class(Lorem).Paragraphs($Get(args(1),""),$Get(args(2),"")),
-        "lines":            ##class(Lorem).Lines($Get(args(1),"")),
-        "text":             ##class(Lorem).Text($Get(args(1),1)),
-        "hipster":          ##class(Lorem).Hipster($Get(args(1),""),$Get(args(2),"")),
-        
-        //Class: Name
-        "name":             ##class(Name).FullName($Get(args(1),"")),
-        "fullname":         ##class(Name).FullName($Get(args(1),"")),
-        "firstname":        ##class(Name).FirstName($Get(args(1),"")),
-        "fname":            ##class(Name).FirstName($Get(args(1),"")),
-        "lastname":         ##class(Name).LastName(),
-        "lname":            ##class(Name).LastName(),
-        "suffix":           ##class(Name).Suffix(),
-        
-        //Class: Person
-        "cpf":              ##class(Person).cpf($Get(args(1),"1")),
-        
-        //Class: Phone
-        "areacode":         ##class(Phone).AreaCode(),
-        "phonenumber":      ##class(Phone).PhoneNumber($Get(args(1),"1")),
-        "phone":            ##class(Phone).PhoneNumber($Get(args(1),"1")),
-        "cellphone":        ##class(Phone).CellPhone($Get(args(1),"1")),
-        
-        //Class: Pokemon
-        "pokemon":          ##class(Pokemon).Pokemon(),
-        
-        //Class: StarWars
-        "starwars.character":##class(StarWars).Characters(),
-        "starwars.droid":   ##class(StarWars).Droids(),
-        "starwars.planet":  ##class(StarWars).Planets(),
-        "starwars.quote":   ##class(StarWars).Quotes(),
-        "starwars.specie":  ##class(StarWars).Species(),
-        "starwars.vehicle": ##class(StarWars).Vehicles(),
-        "starwars.wookieword":##class(StarWars).WookieWords(),
-        "starwars.wookiesentence":##class(StarWars).WookieSentence($Get(args(1),"")),
-        
-        //Class: UFC
-        "ufc.category":     ##class(UFC).Category(),
-        "ufc.fighter":      ##class(UFC).Fighter($Get(args(1),""),$Get(args(2),""),$Get(args(3),"0")),
-        "ufc.featherweight":##class(UFC).Featherweight($Get(args(1),"")),
-        "ufc.middleweight": ##class(UFC).Middleweight($Get(args(1),"")),
-        "ufc.welterweight": ##class(UFC).Welterweight($Get(args(1),"")),
-        "ufc.lightweight":  ##class(UFC).Lightweight($Get(args(1),"")),
-        "ufc.bantamweight": ##class(UFC).Bantamweight($Get(args(1),"")),
-        "ufc.flyweight":    ##class(UFC).Flyweight($Get(args(1),"")),
-        "ufc.heavyweight":  ##class(UFC).Heavyweight($Get(args(1),"")),
-        "ufc.lightheavyweight":##class(UFC).LightHeavyweight($Get(args(1),"")),
-        "ufc.nickname":     ##class(UFC).Nickname($Get(args(1),"")),    
-        
-        :$Random(99) + 1)
 }
 
 }
