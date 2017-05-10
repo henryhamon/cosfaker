@@ -129,11 +129,11 @@
 Class cosFaker.JSON Extends cosFaker.lib.core
 {
 
-/// Version of cosFaker SQL
+/// Version of cosFaker JSON
 Parameter Version As %String = "BETA 0.0.1";
 
 /// Last time that this class was updated
-Parameter LastUpdate As %String = "2017-05-10 11:00:00";
+Parameter LastUpdate As %String = "2017-05-10 16:00:00";
 
 /// Creates random data in JSON
 /// Parameters:<br/>
