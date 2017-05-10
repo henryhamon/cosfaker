@@ -14,7 +14,7 @@ The language of data is according to configuration of your Caché (Now works wit
 * File (Filename, Extension, MimeType)
 * Finance (Amount, Credit Card, Bitcoin Address)
 * Game (Card, Mortal Kombat, Street Fighter)
-* Internet (Username, Email, Protocol, Domain Word, Domain Name, Avatar, Url, Slug)
+* Internet (Username, Email, Protocol, Domain Word, Domain Name, Avatar, Url, Slug, IPV4, IPV6,MAC Address)
 * Job (Title, Skills, Field)
 * Lorem (Words, Sentences, Paragraphs, Lines, Text, Hipster)
 * Name (First name, Last Name, Full Name, Suffix)

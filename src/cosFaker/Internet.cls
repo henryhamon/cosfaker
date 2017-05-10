@@ -73,5 +73,20 @@ ClassMethod Slug(pWords As %String = "", pGlue As %String = "") As %String
 	Quit pWords
 }
 
+ClassMethod IPV4() As %String
+{
+	Quit ..MaskNumber("#.#.#.#",1,254)
+}
+
+ClassMethod IPV6() As %String
+{
+	Quit ..Times(32,"cosFaker.lib.core","Hexadecimal",4,":")
+}
+
+ClassMethod MAC() As %String
+{
+	Quit $ZConvert(..Times(12,"cosFaker.lib.core","Hexadecimal",2,":"),"U")
+}
+
 }
 

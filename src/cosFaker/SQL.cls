@@ -64,6 +64,9 @@
 /// <li>avatar [<b>size</b>]</li>
 /// <li>url</li>
 /// <li>slug [<b style="color:darkred">'words'</b>,<b>glue</b>]</li>
+/// <li>ipv4</li>
+/// <li>ipv6</li>
+/// <li>mac</li>
 /// </ul>
 /// <b>Job:</b><ul>
 /// <li>job.title</li>
@@ -344,6 +347,9 @@ ClassMethod DefineValue(pType As %String, args...) As %String [ Private ]
         "url":              ##class(Internet).Url(),
         "avatar":           ##class(Internet).Avatar($Get(args(1),"")),
         "slug":             ##class(Internet).Slug($Get(args(1),""),$Get(args(2),"")),
+        "ipv4":             ##class(Internet).IPV4(),
+        "ipv6":             ##class(Internet).IPV6(),
+        "mac":              ##class(Internet).MAC(),
         
         //Class: Job
         "job.title":        ##class(Job).Title(),

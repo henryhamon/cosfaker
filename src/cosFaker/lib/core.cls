@@ -7,9 +7,6 @@ Parameter PtBr = "PtBr";
 /// English (United States)
 Parameter EnUs = "EnUs";
 
-/// Russian
-Parameter Ru = "Ru";
-
 /// "cs" = "Czech"<br/>
 /// "de" = "German"<br/>
 /// "en" = "English"<br/>
@@ -35,7 +32,6 @@ ClassMethod GetLanguage() As %String [ Private ]
 ClassMethod GetLang() As %String [ Private ]
 {
 	Quit:..GetLanguage()="pt-br" ..#PtBr
-	//Set:..GetLanguage()="ru" tLang = ..#Ru
 	Quit ..#EnUs ;Default
 }
 
@@ -51,13 +47,11 @@ ClassMethod MaskNumber(pTemplate As %String, pMin As %Integer = "", pMax As %Int
 	
 	While pos'=$$$NO {
 		
-		//If (pMin="" || pMax="") {
+		If (pMin="" || pMax="") {
 		Set value = $Random(10)
-		/*
 		} Else {
 			Set value = ..Range(pMin, pMax)
 		}
-		*/
 		
 		Set pTemplate = $Extract(pTemplate,0,pos-2)_value_$Extract(pTemplate,pos,*),
 			pos = $Find(pTemplate,"#",0)
@@ -111,6 +105,24 @@ ClassMethod GetPath() As %String [ Private ]
 	Set path = app.Path
 	ZN OldNS
 	Quit path
+}
+
+ClassMethod Hexadecimal() As %String [ Private ]
+{
+	Set Num = ..Range(0,15)
+	Quit:Num<10 Num
+	Quit $Case(Num,10:"a",11:"b",12:"c",13:"d",14:"e",15:"f")
+}
+
+ClassMethod Times(pAmount As %Integer = 1, pClassName As %String = "", pMethodName As %String = "", pBreakInsertCount As %Integer = -1, pBreakInsertString As %String) As %String [ Private ]
+{
+	Set count = 0, ret = ""
+	For i=1:1:pAmount{
+		Set:count=pBreakInsertCount ret = ret_pBreakInsertString, count = 0
+		Set count = count + 1
+		Set ret = ret_$ClassMethod(pClassName,pMethodName)
+	}
+	Quit ret
 }
 
 }
