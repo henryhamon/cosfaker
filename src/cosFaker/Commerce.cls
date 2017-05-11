@@ -1,5 +1,31 @@
-Class cosFaker.Commerce
+Class cosFaker.Commerce Extends cosFaker.lib.core
 {
+
+ClassMethod ProductName() As %String
+{
+	Quit ..SampleFromFile("product_name")
+}
+
+ClassMethod Product() As %String
+{
+	Quit:..GetLang()=..#PtBr ..SampleFromFile("product_adjective")_" "_..ProductName()_" "_$ZConvert(..SampleFromFile("color"),"S")
+	Quit ..SampleFromFile("product_adjective")_" "_$ZConvert(..SampleFromFile("color"),"L")_" "_$ZConvert(..ProductName(),"L")
+}
+
+ClassMethod PromotionCode() As %String
+{
+	Quit ..SampleFromFile("promotion_adjective")_..SampleFromFile("promotion_noum")_..MaskNumber("#####")
+}
+
+ClassMethod Color() As %String
+{
+	Quit ..SampleFromFile("color")
+}
+
+ClassMethod Department() As %String
+{
+	Quit ..SampleFromFile("department")
+}
 
 ClassMethod Price(pMin As %Integer = 0, pMax As %Integer = 1000, pDec As %Integer = 2, pSymbol As %String = "")
 {
