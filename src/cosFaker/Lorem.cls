@@ -353,10 +353,10 @@ ClassMethod Hipster(pParagraphCount As %Integer = "", pSeparator As %String = ""
 {
 	Set:pParagraphCount="" pParagraphCount = 3
 	Set:pSeparator="" pSeparator = $Char(10) _ $Char(13) ; \n \r OR LF CR
-	Set begin = $ListFromString(..GetFile("\"_..GetLang()_"\hipster.fkr","begin"),"|")
-    Set middle = $ListFromString(..GetFile("\"_..GetLang()_"\hipster.fkr","middle1"),"|")
-    Set middle2 = $ListFromString(..GetFile("\"_..GetLang()_"\hipster.fkr","middle2"),"|")
-    Set TheEnd = $ListFromString(..GetFile("\"_..GetLang()_"\hipster.fkr","end"),"|")
+	Set begin = $ListFromString(..GetFile("hipster_begin"),"|")
+    Set middle = $ListFromString(..GetFile("hipster_middle1"),"|")
+    Set middle2 = $ListFromString(..GetFile("hipster_middle2"),"|")
+    Set TheEnd = $ListFromString(..GetFile("hipster_end"),"|")
 	For k=1:1:pParagraphCount {
 		S paragraph = $ListGet(begin,$Random($ListLength(begin)) + 1)
 		S paragraph = paragraph _ $ListGet(middle,$Random($ListLength(middle)) + 1)
@@ -366,7 +366,7 @@ ClassMethod Hipster(pParagraphCount As %Integer = "", pSeparator As %String = ""
 	}
 	
 	Kill begin, TheEnd, middle, middle2
-	Quit $ListToString($Get(paragraphs), pSeparator)
+	Quit $ZConvert($ListToString($Get(paragraphs), pSeparator),"I","UTF8")
 }
 
 }

@@ -3,12 +3,17 @@ Class cosFaker.Address Extends cosFaker.lib.core
 
 ClassMethod StreetSuffix() As %String
 {
-	Quit ..SampleFromFile("street","suffix")
+	Quit ..SampleFromFile("street_suffix")
 }
 
 ClassMethod StreetPrefix() As %String
 {
-	Quit ..SampleFromFile("street","prefix")
+	Quit ..SampleFromFile("street_prefix")
+}
+
+ClassMethod PostCode() As %String
+{
+	Quit ..MaskNumber(..SampleFromFile("postcode"))
 }
 
 ClassMethod StreetName() As %String
@@ -35,17 +40,28 @@ ClassMethod Capital(pLocation As %String = "") As %String
 
 ClassMethod State(pFullName As %Boolean = 0) As %String
 {
-	Quit ..SampleFromFile("state",$Case(pFullName,0:"abbr",1:"full"))
+	Quit ..SampleFromFile("state_"_$Case(pFullName,0:"abbr",1:"full"))
 }
 
 ClassMethod City(pState As %String = "") As %String
 {
+	Set:pState="" pState = ..SampleFromFile("state_abbr")
 	Quit ..SampleFromFile("city",pState)
 }
 
 ClassMethod Country(pAbrev As %Boolean = 0)
 {
-	Quit ..SampleFromFile("country",$Case(pAbrev,0:"full",1:"abbr"))
+	Quit ..SampleFromFile("country_"_$Case(pAbrev,0:"full",1:"abbr"))
+}
+
+ClassMethod SecondaryAddress()
+{
+	Quit ..MaskNumber(..SampleFromFile("secondary_address"))
+}
+
+ClassMethod BuildingNumber()
+{
+	Quit ..MaskNumber(..SampleFromFile("number"))
 }
 
 }

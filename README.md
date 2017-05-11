@@ -4,7 +4,7 @@ Generate massive amounts of fake data for Intersystems Caché
 The language of data is according to configuration of your Caché (Now works with Pt-Br and En-Us(Default)).
 
 ## Valid Types
-* Address (Street, Latitude, Longitude, City, State, Capital, Country, Street Suffix, Street Prefix)
+* Address (Street, Latitude, Longitude, City, State, Capital, Country, Street Suffix, Street Prefix, Postcode, Secondary Address)
 * App (Function name)
 * Coffee (Blend name, Variety, Notes, Origin)
 * Commerce (Price, CNPJ)

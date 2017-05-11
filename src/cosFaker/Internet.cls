@@ -21,7 +21,7 @@ ClassMethod UserName(pFirstName As %String = "", pLastName As %String = "") As %
 
 ClassMethod Email(pFirstName As %String = "", pLastName As %String = "", pProvider As %String = "") As %String
 {
-	Set:pProvider="" pProvider = ..SampleFromFile("internet","email_provider")
+	Set:pProvider="" pProvider = ..SampleFromFile("email_provider")
 	Quit ..UserName(pFirstName, pLastName) _ "@" _ pProvider
 }
 
@@ -45,7 +45,7 @@ ClassMethod DomainWord() As %String
 
 ClassMethod DomainName() As %String
 {
-	Quit $ZConvert(..DomainWord(),"l") _ "." _ ..SampleFromFile("internet","domain_suffix")
+	Quit $ZConvert(..DomainWord(),"l") _ "." _ ..SampleFromFile("domain_suffix")
 }
 
 ClassMethod Url() As %String

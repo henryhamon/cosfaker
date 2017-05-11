@@ -1,14 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Export generator="Cache" version="25" zv="Cache for Windows (x86-64) 2016.2.1 (Build 803)" ts="2017-05-10 16:00:50">
-<CSP name="cosFaker/lang/EnUs/app.fkr" application="/" default="1"><![CDATA[
-action_sql={Search,Results,Persist,Access,Integrate,Totalize,Count,Virtualize,Query,Verify,Generate}
-action_if={Compare,Check,Enable,Validate}
-action_fun={Calculate,Analyze,Run,Assign,Generate,Totalize}
-type={Tax,Invoice,Income,Sale,Items,Shop,Seller,Products,Region,Location,Prices}]]></CSP>
+<Export generator="Cache" version="25" zv="Cache for Windows (x86-64) 2016.2.1 (Build 803)" ts="2017-05-11 10:42:33">
+<CSP name="cosFaker/lang/EnUs/EnUs.fkr" application="/" default="1"><![CDATA[
+//class(lowercase name)->type={values}
+address->postcode={#####,#####-####}
+address->secondary_address={Apt. ###,Suite ###}
+address->number={#####,####,###,s/n}
+address->street_suffix={,,,,,,,,,,,,,,,,,,,Alley,Annex,Arcade,Avenue,Bayou,Beach,Bend,Bluff,Bottom,Boulevard,Branch,Bridge,Brook,Burg,Bypass,Camp,Canyon,Cape,Causeway,Center,Circle,Cliff,Club,Common,Corner,Course,Court,Cove,Creek,Crescent,Crossing,Crossroad,Curve,Dale,Dam,Divide,Drive,Estate,Expressway,Extension,Fall,Ferry,Field,Flat,Ford,Forest,Forge,Fork,Fort,Freeway,Garden,Gateway,Glen,Green,Grove,Harbor,Haven,Heights,Highway,Hill,Hollow,Inlet,Island,Isle,Junction,Key,Knoll,Lake,Land,Landing,Lane,Light,Loaf,Lock,Lodge,Loop,Mall,Manor,Meadow,Mews,Mill,Mission,Motorway,Mount,Mountain,Neck,Orchard,Oval,Overpass,Park,Parkway,Pass,Passage,Path,Pike,Pine,Place,Plain,Plaza,Point,Port,Prairie,Radial,Ramp,Ranch,Rapid,Rest,Ridge,River,Road,Route,Row,Rue,Run,Shoal,Shore,Skyway,Spring,Spur,Square,Station,Stravenue,Stream,Street,Summit,Terrace,Throughway,Trace,Track,Trafficway,Trail,Trailer,Tunnel,Turnpike,Underpass,Union,Valley,Viaduct,View,Village,Ville,Vista,Walk,Wall,Way,Well,Wells}
+address->street_prefix={Road,Avenue,Cross,Bridge,Marginal,Alley,Highway}
+address->state_full={Alabama,Alaska,Arizona,Arkansas,California,Colorado,Connecticut,Delaware,Florida,Georgia,Hawaii,Idaho,Illinois,Indiana,Iowa,Kansas,Kentucky,Louisiana,Maine,Maryland,Massachusetts,Michigan,Minnesota,Mississippi,Missouri,Montana,Nebraska,Nevada,New Hampshire,New Jersey,New Mexico,New York,North Carolina,North Dakota,Ohio,Oklahoma,Oregon,Pennsylvania,Rhode Island,South Carolina,South Dakota,Tennessee,Texas,Utah,Vermont,Virginia,Washington,West Virginia,Wisconsin,Wyoming}
+address->state_abbr={AL,AK,AZ,AR,CA,CO,CT,DE,FL,GA,HI,ID,IL,IN,IA,KS,KY,LA,ME,MD,MA,MI,MN,MS,MO,MT,NE,NV,NH,NJ,NM,NY,NC,ND,OH,OK,OR,PA,RI,SC,SD,TN,TX,UT,VT,VA,WA,WV,WI,WY}
+address->country_abbr={AF,AL,DZ,AO,AR,AM,AZ,BD,BY,BZ,BJ,BT,BO,BA,BW,BR,BG,BF,BI,KH,CM,CV,CF,TD,CL,CN,CO,KM,CG,CK,CR,CI,HR,CU,KP,CD,DJ,DM,DO,EC,EG,SV,GQ,ER,ET,FJ,GA,GM,GE,GH,GD,GT,GN,GW,GY,HT,HN,HU,IN,ID,IR,IQ,JM,JO,KZ,KE,KI,KG,LA,LV,LB,LS,LR,LY,LT,MG,MW,MY,MV,ML,MH,MR,MU,MX,FM,MN,ME,MA,MZ,MM,NA,NR,NP,NI,NE,NG,NU,OM,PK,PW,PA,PG,PY,PE,PH,PL,MD,RO,RU,RW,KN,LC,VC,WS,ST,SN,RS,SC,SL,SK,SB,SO,ZA,LK,SD,SR,SZ,SY,TJ,TH,MK,TL,TG,TO,TN,TR,TM,TV,UG,UA,TZ,UY,UZ,VU,VE,VN,YE,ZM,ZW}
+address->country_full={Afghanistan,Albania,Algeria,Angola,Argentina,Armenia,Azerbaijan,Bangladesh,Belarus,Belize,Benin,Bhutan,Bolivia (Plurinational State of),Bosnia and Herzegovina,Botswana,Brazil,Bulgaria,Burkina Faso,Burundi,Cambodia,Cameroon,Cape Verde,Central African Republic,Chad,Chile,China,Colombia,Comoros,Congo,Cook Islands,Costa Rica,Côte d'Ivoire,Croatia,Cuba,Democratic People's Republic of Korea,Democratic Republic of the Congo,Djiboutia,Dominica,Dominican Republic,Ecuador,Egypt,El Salvador,Equatorial Guinea,Eritrea,Ethiopia,Fiji,Gabon,Gambia,Georgia,Ghana,Grenada,Guatemala,Guinea,Guinea-Bissau,Guyana,Haiti,Honduras,Hungary,India,Indonesia,Iran (Islamic Republic of),Iraq,Jamaica,Jordan,Kazakhstan,Kenya,Kiribati,Kyrgyzstan,Lao People's Democratic Republic,Latvia,Lebanon,Lesotho,Liberia,Libyan Arab Jamahiriya,Lithuania,Madagascar,Malawi,Malaysia,Maldives,Mali,Marshall Islands,Mauritania,Mauritius,Mexico,Micronesia (Federated States of),Mongolia,Montenegro,Morocco,Mozambique,Myanmar,Namibia,Nauru,Nepal,Nicaragua,Niger,Nigeria,Niue,Oman,Pakistan,Palau,Panama,Papua New Guinea,Paraguay,Peru,Philippines,Poland,Republic of Moldova,Romania,Russian Federation,Rwanda,Saint Kitts and Nevis,Saint Lucia,Saint Vincent and the Grenadines,Samoa,Sao Tome and Principe,Senegal,Serbia,Seychelles,Sierra Leone,Slovakia,Solomon Islands,Somalia,South Africa,Sri Lanka,Sudan,Suriname,Swaziland,Syrian Arab Republic,Tajikistan,Thailand,The former Yugoslav Republic of Macedonia,Timor-Leste,Togo,Tonga,Tunisia,Turkey,Turkmenistan,Tuvalu,Uganda,Ukraine,United Republic of Tanzania,Uruguay,Uzbekistan,Vanuatu,Venezuela (Bolivarian Republic of),Viet Nam,Yemen,Zambia,Zimbabwe}
+address->capital={Montgomery,Juneau,Phoenix,Little Rock,Sacramento,Denver,Hartford,Dover,Tallahassee,Atlanta,Honolulu,Boise,Springfield,Indianapolis,Des Moines,Topeka,Frankfort,Baton Rouge,Augusta,Annapolis,Boston,Lansing,Saint Paul,Jackson,Jefferson City,Helena,Lincoln,Carson City,Concord,Trenton,Santa Fe,Albany,Raleigh,Bismarck,Columbus,Oklahoma City,Salem,Harrisburg,Providence,Columbia,Pierre,Nashville,Austin,Salt Lake City,Montpelier,Richmond,Olympia,Charleston,Madison,Cheyenne}
+address->city=file{city}
 
+app->action_sql={Search,Results,Persist,Access,Integrate,Totalize,Count,Virtualize,Query,Verify,Generate}
+app->action_if={Compare,Check,Enable,Validate}
+app->action_fun={Calculate,Analyze,Run,Assign,Generate,Totalize}
+app->type={Tax,Invoice,Income,Sale,Items,Shop,Seller,Products,Region,Location,Prices}
 
-<CSP name="cosFaker/lang/EnUs/capital.fkr" application="/" default="1"><![CDATA[
-Montgomery,Juneau,Phoenix,Little Rock,Sacramento,Denver,Hartford,Dover,Tallahassee,Atlanta,Honolulu,Boise,Springfield,Indianapolis,Des Moines,Topeka,Frankfort,Baton Rouge,Augusta,Annapolis,Boston,Lansing,Saint Paul,Jackson,Jefferson City,Helena,Lincoln,Carson City,Concord,Trenton,Santa Fe,Albany,Raleigh,Bismarck,Columbus,Oklahoma City,Salem,Harrisburg,Providence,Columbia,Pierre,Nashville,Austin,Salt Lake City,Montpelier,Richmond,Olympia,Charleston,Madison,Cheyenne]]></CSP>
+company->profession={teacher,actor,musician,philosopher,writer,doctor,accountant,agriculturist,architect,economist,engineer,interpreter,attorney at law,advocate,librarian,statistician,human resources,firefighter,judge,police officer,astronomer,biologist,chemist,physicist,programmer,web developer,designer}
+company->industry={Defense & Space,Computer Hardware,Computer Software,Computer Networking,Internet,Semiconductors,Telecommunications,Law Practice,Legal Services,Management Consulting,Biotechnology,Medical Practice,Hospital & Health Care,Pharmaceuticals,Veterinary,Medical Devices,Cosmetics,Apparel & Fashion,Sporting Goods,Tobacco,Supermarkets,Food Production,Consumer Electronics,Consumer Goods,Furniture,Retail,Entertainment,Gambling & Casinos,Leisure, Travel & Tourism,Hospitality,Restaurants,Sports,Food & Beverages,Motion Pictures and Film,Broadcast Media,Museums and Institutions,Fine Art,Performing Arts,Recreational Facilities and Services,Banking,Insurance,Financial Services,Real Estate,Investment Banking,Investment Management,Accounting,Construction,Building Materials,Architecture & Planning,Civil Engineering,Aviation & Aerospace,Automotive,Chemicals,Machinery,Mining & Metals,Oil & Energy,Shipbuilding,Utilities,Textiles,Paper & Forest Products,Railroad Manufacture,Farming,Ranching,Dairy,Fishery,Primary / Secondary Education,Higher Education,Education Management,Research,Military,Legislative Office,Judiciary,International Affairs,Government Administration,Executive Office,Law Enforcement,Public Safety,Public Policy,Marketing and Advertising,Newspapers,Publishing,Printing,Information Services,Libraries,Environmental Services,Package / Freight Delivery,Individual & Family Services,Religious Institutions,Civic & Social Organization,Consumer Services,Transportationg / Trucking / Railroad,Warehousing,Airlines / Aviation,Maritime,Information Technology and Services,Market Research,Public Relations and Communications,Design,Nonprofit Organization Management,Fund-Raising,Program Development,Writing and Editing,Staffing and Recruiting,Professional Training & Coaching,Venture Capital & Private Equity,Political Organization,Translation and Localization,Computer Games,Events Services,Arts and Crafts,Electrical / Electronic Manufacturing,Online Media,Nanotechnology,Music,Logistics and Supply Chain,Plastics,Computer & Network Security,Wireless,Alternative Dispute Resolution,Security and Investigations,Facilities Services,Outsourcing / Offshoring,Health, Wellness and Fitness,Alternative Medicine,Media Production,Animation,Commercial Real Estate,Capital Markets,Think Tanks,Philanthropy,E-Learning,Wholesale,Import and Export,Mechanical or Industrial Engineering,Photography,Human Resources,Business Supplies and Equipment,Mental Health Care,Graphic Design,International Trade and Development,Wine and Spirits,Luxury Goods & Jewelry,Renewables & Environment,Glass, Ceramics & Concrete,Packaging and Containers,Industrial Automation,Government Relations}
+company->suffix={Inc,and Sons,LLC,Group}
+
+game->suit={Clubs,Hearts,Spades,Diamonds}
+game->separator={of}
+
+internet->email_provider={gmail.com,yahoo.com,hotmail.com}
+internet->domain_suffix={com,us,biz,info,name,net,org,io,co}
+
+job->title_seniority={Lead,Senior,Direct,Corporate,Dynamic,Future,Product,National,Regional,District,Central,Global,Customer,Investor,Dynamic,International,Legacy,Forward,Internal,Human,Chief,Principal}
+job->title_position={Supervisor,Associate,Executive,Liaison,Officer,Manager,Engineer,Specialist,Director,Coordinator,Administrator,Architect,Analyst,Designer,Planner,Orchestrator,Technician,Developer,Producer,Consultant,Assistant,Facilitator,Agent,Representative,Strategist}
+job->field={Marketing,IT,Accounting,Administration,Advertising,Banking,Community-Services,Construction,Consulting,Design,Education,Farming,Government,Healthcare,Hospitality,Legal,Manufacturing,Marketing,Mining,Real-Estate,Retail,Sales,Technology}
+job->skills={Teamwork,Communication,Problem solving,Leadership,Organisation,Work under pressure,Confidence,Self-motivated,Networking skills,Proactive,Fast learner,Technical savvy}
+
+lorem->hipster_begin={Dear friends, |On the other hand, |Also, |However, we must not forget that |In the same way, |Everyday practice proves that |It is never too much to remember the weight and significance of these problems, since |The accumulated experiences demonstrate that |Above all, it is essential to emphasize that |The incentive to technological advance, as well as |Regardless of, |All these duly considered questions cast doubt on whether |Thinking more in the long run, |What we must always keep in mind is that |Still, there are doubts about how |I would like to emphasize that |However, |At the organizational level, |The commitment to analyze |We realize, more and more, that |In today's world, |It is important to question how |In this sense, |Of course, |Therefore, |Of course |We can already glimpse the way in which |In this way, |The care in identifying critical points |The certification of methodologies that help us deal with }
+lorem->hipster_middle1={the implementation of the program points |the complexity of the studies carried out |the continuous expansion of our activity |the current structure of the organization |the new structural model advocated here |the continuous development of different ways of acting |the constant dissemination of information |the consolidation of structures |the consultation of the various militants |the beginning of the general activity of formation of attitudes |the challenging globalized scenario |the mobility of international capital |the phenomenon of the Internet |the hegemony of the political environment |the expansion of world markets |the increase of the dialogue between the different productive sectors |the growing influence of the media |the need for procedural renewal | competitiveness in commercial transactions |the emergence of virtual commerce |the revolution of customs |the monitoring of consumer preferences |the commitment between the teams |the clear determination of goals |the adoption of decentralizing policies |the valuation of subjective factors |the perception of difficulties |the understanding of the proposed goals |the consensus on the need for qualification |the impartial judgment of eventualities }
+lorem->hipster_middle2={forces us to the analysis |plays an essential role in the formulation |requires precision and definition |helps the preparation and the composition |guarantees the contribution of an important group in determining |assumes important positions in the establishment |facilitates the creation |hinders the appreciation of the importance |offers an interesting opportunity for verification |entails a process of reformulation and modernization |may lead us to consider the restructuring |represents an opening for improvement |has not convincingly demonstrated that it will participate in the change |perhaps it will emphasize relativity |prepares us to face atypical situations arising |maximizes the possibilities on account |challenges the ability to equalize |adds value to the establishment |is one of the consequences |promotes leverage |can no longer dissociate itself |enables a better global vision |stimulates standardization |points to improvement |is part of a management process |causes indirect impact on the revaluation |presents trends towards approving maintenance |extends the scope and importance |must undergo modifications independently |positively affects the correct forecast }
+lorem->hipster_end={the financial and administrative conditions required.|from the development guidelines for the future.|of the general participation system.|of the positions of the governing bodies in relation to their attributions.|of the new propositions.|from the preferred directions in the direction of progress.|of the system of training of cadres that corresponds to the needs.|of undeniably appropriate conditions.|of the desired indexes.|of the forms of action.|of corporate paradigms.|of vertical relationships between hierarchies.|the communication process as a whole.|of the methods used in the evaluation of results.|of all the functional resources involved.|of the levels of departmental motivation.|of the innovative management of which we are part.|of the conventional modes of operation.|of alternatives to orthodox solutions.|of the procedures normally adopted.|of strategic knowledge to achieve excellence.|of the flow of information.|of the survey of the variables involved.|of the various currents of thought.|of the impact on decision agility.|of normative rules of conduct.|of the sectoral budget.|long-term expected return.|of the investment in technical recycling.|of the redeployment of functional frameworks.}
+
+name->female_names={Mary,Patricia,Linda,Barbara,Elizabeth,Jennifer,Maria,Susan,Margaret,Dorothy,Lisa,Nancy,Karen,Betty,Helen,Sandra,Donna,Carol,Ruth,Sharon,Michelle,Laura,Sarah,Kimberly,Deborah,Jessica,Shirley,Cynthia,Angela,Melissa,Brenda,Amy,Anna,Rebecca,Virginia,Kathleen,Pamela,Martha,Debra,Amanda,Stephanie,Carolyn,Christine,Marie,Janet,Catherine,Frances,Ann,Joyce,Diane,Alice,Julie,Heather,Teresa,Doris,Gloria,Evelyn,Jean,Cheryl,Mildred,Katherine,Joan,Ashley,Judith,Rose,Janice,Kelly,Nicole,Judy,Christina,Kathy,Theresa,Beverly,Denise,Tammy,Irene,Jane,Lori,Rachel,Marilyn,Andrea,Kathryn,Louise,Sara,Anne,Jacqueline,Wanda,Bonnie,Julia,Ruby,Lois,Tina,Phyllis,Norma,Paula,Diana,Annie,Lillian,Emily,Robin,Peggy,Crystal,Gladys,Rita,Dawn,Connie,Florence,Tracy,Edna,Tiffany,Carmen,Rosa,Cindy,Grace,Wendy,Victoria,Edith,Kim,Sherry,Sylvia,Josephine,Thelma,Shannon,Sheila,Ethel,Ellen,Elaine,Marjorie,Carrie,Charlotte,Monica,Esther,Pauline,Emma,Juanita,Anita,Rhonda,Hazel,Amber,Eva,Debbie,April,Leslie,Clara,Lucille,Jamie,Joanne,Eleanor,Valerie,Danielle,Megan,Alicia,Suzanne,Michele,Gail,Bertha,Darlene,Veronica,Jill,Erin,Geraldine,Lauren,Cathy,Joann,Lorraine,Lynn,Sally,Regina,Erica,Beatrice,Dolores,Bernice,Audrey,Yvonne,Annette,June,Samantha,Marion,Dana,Stacy,Ana,Renee,Ida,Vivian,Roberta,Holly,Brittany,Melanie,Loretta,Yolanda,Jeanette,Laurie,Katie,Kristen,Vanessa,Alma,Sue,Elsie,Beth,Jeanne,Vicki,Carla,Tara,Rosemary,Eileen,Terri,Gertrude,Lucy,Tonya,Ella,Stacey,Wilma,Gina,Kristin,Jessie,Natalie,Agnes,Vera,Willie,Charlene,Bessie,Delores,Melinda,Pearl,Arlene,Maureen,Colleen,Allison,Tamara,Joy,Georgia,Constance,Lillie,Claudia,Jackie,Marcia,Tanya,Nellie,Minnie,Marlene,Heidi,Glenda,Lydia,Viola,Courtney,Marian,Stella,Caroline,Dora,Jo,Vickie,Mattie,Terry,Maxine,Irma,Mabel,Marsha,Myrtle,Lena,Christy,Deanna,Patsy,Hilda,Gwendolyn,Jennie,Nora,Margie,Nina,Cassandra,Leah,Penny,Kay,Priscilla,Naomi,Carole,Brandy,Olga,Billie,Dianne,Tracey,Leona,Jenny,Felicia,Sonia,Miriam,Velma,Becky,Bobbie,Violet,Kristina,Toni,Misty,Mae,Shelly,Daisy,Ramona,Sherri,Erika,Katrina,Claire}
+name->male_names={James,John,Robert,Michael,William,David,Richard,Charles,Joseph,Thomas,Christopher,Daniel,Paul,Mark,Donald,George,Kenneth,Steven,Edward,Brian,Ronald,Anthony,Kevin,Jason,Matthew,Gary,Timothy,Jose,Larry,Jeffrey,Frank,Scott,Eric,Stephen,Andrew,Raymond,Gregory,Joshua,Jerry,Dennis,Walter,Patrick,Peter,Harold,Douglas,Henry,Carl,Arthur,Ryan,Roger,Joe,Juan,Jack,Albert,Jonathan,Justin,Terry,Gerald,Keith,Samuel,Willie,Ralph,Lawrence,Nicholas,Roy,Benjamin,Bruce,Brandon,Adam,Harry,Fred,Wayne,Billy,Steve,Louis,Jeremy,Aaron,Randy,Howard,Eugene,Carlos,Russell,Bobby,Victor,Martin,Ernest,Phillip,Todd,Jesse,Craig,Alan,Shawn,Clarence,Sean,Philip,Chris,Johnny,Earl,Jimmy,Antonio,Danny,Bryan,Tony,Luis,Mike,Stanley,Leonard,Nathan,Dale,Manuel,Rodney,Curtis,Norman,Allen,Marvin,Vincent,Glenn,Jeffery,Travis,Jeff,Chad,Jacob,Lee,Melvin,Alfred,Kyle,Francis,Bradley,Jesus,Herbert,Frederick,Ray,Joel,Edwin,Don,Eddie,Ricky,Troy,Randall,Barry,Alexander,Bernard,Mario,Leroy,Francisco,Marcus,Micheal,Theodore,Clifford,Miguel,Oscar,Jay,Jim,Tom,Calvin,Alex,Jon,Ronnie,Bill,Lloyd,Tommy,Leon,Derek,Warren,Darrell,Jerome,Floyd,Leo,Alvin,Tim,Wesley,Gordon,Dean,Greg,Jorge,Dustin,Pedro,Derrick,Dan,Lewis,Zachary,Corey,Herman,Maurice,Vernon,Roberto,Clyde,Glen,Hector,Shane,Ricardo,Sam,Rick,Lester,Brent,Ramon,Charlie,Tyler,Gilbert,Gene,Marc,Reginald,Ruben,Brett,Angel,Nathaniel,Rafael,Leslie,Edgar,Milton,Raul,Ben,Chester,Cecil,Duane,Franklin,Andre,Elmer,Brad,Gabriel,Ron,Mitchell,Roland,Arnold,Harvey,Jared,Adrian,Karl,Cory,Claude,Erik,Darryl,Jamie,Neil,Jessie,Christian,Javier,Fernando,Clinton,Ted,Mathew,Tyrone,Darren,Lonnie,Lance,Cody,Julio,Kelly,Kurt,Allan,Nelson,Guy,Clayton,Hugh,Max,Dwayne,Dwight,Armando,Felix,Jimmie,Everett,Jordan,Ian,Wallace,Ken,Bob,Jaime,Casey,Alfredo,Alberto,Dave,Ivan,Johnnie,Sidney,Byron,Julian,Isaac,Morris,Clifton,Willard,Daryl,Ross,Virgil,Andy,Marshall,Salvador,Perry,Kirk,Sergio,Marion,Tracy,Seth,Kent,Terrance,Rene,Eduardo,Terrence,Enrique,Freddie,Wade}
+name->last_names={Smith,Johnson,Williams,Jones,Brown,Davis,Miller,Wilson,Moore,Taylor,Anderson,Thomas,Jackson,White,Harris,Martin,Thompson,Garcia,Martinez,Robinson,Clark,Rodriguez,Lewis,Lee,Walker,Hall,Allen,Young,Hernandez,King,Wright,Lopez,Hill,Scott,Green,Adams,Baker,Gonzalez,Nelson,Carter,Mitchell,Perez,Roberts,Turner,Phillips,Campbell,Parker,Evans,Edwards,Collins,Stewart,Sanchez,Morris,Rogers,Reed,Cook,Morgan,Bell,Murphy,Bailey,Rivera,Cooper,Richardson,Cox,Howard,Ward,Torres,Peterson,Gray,Ramirez,James,Watson,Brooks,Kelly,Sanders,Price,Bennett,Wood,Barnes,Ross,Henderson,Coleman,Jenkins,Perry,Powell,Long,Patterson,Hughes,Flores,Washington,Butler,Simmons,Foster,Gonzales,Bryant,Alexander,Russell,Griffin,Diaz,Hayes,Myers,Ford,Hamilton,Graham,Sullivan,Wallace,Woods,Cole,West,Jordan,Owens,Reynolds,Fisher,Ellis,Harrison,Gibson,Mcdonald,Cruz,Marshall,Ortiz,Gomez,Murray,Freeman,Wells,Webb,Simpson,Stevens,Tucker,Porter,Hunter,Hicks,Crawford,Henry,Boyd,Mason,Morales,Kennedy,Warren,Dixon,Ramos,Reyes,Burns,Gordon,Shaw,Holmes,Rice,Robertson,Hunt,Black,Daniels,Palmer,Mills,Nichols,Grant,Knight,Ferguson,Rose,Stone,Hawkins,Dunn,Perkins,Hudson,Spencer,Gardner,Stephens,Payne,Pierce,Berry,Matthews,Arnold,Wagner,Willis,Ray,Watkins,Olson,Carroll,Duncan,Snyder,Hart,Cunningham,Bradley,Lane,Andrews,Ruiz,Harper,Fox,Riley,Armstrong,Carpenter,Weaver,Greene,Lawrence,Elliott,Chavez,Sims,Austin,Peters,Kelley,Franklin,Lawson,Fields,Gutierrez,Ryan,Schmidt,Carr,Vasquez,Castillo,Wheeler,Chapman,Oliver,Montgomery,Richards,Williamson,Johnston,Banks,Meyer,Bishop,Mccoy,Howell,Alvarez,Morrison,Hansen,Fernandez,Garza,Harvey,Little,Burton,Stanley,Nguyen,George,Jacobs,Reid,Kim,Fuller,Lynch,Dean,Gilbert,Garrett,Romero,Welch,Larson,Frazier,Burke,Hanson,Day,Mendoza,Moreno,Bowman,Medina,Fowler,Brewer,Hoffman,Carlson,Silva,Pearson,Holland,Douglas,Fleming,Jensen,Vargas,Byrd,Davidson,Hopkins,May,Terry,Herrera,Wade,Soto,Walters,Curtis,Neal,Caldwell,Lowe,Jennings,Barnett,Graves,Jimenez,Horton,Shelton,Barrett,Obrien,Castro,Sutton,Gregory,Mckinney,Lucas,Miles,Craig,Rodriquez,Chambers,Holt,Lambert,Fletcher,Watts,Bates,Hale,Rhodes,Pena,Beck,Newman,Haynes,Mcdaniel,Mendez,Bush,Vaughn,Parks,Dawson,Santiago,Norris,Hardy,Love,Steele,Curry,Powers,Schultz,Barker,Guzman,Page,Munoz,Ball,Keller,Chandler,Weber,Leonard,Walsh,Lyons,Ramsey,Wolfe,Schneider,Mullins,Benson,Sharp,Bowen,Daniel,Barber,Cummings,Hines,Baldwin,Griffith,Valdez,Hubbard,Salazar,Reeves,Warner,Stevenson,Burgess,Santos,Tate,Cross,Garner,Mann,Mack,Moss,Thornton,Dennis,Mcgee,Farmer,Delgado,Aguilar,Vega,Glover,Manning,Cohen,Harmon,Rodgers,Robbins,Newton,Todd,Blair,Higgins,Ingram,Reese,Cannon,Strickland,Townsend,Potter,Goodwin,Walton,Rowe,Hampton,Ortega,Patton,Swanson,Joseph,Francis,Goodman,Maldonado,Yates,Becker,Erickson,Hodges,Rios,Conner,Adkins,Webster,Norman,Malone,Hammond,Flowers,Cobb,Moody,Quinn,Blake,Maxwell,Pope,Floyd,Osborne,Paul,Mccarthy,Guerrero,Lindsey,Estrada,Sandoval,Gibbs,Tyler,Gross,Fitzgerald,Stokes,Doyle,Sherman,Saunders,Wise,Colon,Gill,Alvarado,Greer,Padilla,Simon,Waters,Nunez,Ballard,Schwartz,Mcbride,Houston,Christensen,Klein,Pratt,Briggs,Parsons,Mclaughlin,Zimmerman,French,Buchanan,Moran,Copeland,Roy,Pittman,Brady,Mccormick,Holloway,Brock,Poole,Frank,Logan,Owen,Bass,Marsh,Drake,Wong,Jefferson,Park,Morton,Abbott,Sparks,Patrick,Norton,Huff,Clayton,Massey,Lloyd,Figueroa,Carson,Bowers,Roberson,Barton,Tran,Lamb,Harrington,Casey,Boone,Cortez,Clarke,Mathis,Singleton,Wilkins,Cain,Bryan,Underwood,Hogan,Mckenzie,Collier,Luna,Phelps,Mcguire,Allison,Bridges,Wilkerson,Nash,Summers,Atkins,Wilcox,Pitts,Conley,Marquez,Burnett,Richard,Cochran,Chase,Davenport,Hood,Gates,Clay,Ayala,Sawyer,Roman,Vazquez,Dickerson,Hodge,Acosta,Flynn,Espinoza,Nicholson,Monroe,Wolf,Morrow,Kirk,Randall,Anthony,Whitaker,Oconnor,Skinner,Ware,Molina,Kirby,Huffman,Bradford,Charles,Gilmore,Dominguez,Oneal,Bruce,Lang,Combs,Kramer,Heath,Hancock,Gallagher,Gaines,Shaffer,Short,Wiggins,Mathews,Mcclain,Fischer,Wall,Small,Melton,Hensley,Bond,Dyer,Cameron,Grimes,Contreras,Christian,Wyatt,Baxter,Snow,Mosley,Shepherd,Larsen,Hoover,Beasley,Glenn,Petersen,Whitehead,Meyers,Keith,Garrison,Vincent,Shields,Horn,Savage,Olsen,Schroeder,Hartman,Woodard,Mueller,Kemp,Deleon,Booth,Patel,Calhoun,Wiley,Eaton,Cline,Navarro,Harrell,Lester,Humphrey,Parrish,Duran,Hutchinson,Hess,Dorsey,Bullock,Robles,Beard,Dalton,Avila,Vance,Rich,Blackwell,York,Johns,Blankenship,Trevino,Salinas,Campos,Pruitt,Moses,Callahan,Golden,Montoya}
+name->person_suffix={Jr.,Sr.,I,II,III,IV,V,MD,DDS,PhD,DVM}]]></CSP>
 
 
 <CSP name="cosFaker/lang/EnUs/city.fkr" application="/" default="1"><![CDATA[
@@ -75,76 +109,49 @@ WA={Auburn,Federal Way,Bellevue,Black Diamond,Bothell,Burton,Carnation,Duvall,Ed
 AK={Anchorage,Jber,JBER,Indian,Kongiganak,Adak,Atka,Chignik Lake,Port Heiden,Port Lions,Akiachak,Akiak,Akutan,Alakanuk,Aleknagik,Anchor Point,Aniak,Anvik,Bethel,Chefornak,Chevak,Chignik,Chignik Lagoon,Chitina,Chugiak,Clam Gulch,Clarks Point,Cold Bay,Cooper Landing,Copper Center,Cordova,Crooked Creek,Dillingham,Eagle River,Eek,Egegik,Ekwok,Emmonak,False Pass,Marshall,Gakona,Girdwood,Glennallen,Goodnews Bay,Grayling,Saint George Island,Holy Cross,Homer,Hooper Bay,Hope,Iliamna,Kalskag,Karluk,Kasigluk,Kasilof,Kenai,King Cove,King Salmon,Kipnuk,Kodiak,Kotlik,Kwethluk,Kwigillingok,Wasilla,Larsen Bay,Levelock,Lower Kalskag,Mc Grath,Manokotak,Mekoryuk,Moose Pass,Mountain Village,Naknek,Napakiak,Nikiski,New Stuyahok,Toksook Bay,Nikolski,Ninilchik,Nondalton,Nunapitchuk,Old Harbor,Ouzinkie,Palmer,Pedro Bay,Perryville,Pilot Point,Pilot Station,Platinum,Big Lake,Port Alsworth,Quinhagak,Red Devil,Russian Mission,Saint Marys,Saint Michael,Saint Paul Island,Sand Point,Scammon Bay,Seldovia,Seward,Shageluk,Nunam Iqua,Skwentna,Sleetmute,Soldotna,South Naknek,Stebbins,Sterling,Sutton,Takotna,Talkeetna,Tatitlek,Togiak,Tuluksak,Tuntutuliak,Tununak,Tyonek,Trapper Creek,Unalakleet,Unalaska,Valdez,Willow,Yakutat,Nightmute,Nikolai,Dutch Harbor,Whittier,Houston,Fairbanks,Eielson AFB,Fort Wainwright,Clear,North Pole,Salcha,Two Rivers,Allakaket,Anaktuvuk Pass,Arctic Village,Barrow,Beaver,Ester,Bettles Field,Buckland,Cantwell,Central,Fort Greely,Chicken,Circle,Prudhoe Bay,Deering,Delta Junction,Eagle,Elim,Fort Yukon,Galena,Gambell,Healy,Anderson,Hughes,Huslia,Kaktovik,Kaltag,Kiana,Kivalina,Kobuk,Kotzebue,Koyuk,Koyukuk,Denali National Park,Manley Hot Springs,Lake Minchumina,Minto,Point Lay,Nenana,Noatak,Nome,Noorvik,Northway,Nulato,Point Hope,Rampart,Ruby,Savoonga,Selawik,Shaktoolik,Shishmaref,Shungnak,Stevens Village,Tanacross,Tanana,Teller,Tok,Venetie,Wainwright,Wales,White Mountain,Brevig Mission,Ambler,Chalkyitsik,Nuiqsut,Atqasuk,Juneau,Angoon,Auke Bay,Douglas,Elfin Cove,Gustavus,Haines,Hoonah,Kake,Pelican,Petersburg,Sitka,Port Alexander,Skagway,Tenakee Springs,Ketchikan,Meyers Chuck,Coffman Cove,Thorne Bay,Craig,Hydaburg,Hyder,Klawock,Metlakatla,Point Baker,Ward Cove,Wrangell}]]></CSP>
 
 
-<CSP name="cosFaker/lang/EnUs/company.fkr" application="/" default="1"><![CDATA[
-profession={teacher,actor,musician,philosopher,writer,doctor,accountant,agriculturist,architect,economist,engineer,interpreter,attorney at law,advocate,librarian,statistician,human resources,firefighter,judge,police officer,astronomer,biologist,chemist,physicist,programmer,web developer,designer}
-industry={Defense & Space,Computer Hardware,Computer Software,Computer Networking,Internet,Semiconductors,Telecommunications,Law Practice,Legal Services,Management Consulting,Biotechnology,Medical Practice,Hospital & Health Care,Pharmaceuticals,Veterinary,Medical Devices,Cosmetics,Apparel & Fashion,Sporting Goods,Tobacco,Supermarkets,Food Production,Consumer Electronics,Consumer Goods,Furniture,Retail,Entertainment,Gambling & Casinos,Leisure, Travel & Tourism,Hospitality,Restaurants,Sports,Food & Beverages,Motion Pictures and Film,Broadcast Media,Museums and Institutions,Fine Art,Performing Arts,Recreational Facilities and Services,Banking,Insurance,Financial Services,Real Estate,Investment Banking,Investment Management,Accounting,Construction,Building Materials,Architecture & Planning,Civil Engineering,Aviation & Aerospace,Automotive,Chemicals,Machinery,Mining & Metals,Oil & Energy,Shipbuilding,Utilities,Textiles,Paper & Forest Products,Railroad Manufacture,Farming,Ranching,Dairy,Fishery,Primary / Secondary Education,Higher Education,Education Management,Research,Military,Legislative Office,Judiciary,International Affairs,Government Administration,Executive Office,Law Enforcement,Public Safety,Public Policy,Marketing and Advertising,Newspapers,Publishing,Printing,Information Services,Libraries,Environmental Services,Package / Freight Delivery,Individual & Family Services,Religious Institutions,Civic & Social Organization,Consumer Services,Transportationg / Trucking / Railroad,Warehousing,Airlines / Aviation,Maritime,Information Technology and Services,Market Research,Public Relations and Communications,Design,Nonprofit Organization Management,Fund-Raising,Program Development,Writing and Editing,Staffing and Recruiting,Professional Training & Coaching,Venture Capital & Private Equity,Political Organization,Translation and Localization,Computer Games,Events Services,Arts and Crafts,Electrical / Electronic Manufacturing,Online Media,Nanotechnology,Music,Logistics and Supply Chain,Plastics,Computer & Network Security,Wireless,Alternative Dispute Resolution,Security and Investigations,Facilities Services,Outsourcing / Offshoring,Health, Wellness and Fitness,Alternative Medicine,Media Production,Animation,Commercial Real Estate,Capital Markets,Think Tanks,Philanthropy,E-Learning,Wholesale,Import and Export,Mechanical or Industrial Engineering,Photography,Human Resources,Business Supplies and Equipment,Mental Health Care,Graphic Design,International Trade and Development,Wine and Spirits,Luxury Goods & Jewelry,Renewables & Environment,Glass, Ceramics & Concrete,Packaging and Containers,Industrial Automation,Government Relations}
-suffix={Corp.,Inc.,Co.,Ltd.,LC,LLC,PLLC,LP,LLP,LLLP}]]></CSP>
+<CSP name="cosFaker/lang/PtBr/PtBr.fkr" application="/" default="1"><![CDATA[
+//class(lowercase name)->type={values}
+address->postcode={#####-###}
+address->secondary_address={Apto. ###,Sobrado ##,Casa #,Lote ##,Quadra ##}
+address->number={#####,####,###,s/n}
+address->street_suffix={Doutor,,Marechal,Padre,,Almirante,General,Monsenhor,,Conselheiro}
+address->street_prefix={Rua,Avenida,Travessa,Ponte,Alameda,Marginal,Viela,Rodovia}
+address->state_full={Acre,Alagoas,Amapá,Amazonas,Bahia,Ceará,Distrito Federal,Espírito Santo,Goiás,Maranhão,Mato Grosso,Mato Grosso do Sul,Minas Gerais,Pará,Paraíba,Paraná,Pernambuco,Piauí,Rio de Janeiro,Rio Grande do Norte,Rio Grande do Sul,Rondônia,Roraima,Santa Catarina,São Paulo,Sergipe,Tocantins}
+address->state_abbr={AC,AL,AP,AM,BA,CE,DF,ES,GO,MA,MT,MS,MG,PA,PB,PR,PE,PI,RJ,RN,RS,RO,RR,SC,SP,SE,TO}
+address->country_abbr={AF,ZA,AL,DE,AD,AO,AI,AQ,AG,AN,SA,DZ,AR,AM,AW,AU,AT,AZ,BS,BD,BB,BH,BY,BE,BZ,BX,BJ,BM,BO,BA,BW,BR,BN,BG,BF,BI,BT,CV,CM,KH,CA,QA,KZ,TD,CL,CN,CY,CO,KM,CG,CI,CR,HR,CU,DK,DJ,DM,EG,SV,AE,EC,ER,EM,SK,SI,ES,US,EE,ET,RU,FJ,PH,FI,FR,GA,GM,GH,GE,GS,GI,GD,GR,GL,GP,GU,GT,GY,GN,GW,GQ,HT,NL,HN,HK,HU,YE,IN,ID,ID,IR,IR,IQ,IQ,IE,IE,IS,IS,IL,IL,IT,JM,JP,JE,JO,KI,KW,LA,LS,LV,LB,LR,LY,LI,LT,LU,MO,MG,MY,MW,MV,ML,MT,MA,MQ,MU,MR,MX,MM,FM,MZ,MC,MN,MS,ME,NA,NR,NP,NI,NE,NG,NO,NC,NZ,OM,PW,PA,PG,PK,PY,PE,PN,PF,PL,PR,PT,KE,KG,GB,CF,KR,MK,MD,CD,DO,KP,CZ,TZ,RE,RO,RW,EH,PM,AS,WS,SH,LC,KN,SM,ST,VC,SN,SL,RS,SC,SG,SY,SO,LK,SZ,SD,SE,CH,SR,SJ,TJ,TH,TW,TL,TG,TK,TO,TT,TN,TM,TR,TV,UA,UG,UY,UZ,VU,VA,VE,VN,YU,ZR,ZM,ZW}
+address->country_full={Afeganistão,Africa do Sul,Albânia,Alemanha,Andorra,Angola,Anguilla,Antartica,Antígua e Barbuda,Antilhas Holandesas,Arábia Saudita,Argélia,Argentina,Armênia,Aruba,Austrália,Áustria,Azerbaidjão,Bahamas,Bangladesh,Barbados,Bareine,Belarus,Bélgica,Belize,Benelux,Benin,Bermudas,Bolívia,Bósnia e Herzegóvina,Botswana,Brasil,Brunei Darussalam,Bulgária,Burkina Faso,Burundi,Butão,Cabo Verde,Camarões,Camboja,Canadá,Catar,Cazaquistão,Chade,Chile,China,Chipre,Colômbia,Comores,Congo,Costa do Marfim,Costa Rica,Croácia,Cuba,Dinamarca,Djibuti,Dominica,Egito,El Salvador,Emirados Árabes Unidos,Equador,Eritréia,Escritório para Harmonização no Mercado Interno,Eslováquia,Eslovenia,Espanha,Estados Unidos da América,Estônia,Etiópia,Federação Russa,Fiji,Filipinas,Finlândia,França,Gabão,Gambia,Gana,Geórgia,Geórgia do Sul e Ilhas Sandwich do Sul,Gibraltar,Granada,Grécia,Groenlândia,Guadalupe,Guam,Guatemala,Guiana,Guine,Guiné Bissau,Guine Equatorial,Haiti,Holanda,Honduras,Hong-Kong,Hungria,Iêmen,India,Indonésia,Indonésia,Irã,Irã,Iraque,Iraque,Irlanda,Irlanda,Islândia,Islândia,Israel,Israel,Itália,Jamaica,Japão,Jersey,Jordânia,Kiribati,Kuwait,Laos,Lesoto,Letônia,Líbano,Libéria,Líbia,Liechtenstein,Lituânia,Luxemburgo,Macau,Madagascar,Malásia,Malawi,Maldivas,Mali,Malta,Marrocos,Martinica,Maurício,Mauritânia,México,Mianmá,Micronésia,Moçambique,Mônaco,Mongólia,Mont Serrat,Montenegro,Namíbia,Nauru,Nepal,Nicarágua,Níger,Nigéria,Noruega,Nova Caledônia,Nova Zelândia,Omã,Palau,Panamá,Papua Nova Guiné,Paquistão,Paraguai,Peru,Pitcairn,Polinésia Francesa,Polônia,Porto Rico,Portugal,Quênia,Quirguistão,Reino Unido,República Centro Africana,República da Coréia,República da Macedonia,República da Moldova,República Dem. Do Congo,República Dominicana,República Pop. Dem. da Coreia,República Tcheca,República Unida da Tanzânia,Reunião,Romênia,Ruanda,Saara Ocidental,Saint Pierre e Miquelon,Samoa Americana,Samoa Ocidental,Santa Helena,Santa Lúcia,São Cristovão e Nevis,São Marino,São Tomé e Príncipe,São Vicente e Granadinas,Senegal,Serra Leoa,Sérvia,Seychelles,Singapura,Síria,Somália,Sri Lanka,Suazilândia,Sudão,Suécia,Suíça,Suriname,Svalbard e Jan Mayen,Tadjiquistão,Tailândia,Taiwan,Timor-Leste,Togo,Tokelau,Tonga,Trinidad e Tobago,Tunísia,Turcomenistão,Turquia,Tuvalu,Ucrânia,Uganda,Uruguai,Uzbequistão,Vanuatu,Vaticano,Venezuela,Vietnã,Yugoslávia,Zaire,Zâmbia,Zimbábue}
+address->capital={Rio Branco,Maceió,Macapá,Manaus,Salvador,Fortaleza,Brasília,Vitória,Goiânia,São Luís,Cuiabá,Campo Grande,Belo Horizonte,Belém,João Pessoa,Curitiba,Recife,Teresina,Rio de Janeiro,Natal,Porto Alegre,Porto Velho,Boa Vista,Florianópolis,São Paulo,Aracaju,Palmas}
+address->city=file{city}
 
+app->action_sql={Buscar,Resultados,Persistir,Acessar,Integrar,Totalizar,Contar,Virtualizar,Consultar,Verificar,Gerar}
+app->action_if={Comparar,Verificar,Habilitar,Validar}
+app->action_fun={Calcular,Analisar,Executar,Atribuir,Gerar,Totalizar}
+app->type={ICMS,Imposto,Nota Fiscal,Renda,Venda,Itens,Loja,Vendedor,Produtos,Região,Localização,Preços}
 
-<CSP name="cosFaker/lang/EnUs/country.fkr" application="/" default="1"><![CDATA[
-abbr={AF,AL,DZ,AO,AR,AM,AZ,BD,BY,BZ,BJ,BT,BO,BA,BW,BR,BG,BF,BI,KH,CM,CV,CF,TD,CL,CN,CO,KM,CG,CK,CR,CI,HR,CU,KP,CD,DJ,DM,DO,EC,EG,SV,GQ,ER,ET,FJ,GA,GM,GE,GH,GD,GT,GN,GW,GY,HT,HN,HU,IN,ID,IR,IQ,JM,JO,KZ,KE,KI,KG,LA,LV,LB,LS,LR,LY,LT,MG,MW,MY,MV,ML,MH,MR,MU,MX,FM,MN,ME,MA,MZ,MM,NA,NR,NP,NI,NE,NG,NU,OM,PK,PW,PA,PG,PY,PE,PH,PL,MD,RO,RU,RW,KN,LC,VC,WS,ST,SN,RS,SC,SL,SK,SB,SO,ZA,LK,SD,SR,SZ,SY,TJ,TH,MK,TL,TG,TO,TN,TR,TM,TV,UG,UA,TZ,UY,UZ,VU,VE,VN,YE,ZM,ZW}
-full={Afghanistan,Albania,Algeria,Angola,Argentina,Armenia,Azerbaijan,Bangladesh,Belarus,Belize,Benin,Bhutan,Bolivia (Plurinational State of),Bosnia and Herzegovina,Botswana,Brazil,Bulgaria,Burkina Faso,Burundi,Cambodia,Cameroon,Cape Verde,Central African Republic,Chad,Chile,China,Colombia,Comoros,Congo,Cook Islands,Costa Rica,Côte d'Ivoire,Croatia,Cuba,Democratic People's Republic of Korea,Democratic Republic of the Congo,Djiboutia,Dominica,Dominican Republic,Ecuador,Egypt,El Salvador,Equatorial Guinea,Eritrea,Ethiopia,Fiji,Gabon,Gambia,Georgia,Ghana,Grenada,Guatemala,Guinea,Guinea-Bissau,Guyana,Haiti,Honduras,Hungary,India,Indonesia,Iran (Islamic Republic of),Iraq,Jamaica,Jordan,Kazakhstan,Kenya,Kiribati,Kyrgyzstan,Lao People's Democratic Republic,Latvia,Lebanon,Lesotho,Liberia,Libyan Arab Jamahiriya,Lithuania,Madagascar,Malawi,Malaysia,Maldives,Mali,Marshall Islands,Mauritania,Mauritius,Mexico,Micronesia (Federated States of),Mongolia,Montenegro,Morocco,Mozambique,Myanmar,Namibia,Nauru,Nepal,Nicaragua,Niger,Nigeria,Niue,Oman,Pakistan,Palau,Panama,Papua New Guinea,Paraguay,Peru,Philippines,Poland,Republic of Moldova,Romania,Russian Federation,Rwanda,Saint Kitts and Nevis,Saint Lucia,Saint Vincent and the Grenadines,Samoa,Sao Tome and Principe,Senegal,Serbia,Seychelles,Sierra Leone,Slovakia,Solomon Islands,Somalia,South Africa,Sri Lanka,Sudan,Suriname,Swaziland,Syrian Arab Republic,Tajikistan,Thailand,The former Yugoslav Republic of Macedonia,Timor-Leste,Togo,Tonga,Tunisia,Turkey,Turkmenistan,Tuvalu,Uganda,Ukraine,United Republic of Tanzania,Uruguay,Uzbekistan,Vanuatu,Venezuela (Bolivarian Republic of),Viet Nam,Yemen,Zambia,Zimbabwe}]]></CSP>
+company->profession={professor,ator,músico,filósofo,escritor,médico,contador,agricultor,arquiteto,economista,engenheiro,intérprete,juíz,advogado,bibliotecário,estatístico,recursos humanos,bombeiro,policial,astrônomo,biólogo,químico,físico,programador,desenvolvedor web,designer}
+company->industry={Defesa e Espaço,Hardware de Computador,Software de Computador,Redes de Computadores,Internet,Semicondutores,Telecomunicações,Prática Jurídica,Serviços Legais,Consultoria de Gestão,Biotecnologia,Prática Médica,Hospital & Saúde,Farmaceuticos,Veterinária,Dispositivos Médicos,Cosméticos,Moda e Aparência,Artigos Esportivos,Tabaco,Supermercados,Produção de Alimentos,Eletrônicos,Bens de consumo,Móveis,Varejo,Entretenimento,Apostas e Cassinos,Lazer, Viagem e Turismo,Hospitalidade,Restaurantes,Esportes,Alimentos & Bebidas,Cinema e Filmes,Mídia de Difusão,Museus e Instituições,Belas Artes,Artes performáticas,Serviços e Facilidades Recreacionais,Bancário,Seguro,Serviços Financeiros,Imobiliária,Investimento Bancário,Gerenciamento de Investimentos,Contabilidade,Construção,Materiais de Construção,Arquitetura e Planejamento,Engenharia Civil,Aviação e Aeroespacial,Automotivos,Químicos,Maquinário,Metais e Mineração,Óleo e Energia,Construção naval,Utilidades,Têxteis,Papel e Produtos Florestais,Fabricação de Estradas de Ferro,Agricultura,Laticínios,Pescaria,Ensino Primário e Médio,Ensino Superior,Gerenciamento de Educação,Pesquisa,Militar,Escritório Legislativo,Judiciário,Assuntos Internacionais,Administração Governamental,Escritório Executivo,Aplicação da Lei,Segurança Pública,Políticas Públicas,Anúncios e Marketing,Jornais,Publicação,Impressão,Serviços de Informação,Bibliotecas,Serviços Ambientais,Entrega de Pacote / Frete,Serviços Individuais e Famíliares,Instituições Religiosas,Organização Social e Civil,Serviços do Consumidor,Transporte / Caminhões / Ferrovias,Armazenagem,Linhas Aéreas / Aviação,Marítimo,Serviços e Tecnologia da Informação,Pesquisa de Mercado,Relações Públicas e Comunicações,Design,Gestão de Organizações sem fins lucrativos,Angariação de Fundos,Desenvolvimento de Programas,Edição,Pessoal e Recrutamento,Treinamento Profissional & Coaching,Capital de Risco,Organização Política,Tradução e Localização,Jogos de Computador,Serviços de Eventos,Artes e Ofícios,Fabricação Elétrica/Eletrônica,Mídia Online,Nanotecnologia,Música,Logística e Cadeia de Suprimentos,Plásticos,Segurança computacional e de rede,Wireless,Resolução alternativa de disputa,Segurança e Investigações,Serviços de Instalação,Terceirização,Saúde, Bem estar e Fitness,Medicina Alternativa,Produção de Mídia,Animação,Imóveis Comerciais,Mercados capitais,Filantropia,E-Learning,Atacado,Importação e Exportação,Engenharia Mecânica ou Industrial,Fotografia,Recursos Humanos,Suprimentos e equipamentos para empresas,Saúde Mental,Design Gráfico,Comércio Internacional e Desenvolvimento,Vinho e Bebidas,Artigos de Luxo e Jóias,Renováveis & Meio Ambiente,Vidro, Cerâmicas e Concreto,Embalagens e Contentores,Automação Industrial,Relações Governamentais}
+company->suffix={EIRELI,S.A.,LTDA,e Associados,Comércio,Tecnologia}
 
+game->suit={Paus,Copas,Espada,Ouro}
+game->separator={de}
 
-<CSP name="cosFaker/lang/EnUs/female_names.fkr" application="/" default="1"><![CDATA[
-Mary,Patricia,Linda,Barbara,Elizabeth,Jennifer,Maria,Susan,Margaret,Dorothy,Lisa,Nancy,Karen,Betty,Helen,Sandra,Donna,Carol,Ruth,Sharon,Michelle,Laura,Sarah,Kimberly,Deborah,Jessica,Shirley,Cynthia,Angela,Melissa,Brenda,Amy,Anna,Rebecca,Virginia,Kathleen,Pamela,Martha,Debra,Amanda,Stephanie,Carolyn,Christine,Marie,Janet,Catherine,Frances,Ann,Joyce,Diane,Alice,Julie,Heather,Teresa,Doris,Gloria,Evelyn,Jean,Cheryl,Mildred,Katherine,Joan,Ashley,Judith,Rose,Janice,Kelly,Nicole,Judy,Christina,Kathy,Theresa,Beverly,Denise,Tammy,Irene,Jane,Lori,Rachel,Marilyn,Andrea,Kathryn,Louise,Sara,Anne,Jacqueline,Wanda,Bonnie,Julia,Ruby,Lois,Tina,Phyllis,Norma,Paula,Diana,Annie,Lillian,Emily,Robin,Peggy,Crystal,Gladys,Rita,Dawn,Connie,Florence,Tracy,Edna,Tiffany,Carmen,Rosa,Cindy,Grace,Wendy,Victoria,Edith,Kim,Sherry,Sylvia,Josephine,Thelma,Shannon,Sheila,Ethel,Ellen,Elaine,Marjorie,Carrie,Charlotte,Monica,Esther,Pauline,Emma,Juanita,Anita,Rhonda,Hazel,Amber,Eva,Debbie,April,Leslie,Clara,Lucille,Jamie,Joanne,Eleanor,Valerie,Danielle,Megan,Alicia,Suzanne,Michele,Gail,Bertha,Darlene,Veronica,Jill,Erin,Geraldine,Lauren,Cathy,Joann,Lorraine,Lynn,Sally,Regina,Erica,Beatrice,Dolores,Bernice,Audrey,Yvonne,Annette,June,Samantha,Marion,Dana,Stacy,Ana,Renee,Ida,Vivian,Roberta,Holly,Brittany,Melanie,Loretta,Yolanda,Jeanette,Laurie,Katie,Kristen,Vanessa,Alma,Sue,Elsie,Beth,Jeanne,Vicki,Carla,Tara,Rosemary,Eileen,Terri,Gertrude,Lucy,Tonya,Ella,Stacey,Wilma,Gina,Kristin,Jessie,Natalie,Agnes,Vera,Willie,Charlene,Bessie,Delores,Melinda,Pearl,Arlene,Maureen,Colleen,Allison,Tamara,Joy,Georgia,Constance,Lillie,Claudia,Jackie,Marcia,Tanya,Nellie,Minnie,Marlene,Heidi,Glenda,Lydia,Viola,Courtney,Marian,Stella,Caroline,Dora,Jo,Vickie,Mattie,Terry,Maxine,Irma,Mabel,Marsha,Myrtle,Lena,Christy,Deanna,Patsy,Hilda,Gwendolyn,Jennie,Nora,Margie,Nina,Cassandra,Leah,Penny,Kay,Priscilla,Naomi,Carole,Brandy,Olga,Billie,Dianne,Tracey,Leona,Jenny,Felicia,Sonia,Miriam,Velma,Becky,Bobbie,Violet,Kristina,Toni,Misty,Mae,Shelly,Daisy,Ramona,Sherri,Erika,Katrina,Claire]]></CSP>
+internet->email_provider={gmail.com,yahoo.com,hotmail.com,bol.com.br}
+internet->domain_suffix={com,biz,info,name,net,org}
 
+job->title_seniority={Lider,Senior,Produtor,Nacional,Regional,Central,Global,Cliente,Investidor,Dinâmico,Internacional,Legal,Avançado,Interno,Chefe}
+job->title_position={Supervisor,Associado,Executivo,Oficial,Gerente,Engenheiro,Especialista,Diretor,Coordenador,Administrador,Arquiteto,Analista,Designer,Planejador,Orquestrador,Técnico,Desenvolvedor,Produtor,Consultor,Assistente,Facilitador,Agente,Estrategista}
+job->field={Marketing,TI,Contabilidade,Administração,Anúncio,Bancário,Serviços Comunitários,Construção,Consultoria,Design,Educação,Agricultura,Governo,Saúde,Hospitalidade,Jurídico,Fabricação,Marketing,Mineração,Imobiliária,Varejo,Vendas,Tecnologia}
+job->skills={Trabalho em Equipe,Comunicação,Resolução de Problemas,Liderança,Organização,Trabalho sobre pressão,Confidencialidade,Auto motivado,Habilidades de Networking,Proativo,Aprende com rapidez,Técnico experiente}
 
-<CSP name="cosFaker/lang/EnUs/game.fkr" application="/" default="1"><![CDATA[
-suit={Clubs,Hearts,Spades,Diamonds}
-separator={of}]]></CSP>
+lorem->hipster_begin={Caros amigos, |Por outro lado, |Assim mesmo, |No entanto, não podemos esquecer que |Do mesmo modo, |A prática cotidiana prova que |Nunca é demais lembrar o peso e o significado destes problemas, uma vez que |As experiências acumuladas demonstram que |Acima de tudo, é fundamental ressaltar que |O incentivo ao avanço tecnológico, assim como |Não obstante, |Todas estas questões, devidamente ponderadas, levantam dúvidas sobre se |Pensando mais a longo prazo, |O que temos que ter sempre em mente é que |Ainda assim, existem dúvidas a respeito de como |Gostaria de enfatizar que |Todavia, |A nível organizacional, |O empenho em analisar |Percebemos, cada vez mais, que |No mundo atual, |É importante questionar o quanto |Neste sentido, |Evidentemente, |Por conseguinte, |É claro que |Podemos já vislumbrar o modo pelo qual |Desta maneira, |O cuidado em identificar pontos críticos n|A certificação de metodologias que nos auxiliam a lidar com }
+lorem->hipster_middle1={a execução dos pontos do programa |a complexidade dos estudos efetuados |a contínua expansão de nossa atividade |a estrutura atual da organização |o novo modelo estrutural aqui preconizado |o desenvolvimento contínuo de distintas formas de atuação |a constante divulgação das informações |a consolidação das estruturas |a consulta aos diversos militantes |o início da atividade geral de formação de atitudes |o desafiador cenário globalizado |a mobilidade dos capitais internacionais |o fenômeno da Internet |a hegemonia do ambiente político |a expansão dos mercados mundiais |o aumento do diálogo entre os diferentes setores produtivos |a crescente influência da mídia |a necessidade de renovação processual |a competitividade nas transações comerciais |o surgimento do comércio virtual |a revolução dos costumes |o acompanhamento das preferências de consumo |o comprometimento entre as equipes |a determinação clara de objetivos |a adoção de políticas descentralizadoras |a valorização de fatores subjetivos |a percepção das dificuldades |o entendimento das metas propostas |o consenso sobre a necessidade de qualificação |o julgamento imparcial das eventualidades }
+lorem->hipster_middle2={nos obriga à análise |cumpre um papel essencial na formulação |exige a precisão e a definição |auxilia a preparação e a composição |garante a contribuição de um grupo importante na determinação |assume importantes posições no estabelecimento |facilita a criação |obstaculiza a apreciação da importância |oferece uma interessante oportunidade para verificação |acarreta um processo de reformulação e modernização |pode nos levar a considerar a reestruturação |representa uma abertura para a melhoria |ainda não demonstrou convincentemente que vai participar na mudança |talvez venha a ressaltar a relatividade |prepara-nos para enfrentar situações atípicas decorrentes |maximiza as possibilidades por conta |desafia a capacidade de equalização |agrega valor ao estabelecimento |é uma das consequências |promove a alavancagem |não pode mais se dissociar |possibilita uma melhor visão global |estimula a padronização |aponta para a melhoria |faz parte de um processo de gerenciamento |causa impacto indireto na reavaliação |apresenta tendências no sentido de aprovar a manutenção |estende o alcance e a importância |deve passar por modificações independentemente |afeta positivamente a correta previsão }
+lorem->hipster_end={das condições financeiras e administrativas exigidas.|das diretrizes de desenvolvimento para o futuro.|do sistema de participação geral.|das posturas dos órgãos dirigentes com relação às suas atribuições.|das novas proposições.|das direções preferenciais no sentido do progresso.|do sistema de formação de quadros que corresponde às necessidades.|das condições inegavelmente apropriadas.|dos índices pretendidos.|das formas de ação.|dos paradigmas corporativos.|dos relacionamentos verticais entre as hierarquias.|do processo de comunicação como um todo.|dos métodos utilizados na avaliação de resultados.|de todos os recursos funcionais envolvidos.|dos níveis de motivação departamental.|da gestão inovadora da qual fazemos parte.|dos modos de operação convencionais.|de alternativas às soluções ortodoxas.|dos procedimentos normalmente adotados.|dos conhecimentos estratégicos para atingir a excelência.|do fluxo de informações.|do levantamento das variáveis envolvidas.|das diversas correntes de pensamento.|do impacto na agilidade decisória.|das regras de conduta normativas.|do orçamento setorial.|do retorno esperado a longo prazo.|do investimento em reciclagem técnica.|do remanejamento dos quadros funcionais.}
 
-
-<CSP name="cosFaker/lang/EnUs/hipster.fkr" application="/" default="1"><![CDATA[
-begin={Dear friends, |On the other hand, |Also, |However, we must not forget that |In the same way, |Everyday practice proves that |It is never too much to remember the weight and significance of these problems, since |The accumulated experiences demonstrate that |Above all, it is essential to emphasize that |The incentive to technological advance, as well as |Regardless of, |All these duly considered questions cast doubt on whether |Thinking more in the long run, |What we must always keep in mind is that |Still, there are doubts about how |I would like to emphasize that |However, |At the organizational level, |The commitment to analyze |We realize, more and more, that |In today's world, |It is important to question how |In this sense, |Of course, |Therefore, |Of course |We can already glimpse the way in which |In this way, |The care in identifying critical points |The certification of methodologies that help us deal with }
-middle1={the implementation of the program points |the complexity of the studies carried out |the continuous expansion of our activity |the current structure of the organization |the new structural model advocated here |the continuous development of different ways of acting |the constant dissemination of information |the consolidation of structures |the consultation of the various militants |the beginning of the general activity of formation of attitudes |the challenging globalized scenario |the mobility of international capital |the phenomenon of the Internet |the hegemony of the political environment |the expansion of world markets |the increase of the dialogue between the different productive sectors |the growing influence of the media |the need for procedural renewal | competitiveness in commercial transactions |the emergence of virtual commerce |the revolution of customs |the monitoring of consumer preferences |the commitment between the teams |the clear determination of goals |the adoption of decentralizing policies |the valuation of subjective factors |the perception of difficulties |the understanding of the proposed goals |the consensus on the need for qualification |the impartial judgment of eventualities }
-middle2={forces us to the analysis |plays an essential role in the formulation |requires precision and definition |helps the preparation and the composition |guarantees the contribution of an important group in determining |assumes important positions in the establishment |facilitates the creation |hinders the appreciation of the importance |offers an interesting opportunity for verification |entails a process of reformulation and modernization |may lead us to consider the restructuring |represents an opening for improvement |has not convincingly demonstrated that it will participate in the change |perhaps it will emphasize relativity |prepares us to face atypical situations arising |maximizes the possibilities on account |challenges the ability to equalize |adds value to the establishment |is one of the consequences |promotes leverage |can no longer dissociate itself |enables a better global vision |stimulates standardization |points to improvement |is part of a management process |causes indirect impact on the revaluation |presents trends towards approving maintenance |extends the scope and importance |must undergo modifications independently |positively affects the correct forecast }
-end={the financial and administrative conditions required.|from the development guidelines for the future.|of the general participation system.|of the positions of the governing bodies in relation to their attributions.|of the new propositions.|from the preferred directions in the direction of progress.|of the system of training of cadres that corresponds to the needs.|of undeniably appropriate conditions.|of the desired indexes.|of the forms of action.|of corporate paradigms.|of vertical relationships between hierarchies.|the communication process as a whole.|of the methods used in the evaluation of results.|of all the functional resources involved.|of the levels of departmental motivation.|of the innovative management of which we are part.|of the conventional modes of operation.|of alternatives to orthodox solutions.|of the procedures normally adopted.|of strategic knowledge to achieve excellence.|of the flow of information.|of the survey of the variables involved.|of the various currents of thought.|of the impact on decision agility.|of normative rules of conduct.|of the sectoral budget.|long-term expected return.|of the investment in technical recycling.|of the redeployment of functional frameworks.}]]></CSP>
-
-
-<CSP name="cosFaker/lang/EnUs/internet.fkr" application="/" default="1"><![CDATA[
-email_provider={gmail.com,yahoo.com,hotmail.com,bol.com.br}
-domain_suffix={com,biz,info,name,net,org}]]></CSP>
-
-
-<CSP name="cosFaker/lang/EnUs/job.fkr" application="/" default="1"><![CDATA[
-title_seniority={Lead,Senior,Product,National,Regional,District,Central,Global,Customer,Investor,Dynamic,International,Legacy,Forward,Internal,Chief}
-title_position={Supervisor,Associate,Executive,Liaison,Officer,Manager,Engineer,Specialist,Director,Coordinator,Administrator,Architect,Analyst,Designer,Planner,Orchestrator,Technician,Developer,Producer,Consultant,Assistant,Facilitator,Agent,Representative,Strategist}
-field={Marketing,IT,Accounting,Administration,Advertising,Banking,Community-Services,Construction,Consulting,Design,Education,Farming,Government,Healthcare,Hospitality,Legal,Manufacturing,Marketing,Mining,Real-Estate,Retail,Sales,Technology}
-skills={Teamwork,Communication,Problem solving,Leadership,Organisation,Work under pressure,Confidence,Self-motivated,Networking skills,Proactive,Fast learner,Technical savvy}]]></CSP>
-
-
-<CSP name="cosFaker/lang/EnUs/last_names.fkr" application="/" default="1"><![CDATA[
-Smith,Johnson,Williams,Jones,Brown,Davis,Miller,Wilson,Moore,Taylor,Anderson,Thomas,Jackson,White,Harris,Martin,Thompson,Garcia,Martinez,Robinson,Clark,Rodriguez,Lewis,Lee,Walker,Hall,Allen,Young,Hernandez,King,Wright,Lopez,Hill,Scott,Green,Adams,Baker,Gonzalez,Nelson,Carter,Mitchell,Perez,Roberts,Turner,Phillips,Campbell,Parker,Evans,Edwards,Collins,Stewart,Sanchez,Morris,Rogers,Reed,Cook,Morgan,Bell,Murphy,Bailey,Rivera,Cooper,Richardson,Cox,Howard,Ward,Torres,Peterson,Gray,Ramirez,James,Watson,Brooks,Kelly,Sanders,Price,Bennett,Wood,Barnes,Ross,Henderson,Coleman,Jenkins,Perry,Powell,Long,Patterson,Hughes,Flores,Washington,Butler,Simmons,Foster,Gonzales,Bryant,Alexander,Russell,Griffin,Diaz,Hayes,Myers,Ford,Hamilton,Graham,Sullivan,Wallace,Woods,Cole,West,Jordan,Owens,Reynolds,Fisher,Ellis,Harrison,Gibson,Mcdonald,Cruz,Marshall,Ortiz,Gomez,Murray,Freeman,Wells,Webb,Simpson,Stevens,Tucker,Porter,Hunter,Hicks,Crawford,Henry,Boyd,Mason,Morales,Kennedy,Warren,Dixon,Ramos,Reyes,Burns,Gordon,Shaw,Holmes,Rice,Robertson,Hunt,Black,Daniels,Palmer,Mills,Nichols,Grant,Knight,Ferguson,Rose,Stone,Hawkins,Dunn,Perkins,Hudson,Spencer,Gardner,Stephens,Payne,Pierce,Berry,Matthews,Arnold,Wagner,Willis,Ray,Watkins,Olson,Carroll,Duncan,Snyder,Hart,Cunningham,Bradley,Lane,Andrews,Ruiz,Harper,Fox,Riley,Armstrong,Carpenter,Weaver,Greene,Lawrence,Elliott,Chavez,Sims,Austin,Peters,Kelley,Franklin,Lawson,Fields,Gutierrez,Ryan,Schmidt,Carr,Vasquez,Castillo,Wheeler,Chapman,Oliver,Montgomery,Richards,Williamson,Johnston,Banks,Meyer,Bishop,Mccoy,Howell,Alvarez,Morrison,Hansen,Fernandez,Garza,Harvey,Little,Burton,Stanley,Nguyen,George,Jacobs,Reid,Kim,Fuller,Lynch,Dean,Gilbert,Garrett,Romero,Welch,Larson,Frazier,Burke,Hanson,Day,Mendoza,Moreno,Bowman,Medina,Fowler,Brewer,Hoffman,Carlson,Silva,Pearson,Holland,Douglas,Fleming,Jensen,Vargas,Byrd,Davidson,Hopkins,May,Terry,Herrera,Wade,Soto,Walters,Curtis,Neal,Caldwell,Lowe,Jennings,Barnett,Graves,Jimenez,Horton,Shelton,Barrett,Obrien,Castro,Sutton,Gregory,Mckinney,Lucas,Miles,Craig,Rodriquez,Chambers,Holt,Lambert,Fletcher,Watts,Bates,Hale,Rhodes,Pena,Beck,Newman,Haynes,Mcdaniel,Mendez,Bush,Vaughn,Parks,Dawson,Santiago,Norris,Hardy,Love,Steele,Curry,Powers,Schultz,Barker,Guzman,Page,Munoz,Ball,Keller,Chandler,Weber,Leonard,Walsh,Lyons,Ramsey,Wolfe,Schneider,Mullins,Benson,Sharp,Bowen,Daniel,Barber,Cummings,Hines,Baldwin,Griffith,Valdez,Hubbard,Salazar,Reeves,Warner,Stevenson,Burgess,Santos,Tate,Cross,Garner,Mann,Mack,Moss,Thornton,Dennis,Mcgee,Farmer,Delgado,Aguilar,Vega,Glover,Manning,Cohen,Harmon,Rodgers,Robbins,Newton,Todd,Blair,Higgins,Ingram,Reese,Cannon,Strickland,Townsend,Potter,Goodwin,Walton,Rowe,Hampton,Ortega,Patton,Swanson,Joseph,Francis,Goodman,Maldonado,Yates,Becker,Erickson,Hodges,Rios,Conner,Adkins,Webster,Norman,Malone,Hammond,Flowers,Cobb,Moody,Quinn,Blake,Maxwell,Pope,Floyd,Osborne,Paul,Mccarthy,Guerrero,Lindsey,Estrada,Sandoval,Gibbs,Tyler,Gross,Fitzgerald,Stokes,Doyle,Sherman,Saunders,Wise,Colon,Gill,Alvarado,Greer,Padilla,Simon,Waters,Nunez,Ballard,Schwartz,Mcbride,Houston,Christensen,Klein,Pratt,Briggs,Parsons,Mclaughlin,Zimmerman,French,Buchanan,Moran,Copeland,Roy,Pittman,Brady,Mccormick,Holloway,Brock,Poole,Frank,Logan,Owen,Bass,Marsh,Drake,Wong,Jefferson,Park,Morton,Abbott,Sparks,Patrick,Norton,Huff,Clayton,Massey,Lloyd,Figueroa,Carson,Bowers,Roberson,Barton,Tran,Lamb,Harrington,Casey,Boone,Cortez,Clarke,Mathis,Singleton,Wilkins,Cain,Bryan,Underwood,Hogan,Mckenzie,Collier,Luna,Phelps,Mcguire,Allison,Bridges,Wilkerson,Nash,Summers,Atkins,Wilcox,Pitts,Conley,Marquez,Burnett,Richard,Cochran,Chase,Davenport,Hood,Gates,Clay,Ayala,Sawyer,Roman,Vazquez,Dickerson,Hodge,Acosta,Flynn,Espinoza,Nicholson,Monroe,Wolf,Morrow,Kirk,Randall,Anthony,Whitaker,Oconnor,Skinner,Ware,Molina,Kirby,Huffman,Bradford,Charles,Gilmore,Dominguez,Oneal,Bruce,Lang,Combs,Kramer,Heath,Hancock,Gallagher,Gaines,Shaffer,Short,Wiggins,Mathews,Mcclain,Fischer,Wall,Small,Melton,Hensley,Bond,Dyer,Cameron,Grimes,Contreras,Christian,Wyatt,Baxter,Snow,Mosley,Shepherd,Larsen,Hoover,Beasley,Glenn,Petersen,Whitehead,Meyers,Keith,Garrison,Vincent,Shields,Horn,Savage,Olsen,Schroeder,Hartman,Woodard,Mueller,Kemp,Deleon,Booth,Patel,Calhoun,Wiley,Eaton,Cline,Navarro,Harrell,Lester,Humphrey,Parrish,Duran,Hutchinson,Hess,Dorsey,Bullock,Robles,Beard,Dalton,Avila,Vance,Rich,Blackwell,York,Johns,Blankenship,Trevino,Salinas,Campos,Pruitt,Moses,Callahan,Golden,Montoya]]></CSP>
-
-
-<CSP name="cosFaker/lang/EnUs/male_names.fkr" application="/" default="1"><![CDATA[
-James,John,Robert,Michael,William,David,Richard,Charles,Joseph,Thomas,Christopher,Daniel,Paul,Mark,Donald,George,Kenneth,Steven,Edward,Brian,Ronald,Anthony,Kevin,Jason,Matthew,Gary,Timothy,Jose,Larry,Jeffrey,Frank,Scott,Eric,Stephen,Andrew,Raymond,Gregory,Joshua,Jerry,Dennis,Walter,Patrick,Peter,Harold,Douglas,Henry,Carl,Arthur,Ryan,Roger,Joe,Juan,Jack,Albert,Jonathan,Justin,Terry,Gerald,Keith,Samuel,Willie,Ralph,Lawrence,Nicholas,Roy,Benjamin,Bruce,Brandon,Adam,Harry,Fred,Wayne,Billy,Steve,Louis,Jeremy,Aaron,Randy,Howard,Eugene,Carlos,Russell,Bobby,Victor,Martin,Ernest,Phillip,Todd,Jesse,Craig,Alan,Shawn,Clarence,Sean,Philip,Chris,Johnny,Earl,Jimmy,Antonio,Danny,Bryan,Tony,Luis,Mike,Stanley,Leonard,Nathan,Dale,Manuel,Rodney,Curtis,Norman,Allen,Marvin,Vincent,Glenn,Jeffery,Travis,Jeff,Chad,Jacob,Lee,Melvin,Alfred,Kyle,Francis,Bradley,Jesus,Herbert,Frederick,Ray,Joel,Edwin,Don,Eddie,Ricky,Troy,Randall,Barry,Alexander,Bernard,Mario,Leroy,Francisco,Marcus,Micheal,Theodore,Clifford,Miguel,Oscar,Jay,Jim,Tom,Calvin,Alex,Jon,Ronnie,Bill,Lloyd,Tommy,Leon,Derek,Warren,Darrell,Jerome,Floyd,Leo,Alvin,Tim,Wesley,Gordon,Dean,Greg,Jorge,Dustin,Pedro,Derrick,Dan,Lewis,Zachary,Corey,Herman,Maurice,Vernon,Roberto,Clyde,Glen,Hector,Shane,Ricardo,Sam,Rick,Lester,Brent,Ramon,Charlie,Tyler,Gilbert,Gene,Marc,Reginald,Ruben,Brett,Angel,Nathaniel,Rafael,Leslie,Edgar,Milton,Raul,Ben,Chester,Cecil,Duane,Franklin,Andre,Elmer,Brad,Gabriel,Ron,Mitchell,Roland,Arnold,Harvey,Jared,Adrian,Karl,Cory,Claude,Erik,Darryl,Jamie,Neil,Jessie,Christian,Javier,Fernando,Clinton,Ted,Mathew,Tyrone,Darren,Lonnie,Lance,Cody,Julio,Kelly,Kurt,Allan,Nelson,Guy,Clayton,Hugh,Max,Dwayne,Dwight,Armando,Felix,Jimmie,Everett,Jordan,Ian,Wallace,Ken,Bob,Jaime,Casey,Alfredo,Alberto,Dave,Ivan,Johnnie,Sidney,Byron,Julian,Isaac,Morris,Clifton,Willard,Daryl,Ross,Virgil,Andy,Marshall,Salvador,Perry,Kirk,Sergio,Marion,Tracy,Seth,Kent,Terrance,Rene,Eduardo,Terrence,Enrique,Freddie,Wade]]></CSP>
-
-
-<CSP name="cosFaker/lang/EnUs/person_suffix.fkr" application="/" default="1"><![CDATA[
-Jr.,Grandson,Son]]></CSP>
-
-
-<CSP name="cosFaker/lang/EnUs/state.fkr" application="/" default="1"><![CDATA[
-full={Alabama,Alaska,Arizona,Arkansas,California,Colorado,Connecticut,Delaware,Florida,Georgia,Hawaii,Idaho,Illinois,Indiana,Iowa,Kansas,Kentucky,Louisiana,Maine,Maryland,Massachusetts,Michigan,Minnesota,Mississippi,Missouri,Montana,Nebraska,Nevada,New Hampshire,New Jersey,New Mexico,New York,North Carolina,North Dakota,Ohio,Oklahoma,Oregon,Pennsylvania,Rhode Island,South Carolina,South Dakota,Tennessee,Texas,Utah,Vermont,Virginia,Washington,West Virginia,Wisconsin,Wyoming}
-abbr={AL,AK,AZ,AR,CA,CO,CT,DE,FL,GA,HI,ID,IL,IN,IA,KS,KY,LA,ME,MD,MA,MI,MN,MS,MO,MT,NE,NV,NH,NJ,NM,NY,NC,ND,OH,OK,OR,PA,RI,SC,SD,TN,TX,UT,VT,VA,WA,WV,WI,WY}]]></CSP>
-
-
-<CSP name="cosFaker/lang/EnUs/street.fkr" application="/" default="1"><![CDATA[
-suffix={,,,,,,,,,,,,,,,,,,,Alley,Annex,Arcade,Avenue,Bayou,Beach,Bend,Bluff,Bottom,Boulevard,Branch,Bridge,Brook,Burg,Bypass,Camp,Canyon,Cape,Causeway,Center,Circle,Cliff,Club,Common,Corner,Course,Court,Cove,Creek,Crescent,Crossing,Crossroad,Curve,Dale,Dam,Divide,Drive,Estate,Expressway,Extension,Fall,Ferry,Field,Flat,Ford,Forest,Forge,Fork,Fort,Freeway,Garden,Gateway,Glen,Green,Grove,Harbor,Haven,Heights,Highway,Hill,Hollow,Inlet,Island,Isle,Junction,Key,Knoll,Lake,Land,Landing,Lane,Light,Loaf,Lock,Lodge,Loop,Mall,Manor,Meadow,Mews,Mill,Mission,Motorway,Mount,Mountain,Neck,Orchard,Oval,Overpass,Park,Parkway,Pass,Passage,Path,Pike,Pine,Place,Plain,Plaza,Point,Port,Prairie,Radial,Ramp,Ranch,Rapid,Rest,Ridge,River,Road,Route,Row,Rue,Run,Shoal,Shore,Skyway,Spring,Spur,Square,Station,Stravenue,Stream,Street,Summit,Terrace,Throughway,Trace,Track,Trafficway,Trail,Trailer,Tunnel,Turnpike,Underpass,Union,Valley,Viaduct,View,Village,Ville,Vista,Walk,Wall,Way,Well,Wells}
-prefix={Road,Avenue,Cross,Bridge,Marginal,Alley,Highway}]]></CSP>
-
-
-<CSP name="cosFaker/lang/PtBr/app.fkr" application="/" default="1"><![CDATA[
-action_sql={Buscar,Resultados,Persistir,Acessar,Integrar,Totalizar,Contar,Virtualizar,Consultar,Verificar,Gerar}
-action_if={Comparar,Verificar,Habilitar,Validar}
-action_fun={Calcular,Analisar,Executar,Atribuir,Gerar,Totalizar}
-type={ICMS,Imposto,Nota Fiscal,Renda,Venda,Itens,Loja,Vendedor,Produtos,Região,Localização,Preços}]]></CSP>
-
-
-<CSP name="cosFaker/lang/PtBr/capital.fkr" application="/" default="1"><![CDATA[
-Rio Branco,Maceió,Macapá,Manaus,Salvador,Fortaleza,Brasília,Vitória,Goiânia,São Luís,Cuiabá,Campo Grande,Belo Horizonte,Belém,João Pessoa,Curitiba,Recife,Teresina,Rio de Janeiro,Natal,Porto Alegre,Porto Velho,Boa Vista,Florianópolis,São Paulo,Aracaju,Palmas]]></CSP>
+name->female_names={Alessandra,Aline,Bruna,Carla,Célia,Cecília,Dalila,Eduarda,Esther,Fabrícia,Felícia,Fabiana,Isabel,Isabela,Joana,Graziela,Júlia,Janaína,Karla,Lorena,Lorraine,Larissa,Meire,Marcela,Margarida,Mércia,Márcia,Marli,Morgana,Maria,Marta,Natália,Núbia,Ofélia,Paula,Rafaelly,Rafaela,Roberta,Sílvia,Silvana,Suélen,Sara,Talita,Vanessa,Vitória}
+name->male_names={Miguel,Yuri,Daniel,Heitor,Eduardo,Bruno,Tiago,João,Samuel,Igor,Leonardo,Diogo,Vinicios,Benjamim,Enzo,Rodrigo,Tomás,Diego,Luis,Kevin,Augusto,Filipe,Pablo,André,Emanuel,Fernando,Danilo,Renan,Levi,Alexandre,Lorenzo,Octávio,Ricardo,Marcelo,Kelvin,Leandro,Wilian,Alan,Júlio,Jonathan,Calebe,Paulo,Joaquim,Fabrício,Francisco,Douglas,António,Carlos,Vicente,Fábio,Lourenço,Marcos,Renato,Ângelo,Raul,Frederico,José,Valentim,Manuel,Artur,Gabriel,Guilherme,Bernardo,Lucas,Gustavo,Bryan,Rafael,Henrique,David,Mateus,Nicolas,Victor,Caio,Theo,Felipe,Santiago,Martim,Jonas,Maurício,Afonso,Michael,César,Cristiano,Jorge,Ramom,Edgar,Ulisses,Juliano,Ivan,Marco,Flávio,Anderson,Aquiles,Alexander,Álvaro,Muriel,Adriano,Roberto,Alessandro,Alexandre,Antônio,Breno,Carlos,César,Danilo,Deneval,Eduardo,Elísio,Fábio,Fabrício,Félix,Felipe,Feliciano,Frederico,Fabiano,Gustavo,Guilherme,Gúbio,Heitor,Hélio,Henry,Hugo,Ígor,João,Josemar,Júlio César,Júlio,Kléber,Lucas,Luiggi,Leandro,Leonardo,Ladislau,Marcos,Marcelo,Mario,Norberto,Nataniel,Paulo,Pablo,Pedro,Raul,Rafael,Ricardo,Roberto,Silas,Salvador,Sirineu,Tertuliano,Vicente,Víctor,Yango,Yago,Yuri,Washington,Warley}
+name->last_names={Silva,Souza,Carvalho,Santos,Reis,Xavier,Franco,Braga,Macedo,Batista,Barreto,Barros,Moraes,Malta,Carmello,Mengga,Costa,Rodrigues,Pereira,Melo,Saraiva,Nogueira,Oliveira,Martins,Moreira,Lima,Vaz,Albuquerque,Almeida,Alves,Aragão,Araújo,Barbosa,Brito,Caldeira,Campos,Cardoso,Cardoso,Carvalho,Castro,Cavalcante,Cavalcanti,da Conceição,da Costa,da Cruz,da Cunha,da Luz,da Mata,da Mota,da Paz,da Rocha,da Rosa,das Neves,Dias,Duarte,Farias,Fernandes,Ferreira,Fogaça,Freitas,Gomes,Gonçalves,Lopes,Mendes,Monteiro,Moura,Nascimento,Novaes,Nunes,Peixoto,Pinheiro,Pires,Porto,Ramos,Rezende,Ribeiro,Rocha,Sales,Silveira,Teixeira,Viana,Vieira}
+name->person_suffix={Jr.,Neto,Filho}]]></CSP>
 
 
 <CSP name="cosFaker/lang/PtBr/city.fkr" application="/" default="1"><![CDATA[
@@ -177,83 +184,29 @@ TO={Abreulândia,Aguiarnópolis,Aliança do Tocantins,Almas,Alvorada,Ananás,Ang
 DF={Brasília}]]></CSP>
 
 
-<CSP name="cosFaker/lang/PtBr/company.fkr" application="/" default="1"><![CDATA[
-profession={professor,ator,músico,filósofo,escritor,médico,contador,agricultor,arquiteto,economista,engenheiro,intérprete,juíz,advogado,bibliotecário,estatístico,recursos humanos,bombeiro,policial,astrônomo,biólogo,químico,físico,programador,desenvolvedor web,designer}
-industry={Defesa e Espaço,Hardware de Computador,Software de Computador,Redes de Computadores,Internet,Semicondutores,Telecomunicações,Prática Jurídica,Serviços Legais,Consultoria de Gestão,Biotecnologia,Prática Médica,Hospital & Saúde,Farmaceuticos,Veterinária,Dispositivos Médicos,Cosméticos,Moda e Aparência,Artigos Esportivos,Tabaco,Supermercados,Produção de Alimentos,Eletrônicos,Bens de consumo,Móveis,Varejo,Entretenimento,Apostas e Cassinos,Lazer, Viagem e Turismo,Hospitalidade,Restaurantes,Esportes,Alimentos & Bebidas,Cinema e Filmes,Mídia de Difusão,Museus e Instituições,Belas Artes,Artes performáticas,Serviços e Facilidades Recreacionais,Bancário,Seguro,Serviços Financeiros,Imobiliária,Investimento Bancário,Gerenciamento de Investimentos,Contabilidade,Construção,Materiais de Construção,Arquitetura e Planejamento,Engenharia Civil,Aviação e Aeroespacial,Automotivos,Químicos,Maquinário,Metais e Mineração,Óleo e Energia,Construção naval,Utilidades,Têxteis,Papel e Produtos Florestais,Fabricação de Estradas de Ferro,Agricultura,Laticínios,Pescaria,Ensino Primário e Médio,Ensino Superior,Gerenciamento de Educação,Pesquisa,Militar,Escritório Legislativo,Judiciário,Assuntos Internacionais,Administração Governamental,Escritório Executivo,Aplicação da Lei,Segurança Pública,Políticas Públicas,Anúncios e Marketing,Jornais,Publicação,Impressão,Serviços de Informação,Bibliotecas,Serviços Ambientais,Entrega de Pacote / Frete,Serviços Individuais e Famíliares,Instituições Religiosas,Organização Social e Civil,Serviços do Consumidor,Transporte / Caminhões / Ferrovias,Armazenagem,Linhas Aéreas / Aviação,Marítimo,Serviços e Tecnologia da Informação,Pesquisa de Mercado,Relações Públicas e Comunicações,Design,Gestão de Organizações sem fins lucrativos,Angariação de Fundos,Desenvolvimento de Programas,Edição,Pessoal e Recrutamento,Treinamento Profissional & Coaching,Capital de Risco,Organização Política,Tradução e Localização,Jogos de Computador,Serviços de Eventos,Artes e Ofícios,Fabricação Elétrica/Eletrônica,Mídia Online,Nanotecnologia,Música,Logística e Cadeia de Suprimentos,Plásticos,Segurança computacional e de rede,Wireless,Resolução alternativa de disputa,Segurança e Investigações,Serviços de Instalação,Terceirização,Saúde, Bem estar e Fitness,Medicina Alternativa,Produção de Mídia,Animação,Imóveis Comerciais,Mercados capitais,Filantropia,E-Learning,Atacado,Importação e Exportação,Engenharia Mecânica ou Industrial,Fotografia,Recursos Humanos,Suprimentos e equipamentos para empresas,Saúde Mental,Design Gráfico,Comércio Internacional e Desenvolvimento,Vinho e Bebidas,Artigos de Luxo e Jóias,Renováveis & Meio Ambiente,Vidro, Cerâmicas e Concreto,Embalagens e Contentores,Automação Industrial,Relações Governamentais}
-suffix={EIRELI,S.A.,LTDA,e Associados,Comércio,Tecnologia}]]></CSP>
-
-
-<CSP name="cosFaker/lang/PtBr/country.fkr" application="/" default="1"><![CDATA[
-abbr={AF,ZA,AL,DE,AD,AO,AI,AQ,AG,AN,SA,DZ,AR,AM,AW,AU,AT,AZ,BS,BD,BB,BH,BY,BE,BZ,BX,BJ,BM,BO,BA,BW,BR,BN,BG,BF,BI,BT,CV,CM,KH,CA,QA,KZ,TD,CL,CN,CY,CO,KM,CG,CI,CR,HR,CU,DK,DJ,DM,EG,SV,AE,EC,ER,EM,SK,SI,ES,US,EE,ET,RU,FJ,PH,FI,FR,GA,GM,GH,GE,GS,GI,GD,GR,GL,GP,GU,GT,GY,GN,GW,GQ,HT,NL,HN,HK,HU,YE,IN,ID,ID,IR,IR,IQ,IQ,IE,IE,IS,IS,IL,IL,IT,JM,JP,JE,JO,KI,KW,LA,LS,LV,LB,LR,LY,LI,LT,LU,MO,MG,MY,MW,MV,ML,MT,MA,MQ,MU,MR,MX,MM,FM,MZ,MC,MN,MS,ME,NA,NR,NP,NI,NE,NG,NO,NC,NZ,OM,PW,PA,PG,PK,PY,PE,PN,PF,PL,PR,PT,KE,KG,GB,CF,KR,MK,MD,CD,DO,KP,CZ,TZ,RE,RO,RW,EH,PM,AS,WS,SH,LC,KN,SM,ST,VC,SN,SL,RS,SC,SG,SY,SO,LK,SZ,SD,SE,CH,SR,SJ,TJ,TH,TW,TL,TG,TK,TO,TT,TN,TM,TR,TV,UA,UG,UY,UZ,VU,VA,VE,VN,YU,ZR,ZM,ZW}
-full={Afeganistão,Africa do Sul,Albânia,Alemanha,Andorra,Angola,Anguilla,Antartica,Antígua e Barbuda,Antilhas Holandesas,Arábia Saudita,Argélia,Argentina,Armênia,Aruba,Austrália,Áustria,Azerbaidjão,Bahamas,Bangladesh,Barbados,Bareine,Belarus,Bélgica,Belize,Benelux,Benin,Bermudas,Bolívia,Bósnia e Herzegóvina,Botswana,Brasil,Brunei Darussalam,Bulgária,Burkina Faso,Burundi,Butão,Cabo Verde,Camarões,Camboja,Canadá,Catar,Cazaquistão,Chade,Chile,China,Chipre,Colômbia,Comores,Congo,Costa do Marfim,Costa Rica,Croácia,Cuba,Dinamarca,Djibuti,Dominica,Egito,El Salvador,Emirados Árabes Unidos,Equador,Eritréia,Escritório para Harmonização no Mercado Interno,Eslováquia,Eslovenia,Espanha,Estados Unidos da América,Estônia,Etiópia,Federação Russa,Fiji,Filipinas,Finlândia,França,Gabão,Gambia,Gana,Geórgia,Geórgia do Sul e Ilhas Sandwich do Sul,Gibraltar,Granada,Grécia,Groenlândia,Guadalupe,Guam,Guatemala,Guiana,Guine,Guiné Bissau,Guine Equatorial,Haiti,Holanda,Honduras,Hong-Kong,Hungria,Iêmen,India,Indonésia,Indonésia,Irã,Irã,Iraque,Iraque,Irlanda,Irlanda,Islândia,Islândia,Israel,Israel,Itália,Jamaica,Japão,Jersey,Jordânia,Kiribati,Kuwait,Laos,Lesoto,Letônia,Líbano,Libéria,Líbia,Liechtenstein,Lituânia,Luxemburgo,Macau,Madagascar,Malásia,Malawi,Maldivas,Mali,Malta,Marrocos,Martinica,Maurício,Mauritânia,México,Mianmá,Micronésia,Moçambique,Mônaco,Mongólia,Mont Serrat,Montenegro,Namíbia,Nauru,Nepal,Nicarágua,Níger,Nigéria,Noruega,Nova Caledônia,Nova Zelândia,Omã,Palau,Panamá,Papua Nova Guiné,Paquistão,Paraguai,Peru,Pitcairn,Polinésia Francesa,Polônia,Porto Rico,Portugal,Quênia,Quirguistão,Reino Unido,República Centro Africana,República da Coréia,República da Macedonia,República da Moldova,República Dem. Do Congo,República Dominicana,República Pop. Dem. da Coreia,República Tcheca,República Unida da Tanzânia,Reunião,Romênia,Ruanda,Saara Ocidental,Saint Pierre e Miquelon,Samoa Americana,Samoa Ocidental,Santa Helena,Santa Lúcia,São Cristovão e Nevis,São Marino,São Tomé e Príncipe,São Vicente e Granadinas,Senegal,Serra Leoa,Sérvia,Seychelles,Singapura,Síria,Somália,Sri Lanka,Suazilândia,Sudão,Suécia,Suíça,Suriname,Svalbard e Jan Mayen,Tadjiquistão,Tailândia,Taiwan,Timor-Leste,Togo,Tokelau,Tonga,Trinidad e Tobago,Tunísia,Turcomenistão,Turquia,Tuvalu,Ucrânia,Uganda,Uruguai,Uzbequistão,Vanuatu,Vaticano,Venezuela,Vietnã,Yugoslávia,Zaire,Zâmbia,Zimbábue}]]></CSP>
-
-
-<CSP name="cosFaker/lang/PtBr/female_names.fkr" application="/" default="1"><![CDATA[
-Alessandra,Aline,Bruna,Carla,Célia,Cecília,Dalila,Eduarda,Esther,Fabrícia,Felícia,Fabiana,Isabel,Isabela,Joana,Graziela,Júlia,Janaína,Karla,Lorena,Lorraine,Larissa,Meire,Marcela,Margarida,Mércia,Márcia,Marli,Morgana,Maria,Marta,Natália,Núbia,Ofélia,Paula,Rafaelly,Rafaela,Roberta,Sílvia,Silvana,Suélen,Sara,Talita,Vanessa,Vitória]]></CSP>
-
-
-<CSP name="cosFaker/lang/PtBr/game.fkr" application="/" default="1"><![CDATA[
-suit={Paus,Copas,Espada,Ouro}
-separator={de}]]></CSP>
-
-
-<CSP name="cosFaker/lang/PtBr/hipster.fkr" application="/" default="1"><![CDATA[
-begin={Caros amigos, |Por outro lado, |Assim mesmo, |No entanto, não podemos esquecer que |Do mesmo modo, |A prática cotidiana prova que |Nunca é demais lembrar o peso e o significado destes problemas, uma vez que |As experiências acumuladas demonstram que |Acima de tudo, é fundamental ressaltar que |O incentivo ao avanço tecnológico, assim como |Não obstante, |Todas estas questões, devidamente ponderadas, levantam dúvidas sobre se |Pensando mais a longo prazo, |O que temos que ter sempre em mente é que |Ainda assim, existem dúvidas a respeito de como |Gostaria de enfatizar que |Todavia, |A nível organizacional, |O empenho em analisar |Percebemos, cada vez mais, que |No mundo atual, |É importante questionar o quanto |Neste sentido, |Evidentemente, |Por conseguinte, |É claro que |Podemos já vislumbrar o modo pelo qual |Desta maneira, |O cuidado em identificar pontos críticos n|A certificação de metodologias que nos auxiliam a lidar com }
-middle1={a execução dos pontos do programa |a complexidade dos estudos efetuados |a contínua expansão de nossa atividade |a estrutura atual da organização |o novo modelo estrutural aqui preconizado |o desenvolvimento contínuo de distintas formas de atuação |a constante divulgação das informações |a consolidação das estruturas |a consulta aos diversos militantes |o início da atividade geral de formação de atitudes |o desafiador cenário globalizado |a mobilidade dos capitais internacionais |o fenômeno da Internet |a hegemonia do ambiente político |a expansão dos mercados mundiais |o aumento do diálogo entre os diferentes setores produtivos |a crescente influência da mídia |a necessidade de renovação processual |a competitividade nas transações comerciais |o surgimento do comércio virtual |a revolução dos costumes |o acompanhamento das preferências de consumo |o comprometimento entre as equipes |a determinação clara de objetivos |a adoção de políticas descentralizadoras |a valorização de fatores subjetivos |a percepção das dificuldades |o entendimento das metas propostas |o consenso sobre a necessidade de qualificação |o julgamento imparcial das eventualidades }
-middle2={nos obriga à análise |cumpre um papel essencial na formulação |exige a precisão e a definição |auxilia a preparação e a composição |garante a contribuição de um grupo importante na determinação |assume importantes posições no estabelecimento |facilita a criação |obstaculiza a apreciação da importância |oferece uma interessante oportunidade para verificação |acarreta um processo de reformulação e modernização |pode nos levar a considerar a reestruturação |representa uma abertura para a melhoria |ainda não demonstrou convincentemente que vai participar na mudança |talvez venha a ressaltar a relatividade |prepara-nos para enfrentar situações atípicas decorrentes |maximiza as possibilidades por conta |desafia a capacidade de equalização |agrega valor ao estabelecimento |é uma das consequências |promove a alavancagem |não pode mais se dissociar |possibilita uma melhor visão global |estimula a padronização |aponta para a melhoria |faz parte de um processo de gerenciamento |causa impacto indireto na reavaliação |apresenta tendências no sentido de aprovar a manutenção |estende o alcance e a importância |deve passar por modificações independentemente |afeta positivamente a correta previsão }
-end={das condições financeiras e administrativas exigidas.|das diretrizes de desenvolvimento para o futuro.|do sistema de participação geral.|das posturas dos órgãos dirigentes com relação às suas atribuições.|das novas proposições.|das direções preferenciais no sentido do progresso.|do sistema de formação de quadros que corresponde às necessidades.|das condições inegavelmente apropriadas.|dos índices pretendidos.|das formas de ação.|dos paradigmas corporativos.|dos relacionamentos verticais entre as hierarquias.|do processo de comunicação como um todo.|dos métodos utilizados na avaliação de resultados.|de todos os recursos funcionais envolvidos.|dos níveis de motivação departamental.|da gestão inovadora da qual fazemos parte.|dos modos de operação convencionais.|de alternativas às soluções ortodoxas.|dos procedimentos normalmente adotados.|dos conhecimentos estratégicos para atingir a excelência.|do fluxo de informações.|do levantamento das variáveis envolvidas.|das diversas correntes de pensamento.|do impacto na agilidade decisória.|das regras de conduta normativas.|do orçamento setorial.|do retorno esperado a longo prazo.|do investimento em reciclagem técnica.|do remanejamento dos quadros funcionais.}]]></CSP>
-
-
-<CSP name="cosFaker/lang/PtBr/internet.fkr" application="/" default="1"><![CDATA[
-email_provider={gmail.com,yahoo.com,hotmail.com,bol.com.br}
-domain_suffix={com,biz,info,name,net,org}]]></CSP>
-
-
-<CSP name="cosFaker/lang/PtBr/job.fkr" application="/" default="1"><![CDATA[
-title_seniority={Lider,Senior,Produtor,Nacional,Regional,Central,Global,Cliente,Investidor,Dinâmico,Internacional,Legal,Avançado,Interno,Chefe}
-title_position={Supervisor,Associado,Executivo,Oficial,Gerente,Engenheiro,Especialista,Diretor,Coordenador,Administrador,Arquiteto,Analista,Designer,Planejador,Orquestrador,Técnico,Desenvolvedor,Produtor,Consultor,Assistente,Facilitador,Agente,Estrategista}
-field={Marketing,TI,Contabilidade,Administração,Anúncio,Bancário,Serviços Comunitários,Construção,Consultoria,Design,Educação,Agricultura,Governo,Saúde,Hospitalidade,Jurídico,Fabricação,Marketing,Mineração,Imobiliária,Varejo,Vendas,Tecnologia}
-skills={Trabalho em Equipe,Comunicação,Resolução de Problemas,Liderança,Organização,Trabalho sobre pressão,Confidencialidade,Auto motivado,Habilidades de Networking,Proativo,Aprende com rapidez,Técnico experiente}]]></CSP>
-
-
-<CSP name="cosFaker/lang/PtBr/last_names.fkr" application="/" default="1"><![CDATA[
-Silva,Souza,Carvalho,Santos,Reis,Xavier,Franco,Braga,Macedo,Batista,Barreto,Barros,Moraes,Malta,Carmello,Mengga,Costa,Rodrigues,Pereira,Melo,Saraiva,Nogueira,Oliveira,Martins,Moreira,Lima,Vaz,Albuquerque,Almeida,Alves,AragÃ£o,AraÃºjo,Barbosa,Brito,Caldeira,Campos,Cardoso,Cardoso,Carvalho,Castro,Cavalcante,Cavalcanti,da ConceiÃ§Ã£o,da Costa,da Cruz,da Cunha,da Luz,da Mata,da Mota,da Paz,da Rocha,da Rosa,das Neves,Dias,Duarte,Farias,Fernandes,Ferreira,FogaÃ§a,Freitas,Gomes,GonÃ§alves,Lopes,Mendes,Monteiro,Moura,Nascimento,Novaes,Nunes,Peixoto,Pinheiro,Pires,Porto,Ramos,Rezende,Ribeiro,Rocha,Sales,Silveira,Teixeira,Viana,Vieira]]></CSP>
-
-
-<CSP name="cosFaker/lang/PtBr/male_names.fkr" application="/" default="1"><![CDATA[
-Miguel,Yuri,Daniel,Heitor,Eduardo,Bruno,Tiago,João,Samuel,Igor,Leonardo,Diogo,Vinicios,Benjamim,Enzo,Rodrigo,Tomás,Diego,Luis,Kevin,Augusto,Filipe,Pablo,André,Emanuel,Fernando,Danilo,Renan,Levi,Alexandre,Lorenzo,Octávio,Ricardo,Marcelo,Kelvin,Leandro,Wilian,Alan,Júlio,Jonathan,Calebe,Paulo,Joaquim,Fabrício,Francisco,Douglas,António,Carlos,Vicente,Fábio,Lourenço,Marcos,Renato,Ângelo,Raul,Frederico,José,Valentim,Manuel,Artur,Gabriel,Guilherme,Bernardo,Lucas,Gustavo,Bryan,Rafael,Henrique,David,Mateus,Nicolas,Victor,Caio,Theo,Felipe,Santiago,Martim,Jonas,Maurício,Afonso,Michael,César,Cristiano,Jorge,Ramom,Edgar,Ulisses,Juliano,Ivan,Marco,Flávio,Anderson,Aquiles,Alexander,Álvaro,Muriel,Adriano,Roberto,Alessandro,Alexandre,Antônio,Breno,Carlos,César,Danilo,Deneval,Eduardo,Elísio,Fábio,Fabrício,Félix,Felipe,Feliciano,Frederico,Fabiano,Gustavo,Guilherme,Gúbio,Heitor,Hélio,Henry,Hugo,Ígor,João,Josemar,Júlio César,Júlio,Kléber,Lucas,Luiggi,Leandro,Leonardo,Ladislau,Marcos,Marcelo,Mario,Norberto,Nataniel,Paulo,Pablo,Pedro,Raul,Rafael,Ricardo,Roberto,Silas,Salvador,Sirineu,Tertuliano,Vicente,Víctor,Yango,Yago,Yuri,Washington,Warley]]></CSP>
-
-
-<CSP name="cosFaker/lang/PtBr/person_suffix.fkr" application="/" default="1"><![CDATA[
-Jr.,Neto,Filho]]></CSP>
-
-
-<CSP name="cosFaker/lang/PtBr/state.fkr" application="/" default="1"><![CDATA[
-full={Acre,Alagoas,Amapá,Amazonas,Bahia,Ceará,Distrito Federal,Espírito Santo,Goiás,Maranhão,Mato Grosso,Mato Grosso do Sul,Minas Gerais,Pará,Paraíba,Paraná,Pernambuco,Piauí,Rio de Janeiro,Rio Grande do Norte,Rio Grande do Sul,Rondônia,Roraima,Santa Catarina,São Paulo,Sergipe,Tocantins}
-abbr={AC,AL,AP,AM,BA,CE,DF,ES,GO,MA,MT,MS,MG,PA,PB,PR,PE,PI,RJ,RN,RS,RO,RR,SC,SP,SE,TO}]]></CSP>
-
-
-<CSP name="cosFaker/lang/PtBr/street.fkr" application="/" default="1"><![CDATA[
-suffix={Doutor,,Marechal,Padre,,Almirante,General,Monsenhor,,Conselheiro}
-prefix={Rua,Avenida,Travessa,Ponte,Alameda,Marginal,Viela,Rodovia}]]></CSP>
-
-
 <Class name="cosFaker.Address">
 <Super>cosFaker.lib.core</Super>
-<TimeChanged>64412,49897.858233</TimeChanged>
+<TimeChanged>64414,35745.134182</TimeChanged>
 <TimeCreated>64037,29468.065211</TimeCreated>
 
 <Method name="StreetSuffix">
 <ClassMethod>1</ClassMethod>
 <ReturnType>%String</ReturnType>
-<Implementation><![CDATA[	Quit ..SampleFromFile("street","suffix")
+<Implementation><![CDATA[	Quit ..SampleFromFile("street_suffix")
 ]]></Implementation>
 </Method>
 
 <Method name="StreetPrefix">
 <ClassMethod>1</ClassMethod>
 <ReturnType>%String</ReturnType>
-<Implementation><![CDATA[	Quit ..SampleFromFile("street","prefix")
+<Implementation><![CDATA[	Quit ..SampleFromFile("street_prefix")
+]]></Implementation>
+</Method>
+
+<Method name="PostCode">
+<ClassMethod>1</ClassMethod>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[	Quit ..MaskNumber(..SampleFromFile("postcode"))
 ]]></Implementation>
 </Method>
 
@@ -291,7 +244,7 @@ prefix={Rua,Avenida,Travessa,Ponte,Alameda,Marginal,Viela,Rodovia}]]></CSP>
 <ClassMethod>1</ClassMethod>
 <FormalSpec>pFullName:%Boolean=0</FormalSpec>
 <ReturnType>%String</ReturnType>
-<Implementation><![CDATA[	Quit ..SampleFromFile("state",$Case(pFullName,0:"abbr",1:"full"))
+<Implementation><![CDATA[	Quit ..SampleFromFile("state_"_$Case(pFullName,0:"abbr",1:"full"))
 ]]></Implementation>
 </Method>
 
@@ -299,14 +252,28 @@ prefix={Rua,Avenida,Travessa,Ponte,Alameda,Marginal,Viela,Rodovia}]]></CSP>
 <ClassMethod>1</ClassMethod>
 <FormalSpec>pState:%String=""</FormalSpec>
 <ReturnType>%String</ReturnType>
-<Implementation><![CDATA[	Quit ..SampleFromFile("city",pState)
+<Implementation><![CDATA[
+	Set:pState="" pState = ..SampleFromFile("state_abbr")
+	Quit ..SampleFromFile("city",pState)
 ]]></Implementation>
 </Method>
 
 <Method name="Country">
 <ClassMethod>1</ClassMethod>
 <FormalSpec>pAbrev:%Boolean=0</FormalSpec>
-<Implementation><![CDATA[	Quit ..SampleFromFile("country",$Case(pAbrev,0:"full",1:"abbr"))
+<Implementation><![CDATA[	Quit ..SampleFromFile("country_"_$Case(pAbrev,0:"full",1:"abbr"))
+]]></Implementation>
+</Method>
+
+<Method name="SecondaryAddress">
+<ClassMethod>1</ClassMethod>
+<Implementation><![CDATA[	Quit ..MaskNumber(..SampleFromFile("secondary_address"))
+]]></Implementation>
+</Method>
+
+<Method name="BuildingNumber">
+<ClassMethod>1</ClassMethod>
+<Implementation><![CDATA[	Quit ..MaskNumber(..SampleFromFile("number"))
 ]]></Implementation>
 </Method>
 </Class>
@@ -314,7 +281,7 @@ prefix={Rua,Avenida,Travessa,Ponte,Alameda,Marginal,Viela,Rodovia}]]></CSP>
 
 <Class name="cosFaker.App">
 <Super>cosFaker.lib.core</Super>
-<TimeChanged>64412,48473.448645</TimeChanged>
+<TimeChanged>64414,36065.191255</TimeChanged>
 <TimeCreated>64016,37345.119926</TimeCreated>
 
 <Method name="FunctionName">
@@ -335,9 +302,9 @@ prefix={Rua,Avenida,Travessa,Ponte,Alameda,Marginal,Viela,Rodovia}]]></CSP>
 <ReturnType>%String</ReturnType>
 <Implementation><![CDATA[
 	Set:pGroup="" pGroup = $ListGet($ListFromString("SQL,IF,FUN",","),$Random(3)+1)
-	Quit:pGroup="SQL" ..SampleFromFile("app","action_sql")
-	Quit:pGroup="IF" ..SampleFromFile("app","action_if")
-	Quit:pGroup="FUN" ..SampleFromFile("app","action_fun")
+	Quit:pGroup="SQL" ..SampleFromFile("action_sql")
+	Quit:pGroup="IF" ..SampleFromFile("action_if")
+	Quit:pGroup="FUN" ..SampleFromFile("action_fun")
 	Quit ""
 ]]></Implementation>
 </Method>
@@ -345,7 +312,7 @@ prefix={Rua,Avenida,Travessa,Ponte,Alameda,Marginal,Viela,Rodovia}]]></CSP>
 <Method name="AppType">
 <ClassMethod>1</ClassMethod>
 <ReturnType>%String</ReturnType>
-<Implementation><![CDATA[	Quit ..SampleFromFile("app","type")
+<Implementation><![CDATA[	Quit ..SampleFromFile("type")
 ]]></Implementation>
 </Method>
 </Class>
@@ -483,7 +450,7 @@ prefix={Rua,Avenida,Travessa,Ponte,Alameda,Marginal,Viela,Rodovia}]]></CSP>
 
 <Class name="cosFaker.Company">
 <Super>cosFaker.lib.core</Super>
-<TimeChanged>64412,49779.777514</TimeChanged>
+<TimeChanged>64414,36587.256412</TimeChanged>
 <TimeCreated>64364,55329.019724</TimeCreated>
 
 <Method name="Name">
@@ -491,8 +458,8 @@ prefix={Rua,Avenida,Travessa,Ponte,Alameda,Marginal,Viela,Rodovia}]]></CSP>
 <ReturnType>%String</ReturnType>
 <Implementation><![CDATA[
 	Quit $Case($Random(2),
-		1:##class(Name).FirstName()_" "_..SampleFromFile("company","suffix"),
-		:##class(Name).LastName()_" "_..SampleFromFile("company","suffix"))
+		1:##class(Name).FirstName()_" "_..SampleFromFile("suffix"),
+		:##class(Name).LastName()_" "_..SampleFromFile("suffix"))
 ]]></Implementation>
 </Method>
 
@@ -500,7 +467,7 @@ prefix={Rua,Avenida,Travessa,Ponte,Alameda,Marginal,Viela,Rodovia}]]></CSP>
 <ClassMethod>1</ClassMethod>
 <ReturnType>%String</ReturnType>
 <Implementation><![CDATA[
-	Set prof = $ZConvert(..SampleFromFile("company","profession"),"l")
+	Set prof = $ZConvert(..SampleFromFile("profession"),"l")
 	Quit $ZConvert($Extract(prof,1,1),"U")_$Extract(prof,2,*)
 ]]></Implementation>
 </Method>
@@ -508,7 +475,7 @@ prefix={Rua,Avenida,Travessa,Ponte,Alameda,Marginal,Viela,Rodovia}]]></CSP>
 <Method name="Industry">
 <ClassMethod>1</ClassMethod>
 <ReturnType>%String</ReturnType>
-<Implementation><![CDATA[	Quit ..SampleFromFile("company","industry")
+<Implementation><![CDATA[	Quit ..SampleFromFile("industry")
 ]]></Implementation>
 </Method>
 </Class>
@@ -656,7 +623,7 @@ prefix={Rua,Avenida,Travessa,Ponte,Alameda,Marginal,Viela,Rodovia}]]></CSP>
 
 <Class name="cosFaker.Game">
 <Super>cosFaker.lib.core</Super>
-<TimeChanged>64412,52249.856559</TimeChanged>
+<TimeChanged>64414,36701.904927</TimeChanged>
 <TimeCreated>64371,30101.281513</TimeCreated>
 
 <Method name="MortalKombat">
@@ -683,8 +650,8 @@ prefix={Rua,Avenida,Travessa,Ponte,Alameda,Marginal,Viela,Rodovia}]]></CSP>
 <ReturnType>%String</ReturnType>
 <Implementation><![CDATA[
 	Set cards = $ListBuild("A","2","3","4","5","6","7","8","9","J","Q","K")
-	Quit:pAbrev ..Sample(cards)_$Extract(..SampleFromFile("game","suit"),1,1)
-	Quit ..Sample(cards)_" "_..SampleFromFile("game","separator")_" "_..SampleFromFile("game","suit")
+	Quit:pAbrev ..Sample(cards)_$Extract(..SampleFromFile("suit"),1,1)
+	Quit ..Sample(cards)_" "_..SampleFromFile("separator")_" "_..SampleFromFile("suit")
 ]]></Implementation>
 </Method>
 </Class>
@@ -692,7 +659,7 @@ prefix={Rua,Avenida,Travessa,Ponte,Alameda,Marginal,Viela,Rodovia}]]></CSP>
 
 <Class name="cosFaker.Internet">
 <Super>cosFaker.lib.core</Super>
-<TimeChanged>64413,40469.613426</TimeChanged>
+<TimeChanged>64414,36733.030469</TimeChanged>
 <TimeCreated>64015,57627.232261</TimeCreated>
 
 <Method name="UserName">
@@ -722,7 +689,7 @@ prefix={Rua,Avenida,Travessa,Ponte,Alameda,Marginal,Viela,Rodovia}]]></CSP>
 <FormalSpec>pFirstName:%String="",pLastName:%String="",pProvider:%String=""</FormalSpec>
 <ReturnType>%String</ReturnType>
 <Implementation><![CDATA[
-	Set:pProvider="" pProvider = ..SampleFromFile("internet","email_provider")
+	Set:pProvider="" pProvider = ..SampleFromFile("email_provider")
 	Quit ..UserName(pFirstName, pLastName) _ "@" _ pProvider
 ]]></Implementation>
 </Method>
@@ -754,7 +721,7 @@ prefix={Rua,Avenida,Travessa,Ponte,Alameda,Marginal,Viela,Rodovia}]]></CSP>
 <Method name="DomainName">
 <ClassMethod>1</ClassMethod>
 <ReturnType>%String</ReturnType>
-<Implementation><![CDATA[	Quit $ZConvert(..DomainWord(),"l") _ "." _ ..SampleFromFile("internet","domain_suffix")
+<Implementation><![CDATA[	Quit $ZConvert(..DomainWord(),"l") _ "." _ ..SampleFromFile("domain_suffix")
 ]]></Implementation>
 </Method>
 
@@ -823,136 +790,9 @@ prefix={Rua,Avenida,Travessa,Ponte,Alameda,Marginal,Viela,Rodovia}]]></CSP>
 
 <Class name="cosFaker.JSON">
 <Description><![CDATA[
-<h1>cosFaker JSON</h1><br/>
-<span style="font-size:10px;">Author: <b>Andrei Luiz Nenevê - <a href="mailto:alneneve@gmail.com" target="_blank">Email</a> - <a href="https://github.com/AndreiLN" target="_blank">Github</a></b></span>
-<p><b>This class will generate random data according the options in cosFaker for any json string, it can return an JSON String or Object. Examples are shown in method's description.</b></p><br/><br/>
-<h3>Valid Types:</h3>
-<div style="padding-left:25px;border: 1px dashed #ddd;background-color:#eee;">
-<br/><b>*** You can aways pass a number before the type to generate an array of the desired type</b><br/><br/>
-<b>[]</b> = Parameters (Aways optional)<b></b>, <b style="color:darkgreen;">{}</b> = Default, <b style="color:darkblue;">()</b> = List of Valid Values<b></b>, <b style="color:darkred;">" "</b> = Must pass the string in double quotation marks<br/><br/>
-<b>Address:</b><ul>
-<li>streetprefix</li>
-<li>street || streetname || street-name</li>
-<li>latitude</li>
-<li>longitude</li>
-<li>capital</li>
-<li>state [<b>full-name</b><span style="color:darkgreen;">{0}</span>]</li>
-<li>statefull</li>
-<li>city [<b>state</b>]</li>
-<li>country [<b>abbreviated</b>]</li>
-</ul>
-<b>App:</b><ul>
-<li>function || functionname || function-name [<b>group</b><span style="color:darkblue;">(SQL,IF,FUN)</span>,<b>separator</b>]</li>
-</ul>
-<b>Coffee:</b><ul>
-<li>coffee.blendname || coffee.blend</li>
-<li>coffee.variety</li>
-<li>coffee.notes</li>
-<li>coffee.origin</li>
-</ul>
-<b>Commerce:</b><ul>
-<li>price [<b>min</b><span style="color:darkgreen;">{0}</span>,<b>max</b><span style="color:darkgreen;">{1000}</span>,<b>decimal-places</b><span style="color:darkgreen;">{2}</span>,<b>symbol</b>]</li>
-<li>cnpj [<b>pretty</b><span style="color:darkgreen;">{1}</span>]</li>
-</ul>
-<b>Company:</b><ul>
-<li>profession</li>
-<li>industry</li>
-</ul>
-<b>Dates:</b><ul>
-<li>date [<b>days</b><span style="color:darkgreen;">{365}</span>,<b>format</b><span style="color:darkgreen;">{3}</span>]</li>
-<li>dates.forward || date.forward [<b>days</b><span style="color:darkgreen;">{365}</span>,<b>format</b><span style="color:darkgreen;">{3}</span>]</li>
-<li>dates.backward || date.backward [<b>days</b><span style="color:darkgreen;">{365}</span>,<b>format</b><span style="color:darkgreen;">{3}</span>]</li>
-</ul>
-<b>DragonBall:</b><ul>
-<li>dragonball.character</li>
-</ul>
-<b>File:</b><ul>
-<li>filename [<b>directory</b>,<b>name</b>,<b>extension</b>,<b>separator</b><span style="color:darkgreen;">{/}</span>]</li>
-<li>file.extension</li>
-<li>file.mimetype</li>
-</ul>
-<b>Finance:</b><ul>
-<li>amount [<b>min</b><span style="color:darkgreen;">{0}</span>,<b>max</b><span style="color:darkgreen;">{10000}</span>,<b>decimal-places</b><span style="color:darkgreen;">{2}</span>,<b>separator</b><span style="color:darkgreen;">{,}</span>,<b>symbol</b>]</li>
-<li>creditcard || credit-card [<b>type</b><span style="color:darkblue;">(visa,mastercard,american_express)</span>]</li>
-<li>bitcoinaddress || bitcoin-address [<b>min</b><span style="color:darkgreen;">{24}</span>,<b>max</b><span style="color:darkgreen;">{34}</span>]</li>
-</ul>
-<b>Game:</b><ul>
-<li>game.card || card [<b>abbreviated</b><span style="color:darkgreen;">{0}</span>]</li>
-<li>mortalkombat</li>
-<li>streetfighter</li>
-</ul>
-<b>Internet:</b><ul>
-<li>username [<b>first-name</b>,<b>last-name</b>]</li>
-<li>email [<b>first-name</b>,<b>last-name</b>,<b>provider</b>]</li>
-<li>protocol</li>
-<li>domainword</li>
-<li>domain || domainname || domain-name</li>
-<li>avatar [<b>size</b>]</li>
-<li>url</li>
-<li>slug [<b style="color:darkred">"words"</b>,<b>glue</b>]</li>
-<li>ipv4</li>
-<li>ipv6</li>
-<li>mac</li>
-</ul>
-<b>Job:</b><ul>
-<li>job.title</li>
-<li>job.skills || skill</li>
-<li>job.field</li>
-</ul>
-<b>Lorem:</b><ul>
-<li>word</li>
-<li>words [<b>amount</b>]</li>
-<li>sentence [<b>min-amount</b><span style="color:darkgreen;">{3}</span>,<b>max-amount</b><span style="color:darkgreen;">{10}</span>]</li>
-<li>sentences [<b>sentence-amount</b>,<b>separator</b>]</li>
-<li>paragraph || p [<b>sentence-amount</b>]</li>
-<li>paragraphs [<b>paragraph-amount</b>,<b>separator</b>]</li>
-<li>lines [<b>line-amount</b>]</li>
-<li>text [<b>amount</b>]</li>
-<li>hipster [<b>paragraph-amount</b>,<b>separator</b>]</li>
-</ul>
-<b>Name:</b><ul>
-<li>name || fullname || full-name [<b>gender</b><span style="color:darkblue;">(1="female",2="male")]</li>
-<li>firstname || fname || first-name [<b>gender</b><span style="color:darkblue;">(1="female",2="male")]</li>
-<li>lastname || lname || last-name [<b>gender</b><span style="color:darkblue;">(1="female",2="male")]</li>
-<li>suffix</li>
-</ul>
-<b>Person:</b><ul>
-<li>cpf [<b>Pretty</b><span style="color:darkgreen;">{1}</span>]</li>
-</ul>
-<b>Phone:</b><ul>
-<li>areacode || area-code</li>
-<li>phonenumber || phone [<b>area-code</b><span style="color:darkgreen;">{1}</span>]</li>
-<li>cellphone || cell-phone [<b>area-code</b><span style="color:darkgreen;">{1}</span>]</li>
-</ul>
-<b>Pokemon:</b><ul>
-<li>pokemon</li>
-</ul>
-<b>StarWars:</b><ul>
-<li>starwars.character</li>
-<li>starwars.droid</li>
-<li>starwars.planet</li>
-<li>starwars.quote</li>
-<li>starwars.specie</li>
-<li>starwars.vehicle</li>
-<li>starwars.wookieword</li>
-<li>starwars.wookiesentence [<b>amount</b>]</li>
-</ul>
-<b>UFC:</b><ul>
-<li>ufc.category</li>
-<li>ufc.fighter [<b>category</b>,<b>country</b>,<b>with-country</b><span style="color:darkgreen;">{0}</span>]</li>
-<li>ufc.featherweight [<b>country</b>]</li>
-<li>ufc.middleweight [<b>country</b>]</li>
-<li>ufc.welterweight [<b>country</b>]</li>
-<li>ufc.lightweight [<b>country</b>]</li>
-<li>ufc.bantamweight [<b>country</b>]</li>
-<li>ufc.flyweight [<b>country</b>]</li>
-<li>ufc.heavyweight [<b>country</b>]</li>
-<li>ufc.lightheavyweight [<b>country</b>]</li>
-<li>ufc.nickname [<b style="color:darkred">"fighter-name"</b>]</li>
-</ul><br>
-<ul><li>Any other will be an random integer between 1 and 99</li></ul>]]></Description>
+<h1>cosFaker JSON</h1><br/> <span style="font-size:10px;">Author: <b>Andrei Luiz Nenevê - <a href="mailto:alneneve@gmail.com" target="_blank">Email</a> - <a href="https://github.com/AndreiLN" target="_blank">Github</a></b></span> <p><b>This class will generate random data according the options in cosFaker for any json string, it can return an JSON String or Object. Examples are shown in method's description.</b></p><br/><br/> <h3>Valid Types:</h3> <div style="padding-left:25px;border: 1px dashed #ddd;background-color:#eee;"> <br/><b>*** You can aways pass a number before the type to generate an array of the desired type</b><br/><br/><b>[]</b> = Parameters (Aways optional)<b></b>, <b style="color:darkgreen;">{}</b> = Default, <b style="color:darkblue;">()</b> = List of Valid Values<b></b>, <b style="color:darkred;">" "</b> = Must pass the string in double quotation marks<br/><br/><b>Address:</b><ul><li>streetprefix</li><li>street || streetname || street-name</li><li>latitude</li><li>longitude</li><li>capital</li><li>state [<b>full-name</b><span style="color:darkgreen;">{0}</span>]</li><li>statefull</li><li>city [<b>state</b>]</li><li>country [<b>abbreviated</b>]</li><li>postcode</li><li>secondary-address || secondaryaddress</li><li>building-number || buildingnumber</li></ul><b>App:</b><ul><li>function || functionname || function-name [<b>group</b><span style="color:darkblue;">(SQL,IF,FUN)</span>,<b>separator</b>]</li><li>app.action [<b>group</b><span style="color:darkblue;">(SQL,IF,FUN)</span>]</li><li>app.type </li></ul><b>Coffee:</b><ul><li>coffee.blendname || coffee.blend</li><li>coffee.variety</li><li>coffee.notes</li><li>coffee.origin</li></ul><b>Commerce:</b><ul><li>price [<b>min</b><span style="color:darkgreen;">{0}</span>,<b>max</b><span style="color:darkgreen;">{1000}</span>,<b>decimal-places</b><span style="color:darkgreen;">{2}</span>,<b>symbol</b>]</li><li>cnpj [<b>pretty</b><span style="color:darkgreen;">{1}</span>]</li></ul><b>Company:</b><ul><li>profession</li><li>industry</li><li>company.name</li></ul><b>Dates:</b><ul><li>date [<b>days</b><span style="color:darkgreen;">{365}</span>,<b>format</b><span style="color:darkgreen;">{3}</span>]</li><li>dates.forward || date.forward [<b>days</b><span style="color:darkgreen;">{365}</span>,<b>format</b><span style="color:darkgreen;">{3}</span>]</li><li>dates.backward || date.backward [<b>days</b><span style="color:darkgreen;">{365}</span>,<b>format</b><span style="color:darkgreen;">{3}</span>]</li></ul><b>DragonBall:</b><ul><li>dragonball.character</li></ul><b>File:</b><ul><li>filename [<b>directory</b>,<b>name</b>,<b>extension</b>,<b>separator</b><span style="color:darkgreen;">{/}</span>]</li><li>file.extension</li><li>file.mimetype</li></ul><b>Finance:</b><ul><li>amount [<b>min</b><span style="color:darkgreen;">{0}</span>,<b>max</b><span style="color:darkgreen;">{10000}</span>,<b>decimal-places</b><span style="color:darkgreen;">{2}</span>,<b>separator</b><span style="color:darkgreen;">{,}</span>,<b>symbol</b>]</li><li>creditcard || credit-card [<b>type</b><span style="color:darkblue;">(visa,mastercard,american_express)</span>]</li><li>bitcoinaddress || bitcoin-address [<b>min</b><span style="color:darkgreen;">{24}</span>,<b>max</b><span style="color:darkgreen;">{34}</span>]</li></ul><b>Game:</b><ul><li>game.card || card [<b>abbreviated</b><span style="color:darkgreen;">{0}</span>]</li><li>mortalkombat</li><li>streetfighter</li></ul><b>Internet:</b><ul><li>username [<b>first-name</b>,<b>last-name</b>]</li><li>email [<b>first-name</b>,<b>last-name</b>,<b>provider</b>]</li><li>protocol</li><li>domainword</li><li>domain || domainname || domain-name</li><li>avatar [<b>size</b>]</li><li>url</li><li>slug [<b style="color:darkred">'words'</b>,<b>glue</b>]</li><li>ipv4</li><li>ipv6</li><li>mac</li></ul><b>Job:</b><ul><li>job.title</li><li>job.skills || skill</li><li>job.field</li></ul><b>Lorem:</b><ul><li>word</li><li>words [<b>amount</b>]</li><li>sentence [<b>min-amount</b><span style="color:darkgreen;">{3}</span>,<b>max-amount</b><span style="color:darkgreen;">{10}</span>]</li><li>sentences [<b>sentence-amount</b>,<b>separator</b>]</li><li>paragraph || p [<b>sentence-amount</b>]</li><li>paragraphs [<b>paragraph-amount</b>,<b>separator</b>]</li><li>lines [<b>line-amount</b>]</li><li>text [<b>amount</b>]</li><li>hipster [<b>paragraph-amount</b>,<b>separator</b>]</li></ul><b>Name:</b><ul><li>name || fullname || full-name [<b>gender</b><span style="color:darkblue;">(1="female",2="male")]</li><li>firstname || fname || first-name [<b>gender</b><span style="color:darkblue;">(1="female",2="male")]</li><li>lastname || lname || last-name [<b>gender</b><span style="color:darkblue;">(1="female",2="male")]</li><li>suffix</li></ul><b>Person:</b><ul><li>cpf [<b>Pretty</b><span style="color:darkgreen;">{1}</span>]</li></ul><b>Phone:</b><ul><li>areacode || area-code</li><li>phonenumber || phone [<b>area-code</b><span style="color:darkgreen;">{1}</span>]</li><li>cellphone || cell-phone [<b>area-code</b><span style="color:darkgreen;">{1}</span>]</li></ul><b>Pokemon:</b><ul><li>pokemon</li></ul><b>StarWars:</b><ul><li>starwars.character</li><li>starwars.droid</li><li>starwars.planet</li><li>starwars.quote</li><li>starwars.specie</li><li>starwars.vehicle</li><li>starwars.wookieword</li><li>starwars.wookiesentence [<b>amount</b>]</li></ul><b>UFC:</b><ul><li>ufc.category</li><li>ufc.fighter [<b>category</b>,<b>country</b>,<b>with-country</b><span style="color:darkgreen;">{0}</span>]</li><li>ufc.featherweight [<b>country</b>]</li><li>ufc.middleweight [<b>country</b>]</li><li>ufc.welterweight [<b>country</b>]</li><li>ufc.lightweight [<b>country</b>]</li><li>ufc.bantamweight [<b>country</b>]</li><li>ufc.flyweight [<b>country</b>]</li><li>ufc.heavyweight [<b>country</b>]</li><li>ufc.lightheavyweight [<b>country</b>]</li><li>ufc.nickname [<b style="color:darkred">'fighter-name'</b>]</li></ul><br><ul><li>Any other will be an random integer between 1 and 99</li></ul></div>]]></Description>
 <Super>cosFaker.lib.core</Super>
-<TimeChanged>64413,57556.567255</TimeChanged>
+<TimeChanged>64414,33073.938672</TimeChanged>
 <TimeCreated>64373,51516.328131</TimeCreated>
 
 <Parameter name="Version">
@@ -966,7 +806,7 @@ Version of cosFaker JSON</Description>
 <Description>
 Last time that this class was updated</Description>
 <Type>%String</Type>
-<Default>2017-05-10 16:00:00</Default>
+<Default>2017-05-11 09:11:13</Default>
 </Parameter>
 
 <Method name="GetDataJSONFromJSON">
@@ -1166,15 +1006,15 @@ Write listOfPokemons.Count()
 
 <Class name="cosFaker.Job">
 <Super>cosFaker.lib.core</Super>
-<TimeChanged>64412,49513.685768</TimeChanged>
+<TimeChanged>64414,36862.045773</TimeChanged>
 <TimeCreated>64365,52785.076161</TimeCreated>
 
 <Method name="Title">
 <ClassMethod>1</ClassMethod>
 <Implementation><![CDATA[
 	Set title = $Random(3),
-		seniority = ..SampleFromFile("job","title_seniority"),
-		position = ..SampleFromFile("job","title_position")
+		seniority = ..SampleFromFile("title_seniority"),
+		position = ..SampleFromFile("title_position")
 	Quit:title=0 position_" de "_..Field()_" "_seniority
 	Quit:title=1 position_" "_seniority
 	Quit:title=2 position_" de "_..Field()
@@ -1183,13 +1023,13 @@ Write listOfPokemons.Count()
 
 <Method name="Field">
 <ClassMethod>1</ClassMethod>
-<Implementation><![CDATA[	Quit ..SampleFromFile("job","field")
+<Implementation><![CDATA[	Quit ..SampleFromFile("field")
 ]]></Implementation>
 </Method>
 
 <Method name="Skills">
 <ClassMethod>1</ClassMethod>
-<Implementation><![CDATA[	Quit ..SampleFromFile("job","skills")
+<Implementation><![CDATA[	Quit ..SampleFromFile("skills")
 ]]></Implementation>
 </Method>
 </Class>
@@ -1197,7 +1037,7 @@ Write listOfPokemons.Count()
 
 <Class name="cosFaker.Lorem">
 <Super>cosFaker.lib.core</Super>
-<TimeChanged>64412,47918.504612</TimeChanged>
+<TimeChanged>64414,37139.255686</TimeChanged>
 <TimeCreated>64015,32148.367654</TimeCreated>
 
 <Method name="Word">
@@ -1588,10 +1428,10 @@ Write listOfPokemons.Count()
 <Implementation><![CDATA[
 	Set:pParagraphCount="" pParagraphCount = 3
 	Set:pSeparator="" pSeparator = $Char(10) _ $Char(13) ; \n \r OR LF CR
-	Set begin = $ListFromString(..GetFile("\"_..GetLang()_"\hipster.fkr","begin"),"|")
-    Set middle = $ListFromString(..GetFile("\"_..GetLang()_"\hipster.fkr","middle1"),"|")
-    Set middle2 = $ListFromString(..GetFile("\"_..GetLang()_"\hipster.fkr","middle2"),"|")
-    Set TheEnd = $ListFromString(..GetFile("\"_..GetLang()_"\hipster.fkr","end"),"|")
+	Set begin = $ListFromString(..GetFile("hipster_begin"),"|")
+    Set middle = $ListFromString(..GetFile("hipster_middle1"),"|")
+    Set middle2 = $ListFromString(..GetFile("hipster_middle2"),"|")
+    Set TheEnd = $ListFromString(..GetFile("hipster_end"),"|")
 	For k=1:1:pParagraphCount {
 		S paragraph = $ListGet(begin,$Random($ListLength(begin)) + 1)
 		S paragraph = paragraph _ $ListGet(middle,$Random($ListLength(middle)) + 1)
@@ -1601,7 +1441,7 @@ Write listOfPokemons.Count()
 	}
 	
 	Kill begin, TheEnd, middle, middle2
-	Quit $ListToString($Get(paragraphs), pSeparator)
+	Quit $ZConvert($ListToString($Get(paragraphs), pSeparator),"I","UTF8")
 ]]></Implementation>
 </Method>
 </Class>
@@ -1609,7 +1449,7 @@ Write listOfPokemons.Count()
 
 <Class name="cosFaker.Name">
 <Super>cosFaker.lib.core</Super>
-<TimeChanged>64412,47161.319783</TimeChanged>
+<TimeChanged>64414,37426.547618</TimeChanged>
 <TimeCreated>64015,30897.267344</TimeCreated>
 
 <Method name="FirstName">
@@ -1666,7 +1506,7 @@ Male Gender = 2</Description>
 </Class>
 
 
-<Project name="cosFaker" LastModified="2017-05-10 10:23:52.336377">
+<Project name="cosFaker" LastModified="2017-05-11 10:42:33.83716">
   <Items>
     <ProjectItem name="cosFaker.Address" type="CLS"></ProjectItem>
     <ProjectItem name="cosFaker.App" type="CLS"></ProjectItem>
@@ -1679,6 +1519,7 @@ Male Gender = 2</Description>
     <ProjectItem name="cosFaker.Finance" type="CLS"></ProjectItem>
     <ProjectItem name="cosFaker.Game" type="CLS"></ProjectItem>
     <ProjectItem name="cosFaker.Internet" type="CLS"></ProjectItem>
+    <ProjectItem name="cosFaker.JSON" type="CLS"></ProjectItem>
     <ProjectItem name="cosFaker.Job" type="CLS"></ProjectItem>
     <ProjectItem name="cosFaker.Lorem" type="CLS"></ProjectItem>
     <ProjectItem name="cosFaker.Name" type="CLS"></ProjectItem>
@@ -1690,8 +1531,6 @@ Male Gender = 2</Description>
     <ProjectItem name="cosFaker.UFC" type="CLS"></ProjectItem>
     <ProjectItem name="cosFaker.lib.core" type="CLS"></ProjectItem>
     <ProjectItem name="cosFaker" type="DIR"></ProjectItem>
-    <ProjectItem name="cosFaker/lang/PtBr" type="DIR"></ProjectItem>
-    <ProjectItem name="cosFaker.JSON" type="CLS"></ProjectItem>
   </Items>
 </Project>
 
@@ -1807,145 +1646,9 @@ Male Gender = 2</Description>
 
 <Class name="cosFaker.SQL">
 <Description><![CDATA[
-<h1>cosFaker SQL</h1><br/>
-<span style="font-size:10px;">Author: <b>Andrei Luiz Nenevê - <a href="mailto:alneneve@gmail.com" target="_blank">Email</a> - <a href="https://github.com/AndreiLN" target="_blank">Github</a></b></span>
-<p><b>This class will generate random data according the options in cosFaker for any table. Examples are shown in method's description.</b></p><br/><br/>
-<h3>Valid Types:</h3>
-<div style="padding-left:25px;border: 1px dashed #ddd;background-color:#eee;">
-<b>[]</b> = Parameters (Aways optional)<b></b>, <b style="color:darkgreen;">{}</b> = Default, <b style="color:darkblue;">()</b> = List of Valid Values<b></b>, <b style="color:darkred;">' '</b> = Must pass the string in single quotation marks<br/><br/>
-<b>Address:</b><ul>
-<li>streetprefix</li>
-<li>street || streetname || street-name</li>
-<li>latitude</li>
-<li>longitude</li>
-<li>capital</li>
-<li>state [<b>full-name</b><span style="color:darkgreen;">{0}</span>]</li>
-<li>statefull</li>
-<li>city [<b>state</b>]</li>
-<li>country [<b>abbreviated</b>]</li>
-</ul>
-<b>App:</b><ul>
-<li>function || functionname || function-name [<b>group</b><span style="color:darkblue;">(SQL,IF,FUN)</span>,<b>separator</b>]</li>
-</ul>
-<b>Coffee:</b><ul>
-<li>coffee.blendname || coffee.blend</li>
-<li>coffee.variety</li>
-<li>coffee.notes</li>
-<li>coffee.origin</li>
-</ul>
-<b>Commerce:</b><ul>
-<li>price [<b>min</b><span style="color:darkgreen;">{0}</span>,<b>max</b><span style="color:darkgreen;">{1000}</span>,<b>decimal-places</b><span style="color:darkgreen;">{2}</span>,<b>symbol</b>]</li>
-<li>cnpj [<b>pretty</b><span style="color:darkgreen;">{1}</span>]</li>
-</ul>
-<b>Company:</b><ul>
-<li>profession</li>
-<li>industry</li>
-</ul>
-<b>Dates:</b><ul>
-<li>date [<b>days</b><span style="color:darkgreen;">{365}</span>,<b>format</b><span style="color:darkgreen;">{3}</span>]</li>
-<li>dates.forward || date.forward [<b>days</b><span style="color:darkgreen;">{365}</span>,<b>format</b><span style="color:darkgreen;">{3}</span>]</li>
-<li>dates.backward || date.backward [<b>days</b><span style="color:darkgreen;">{365}</span>,<b>format</b><span style="color:darkgreen;">{3}</span>]</li>
-</ul>
-<b>DragonBall:</b><ul>
-<li>dragonball.character</li>
-</ul>
-<b>File:</b><ul>
-<li>filename [<b>directory</b>,<b>name</b>,<b>extension</b>,<b>separator</b><span style="color:darkgreen;">{/}</span>]</li>
-<li>file.extension</li>
-<li>file.mimetype</li>
-</ul>
-<b>Finance:</b><ul>
-<li>amount [<b>min</b><span style="color:darkgreen;">{0}</span>,<b>max</b><span style="color:darkgreen;">{10000}</span>,<b>decimal-places</b><span style="color:darkgreen;">{2}</span>,<b>separator</b><span style="color:darkgreen;">{,}</span>,<b>symbol</b>]</li>
-<li>creditcard || credit-card [<b>type</b><span style="color:darkblue;">(visa,mastercard,american_express)</span>]</li>
-<li>bitcoinaddress || bitcoin-address [<b>min</b><span style="color:darkgreen;">{24}</span>,<b>max</b><span style="color:darkgreen;">{34}</span>]</li>
-</ul>
-<b>Game:</b><ul>
-<li>game.card || card [<b>abbreviated</b><span style="color:darkgreen;">{0}</span>]</li>
-<li>mortalkombat</li>
-<li>streetfighter</li>
-</ul>
-<b>Internet:</b><ul>
-<li>username [<b>first-name</b>,<b>last-name</b>]</li>
-<li>email [<b>first-name</b>,<b>last-name</b>,<b>provider</b>]</li>
-<li>protocol</li>
-<li>domainword</li>
-<li>domain || domainname || domain-name</li>
-<li>avatar [<b>size</b>]</li>
-<li>url</li>
-<li>slug [<b style="color:darkred">'words'</b>,<b>glue</b>]</li>
-<li>ipv4</li>
-<li>ipv6</li>
-<li>mac</li>
-</ul>
-<b>Job:</b><ul>
-<li>job.title</li>
-<li>job.skills || skill</li>
-<li>job.field</li>
-</ul>
-<b>Lorem:</b><ul>
-<li>word</li>
-<li>words [<b>amount</b>]</li>
-<li>sentence [<b>min-amount</b><span style="color:darkgreen;">{3}</span>,<b>max-amount</b><span style="color:darkgreen;">{10}</span>]</li>
-<li>sentences [<b>sentence-amount</b>,<b>separator</b>]</li>
-<li>paragraph || p [<b>sentence-amount</b>]</li>
-<li>paragraphs [<b>paragraph-amount</b>,<b>separator</b>]</li>
-<li>lines [<b>line-amount</b>]</li>
-<li>text [<b>amount</b>]</li>
-<li>hipster [<b>paragraph-amount</b>,<b>separator</b>]</li>
-</ul>
-<b>Name:</b><ul>
-<li>name || fullname || full-name [<b>gender</b><span style="color:darkblue;">(1="female",2="male")]</li>
-<li>firstname || fname || first-name [<b>gender</b><span style="color:darkblue;">(1="female",2="male")]</li>
-<li>lastname || lname || last-name [<b>gender</b><span style="color:darkblue;">(1="female",2="male")]</li>
-<li>suffix</li>
-</ul>
-<b>Person:</b><ul>
-<li>cpf [<b>Pretty</b><span style="color:darkgreen;">{1}</span>]</li>
-</ul>
-<b>Phone:</b><ul>
-<li>areacode || area-code</li>
-<li>phonenumber || phone [<b>area-code</b><span style="color:darkgreen;">{1}</span>]</li>
-<li>cellphone || cell-phone [<b>area-code</b><span style="color:darkgreen;">{1}</span>]</li>
-</ul>
-<b>Pokemon:</b><ul>
-<li>pokemon</li>
-</ul>
-<b>StarWars:</b><ul>
-<li>starwars.character</li>
-<li>starwars.droid</li>
-<li>starwars.planet</li>
-<li>starwars.quote</li>
-<li>starwars.specie</li>
-<li>starwars.vehicle</li>
-<li>starwars.wookieword</li>
-<li>starwars.wookiesentence [<b>amount</b>]</li>
-</ul>
-<b>UFC:</b><ul>
-<li>ufc.category</li>
-<li>ufc.fighter [<b>category</b>,<b>country</b>,<b>with-country</b><span style="color:darkgreen;">{0}</span>]</li>
-<li>ufc.featherweight [<b>country</b>]</li>
-<li>ufc.middleweight [<b>country</b>]</li>
-<li>ufc.welterweight [<b>country</b>]</li>
-<li>ufc.lightweight [<b>country</b>]</li>
-<li>ufc.bantamweight [<b>country</b>]</li>
-<li>ufc.flyweight [<b>country</b>]</li>
-<li>ufc.heavyweight [<b>country</b>]</li>
-<li>ufc.lightheavyweight [<b>country</b>]</li>
-<li>ufc.nickname [<b style="color:darkred">'fighter-name'</b>]</li>
-</ul><br>
-<ul><li>Any other will be an random integer between 1 and 99</li></ul>
-</div><br/><h3>Examples:</h3>
-<example>
-Do ##class(cosFaker.SQL).Insert("Sample_Data.Clients","City,Name,NickName","city SC,name 2,ufc.nickname 'Anderson Silva'",1)
-;INSERT INTO Sample_Data.Clients (City,Name,NickName) VALUES ('Trombudo Central','Leandro Mendes','The Spider')
-</example>
-<example>
-Do ##class(cosFaker.SQL).Insert("Sample_Data.Clients","City,Name,Salary","city SC,name 2,price 1000 2000 2 R$",2)
-;INSERT INTO Sample_Data.Clients (City,Name,Salary) VALUES ('Celso Ramos','Luiggi Dias Nunes Saraiva','R$1654.30')
-;INSERT INTO Sample_Data.Clients (City,Name,Salary) VALUES ('Nova Veneza','Fabiano da Costa','R$1255.13')
-</example>]]></Description>
+<h1>cosFaker SQL</h1><br/> <span style="font-size:10px;">Author: <b>Andrei Luiz Nenevê - <a href="mailto:alneneve@gmail.com" target="_blank">Email</a> - <a href="https://github.com/AndreiLN" target="_blank">Github</a></b></span> <p><b>This class will generate random data according the options in cosFaker for any table. Examples are shown in method's description.</b></p><br/><br/> <h3>Valid Types:</h3> <div style="padding-left:25px;border: 1px dashed #ddd;background-color:#eee;"><b>[]</b> = Parameters (Aways optional)<b></b>, <b style="color:darkgreen;">{}</b> = Default, <b style="color:darkblue;">()</b> = List of Valid Values<b></b>, <b style="color:darkred;">' '</b> = Must pass the string in single quotation marks<br/><br/><b>Address:</b><ul><li>streetprefix</li><li>street || streetname || street-name</li><li>latitude</li><li>longitude</li><li>capital</li><li>state [<b>full-name</b><span style="color:darkgreen;">{0}</span>]</li><li>statefull</li><li>city [<b>state</b>]</li><li>country [<b>abbreviated</b>]</li><li>postcode</li><li>secondary-address || secondaryaddress</li><li>building-number || buildingnumber</li></ul><b>App:</b><ul><li>function || functionname || function-name [<b>group</b><span style="color:darkblue;">(SQL,IF,FUN)</span>,<b>separator</b>]</li><li>app.action [<b>group</b><span style="color:darkblue;">(SQL,IF,FUN)</span>]</li><li>app.type </li></ul><b>Coffee:</b><ul><li>coffee.blendname || coffee.blend</li><li>coffee.variety</li><li>coffee.notes</li><li>coffee.origin</li></ul><b>Commerce:</b><ul><li>price [<b>min</b><span style="color:darkgreen;">{0}</span>,<b>max</b><span style="color:darkgreen;">{1000}</span>,<b>decimal-places</b><span style="color:darkgreen;">{2}</span>,<b>symbol</b>]</li><li>cnpj [<b>pretty</b><span style="color:darkgreen;">{1}</span>]</li></ul><b>Company:</b><ul><li>profession</li><li>industry</li><li>company.name</li></ul><b>Dates:</b><ul><li>date [<b>days</b><span style="color:darkgreen;">{365}</span>,<b>format</b><span style="color:darkgreen;">{3}</span>]</li><li>dates.forward || date.forward [<b>days</b><span style="color:darkgreen;">{365}</span>,<b>format</b><span style="color:darkgreen;">{3}</span>]</li><li>dates.backward || date.backward [<b>days</b><span style="color:darkgreen;">{365}</span>,<b>format</b><span style="color:darkgreen;">{3}</span>]</li></ul><b>DragonBall:</b><ul><li>dragonball.character</li></ul><b>File:</b><ul><li>filename [<b>directory</b>,<b>name</b>,<b>extension</b>,<b>separator</b><span style="color:darkgreen;">{/}</span>]</li><li>file.extension</li><li>file.mimetype</li></ul><b>Finance:</b><ul><li>amount [<b>min</b><span style="color:darkgreen;">{0}</span>,<b>max</b><span style="color:darkgreen;">{10000}</span>,<b>decimal-places</b><span style="color:darkgreen;">{2}</span>,<b>separator</b><span style="color:darkgreen;">{,}</span>,<b>symbol</b>]</li><li>creditcard || credit-card [<b>type</b><span style="color:darkblue;">(visa,mastercard,american_express)</span>]</li><li>bitcoinaddress || bitcoin-address [<b>min</b><span style="color:darkgreen;">{24}</span>,<b>max</b><span style="color:darkgreen;">{34}</span>]</li></ul><b>Game:</b><ul><li>game.card || card [<b>abbreviated</b><span style="color:darkgreen;">{0}</span>]</li><li>mortalkombat</li><li>streetfighter</li></ul><b>Internet:</b><ul><li>username [<b>first-name</b>,<b>last-name</b>]</li><li>email [<b>first-name</b>,<b>last-name</b>,<b>provider</b>]</li><li>protocol</li><li>domainword</li><li>domain || domainname || domain-name</li><li>avatar [<b>size</b>]</li><li>url</li><li>slug [<b style="color:darkred">'words'</b>,<b>glue</b>]</li><li>ipv4</li><li>ipv6</li><li>mac</li></ul><b>Job:</b><ul><li>job.title</li><li>job.skills || skill</li><li>job.field</li></ul><b>Lorem:</b><ul><li>word</li><li>words [<b>amount</b>]</li><li>sentence [<b>min-amount</b><span style="color:darkgreen;">{3}</span>,<b>max-amount</b><span style="color:darkgreen;">{10}</span>]</li><li>sentences [<b>sentence-amount</b>,<b>separator</b>]</li><li>paragraph || p [<b>sentence-amount</b>]</li><li>paragraphs [<b>paragraph-amount</b>,<b>separator</b>]</li><li>lines [<b>line-amount</b>]</li><li>text [<b>amount</b>]</li><li>hipster [<b>paragraph-amount</b>,<b>separator</b>]</li></ul><b>Name:</b><ul><li>name || fullname || full-name [<b>gender</b><span style="color:darkblue;">(1="female",2="male")]</li><li>firstname || fname || first-name [<b>gender</b><span style="color:darkblue;">(1="female",2="male")]</li><li>lastname || lname || last-name [<b>gender</b><span style="color:darkblue;">(1="female",2="male")]</li><li>suffix</li></ul><b>Person:</b><ul><li>cpf [<b>Pretty</b><span style="color:darkgreen;">{1}</span>]</li></ul><b>Phone:</b><ul><li>areacode || area-code</li><li>phonenumber || phone [<b>area-code</b><span style="color:darkgreen;">{1}</span>]</li><li>cellphone || cell-phone [<b>area-code</b><span style="color:darkgreen;">{1}</span>]</li></ul><b>Pokemon:</b><ul><li>pokemon</li></ul><b>StarWars:</b><ul><li>starwars.character</li><li>starwars.droid</li><li>starwars.planet</li><li>starwars.quote</li><li>starwars.specie</li><li>starwars.vehicle</li><li>starwars.wookieword</li><li>starwars.wookiesentence [<b>amount</b>]</li></ul><b>UFC:</b><ul><li>ufc.category</li><li>ufc.fighter [<b>category</b>,<b>country</b>,<b>with-country</b><span style="color:darkgreen;">{0}</span>]</li><li>ufc.featherweight [<b>country</b>]</li><li>ufc.middleweight [<b>country</b>]</li><li>ufc.welterweight [<b>country</b>]</li><li>ufc.lightweight [<b>country</b>]</li><li>ufc.bantamweight [<b>country</b>]</li><li>ufc.flyweight [<b>country</b>]</li><li>ufc.heavyweight [<b>country</b>]</li><li>ufc.lightheavyweight [<b>country</b>]</li><li>ufc.nickname [<b style="color:darkred">'fighter-name'</b>]</li></ul><br><ul><li>Any other will be an random integer between 1 and 99</li></ul></div><br/><h3>Examples:</h3> <example> Do ##class(cosFaker.SQL).Insert("Sample_Data.Clients","City,Name,NickName","city SC,name 2,ufc.nickname 'Anderson Silva'",1) ;INSERT INTO Sample_Data.Clients (City,Name,NickName) VALUES ('Trombudo Central','Leandro Mendes','The Spider') </example> <example> Do ##class(cosFaker.SQL).Insert("Sample_Data.Clients","City,Name,Salary","city SC,name 2,price 1000 2000 2 R$",2) ;INSERT INTO Sample_Data.Clients (City,Name,Salary) VALUES ('Celso Ramos','Luiggi Dias Nunes Saraiva','R$1654.30') ;INSERT INTO Sample_Data.Clients (City,Name,Salary) VALUES ('Nova Veneza','Fabiano da Costa','R$1255.13') </example>]]></Description>
 <Super>cosFaker.lib.core</Super>
-<TimeChanged>64413,37422.895116</TimeChanged>
+<TimeChanged>64414,33073.924341</TimeChanged>
 <TimeCreated>64373,51516.328131</TimeCreated>
 
 <Parameter name="Version">
@@ -1959,7 +1662,7 @@ Version of cosFaker SQL</Description>
 <Description>
 Last time that this class was updated</Description>
 <Type>%String</Type>
-<Default>2017-05-10 10:20:00</Default>
+<Default>2017-05-11 09:11:13</Default>
 </Parameter>
 
 <Parameter name="Testing">
@@ -2904,7 +2607,8 @@ Do ##class(cosFaker.SQL).Update("SamplePrj_PierogiDelivery_Data.Clients",
 
 
 <Class name="cosFaker.lib.core">
-<TimeChanged>64413,54334.990419</TimeChanged>
+<Super>%Projection.AbstractProjection</Super>
+<TimeChanged>64414,37534.527804</TimeChanged>
 <TimeCreated>64364,54430.726245</TimeCreated>
 
 <Parameter name="PtBr">
@@ -3013,36 +2717,55 @@ English (United States)</Description>
 ]]></Implementation>
 </Method>
 
+<Method name="SampleFromFile">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>pMethod:%String="",pSearch:%String=""</FormalSpec>
+<Private>1</Private>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[	Quit $ZConvert(..Sample($ListFromString(..GetFile(pMethod,pSearch),",")),"I","UTF8")
+]]></Implementation>
+</Method>
+
 <Method name="GetFile">
 <ClassMethod>1</ClassMethod>
-<FormalSpec>pDirFname:%String,pSearch:%String=""</FormalSpec>
+<FormalSpec>pMethod:%String="",pSearch:%String=""</FormalSpec>
 <Private>1</Private>
 <ReturnType>%String</ReturnType>
 <Implementation><![CDATA[
-	Set file = ##class(%File).%New(..GetPath()_"cosFaker\lang"_pDirFname)
+	Set dir = ..GetPath()_"cosFaker\lang\"_..GetLang()_"\"
+	Set file = ##class(%File).%New(dir_..GetLang()_".fkr")
 	Do file.Open("R")
 	Set Ret = ""
 	While 'file.AtEnd{
 		Set val = file.Read()
-		If ((pSearch'="")&&($Find(val,pSearch_"={")>0)){
-			Set Ret = $Piece($Piece(val,"{",2),"}",1)
+		If (($Find(val,..Class()_"->"_pMethod_"={")>0)){ //Main File
+			Set Ret = ..GetInternalValue(val)
 			Quit
+		} ElseIf (($Find(val,..Class()_"->"_pMethod_"=file{")>0)){ //Another file
+			Set secondaryFile = ##class(%File).%New(dir_..GetInternalValue(val)_".fkr")
+			Do secondaryFile.Open("R")
+			While 'secondaryFile.AtEnd{
+				Set secVal = secondaryFile.Read()
+				If ((pSearch'="")&&($Find(secVal,pSearch_"={")>0)){
+					Set Ret = ..GetInternalValue(secVal)
+					Quit
+				} ElseIf(pSearch="") {
+					Set Ret = Ret_secVal
+				}
+			}
 		}
-		Set:pSearch="" Ret = Ret_val
 	}
 	Do file.Close()
 	Quit Ret
 ]]></Implementation>
 </Method>
 
-<Method name="SampleFromFile">
+<Method name="GetInternalValue">
 <ClassMethod>1</ClassMethod>
-<FormalSpec>pName:%String,pSearch:%String="",pLang:%String=""</FormalSpec>
+<FormalSpec>pString:%String,pSeparator1:%String="{",pSeparator2:%String="}"</FormalSpec>
 <Private>1</Private>
 <ReturnType>%String</ReturnType>
-<Implementation><![CDATA[
-	Set:pLang="" pLang = ..GetLang()
-	Quit ..Sample($ListFromString(..GetFile("\"_pLang_"\"_pName_".fkr",pSearch),","))
+<Implementation><![CDATA[	Quit $Piece($Piece(pString,pSeparator1,2),pSeparator2,1)
 ]]></Implementation>
 </Method>
 
@@ -3108,10 +2831,15 @@ Used by SQL and JSON class</Description>
         "statefull":        ##class(cosFaker.Address).State(1),
         "city":             ##class(cosFaker.Address).City($Get(args(1),"")),
         "country":			##class(cosFaker.Address).Country($Get(args(1),"0")),
+        "postcode":			##class(cosFaker.Address).PostCode(),
+        "secondaryaddress":	##class(cosFaker.Address).SecondaryAddress(),
+        "buildingnumber":	##class(cosFaker.Address).BuildingNumber(),
         
         //Class: App
         "function":         ##class(cosFaker.App).FunctionName($Get(args(1),""),$Get(args(2),"")),
         "functionname":     ##class(cosFaker.App).FunctionName($Get(args(1),""),$Get(args(2),"")),
+        "app.action":		##class(cosFaker.App).AppAction($Get(args(1),"")),
+        "app.type":			##class(cosFaker.App).AppType(),
                 
         //Class: Coffee
         "coffee.blendname": ##class(cosFaker.Coffee).BlendName(),
@@ -3127,6 +2855,7 @@ Used by SQL and JSON class</Description>
         //Class: Company
         "profession":       ##class(cosFaker.Company).Profession(),
         "industry":         ##class(cosFaker.Company).Industry(),
+        "company.name":		##class(cosFaker.Company).Name(),
         
         //Class: Dates
         "date":             $Case(($Random(2)+1),1:##class(cosFaker.Dates).Backward($Get(args(1),"365"),$Get(args(2),"3")),:##class(cosFaker.Dates).Forward($Get(args(1),"365"),$Get(args(2),"3"))),
@@ -3275,6 +3004,188 @@ Used by SQL and JSON class</Description>
         Set tSC = $$$ERROR(5002,pDescription)
     }
     Quit tSC
+]]></Implementation>
+</Method>
+
+<Projection name="Reference">
+<Type>core</Type>
+</Projection>
+
+<Method name="CreateProjection">
+<ClassMethod>1</ClassMethod>
+<FormalSpec><![CDATA[classname:%String,&parameters:%String,modified:%String,qstruct]]></FormalSpec>
+<ReturnType>%Status</ReturnType>
+<Implementation><![CDATA[
+	Set tSC = $$$OK
+	Try {
+		/// Must update the documentation of classes SQL and JSON
+		Set initDescJSON = "<h1>cosFaker JSON</h1><br/> <span style=""font-size:10px;"">Author: <b>Andrei Luiz Nenevê - <a href=""mailto:alneneve@gmail.com"" target=""_blank"">Email</a> - <a href=""https://github.com/AndreiLN"" target=""_blank"">Github</a></b></span> <p><b>This class will generate random data according the options in cosFaker for any json string, it can return an JSON String or Object. Examples are shown in method's description.</b></p><br/><br/> <h3>Valid Types:</h3> <div style=""padding-left:25px;border: 1px dashed #ddd;background-color:#eee;""> <br/><b>*** You can aways pass a number before the type to generate an array of the desired type</b><br/><br/><b>[]</b> = Parameters (Aways optional)<b></b>, <b style=""color:darkgreen;"">{}</b> = Default, <b style=""color:darkblue;"">()</b> = List of Valid Values<b></b>, <b style=""color:darkred;"">"" ""</b> = Must pass the string in double quotation marks<br/><br/>"
+		Set initDescSQL = "<h1>cosFaker SQL</h1><br/> <span style=""font-size:10px;"">Author: <b>Andrei Luiz Nenevê - <a href=""mailto:alneneve@gmail.com"" target=""_blank"">Email</a> - <a href=""https://github.com/AndreiLN"" target=""_blank"">Github</a></b></span> <p><b>This class will generate random data according the options in cosFaker for any table. Examples are shown in method's description.</b></p><br/><br/> <h3>Valid Types:</h3> <div style=""padding-left:25px;border: 1px dashed #ddd;background-color:#eee;""><b>[]</b> = Parameters (Aways optional)<b></b>, <b style=""color:darkgreen;"">{}</b> = Default, <b style=""color:darkblue;"">()</b> = List of Valid Values<b></b>, <b style=""color:darkred;"">' '</b> = Must pass the string in single quotation marks<br/><br/>"
+		Set endDescJSON = "</div>"
+		Set endDescSQL = "</div><br/><h3>Examples:</h3> <example> Do ##class(cosFaker.SQL).Insert(""Sample_Data.Clients"",""City,Name,NickName"",""city SC,name 2,ufc.nickname 'Anderson Silva'"",1) ;INSERT INTO Sample_Data.Clients (City,Name,NickName) VALUES ('Trombudo Central','Leandro Mendes','The Spider') </example> <example> Do ##class(cosFaker.SQL).Insert(""Sample_Data.Clients"",""City,Name,Salary"",""city SC,name 2,price 1000 2000 2 R$"",2) ;INSERT INTO Sample_Data.Clients (City,Name,Salary) VALUES ('Celso Ramos','Luiggi Dias Nunes Saraiva','R$1654.30') ;INSERT INTO Sample_Data.Clients (City,Name,Salary) VALUES ('Nova Veneza','Fabiano da Costa','R$1255.13') </example>"
+	
+		Set Desc = ""_
+		"<b>Address:</b><ul>"_
+			"<li>streetprefix</li>"_
+			"<li>street || streetname || street-name</li>"_
+			"<li>latitude</li>"_
+			"<li>longitude</li>"_
+			"<li>capital</li>"_
+			"<li>state [<b>full-name</b><span style=""color:darkgreen;"">{0}</span>]</li>"_
+			"<li>statefull</li>"_
+			"<li>city [<b>state</b>]</li>"_
+			"<li>country [<b>abbreviated</b>]</li>"_
+			"<li>postcode</li>"_
+			"<li>secondary-address || secondaryaddress</li>"_
+			"<li>building-number || buildingnumber</li>"_
+		"</ul>"_
+		"<b>App:</b><ul>"_
+			"<li>function || functionname || function-name [<b>group</b><span style=""color:darkblue;"">(SQL,IF,FUN)</span>,<b>separator</b>]</li>"_
+			"<li>app.action [<b>group</b><span style=""color:darkblue;"">(SQL,IF,FUN)</span>]</li>"_
+			"<li>app.type </li>"_
+		"</ul>"_
+		"<b>Coffee:</b><ul>"_
+			"<li>coffee.blendname || coffee.blend</li>"_
+			"<li>coffee.variety</li>"_
+			"<li>coffee.notes</li>"_
+			"<li>coffee.origin</li>"_
+		"</ul>"_
+		"<b>Commerce:</b><ul>"_
+			"<li>price [<b>min</b><span style=""color:darkgreen;"">{0}</span>,<b>max</b><span style=""color:darkgreen;"">{1000}</span>,<b>decimal-places</b><span style=""color:darkgreen;"">{2}</span>,<b>symbol</b>]</li>"_
+			"<li>cnpj [<b>pretty</b><span style=""color:darkgreen;"">{1}</span>]</li>"_
+		"</ul>"_
+		"<b>Company:</b><ul>"_
+			"<li>profession</li>"_
+			"<li>industry</li>"_
+			"<li>company.name</li>"_
+		"</ul>"_
+		"<b>Dates:</b><ul>"_
+			"<li>date [<b>days</b><span style=""color:darkgreen;"">{365}</span>,<b>format</b><span style=""color:darkgreen;"">{3}</span>]</li>"_
+			"<li>dates.forward || date.forward [<b>days</b><span style=""color:darkgreen;"">{365}</span>,<b>format</b><span style=""color:darkgreen;"">{3}</span>]</li>"_
+			"<li>dates.backward || date.backward [<b>days</b><span style=""color:darkgreen;"">{365}</span>,<b>format</b><span style=""color:darkgreen;"">{3}</span>]</li>"_
+		"</ul>"_
+		"<b>DragonBall:</b><ul>"_
+			"<li>dragonball.character</li>"_
+		"</ul>"_
+		"<b>File:</b><ul>"_
+			"<li>filename [<b>directory</b>,<b>name</b>,<b>extension</b>,<b>separator</b><span style=""color:darkgreen;"">{/}</span>]</li>"_
+			"<li>file.extension</li>"_
+			"<li>file.mimetype</li>"_
+		"</ul>"_
+		"<b>Finance:</b><ul>"_
+			"<li>amount [<b>min</b><span style=""color:darkgreen;"">{0}</span>,<b>max</b><span style=""color:darkgreen;"">{10000}</span>,<b>decimal-places</b><span style=""color:darkgreen;"">{2}</span>,<b>separator</b><span style=""color:darkgreen;"">{,}</span>,<b>symbol</b>]</li>"_
+			"<li>creditcard || credit-card [<b>type</b><span style=""color:darkblue;"">(visa,mastercard,american_express)</span>]</li>"_
+			"<li>bitcoinaddress || bitcoin-address [<b>min</b><span style=""color:darkgreen;"">{24}</span>,<b>max</b><span style=""color:darkgreen;"">{34}</span>]</li>"_
+		"</ul>"_
+		"<b>Game:</b><ul>"_
+			"<li>game.card || card [<b>abbreviated</b><span style=""color:darkgreen;"">{0}</span>]</li>"_
+			"<li>mortalkombat</li>"_
+			"<li>streetfighter</li>"_
+		"</ul>"_
+		"<b>Internet:</b><ul>"_
+			"<li>username [<b>first-name</b>,<b>last-name</b>]</li>"_
+			"<li>email [<b>first-name</b>,<b>last-name</b>,<b>provider</b>]</li>"_
+			"<li>protocol</li>"_
+			"<li>domainword</li>"_
+			"<li>domain || domainname || domain-name</li>"_
+			"<li>avatar [<b>size</b>]</li>"_
+			"<li>url</li>"_
+			"<li>slug [<b style=""color:darkred"">'words'</b>,<b>glue</b>]</li>"_
+			"<li>ipv4</li>"_
+			"<li>ipv6</li>"_
+			"<li>mac</li>"_
+		"</ul>"_
+		"<b>Job:</b><ul>"_
+			"<li>job.title</li>"_
+			"<li>job.skills || skill</li>"_
+			"<li>job.field</li>"_
+		"</ul>"_
+		"<b>Lorem:</b><ul>"_
+			"<li>word</li>"_
+			"<li>words [<b>amount</b>]</li>"_
+			"<li>sentence [<b>min-amount</b><span style=""color:darkgreen;"">{3}</span>,<b>max-amount</b><span style=""color:darkgreen;"">{10}</span>]</li>"_
+			"<li>sentences [<b>sentence-amount</b>,<b>separator</b>]</li>"_
+			"<li>paragraph || p [<b>sentence-amount</b>]</li>"_
+			"<li>paragraphs [<b>paragraph-amount</b>,<b>separator</b>]</li>"_
+			"<li>lines [<b>line-amount</b>]</li>"_
+			"<li>text [<b>amount</b>]</li>"_
+			"<li>hipster [<b>paragraph-amount</b>,<b>separator</b>]</li>"_
+		"</ul>"_
+		"<b>Name:</b><ul>"_
+			"<li>name || fullname || full-name [<b>gender</b><span style=""color:darkblue;"">(1=""female"",2=""male"")]</li>"_
+			"<li>firstname || fname || first-name [<b>gender</b><span style=""color:darkblue;"">(1=""female"",2=""male"")]</li>"_
+			"<li>lastname || lname || last-name [<b>gender</b><span style=""color:darkblue;"">(1=""female"",2=""male"")]</li>"_
+			"<li>suffix</li>"_
+			"</ul>"_
+		"<b>Person:</b><ul>"_
+			"<li>cpf [<b>Pretty</b><span style=""color:darkgreen;"">{1}</span>]</li>"_
+		"</ul>"_
+		"<b>Phone:</b><ul>"_
+			"<li>areacode || area-code</li>"_
+			"<li>phonenumber || phone [<b>area-code</b><span style=""color:darkgreen;"">{1}</span>]</li>"_
+			"<li>cellphone || cell-phone [<b>area-code</b><span style=""color:darkgreen;"">{1}</span>]</li>"_
+		"</ul>"_
+		"<b>Pokemon:</b><ul>"_
+			"<li>pokemon</li>"_
+		"</ul>"_
+		"<b>StarWars:</b><ul>"_
+			"<li>starwars.character</li>"_
+			"<li>starwars.droid</li>"_
+			"<li>starwars.planet</li>"_
+			"<li>starwars.quote</li>"_
+			"<li>starwars.specie</li>"_
+			"<li>starwars.vehicle</li>"_
+			"<li>starwars.wookieword</li>"_
+			"<li>starwars.wookiesentence [<b>amount</b>]</li>"_
+		"</ul>"_
+		"<b>UFC:</b><ul>"_
+			"<li>ufc.category</li>"_
+			"<li>ufc.fighter [<b>category</b>,<b>country</b>,<b>with-country</b><span style=""color:darkgreen;"">{0}</span>]</li>"_
+			"<li>ufc.featherweight [<b>country</b>]</li>"_
+			"<li>ufc.middleweight [<b>country</b>]</li>"_
+			"<li>ufc.welterweight [<b>country</b>]</li>"_
+			"<li>ufc.lightweight [<b>country</b>]</li>"_
+			"<li>ufc.bantamweight [<b>country</b>]</li>"_
+			"<li>ufc.flyweight [<b>country</b>]</li>"_
+			"<li>ufc.heavyweight [<b>country</b>]</li>"_
+			"<li>ufc.lightheavyweight [<b>country</b>]</li>"_
+			"<li>ufc.nickname [<b style=""color:darkred"">'fighter-name'</b>]</li>"_
+		"</ul><br>"_
+		"<ul><li>Any other will be an random integer between 1 and 99</li></ul>"
+		
+		Set SQLClass = ##class(%Dictionary.ClassDefinition).%OpenId("cosFaker.SQL")
+		If (SQLClass.Description'=(initDescSQL_Desc_endDescSQL)){
+			Set SQLClass.Description = initDescSQL_Desc_endDescSQL
+			$$$THROWONERROR(tSC, SQLClass.%Save())
+			Set LastUpdate = ##class(%Dictionary.ParameterDefinition).%OpenId("cosFaker.SQL||LastUpdate")
+			Set LastUpdate.Default = $ZDateTime($Horolog,3)
+			$$$THROWONERROR(tSC, LastUpdate.%Save())
+			Write !,"Updated description in SQL class!",!
+			Do $System.OBJ.Compile("cosFaker.SQL")
+		}
+		Set JSONClass = ##class(%Dictionary.ClassDefinition).%OpenId("cosFaker.JSON")
+		If (JSONClass.Description'=(initDescJSON_Desc_endDescJSON)){
+			Set LastUpdate = ##class(%Dictionary.ParameterDefinition).%OpenId("cosFaker.JSON||LastUpdate")
+			Set LastUpdate.Default = $ZDateTime($Horolog,3)
+			$$$THROWONERROR(tSC, LastUpdate.%Save())
+			Set JSONClass.Description = initDescJSON_Desc_endDescJSON
+			$$$THROWONERROR(tSC, JSONClass.%Save())
+			Write !,"Updated description in JSON class!",!
+			Do $System.OBJ.Compile("cosFaker.JSON")
+		}
+		
+	} Catch tException {
+		Set:$$$ISOK(tSC) tSC = tException.AsStatus()
+	}
+	Quit tSC
+]]></Implementation>
+</Method>
+
+<Method name="Class">
+<ClassMethod>1</ClassMethod>
+<Private>1</Private>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[	Quit $ZConvert(..%ClassName(),"L")
 ]]></Implementation>
 </Method>
 </Class>
