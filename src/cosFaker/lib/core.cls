@@ -174,6 +174,13 @@ ClassMethod DefineValue(pType As %String, args...) As %String [ Private ]
         "coffee.notes":     ##class(cosFaker.Coffee).Notes(),
         "coffee.origin":    ##class(cosFaker.Coffee).Origin(),
         
+        //Class: Color
+        "color.hexadecimal":##class(cosFaker.Color).Hexadecimal(),
+        "color.hex":		##class(cosFaker.Color).Hexadecimal(),
+        "color.rgb":		##class(cosFaker.Color).RGB(),
+        "color":			##class(cosFaker.Color).Name(),
+        "color.name":		##class(cosFaker.Color).Name(),
+        
         //Class: Commerce
         "price":            ##class(cosFaker.Commerce).Price($Get(args(1),"0"),$Get(args(2),"1000"),$Get(args(3),"2"),$Get(args(4),"")),
         "cnpj":             ##class(cosFaker.Commerce).CNPJ($Get(args(1),"1")),
@@ -362,6 +369,11 @@ ClassMethod CreateProjection(classname As %String, ByRef parameters As %String, 
 			"<li>coffee.variety</li>"_
 			"<li>coffee.notes</li>"_
 			"<li>coffee.origin</li>"_
+		"</ul>"_
+		"<b>Color:</b><ul>"_
+			"<li>color || color.name</li>"_
+			"<li>color.hex || color.hexadecimal</li>"_
+			"<li>color.rgb</li>"_
 		"</ul>"_
 		"<b>Commerce:</b><ul>"_
 			"<li>price [<b>min</b><span style=""color:darkgreen;"">{0}</span>,<b>max</b><span style=""color:darkgreen;"">{1000}</span>,<b>decimal-places</b><span style=""color:darkgreen;"">{2}</span>,<b>symbol</b>]</li>"_
