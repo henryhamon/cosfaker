@@ -177,6 +177,10 @@ ClassMethod DefineValue(pType As %String, args...) As %String [ Private ]
         //Class: Commerce
         "price":            ##class(cosFaker.Commerce).Price($Get(args(1),"0"),$Get(args(2),"1000"),$Get(args(3),"2"),$Get(args(4),"")),
         "cnpj":             ##class(cosFaker.Commerce).CNPJ($Get(args(1),"1")),
+        "commerce.color":	##class(cosFaker.Commerce).Color(),
+        "department":		##class(cosFaker.Commerce).Department(),
+        "promotioncode":	##class(cosFaker.Commerce).PromotionCode(),
+        "productname":		##class(cosFaker.Commerce).ProductName(),
 
         //Class: Company
         "profession":       ##class(cosFaker.Company).Profession(),
@@ -362,6 +366,10 @@ ClassMethod CreateProjection(classname As %String, ByRef parameters As %String, 
 		"<b>Commerce:</b><ul>"_
 			"<li>price [<b>min</b><span style=""color:darkgreen;"">{0}</span>,<b>max</b><span style=""color:darkgreen;"">{1000}</span>,<b>decimal-places</b><span style=""color:darkgreen;"">{2}</span>,<b>symbol</b>]</li>"_
 			"<li>cnpj [<b>pretty</b><span style=""color:darkgreen;"">{1}</span>]</li>"_
+			"<li>commerce.color</li>"_
+			"<li>department</li>"_
+			"<li>promotioncode || promotion-code</li>"_
+			"<li>productname || product-name</li>"_
 		"</ul>"_
 		"<b>Company:</b><ul>"_
 			"<li>profession</li>"_

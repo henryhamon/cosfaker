@@ -7,7 +7,7 @@ The language of data is according to configuration of your Caché (Now works wit
 * Address (Street, Latitude, Longitude, City, State, Capital, Country, Street Suffix, Street Prefix, Postcode, Secondary Address)
 * App (Function name)
 * Coffee (Blend name, Variety, Notes, Origin)
-* Commerce (Price, CNPJ)
+* Commerce (Price, CNPJ, Color, Product, Product Name, Promotion Code)
 * Company (Profession, Industry)
 * Dates (Forward, Backward)
 * DragonBall (Character)
