@@ -1,4 +1,4 @@
-# cosFaker [![GitHub issues](https://img.shields.io/github/issues/henryhamon/cosfaker.svg)](https://github.com/henryhamon/cosfaker/issues) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/henryhamon/cosfaker/master/LICENSE) 
+# cosFaker [![GitHub issues](https://img.shields.io/github/issues/henryhamon/cosfaker.svg)](https://github.com/henryhamon/cosfaker/issues) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/henryhamon/cosfaker/master/LICENSE)
 Generate massive amounts of fake data for Intersystems Caché
 
 The language of data is according to configuration of your Caché (Now works with Pt-Br and En-Us(Default)).
@@ -24,6 +24,16 @@ The language of data is according to configuration of your Caché (Now works wit
 * Pokemon (Pokemons)
 * StarWars (Character, Droid, Planet, Quote, Specie, Vehicle, Wookie word, Wookie Sentence)
 * UFC (Category, Fighter, Fighter by category, Nickname)
+
+## Instalation
+
+To install cosFaker, you just need to import the package cosFaker.vX.X.X.xml file.
+You can go to Management Portal -> System Explorer -> Classes -> Import and select the XML file or just drag the file over Studio.
+Also, if you like terminal like me, execute:
+
+```
+Do $system.OBJ.Load("yourpath/cosFaker.vX.X.X.xml","ck")
+```
 
 
 ## Usage
@@ -73,7 +83,7 @@ Write ##class(cosFaker.JSON).GetDataJSONFromJSON("{Nome:'name 2',Cidade:'city SC
 
 ```cos
 //Suppose you want a person with name, street, phone and his 3 preferred Pokemons
-Write ##class(cosFaker.JSON).GetDataJSONFromJSON("{person:['name','street','phone','3 pokemon']}")  
+Write ##class(cosFaker.JSON).GetDataJSONFromJSON("{person:['name','street','phone','3 pokemon']}")
 // {"person":
 //           [
 //              "Yango Nogueira",
@@ -91,7 +101,7 @@ Set person = ##class(cosFaker.JSON).GetDataOBJFromJSON("{name:'name 2',birth:'da
 Write person.name
 // Flávio Silveira
 
-Set listOfPokemons = person.pokemons          
+Set listOfPokemons = person.pokemons
 Write listOfPokemons.GetAt(1)
 // Diancie
 
