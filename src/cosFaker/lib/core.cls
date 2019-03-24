@@ -44,15 +44,15 @@ ClassMethod Sample(pList) As %String [ Private ]
 ClassMethod MaskNumber(pTemplate As %String, pMin As %Integer = "", pMax As %Integer = "") As %String [ Private ]
 {
 	Set pos = $Find(pTemplate,"#",0)
-	
+
 	While pos'=$$$NO {
-		
+
 		If ((pMin="")||(pMax="")) {
 			Set value = $Random(10)
 		} Else {
 			Set value = ..Range(pMin, pMax)
 		}
-		
+
 		Set pTemplate = $Extract(pTemplate,0,pos-2)_value_$Extract(pTemplate,pos,*),
 			pos = $Find(pTemplate,"#",0)
 	}
@@ -65,7 +65,7 @@ ClassMethod Range(pMin As %Integer = 0, pMax As %Integer = 10000) As %Integer [ 
 	While ('..In(value, pMin, pMax)) {
 		Set value = $Random(pMax + 1)
 	}
-	
+
 	Quit value
 }
 
@@ -79,9 +79,16 @@ ClassMethod SampleFromFile(pMethod As %String = "", pSearch As %String = "") As 
 	Quit $ZConvert(..Sample($ListFromString(..GetFile(pMethod,pSearch),",")),"I","UTF8")
 }
 
+ClassMethod Slash() As %String [ Private ]
+{
+	Set slash = "\"
+	Set:$$$isUNIX slash = "/"
+	Quit slash
+}
+
 ClassMethod GetFile(pMethod As %String = "", pSearch As %String = "") As %String [ Private ]
 {
-	Set dir = ..GetPath()_"cosFaker\lang\"_..GetLang()_"\"
+	Set dir = ..GetPath() _ ..Slash() _"cosFaker"_ ..Slash() _ "lang"_ ..Slash() _ ..GetLang() _ ..Slash()
 	Set file = ##class(%File).%New(dir_..GetLang()_".fkr")
 	Do file.Open("R")
 	Set Ret = ""
@@ -113,12 +120,17 @@ ClassMethod GetInternalValue(pString As %String, pSeparator1 As %String = "{", p
 	Quit $Piece($Piece(pString,pSeparator1,2),pSeparator2,1)
 }
 
-ClassMethod GetPath() As %String [ Private ]
+ClassMethod GetPath() As %String
 {
-	Set OldNS = $Namespace
-	ZN "%SYS"
-	Set app = ##class(Security.Applications).%OpenId($System.CSP.GetDefaultApp(OldNS))
-	Set path = app.Path
+	Set OldNS = $Namespace, path = ""
+	Try {
+		ZN "%SYS"
+		Set app = ##class(Security.Applications).%OpenId($System.CSP.GetDefaultApp(OldNS))
+		Set path = app.Path
+	} Catch tException {
+		Set:$$$ISOK(tSC) tSC = tException.AsStatus()
+		Write !,"ERROR: ", $System.Status.GetErrorText(tSC),!
+	}
 	ZN OldNS
 	Quit path
 }
@@ -144,7 +156,7 @@ ClassMethod Times(pAmount As %Integer = 1, pClassName As %String = "", pMethodNa
 /// Used by SQL and JSON class
 ClassMethod DefineValue(pType As %String, args...) As %String [ Private ]
 {
-    Quit $Case($Translate($ZConvert(pType,"L"),"-",""),     
+    Quit $Case($Translate($ZConvert(pType,"L"),"-",""),
         //Class: Address
         "streetprefix":     ##class(cosFaker.Address).StreetPrefix(),
         "streetsuffix":     ##class(cosFaker.Address).StreetSuffix(),
@@ -160,27 +172,27 @@ ClassMethod DefineValue(pType As %String, args...) As %String [ Private ]
         "postcode":			##class(cosFaker.Address).PostCode(),
         "secondaryaddress":	##class(cosFaker.Address).SecondaryAddress(),
         "buildingnumber":	##class(cosFaker.Address).BuildingNumber(),
-        
+
         //Class: App
         "function":         ##class(cosFaker.App).FunctionName($Get(args(1),""),$Get(args(2),"")),
         "functionname":     ##class(cosFaker.App).FunctionName($Get(args(1),""),$Get(args(2),"")),
         "app.action":		##class(cosFaker.App).AppAction($Get(args(1),"")),
         "app.type":			##class(cosFaker.App).AppType(),
-                
+
         //Class: Coffee
         "coffee.blendname": ##class(cosFaker.Coffee).BlendName(),
         "coffee.blend":     ##class(cosFaker.Coffee).BlendName(),
         "coffee.variety":   ##class(cosFaker.Coffee).Variety(),
         "coffee.notes":     ##class(cosFaker.Coffee).Notes(),
         "coffee.origin":    ##class(cosFaker.Coffee).Origin(),
-        
+
         //Class: Color
         "color.hexadecimal":##class(cosFaker.Color).Hexadecimal(),
         "color.hex":		##class(cosFaker.Color).Hexadecimal(),
         "color.rgb":		##class(cosFaker.Color).RGB(),
         "color":			##class(cosFaker.Color).Name(),
         "color.name":		##class(cosFaker.Color).Name(),
-        
+
         //Class: Commerce
         "price":            ##class(cosFaker.Commerce).Price($Get(args(1),"0"),$Get(args(2),"1000"),$Get(args(3),"2"),$Get(args(4),"")),
         "cnpj":             ##class(cosFaker.Commerce).CNPJ($Get(args(1),"1")),
@@ -193,7 +205,7 @@ ClassMethod DefineValue(pType As %String, args...) As %String [ Private ]
         "profession":       ##class(cosFaker.Company).Profession(),
         "industry":         ##class(cosFaker.Company).Industry(),
         "company.name":		##class(cosFaker.Company).Name(),
-        
+
         //Class: Dates
         "date":             $Case(($Random(2)+1),1:##class(cosFaker.Dates).Backward($Get(args(1),"365"),$Get(args(2),"3")),:##class(cosFaker.Dates).Forward($Get(args(1),"365"),$Get(args(2),"3"))),
         "dates.forward":    ##class(cosFaker.Dates).Forward($Get(args(1),"365"),$Get(args(2),"3")),
@@ -203,23 +215,23 @@ ClassMethod DefineValue(pType As %String, args...) As %String [ Private ]
 
         //Class: DragonBall
         "dragonball.character": ##class(cosFaker.DragonBall).Character(),
-        
+
         //Class: File
         "filename":         ##class(cosFaker.File).Filename($Get(args(1),""),$Get(args(2),""),$Get(args(3),""),$Get(args(4),"/")),
         "file.extension":   ##class(cosFaker.File).Extension(),
         "file.mimetype":    ##class(cosFaker.File).MimeType(),
-        
+
         //Class: Finance
         "amount":           ##class(cosFaker.Finance).Amount($Get(args(1),"0"),$Get(args(2),"10000"),$Get(args(3),"2"),$Get(args(4),","),$Get(args(5),"")),
         "creditcard":       ##class(cosFaker.Finance).CreditCard($Get(args(1),"")),
         "bitcoinaddress":   ##class(cosFaker.Finance).BitcoinAddress($Get(args(1),"24"),$Get(args(1),"34")),
-        
+
         //Class: Game
         "mortalkombat":     ##class(cosFaker.Game).MortalKombat(),
         "streetfighter":    ##class(cosFaker.Game).StreetFighter(),
         "game.card":        ##class(cosFaker.Game).Card($Get(args(1),"0")),
         "card":             ##class(cosFaker.Game).Card($Get(args(1),"0")),
-        
+
         //Class: Internet
         "username":         ##class(cosFaker.Internet).UserName($Get(args(1),""),$Get(args(2),"")),
         "email":            ##class(cosFaker.Internet).Email($Get(args(1),""),$Get(args(2),""),$Get(args(3),"")),
@@ -233,13 +245,13 @@ ClassMethod DefineValue(pType As %String, args...) As %String [ Private ]
         "ipv4":             ##class(cosFaker.Internet).IPV4(),
         "ipv6":             ##class(cosFaker.Internet).IPV6(),
         "mac":              ##class(cosFaker.Internet).MAC(),
-        
+
         //Class: Job
         "job.title":        ##class(cosFaker.Job).Title(),
         "job.skills":       ##class(cosFaker.Job).Skills(),
         "skill":            ##class(cosFaker.Job).Skills(),
         "job.field":        ##class(cosFaker.Job).Field(),
-        
+
         //Class: Lorem
         "word":             ##class(cosFaker.Lorem).Word(),
         "words":            ##class(cosFaker.Lorem).Words($Get(args(1),"")),
@@ -251,7 +263,7 @@ ClassMethod DefineValue(pType As %String, args...) As %String [ Private ]
         "lines":            ##class(cosFaker.Lorem).Lines($Get(args(1),"")),
         "text":             ##class(cosFaker.Lorem).Text($Get(args(1),1)),
         "hipster":          ##class(cosFaker.Lorem).Hipster($Get(args(1),""),$Get(args(2),"")),
-        
+
         //Class: Name
         "name":             ##class(cosFaker.Name).FullName($Get(args(1),"")),
         "fullname":         ##class(cosFaker.Name).FullName($Get(args(1),"")),
@@ -260,19 +272,19 @@ ClassMethod DefineValue(pType As %String, args...) As %String [ Private ]
         "lastname":         ##class(cosFaker.Name).LastName(),
         "lname":            ##class(cosFaker.Name).LastName(),
         "suffix":           ##class(cosFaker.Name).Suffix(),
-        
+
         //Class: Person
         "cpf":              ##class(cosFaker.Person).cpf($Get(args(1),"1")),
-        
+
         //Class: Phone
         "areacode":         ##class(cosFaker.Phone).AreaCode(),
         "phonenumber":      ##class(cosFaker.Phone).PhoneNumber($Get(args(1),"1")),
         "phone":            ##class(cosFaker.Phone).PhoneNumber($Get(args(1),"1")),
         "cellphone":        ##class(cosFaker.Phone).CellPhone($Get(args(1),"1")),
-        
+
         //Class: Pokemon
         "pokemon":          ##class(cosFaker.Pokemon).Pokemon(),
-        
+
         //Class: StarWars
         "starwars.character":##class(cosFaker.StarWars).Characters(),
         "starwars.droid":   ##class(cosFaker.StarWars).Droids(),
@@ -282,7 +294,7 @@ ClassMethod DefineValue(pType As %String, args...) As %String [ Private ]
         "starwars.vehicle": ##class(cosFaker.StarWars).Vehicles(),
         "starwars.wookieword":##class(cosFaker.StarWars).WookieWords(),
         "starwars.wookiesentence":##class(cosFaker.StarWars).WookieSentence($Get(args(1),"")),
-        
+
         //Class: UFC
         "ufc.category":     ##class(cosFaker.UFC).Category(),
         "ufc.fighter":      ##class(cosFaker.UFC).Fighter($Get(args(1),""),$Get(args(2),""),$Get(args(3),"0")),
@@ -294,8 +306,8 @@ ClassMethod DefineValue(pType As %String, args...) As %String [ Private ]
         "ufc.flyweight":    ##class(cosFaker.UFC).Flyweight($Get(args(1),"")),
         "ufc.heavyweight":  ##class(cosFaker.UFC).Heavyweight($Get(args(1),"")),
         "ufc.lightheavyweight":##class(cosFaker.UFC).LightHeavyweight($Get(args(1),"")),
-        "ufc.nickname":     ##class(cosFaker.UFC).Nickname($Get(args(1),"")),    
-        
+        "ufc.nickname":     ##class(cosFaker.UFC).Nickname($Get(args(1),"")),
+
         :$Random(99) + 1)
 }
 
@@ -306,9 +318,9 @@ ClassMethod GetInfo(pTypeField As %String, Output pType As %String, Output pPara
     Try {
         Set pParams = 0
         If $Find(pTypeField,pSanitize)>0{
-           Set p2 = $Replace($Piece(pTypeField,pSanitize,2)," ","_")
-           Set $Piece(pTypeField,pSanitize,2) = p2
-           Set pTypeField = $Translate(pTypeField,pSanitize,"")
+			Set p2 = $Replace($Piece(pTypeField,pSanitize,2)," ","_")
+			Set $Piece(pTypeField,pSanitize,2) = p2
+			Set pTypeField = $Translate(pTypeField,pSanitize,"")
         }
         Set ListType = $ListFromString(pTypeField," "), ptr = 0, idx = 0
         Set pType = $List(ListType,1)
@@ -316,7 +328,7 @@ ClassMethod GetInfo(pTypeField As %String, Output pType As %String, Output pPara
             Set idx = idx + 1
             Set pParams = idx
             Set pParams(idx) = $Translate($List(ListType,i),"_"," ")
-        }   
+        }
     } Catch tException {
         Set:$$$ISOK(tSC) tSC = tException.AsStatus()
     }
@@ -339,11 +351,11 @@ ClassMethod CreateProjection(classname As %String, ByRef parameters As %String, 
 	Set tSC = $$$OK
 	Try {
 		/// Must update the documentation of classes SQL and JSON
-		Set initDescJSON = "<h1>cosFaker JSON</h1><br/> <span style=""font-size:10px;"">Author: <b>Andrei Luiz Nenevê - <a href=""mailto:alneneve@gmail.com"" target=""_blank"">Email</a> - <a href=""https://github.com/AndreiLN"" target=""_blank"">Github</a></b></span> <p><b>This class will generate random data according the options in cosFaker for any json string, it can return an JSON String or Object. Examples are shown in method's description.</b></p><br/><br/> <h3>Valid Types:</h3> <div style=""padding-left:25px;border: 1px dashed #ddd;background-color:#eee;""> <br/><b>*** You can aways pass a number before the type to generate an array of the desired type</b><br/><br/><b>[]</b> = Parameters (Aways optional)<b></b>, <b style=""color:darkgreen;"">{}</b> = Default, <b style=""color:darkblue;"">()</b> = List of Valid Values<b></b>, <b style=""color:darkred;"">"" ""</b> = Must pass the string in double quotation marks<br/><br/>"
-		Set initDescSQL = "<h1>cosFaker SQL</h1><br/> <span style=""font-size:10px;"">Author: <b>Andrei Luiz Nenevê - <a href=""mailto:alneneve@gmail.com"" target=""_blank"">Email</a> - <a href=""https://github.com/AndreiLN"" target=""_blank"">Github</a></b></span> <p><b>This class will generate random data according the options in cosFaker for any table. Examples are shown in method's description.</b></p><br/><br/> <h3>Valid Types:</h3> <div style=""padding-left:25px;border: 1px dashed #ddd;background-color:#eee;""><b>[]</b> = Parameters (Aways optional)<b></b>, <b style=""color:darkgreen;"">{}</b> = Default, <b style=""color:darkblue;"">()</b> = List of Valid Values<b></b>, <b style=""color:darkred;"">' '</b> = Must pass the string in single quotation marks<br/><br/>"
+		Set initDescJSON = "<h1>cosFaker JSON</h1><br/> <span style=""font-size:10px;"">Author: <b>Andrei Luiz Nenevï¿½ - <a href=""mailto:alneneve@gmail.com"" target=""_blank"">Email</a> - <a href=""https://github.com/AndreiLN"" target=""_blank"">Github</a></b></span> <p><b>This class will generate random data according the options in cosFaker for any json string, it can return an JSON String or Object. Examples are shown in method's description.</b></p><br/><br/> <h3>Valid Types:</h3> <div style=""padding-left:25px;border: 1px dashed #ddd;background-color:#eee;""> <br/><b>*** You can aways pass a number before the type to generate an array of the desired type</b><br/><br/><b>[]</b> = Parameters (Aways optional)<b></b>, <b style=""color:darkgreen;"">{}</b> = Default, <b style=""color:darkblue;"">()</b> = List of Valid Values<b></b>, <b style=""color:darkred;"">"" ""</b> = Must pass the string in double quotation marks<br/><br/>"
+		Set initDescSQL = "<h1>cosFaker SQL</h1><br/> <span style=""font-size:10px;"">Author: <b>Andrei Luiz Nenevï¿½ - <a href=""mailto:alneneve@gmail.com"" target=""_blank"">Email</a> - <a href=""https://github.com/AndreiLN"" target=""_blank"">Github</a></b></span> <p><b>This class will generate random data according the options in cosFaker for any table. Examples are shown in method's description.</b></p><br/><br/> <h3>Valid Types:</h3> <div style=""padding-left:25px;border: 1px dashed #ddd;background-color:#eee;""><b>[]</b> = Parameters (Aways optional)<b></b>, <b style=""color:darkgreen;"">{}</b> = Default, <b style=""color:darkblue;"">()</b> = List of Valid Values<b></b>, <b style=""color:darkred;"">' '</b> = Must pass the string in single quotation marks<br/><br/>"
 		Set endDescJSON = "</div>"
 		Set endDescSQL = "</div><br/><h3>Examples:</h3> <example> Do ##class(cosFaker.SQL).Insert(""Sample_Data.Clients"",""City,Name,NickName"",""city SC,name 2,ufc.nickname 'Anderson Silva'"",1) ;INSERT INTO Sample_Data.Clients (City,Name,NickName) VALUES ('Trombudo Central','Leandro Mendes','The Spider') </example> <example> Do ##class(cosFaker.SQL).Insert(""Sample_Data.Clients"",""City,Name,Salary"",""city SC,name 2,price 1000 2000 2 R$"",2) ;INSERT INTO Sample_Data.Clients (City,Name,Salary) VALUES ('Celso Ramos','Luiggi Dias Nunes Saraiva','R$1654.30') ;INSERT INTO Sample_Data.Clients (City,Name,Salary) VALUES ('Nova Veneza','Fabiano da Costa','R$1255.13') </example>"
-	
+
 		Set Desc = ""_
 		"<b>Address:</b><ul>"_
 			"<li>streetprefix</li>"_
@@ -481,7 +493,7 @@ ClassMethod CreateProjection(classname As %String, ByRef parameters As %String, 
 			"<li>ufc.nickname [<b style=""color:darkred"">'fighter-name'</b>]</li>"_
 		"</ul><br>"_
 		"<ul><li>Any other will be an random integer between 1 and 99</li></ul>"
-		
+
 		Set SQLClass = ##class(%Dictionary.ClassDefinition).%OpenId("cosFaker.SQL")
 		If (SQLClass.Description'=(initDescSQL_Desc_endDescSQL)){
 			Set SQLClass.Description = initDescSQL_Desc_endDescSQL
@@ -502,7 +514,7 @@ ClassMethod CreateProjection(classname As %String, ByRef parameters As %String, 
 			Write !,"Updated description in JSON class!",!
 			Do $System.OBJ.Compile("cosFaker.JSON")
 		}
-		
+
 	} Catch tException {
 		Set:$$$ISOK(tSC) tSC = tException.AsStatus()
 	}
@@ -515,4 +527,3 @@ ClassMethod Class() As %String [ Private ]
 }
 
 }
-
