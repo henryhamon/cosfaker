@@ -1,5 +1,5 @@
 # cosFaker [![GitHub issues](https://img.shields.io/github/issues/henryhamon/cosfaker.svg)](https://github.com/henryhamon/cosfaker/issues) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/henryhamon/cosfaker/master/LICENSE)
-Generate massive amounts of fake data for Intersystems Caché
+Generate massive amounts of fake data for Intersystems IRIS
 
 The language of data is according to configuration of your Caché (Now works with Pt-Br and En-Us(Default)).
 
@@ -35,6 +35,35 @@ Also, if you like terminal like me, execute:
 Do $system.OBJ.Load("yourpath/cosFaker.vX.X.X.xml","ck")
 ```
 
+### Docker ###
+
+To install using Docker. Follow this instructions:
+
+Open terminal and clone/git pull the repo into any local directory
+
+```
+$ git clone https://github.com/henryhamon/cosfaker.git
+```
+
+Open the terminal in this directory and run:
+
+```
+$ docker-compose build
+```
+
+Run the IRIS container with your project:
+```
+$ docker-compose up -d
+```
+
+## How to Run the Application
+Open InterSystems IRIS terminal:
+
+```
+$ docker-compose exec iris iris session iris
+USER>zn "IRISAPP"
+IRISAPP>Write ##class(cosFaker.Name).FullName()
+```
 
 ## Usage
 
