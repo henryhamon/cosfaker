@@ -4,6 +4,8 @@ ARG IMAGE=store/intersystems/iris-community:2019.4.0.379.0
 ARG IMAGE=store/intersystems/iris-community:2020.1.0.199.0
 ARG IMAGE=intersystemsdc/iris-community:2019.4.0.383.0-zpm
 FROM $IMAGE
+# bringing the standard shell back
+SHELL ["/bin/bash", "-c"]
 
 USER root
 
