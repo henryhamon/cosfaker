@@ -3,7 +3,7 @@ Class cosFaker.Coffee Extends cosFaker.lib.core
 
 ClassMethod BlendName() As %String
 {
-	Set name1 = ..Sample($ListBuild("Summer", "Holiday", "Jacked", "Joe", "Express", "Reg's", "Split", "Spilt", "Chocolate", "Dark", "Veranda", "Major", "Bluebery", "American", "Huggy", "Wake-up", "Morning", "Evening", "Winter", "Captain's", "Thanksgiving", "Seattle", "Brooklyn", "CafÈ", "Blacktop", "Pumpkin-spice", "Good-morning", "Postmodern", "The Captain's", "The", "Cascara", "Melty", "Heart", "Goodbye", "Hello", "Street", "Red", "Blue", "Green", "Strong", "KrebStar", "Kreb-Full-o"))
+	Set name1 = ..Sample($ListBuild("Summer", "Holiday", "Jacked", "Joe", "Express", "Reg's", "Split", "Spilt", "Chocolate", "Dark", "Veranda", "Major", "Bluebery", "American", "Huggy", "Wake-up", "Morning", "Evening", "Winter", "Captain's", "Thanksgiving", "Seattle", "Brooklyn", "Caf√©", "Blacktop", "Pumpkin-spice", "Good-morning", "Postmodern", "The Captain's", "The", "Cascara", "Melty", "Heart", "Goodbye", "Hello", "Street", "Red", "Blue", "Green", "Strong", "KrebStar", "Kreb-Full-o"))
 	Set name2 = ..Sample($ListBuild("Solstice", "Blend", "Level", "Enlightenment", "Cowboy", "", "Choice", "Select", "Equinox", "Star", "Forrester", "Java", "Symphony", "Utopia", "Cup", "Mug", "Been", "Bean", "Cake", "Extract", "Delight", "Pie", "America", "Treat", "Volcano", "Breaker", "Town", "Light", "Look", "Coffee", "Nuts"))
 	Quit name1_" "_name2
 }
@@ -28,10 +28,10 @@ ClassMethod Notes() As %String
 ClassMethod Origin() As %String
 {
 	Set country = ..Sample($ListBuild("Brazil", "Colombia", "Sumatra", "Ethiopia", "Honduras", "Kenya", "Uganda", "Mexico", "Guatemala", "Nicaragua", "Costa Rica", "Tanzania", "El Salvador", "Rwanda", "Burundi", "Panama", "Yemen", "India"))
-
+ 
 	Set region = ##class(%ArrayOfDataTypes).%New()	
 	Do region.SetAt($ListBuild("Sul Minas", "Mogiana", "Cerrado"),"brazil")
-	Do region.SetAt($ListBuild("NariÒo", "Huila", "Tolima", "Cauca", "Casanare", "Santander", "Antioquia", "Cundinamarca", "Boyac·"),"colombia")
+	Do region.SetAt($ListBuild("Nari√±o", "Huila", "Tolima", "Cauca", "Casanare", "Santander", "Antioquia", "Cundinamarca", "Boyac√°"),"colombia")
 	Do region.SetAt($ListBuild("Tapanuli", "Lintong", "Aceh", "Lake Tawar", "Lintong", "Gayo"),"sumatra")
 	Do region.SetAt($ListBuild("Sidama", "Harrar", "Limu", "Ojimmah", "Lekempti", "Wellega", "Gimbi"),"ethiopia")
 	Do region.SetAt($ListBuild("Agalta", "Comayagua", "Copan", "Montecillos", "Opalca", "El Paraiso"),"honduras")
@@ -39,10 +39,10 @@ ClassMethod Origin() As %String
 	Do region.SetAt($ListBuild("Bugisu", "Mount Elgon", "Kibale"),"uganda")
 	Do region.SetAt($ListBuild("Chiapas", "Oaxaca", "Veracruz", "Colima", "San Luis Potosi", "Nayarit", "Hidalgo", "Puebla", "Jalisco"),"mexico")
 	Do region.SetAt($ListBuild("Acatenango", "Antigua", "Atitlan", "Fraijanes", "Huehuetenango", "Nuevo Oriente", "Coban", "San Marcos"),"guatemala")
-	Do region.SetAt($ListBuild("Matagalpa", "Jinotega", "Boaco", "Madriz", "Nueva Segovia", "EstelÌ", "Dipilto", "Jalapa", "Carazo", "Granada", "Masaya", "Managua", "Rivas"),"nicaragua")
+	Do region.SetAt($ListBuild("Matagalpa", "Jinotega", "Boaco", "Madriz", "Nueva Segovia", "Estel√≠", "Dipilto", "Jalapa", "Carazo", "Granada", "Masaya", "Managua", "Rivas"),"nicaragua")
 	Do region.SetAt($ListBuild("Tarrazu", "Central Valley", "West Valley", "Guanacaste", "Tres Rios", "Turrialba", "Orosi", "Brunca"),"costa rica")
 	Do region.SetAt($ListBuild("Western Region, Bukova", "Western Region, Kigoma", "Mbeya Region", "Southern Region, Mbinga", "Western Region, Tarime", "Northern Region, Oldeani", "Northern Region, Arusha", "Northern Region, Kilimanjaro", "Southern Region, Morogoro"),"tanzania")
-	Do region.SetAt($ListBuild("Alotepec-Metap·n", "Apaneca-Ilamatepec", "El Balsamo-Quetzaltepec", "Cacahuatique", "Chichontepec", "Tecapa-Chinameca"),"el salvador")
+	Do region.SetAt($ListBuild("Alotepec-Metap√°n", "Apaneca-Ilamatepec", "El Balsamo-Quetzaltepec", "Cacahuatique", "Chichontepec", "Tecapa-Chinameca"),"el salvador")
 	Do region.SetAt($ListBuild("Rulindo", "Gishamwana Coffee Island", "Lake Kivu Region", "Kigeyo Washing Station", "Kabirizi"),"rwanda")
 	Do region.SetAt($ListBuild("Kayanza"),"burundi")
 	Do region.SetAt($ListBuild("Boquete", "Chiriqui", "Volcan"),"panama")
